@@ -38,6 +38,7 @@ namespace Program {
       this.uname = new MaterialSkin.Controls.MaterialSingleLineTextField();
       this.pass = new MaterialSkin.Controls.MaterialSingleLineTextField();
       this.login = new MaterialSkin.Controls.MaterialRaisedButton();
+      this.panel1 = new System.Windows.Forms.Panel();
       this.SuspendLayout();
       // 
       // label1
@@ -131,6 +132,14 @@ namespace Program {
       this.login.UseVisualStyleBackColor = true;
       this.login.Click += new System.EventHandler(this.OnClick);
       // 
+      // panel1
+      // 
+      this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+      this.panel1.Location = new System.Drawing.Point(12, 133);
+      this.panel1.Name = "panel1";
+      this.panel1.Size = new System.Drawing.Size(260, 100);
+      this.panel1.TabIndex = 7;
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -142,12 +151,14 @@ namespace Program {
       this.Controls.Add(this.materialLabel2);
       this.Controls.Add(this.materialLabel1);
       this.Controls.Add(this.label1);
+      this.Controls.Add(this.panel1);
       this.Name = "MainForm";
       this.Text = "Login";
       this.Load += new System.EventHandler(this.Form_Load);
       this.ResumeLayout(false);
       this.PerformLayout();
     }
+    private System.Windows.Forms.Panel panel1;
     private MaterialSkin.Controls.MaterialRaisedButton login;
     private MaterialSkin.Controls.MaterialSingleLineTextField pass;
     private MaterialSkin.Controls.MaterialSingleLineTextField uname;
