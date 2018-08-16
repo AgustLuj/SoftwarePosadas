@@ -24,7 +24,11 @@ namespace Program.Sessions {
         using (var reader = cmd.ExecuteReader()) {
           if (reader.HasRows) {
             reader.Read();
-            return new User(){name = uname, id = reader.GetInt32("id"), permissions = reader.GetString("permissions")};
+            if (reader.GetString("uname") == uname && reader.GetString("pass") == pass) {
+              return new User(){name = uname, id = reader.GetInt32("id"), permissions = reader.GetString("permissions")};
+            } else {
+              return new User(){name = "//err", id = -1};
+            }
           } else {
             return new User(){name = "//err", id = -1};
           }

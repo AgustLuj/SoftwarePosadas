@@ -44,6 +44,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="NUnit.Framework">
+      <HintPath>$(SharpDevelopBinPath)\Tools\NUnit\NUnit.Framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -72,6 +75,7 @@
     <Compile Include="src\Program.cs" />
     <Compile Include="src\Static Classes\DBConn.cs" />
     <Compile Include="src\Static Classes\MySQLUtil.cs" />
+    <Compile Include="Test1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

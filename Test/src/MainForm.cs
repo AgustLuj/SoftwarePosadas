@@ -23,7 +23,7 @@ namespace Program {
       var SkinManager = MaterialSkinManager.Instance;
       SkinManager.AddFormToManage(this);
       SkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-      SkinManager.ColorScheme = new ColorScheme((Primary)0xed9936, (Primary)0xd58930, Primary.Brown600, Accent.Blue400, TextShade.BLACK);
+      //SkinManager.ColorScheme = new ColorScheme((Primary)0xed9936, (Primary)0xd58930, Primary.Brown600, Accent.Blue400, TextShade.BLACK);
     }
     
     public void Form_Load(object sender, EventArgs e) {

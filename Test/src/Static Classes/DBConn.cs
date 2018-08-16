@@ -21,10 +21,10 @@ namespace Program.StaticClasses {
 
     public static string GetJSON(int year, string month) {
       var conn = GetDBConnection();
-      conn.Open();
 
       try {
-
+        conn.Open();
+        
         MySqlCommand cmd = new MySqlCommand(string.Format("SELECT `ano`, `{0}` FROM `anos` WHERE `ano` = {1}", month, year), conn);
 
         using (var reader = cmd.ExecuteReader()) {
@@ -45,9 +45,10 @@ namespace Program.StaticClasses {
     public static int InsertJson(int year, string month, string JSON) {
       
       var conn = GetDBConnection();
-      conn.Open();
-      
+            
       try {
+        conn.Open();
+        
         MySqlCommand cmd = new MySqlCommand(string.Format("insert into `anos` (`ano`, {0}) values (@ano, @json)", month), conn);
         cmd.Parameters.Add("@ano", MySqlDbType.Int32).Value = year;
         cmd.Parameters.Add("@json", MySqlDbType.Text).Value = JSON;
@@ -63,9 +64,10 @@ namespace Program.StaticClasses {
     public static int UpdateJson(int year, string month, string JSON) {
 
       var conn = GetDBConnection();
-      conn.Open();
 
       try {
+        conn.Open();
+        
         MySqlCommand cmd = new MySqlCommand(string.Format("update `anos` set `{0}` = @json", month), conn);
         cmd.Parameters.Add("@json", MySqlDbType.Text).Value = JSON;
 

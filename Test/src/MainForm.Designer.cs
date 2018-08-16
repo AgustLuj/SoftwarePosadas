@@ -105,14 +105,14 @@ namespace Program {
       this.pass.MaxLength = 32767;
       this.pass.MouseState = MaterialSkin.MouseState.HOVER;
       this.pass.Name = "pass";
-      this.pass.PasswordChar = '=';
+      this.pass.PasswordChar = '\0';
       this.pass.SelectedText = "";
       this.pass.SelectionLength = 0;
       this.pass.SelectionStart = 0;
       this.pass.Size = new System.Drawing.Size(75, 23);
       this.pass.TabIndex = 4;
       this.pass.TabStop = false;
-      this.pass.UseSystemPasswordChar = false;
+      this.pass.UseSystemPasswordChar = true;
       this.pass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.PassKeyUp);
       // 
       // login
@@ -143,7 +143,7 @@ namespace Program {
       this.Controls.Add(this.materialLabel1);
       this.Controls.Add(this.label1);
       this.Name = "MainForm";
-      this.Text = "Test";
+      this.Text = "Login";
       this.Load += new System.EventHandler(this.Form_Load);
       this.ResumeLayout(false);
       this.PerformLayout();
