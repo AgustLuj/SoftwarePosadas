@@ -32,6 +32,9 @@
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CNSpinner">
+      <HintPath>CNSpinner.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialSkin">
       <HintPath>..\packages\MaterialSkin.Net4.1.0.0\lib\net40\MaterialSkin.dll</HintPath>
     </Reference>
@@ -73,6 +76,10 @@
     <Compile Include="src\Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\Forms\Load.cs" />
+    <Compile Include="src\Forms\Load.Designer.cs">
+      <DependentUpon>Load.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\Forms\MainForm.cs" />
     <Compile Include="src\Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -87,16 +94,21 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <Resource Include="Resources\Ripple-1s-200px.gif" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="src\Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Forms\Load.resx">
+      <DependentUpon>Load.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\Forms\MainForm.resx">
       <DependentUpon>MainForm.Designer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Resources" />
     <Folder Include="src" />
     <Folder Include="src\Namespaces" />
     <Folder Include="src\Classes" />

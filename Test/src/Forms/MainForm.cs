@@ -18,7 +18,7 @@ using Program.Sessions;
 using Program.Extensions;
 using Program.StaticClasses;
 
-namespace Program {
+namespace Program.Forms {
   public partial class MainForm : MaterialForm {
     public MainForm() {
       InitializeComponent();
@@ -42,11 +42,11 @@ namespace Program {
       
       //label1.Text = ;
       //panel1.Dock = DockStyle.Fill;
-//      var f = new Form1();
-//      f.TopLevel = false;
-//      panel1.Controls.Add(f);
-//      panel1.Tag = f;
-//      f.Show();
+      var f = new Form1();
+      f.TopLevel = false;
+      panel1.Controls.Add(f);
+      panel1.Tag = f;
+      f.Show();
     }
     
     public void OnClick(object sender, EventArgs e) {
@@ -63,6 +63,11 @@ namespace Program {
       if (e.KeyCode == Keys.Return) {
         label1.Text = Session.Login(uname.Text, pass.Text).ToString();
       }
+    }
+    
+    void MainFormFormClosed(object sender, FormClosedEventArgs e)
+    {
+      Application.Exit();
     }
   }
 }

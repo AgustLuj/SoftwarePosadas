@@ -6,7 +6,7 @@
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
-namespace Program {
+namespace Program.Forms {
   partial class MainForm {
     /// <summary>
     /// Designer variable used to keep track of non-visual components.
@@ -150,10 +150,13 @@ namespace Program {
       this.Controls.Add(this.uname);
       this.Controls.Add(this.materialLabel2);
       this.Controls.Add(this.materialLabel1);
-      this.Controls.Add(this.label1);
       this.Controls.Add(this.panel1);
+      this.Controls.Add(this.label1);
+      this.Location = new System.Drawing.Point(600, 500);
       this.Name = "MainForm";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
       this.Text = "Login";
+      this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainFormFormClosed);
       this.Load += new System.EventHandler(this.Form_Load);
       this.ResumeLayout(false);
       this.PerformLayout();

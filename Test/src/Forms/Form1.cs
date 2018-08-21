@@ -7,7 +7,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Program
+namespace Program.Forms
 {
   /// <summary>
   /// Description of Form1.

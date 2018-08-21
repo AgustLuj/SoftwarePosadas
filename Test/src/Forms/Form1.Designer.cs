@@ -3,7 +3,7 @@
  * On 16/08/2018
  * Time: 10:43 a.m.
  */
-namespace Program
+namespace Program.Forms
 {
   partial class Form1
   {

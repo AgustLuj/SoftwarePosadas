@@ -7,6 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using Program.Forms;
 using System.Windows.Forms;
 
 namespace Program {
@@ -21,7 +22,11 @@ namespace Program {
     private static void Main(string[] args) {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new MainForm());
+      
+      var l = new Load();
+      l.Show();   
+      
+      Application.Run();
     }
 		
   }
