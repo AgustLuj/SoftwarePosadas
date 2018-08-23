@@ -35,18 +35,10 @@ namespace Program.Forms
     {
       this.components = new System.ComponentModel.Container();
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Load));
-      this.progressSpinner1 = new CNSpinner.ProgressSpinner();
       this.timer1 = new System.Windows.Forms.Timer(this.components);
       this.timer2 = new System.Windows.Forms.Timer(this.components);
+      this.progressSpinner1 = new CNSpinner.ProgressSpinner();
       this.SuspendLayout();
-      // 
-      // progressSpinner1
-      // 
-      this.progressSpinner1.LoadGIFImage = ((System.Drawing.Image)(resources.GetObject("progressSpinner1.LoadGIFImage")));
-      this.progressSpinner1.Location = new System.Drawing.Point(73, 71);
-      this.progressSpinner1.Name = "progressSpinner1";
-      this.progressSpinner1.Size = new System.Drawing.Size(128, 128);
-      this.progressSpinner1.TabIndex = 0;
       // 
       // timer1
       // 
@@ -60,10 +52,19 @@ namespace Program.Forms
       this.timer2.Interval = 1000;
       this.timer2.Tick += new System.EventHandler(this.Timer2Tick);
       // 
+      // progressSpinner1
+      // 
+      this.progressSpinner1.LoadGIFImage = ((System.Drawing.Image)(resources.GetObject("progressSpinner1.LoadGIFImage")));
+      this.progressSpinner1.Location = new System.Drawing.Point(73, 63);
+      this.progressSpinner1.Name = "progressSpinner1";
+      this.progressSpinner1.Size = new System.Drawing.Size(128, 128);
+      this.progressSpinner1.TabIndex = 0;
+      // 
       // Load
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
       this.ClientSize = new System.Drawing.Size(284, 262);
       this.Controls.Add(this.progressSpinner1);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

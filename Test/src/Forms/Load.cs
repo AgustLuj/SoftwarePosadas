@@ -20,20 +20,14 @@ namespace Program.Forms
     
     public Load()
     {
-      //
-      // The InitializeComponent() call is required for Windows Forms designer support.
-      //
       InitializeComponent();
       
-      //this.BackColor = Color.LimeGreen;
-      this.TransparencyKey = Color.FromKnownColor(KnownColor.Control);
+      TransparencyKey = BackColor = Color.White;
+      
       f = new MainForm();
       f.Show();
       f.Visible = false;
       f.Location = new Point((Screen.PrimaryScreen.Bounds.Width >> 1) - (f.Width >> 1), Screen.PrimaryScreen.Bounds.Height);
-      //
-      // TODO: Add constructor code after the InitializeComponent() call.
-      //
     }
     
     void Timer1Tick(object sender, EventArgs e)
