@@ -33,7 +33,7 @@ namespace Program.Forms {
       SkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
       //SkinManager.ColorScheme = new ColorScheme((Primary)0xed9936, (Primary)0xd58930, Primary.Brown600, Accent.Blue400, TextShade.BLACK);
     
-      leftbtns.AddRange(new []{btn_left_guests, btn_left_security});
+      leftbtns.AddRange(new []{btn_left_guests, btn_left_security, btn_left_stats});
     }
     
     public void LoadPermissions(){

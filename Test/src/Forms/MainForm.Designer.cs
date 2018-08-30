@@ -36,6 +36,7 @@ namespace Program.Forms {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
       this.btn_left_guests = new MaterialSkin.Controls.MaterialFlatButton();
       this.panel2 = new System.Windows.Forms.Panel();
+      this.btn_left_stats = new MaterialSkin.Controls.MaterialFlatButton();
       this.btn_left_admin = new MaterialSkin.Controls.MaterialFlatButton();
       this.btn_left_security = new MaterialSkin.Controls.MaterialFlatButton();
       this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
@@ -59,14 +60,15 @@ namespace Program.Forms {
       this.btn_left_guests.Name = "btn_left_guests";
       this.btn_left_guests.Primary = true;
       this.btn_left_guests.selected = false;
-      this.btn_left_guests.Size = new System.Drawing.Size(139, 36);
+      this.btn_left_guests.Size = new System.Drawing.Size(142, 36);
       this.btn_left_guests.TabIndex = 8;
-      this.btn_left_guests.Text = "Huespedes      ";
+      this.btn_left_guests.Text = "Huespedes        ";
       this.btn_left_guests.UseVisualStyleBackColor = true;
       this.btn_left_guests.Click += new System.EventHandler(this.LeftBarClick);
       // 
       // panel2
       // 
+      this.panel2.Controls.Add(this.btn_left_stats);
       this.panel2.Controls.Add(this.btn_left_admin);
       this.panel2.Controls.Add(this.btn_left_security);
       this.panel2.Controls.Add(this.materialFlatButton2);
@@ -77,6 +79,25 @@ namespace Program.Forms {
       this.panel2.TabIndex = 9;
       this.panel2.Tag = "w = 42 -> 185";
       // 
+      // btn_left_stats
+      // 
+      this.btn_left_stats.AutoSize = true;
+      this.btn_left_stats.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+      this.btn_left_stats.Depth = 0;
+      this.btn_left_stats.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.btn_left_stats.Icon = ((System.Drawing.Image)(resources.GetObject("btn_left_stats.Icon")));
+      this.btn_left_stats.Location = new System.Drawing.Point(3, 114);
+      this.btn_left_stats.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+      this.btn_left_stats.MouseState = MaterialSkin.MouseState.HOVER;
+      this.btn_left_stats.Name = "btn_left_stats";
+      this.btn_left_stats.Primary = true;
+      this.btn_left_stats.selected = false;
+      this.btn_left_stats.Size = new System.Drawing.Size(142, 36);
+      this.btn_left_stats.TabIndex = 12;
+      this.btn_left_stats.Text = "Estadísticas";
+      this.btn_left_stats.UseVisualStyleBackColor = true;
+      this.btn_left_stats.Click += new System.EventHandler(this.LeftBarClick);
+      // 
       // btn_left_admin
       // 
       this.btn_left_admin.AutoSize = true;
@@ -84,15 +105,15 @@ namespace Program.Forms {
       this.btn_left_admin.Depth = 0;
       this.btn_left_admin.ForeColor = System.Drawing.SystemColors.ControlText;
       this.btn_left_admin.Icon = ((System.Drawing.Image)(resources.GetObject("btn_left_admin.Icon")));
-      this.btn_left_admin.Location = new System.Drawing.Point(3, 114);
+      this.btn_left_admin.Location = new System.Drawing.Point(3, 150);
       this.btn_left_admin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
       this.btn_left_admin.MouseState = MaterialSkin.MouseState.HOVER;
       this.btn_left_admin.Name = "btn_left_admin";
       this.btn_left_admin.Primary = true;
       this.btn_left_admin.selected = false;
-      this.btn_left_admin.Size = new System.Drawing.Size(139, 36);
+      this.btn_left_admin.Size = new System.Drawing.Size(142, 36);
       this.btn_left_admin.TabIndex = 11;
-      this.btn_left_admin.Text = "Administrar";
+      this.btn_left_admin.Text = "Administrar  ";
       this.btn_left_admin.UseVisualStyleBackColor = true;
       this.btn_left_admin.Visible = false;
       this.btn_left_admin.Click += new System.EventHandler(this.LeftBarClick);
@@ -110,9 +131,9 @@ namespace Program.Forms {
       this.btn_left_security.Name = "btn_left_security";
       this.btn_left_security.Primary = true;
       this.btn_left_security.selected = false;
-      this.btn_left_security.Size = new System.Drawing.Size(139, 36);
+      this.btn_left_security.Size = new System.Drawing.Size(142, 36);
       this.btn_left_security.TabIndex = 10;
-      this.btn_left_security.Text = "Seguridad       ";
+      this.btn_left_security.Text = "Seguridad          ";
       this.btn_left_security.UseVisualStyleBackColor = true;
       this.btn_left_security.Click += new System.EventHandler(this.LeftBarClick);
       // 
@@ -198,6 +219,7 @@ namespace Program.Forms {
       this.ResumeLayout(false);
       this.PerformLayout();
     }
+    private MaterialSkin.Controls.MaterialFlatButton btn_left_stats;
     private MaterialSkin.Controls.MaterialFlatButton btn_left_admin;
     private System.Windows.Forms.Timer timer1;
     private MaterialSkin.Controls.MaterialFlatButton btn_left_security;

@@ -88,6 +88,13 @@ namespace SP.Forms {
       }
     }
     
+    internal static System.Drawing.Bitmap btn_left_stats_Icon {
+      get {
+        object obj = ResourceManager.GetObject("btn_left_stats.Icon", resourceCulture);
+        return ((System.Drawing.Bitmap)(obj));
+      }
+    }
+    
     internal static System.Drawing.Bitmap materialFlatButton2_Icon {
       get {
         object obj = ResourceManager.GetObject("materialFlatButton2.Icon", resourceCulture);

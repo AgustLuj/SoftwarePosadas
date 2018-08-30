@@ -50,15 +50,17 @@ namespace Program.Forms
 
         timer1.Enabled = true;
       } else {
+        lbl_err.ForeColor = Color.FromArgb(0xB00020);
         if(!err){
           Transition mt = new Transition(new TransitionType_EaseInEaseOut(400));
             mt.add(this, "Height", 348);
             mt.add(lbl_err, "Top", 284);
-            mt.TransitionCompletedEvent += (x, y) => {err = true;};
+            mt.TransitionCompletedEvent += (x, y) => err = true;
             mt.run();
         } else {
           Transition mt = new Transition(new TransitionType_Bounce(400));
-            mt.add(lbl_err, "Height", 260);
+            mt.add(lbl_err, "Top", 264);
+            mt.TransitionCompletedEvent += (x, y) => lbl_err.Top = 284;
             mt.run();
         }
       }
