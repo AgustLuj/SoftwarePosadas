@@ -36,6 +36,7 @@ namespace Program.Forms {
       System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
       this.btn_left_guests = new MaterialSkin.Controls.MaterialFlatButton();
       this.panel2 = new System.Windows.Forms.Panel();
+      this.btn_left_admin = new MaterialSkin.Controls.MaterialFlatButton();
       this.btn_left_security = new MaterialSkin.Controls.MaterialFlatButton();
       this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
       this.panel3 = new System.Windows.Forms.Panel();
@@ -58,14 +59,15 @@ namespace Program.Forms {
       this.btn_left_guests.Name = "btn_left_guests";
       this.btn_left_guests.Primary = true;
       this.btn_left_guests.selected = false;
-      this.btn_left_guests.Size = new System.Drawing.Size(125, 36);
+      this.btn_left_guests.Size = new System.Drawing.Size(139, 36);
       this.btn_left_guests.TabIndex = 8;
-      this.btn_left_guests.Text = "Huespedes";
+      this.btn_left_guests.Text = "Huespedes      ";
       this.btn_left_guests.UseVisualStyleBackColor = true;
       this.btn_left_guests.Click += new System.EventHandler(this.LeftBarClick);
       // 
       // panel2
       // 
+      this.panel2.Controls.Add(this.btn_left_admin);
       this.panel2.Controls.Add(this.btn_left_security);
       this.panel2.Controls.Add(this.materialFlatButton2);
       this.panel2.Controls.Add(this.btn_left_guests);
@@ -74,6 +76,26 @@ namespace Program.Forms {
       this.panel2.Size = new System.Drawing.Size(42, 537);
       this.panel2.TabIndex = 9;
       this.panel2.Tag = "w = 42 -> 185";
+      // 
+      // btn_left_admin
+      // 
+      this.btn_left_admin.AutoSize = true;
+      this.btn_left_admin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+      this.btn_left_admin.Depth = 0;
+      this.btn_left_admin.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.btn_left_admin.Icon = ((System.Drawing.Image)(resources.GetObject("btn_left_admin.Icon")));
+      this.btn_left_admin.Location = new System.Drawing.Point(3, 114);
+      this.btn_left_admin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+      this.btn_left_admin.MouseState = MaterialSkin.MouseState.HOVER;
+      this.btn_left_admin.Name = "btn_left_admin";
+      this.btn_left_admin.Primary = true;
+      this.btn_left_admin.selected = false;
+      this.btn_left_admin.Size = new System.Drawing.Size(139, 36);
+      this.btn_left_admin.TabIndex = 11;
+      this.btn_left_admin.Text = "Administrar";
+      this.btn_left_admin.UseVisualStyleBackColor = true;
+      this.btn_left_admin.Visible = false;
+      this.btn_left_admin.Click += new System.EventHandler(this.LeftBarClick);
       // 
       // btn_left_security
       // 
@@ -88,9 +110,9 @@ namespace Program.Forms {
       this.btn_left_security.Name = "btn_left_security";
       this.btn_left_security.Primary = true;
       this.btn_left_security.selected = false;
-      this.btn_left_security.Size = new System.Drawing.Size(125, 36);
+      this.btn_left_security.Size = new System.Drawing.Size(139, 36);
       this.btn_left_security.TabIndex = 10;
-      this.btn_left_security.Text = "Seguridad ";
+      this.btn_left_security.Text = "Seguridad       ";
       this.btn_left_security.UseVisualStyleBackColor = true;
       this.btn_left_security.Click += new System.EventHandler(this.LeftBarClick);
       // 
@@ -164,6 +186,7 @@ namespace Program.Forms {
       this.Controls.Add(this.panel2);
       this.Controls.Add(this.panel3);
       this.Controls.Add(this.btn_addG);
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Location = new System.Drawing.Point(600, 500);
       this.Name = "MainForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -175,6 +198,7 @@ namespace Program.Forms {
       this.ResumeLayout(false);
       this.PerformLayout();
     }
+    private MaterialSkin.Controls.MaterialFlatButton btn_left_admin;
     private System.Windows.Forms.Timer timer1;
     private MaterialSkin.Controls.MaterialFlatButton btn_left_security;
     private MaterialSkin.Controls.MaterialRaisedButtonws materialRaisedButtonws1;

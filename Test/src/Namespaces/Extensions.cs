@@ -4,8 +4,10 @@
  * Time: 1:51 a. m.
  */
 using System;
-using Program.Classes;
 using System.Collections.Generic;
+using System.Windows.Forms;
+
+using Program.Classes;
 
 namespace Program.Extensions {
   /// <summary>
@@ -24,5 +26,15 @@ namespace Program.Extensions {
     public static bool IsNull(this Month m) {
       return (m.general == null);
     }
+    
+    
+    public static Cursor ActuallyLoadCursor(String path) {
+      return new Cursor(LoadCursorFromFile(path));
+    }
+    [System.Runtime.InteropServices.DllImport("user32.dll")]
+    private static extern IntPtr LoadCursorFromFile(string fileName);
+    [System.Runtime.InteropServices.DllImport("user32.dll")]
+    public static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wp, IntPtr lp);
+    }
   }
-}
+ 

@@ -36,6 +36,13 @@ namespace Program.Forms {
       leftbtns.AddRange(new []{btn_left_guests, btn_left_security});
     }
     
+    public void LoadPermissions(){
+      if (Session.user.permissions == "all") {
+        btn_left_admin.Visible = true;
+        leftbtns.Add(btn_left_admin);
+      }
+    }
+    
     public void Form_Load(object sender, EventArgs e) {
       
       Console.WriteLine("Getting conn");
@@ -82,7 +89,6 @@ namespace Program.Forms {
     void LeftBarClick(object sender, EventArgs e)
     {
       var s = sender as MaterialFlatButton;
-
       
       var t = new Transition(new TransitionType_Deceleration(500));
       t.add(btn_addG, "Top", (s.Name == "btn_left_guests") ? 28 : 64);

@@ -97,13 +97,13 @@
     </Compile>
     <Compile Include="src\Classes\Month.cs" />
     <Compile Include="src\Classes\User.cs" />
-    <Compile Include="src\Forms\Form1.cs" />
-    <Compile Include="src\Forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="src\Forms\Load.cs" />
     <Compile Include="src\Forms\Load.Designer.cs">
       <DependentUpon>Load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Forms\Login.cs" />
+    <Compile Include="src\Forms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="src\Forms\MainForm.cs" />
     <Compile Include="src\Forms\MainForm.Designer.cs">
@@ -123,17 +123,20 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Resources\normal.cur">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Images.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\Forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="src\Forms\Load.resx">
       <DependentUpon>Load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Forms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\Forms\MainForm.resx">
       <DependentUpon>MainForm.Designer.cs</DependentUpon>
