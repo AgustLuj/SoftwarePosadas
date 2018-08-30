@@ -11,6 +11,7 @@ using MaterialSkin;
 using MaterialSkin.Controls;
 
 using Program.Sessions;
+using Program.Extensions;
 using Program.StaticClasses;
 
 using Transitions;
@@ -21,7 +22,10 @@ namespace Program.Forms
   {
     
     MainForm ms;
+    
     bool err = false;
+    bool closing = false;
+    bool logging = false;
     
     public Login()
     {
@@ -36,6 +40,8 @@ namespace Program.Forms
     
     void LoginClick(object sender, EventArgs e)
     {
+      logging = true;
+      
       if(Session.Login(txt_uname.Text, txt_pass.Text)){
         
         Transition t = new Transition(new TransitionType_Deceleration(150));
@@ -50,7 +56,10 @@ namespace Program.Forms
 
         timer1.Enabled = true;
       } else {
+      	
+      	logging = false;
         lbl_err.ForeColor = Color.FromArgb(0xB00020);
+        
         if(!err){
           Transition mt = new Transition(new TransitionType_EaseInEaseOut(400));
             mt.add(this, "Height", 348);
@@ -73,7 +82,7 @@ namespace Program.Forms
     
     void LoginFormClosed(object sender, FormClosedEventArgs e)
     {
-     if (Application.OpenForms.Count == 0)
+      if (!Application.OpenForms.areVisible())
        Application.Exit();
     }
     
@@ -88,6 +97,21 @@ namespace Program.Forms
       ms.LoadPermissions();
             
       this.Close();
+    }
+    
+    void LoginFormClosing(object sender, FormClosingEventArgs e)
+    {	
+    	if(!closing && !logging){
+    		
+    		e.Cancel = true;
+    		
+			var t = new Transition(new TransitionType_Acceleration(600));
+				t.add(this, "Top", Screen.PrimaryScreen.Bounds.Height);
+				t.TransitionCompletedEvent += (_, __) => this.Close();
+				t.run();
+				
+			closing = true;
+		}
     }
   }
 }

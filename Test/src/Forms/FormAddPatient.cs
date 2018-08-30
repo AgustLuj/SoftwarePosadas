@@ -10,6 +10,8 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
+using Program.StaticClasses;
+
 namespace Program.Forms
 {
 	/// <summary>
@@ -35,8 +37,8 @@ namespace Program.Forms
 		{
 			nombre = text_nombre.Text;
 			apellido = text_apellido.Text;
-			Ayuda.formAddGuestHome.addButton1(2);
-			Ayuda.formAddGuestHome.ChangeBtn(nombre,apellido);
+			StaticForms.formAddGuestHome.addButton1(2);
+			StaticForms.formAddGuestHome.ChangeBtn(nombre,apellido);
 			this.Close();
 		}
 		
@@ -47,7 +49,7 @@ namespace Program.Forms
 		
 		void FormAddPatientLoad(object sender, EventArgs e)
 		{
-			this.Location=Ayuda.formAddGuestHome.Location;			
+			this.Location = StaticForms.formAddGuestHome.Location;			
 		}
 	}
 }

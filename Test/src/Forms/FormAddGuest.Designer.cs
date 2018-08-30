@@ -451,6 +451,7 @@ namespace Program.Forms
 			this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
 			this.materialFlatButton1.Name = "materialFlatButton1";
 			this.materialFlatButton1.Primary = false;
+			this.materialFlatButton1.selected = false;
 			this.materialFlatButton1.Size = new System.Drawing.Size(70, 36);
 			this.materialFlatButton1.TabIndex = 31;
 			this.materialFlatButton1.Text = "Añadir";
@@ -468,6 +469,7 @@ namespace Program.Forms
 			this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
 			this.materialFlatButton2.Name = "materialFlatButton2";
 			this.materialFlatButton2.Primary = false;
+			this.materialFlatButton2.selected = false;
 			this.materialFlatButton2.Size = new System.Drawing.Size(73, 36);
 			this.materialFlatButton2.TabIndex = 32;
 			this.materialFlatButton2.Text = "CERRAR";
@@ -599,6 +601,7 @@ namespace Program.Forms
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(741, 518);
 			this.Controls.Add(this.combo_localidad);
 			this.Controls.Add(this.materialFlatButton2);

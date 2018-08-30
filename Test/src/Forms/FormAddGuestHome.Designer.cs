@@ -68,6 +68,7 @@ namespace Program.Forms
 			this.button_huesped.MouseState = MaterialSkin.MouseState.HOVER;
 			this.button_huesped.Name = "button_huesped";
 			this.button_huesped.Primary = false;
+			this.button_huesped.selected = false;
 			this.button_huesped.Size = new System.Drawing.Size(145, 36);
 			this.button_huesped.TabIndex = 1;
 			this.button_huesped.Text = "+ Añadir Huesped";
@@ -85,6 +86,7 @@ namespace Program.Forms
 			this.button_paciente.MouseState = MaterialSkin.MouseState.HOVER;
 			this.button_paciente.Name = "button_paciente";
 			this.button_paciente.Primary = false;
+			this.button_paciente.selected = false;
 			this.button_paciente.Size = new System.Drawing.Size(149, 36);
 			this.button_paciente.TabIndex = 2;
 			this.button_paciente.Text = "+ Añadir Paciente";
@@ -123,6 +125,7 @@ namespace Program.Forms
 			this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
 			this.materialFlatButton2.Name = "materialFlatButton2";
 			this.materialFlatButton2.Primary = false;
+			this.materialFlatButton2.selected = false;
 			this.materialFlatButton2.Size = new System.Drawing.Size(73, 36);
 			this.materialFlatButton2.TabIndex = 3;
 			this.materialFlatButton2.Text = "cerrar";
@@ -133,6 +136,7 @@ namespace Program.Forms
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(741, 518);
 			this.Controls.Add(this.materialFlatButton2);
 			this.Controls.Add(this.button_paciente);
