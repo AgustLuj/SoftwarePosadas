@@ -337,3 +337,9 @@ ASALocalRun/
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
 
+Test/Test.csproj
+Test/src/Forms/Form1.Designer.cs
+Test/src/Forms/Form1.cs
+Test/src/Forms/MainForm.Designer.cs
+Test/src/Forms/MainForm.cs
+Test/src/Program.cs

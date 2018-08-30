@@ -6,7 +6,7 @@
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
-namespace Program {
+namespace Program.Forms {
   partial class MainForm {
     /// <summary>
     /// Designer variable used to keep track of non-visual components.

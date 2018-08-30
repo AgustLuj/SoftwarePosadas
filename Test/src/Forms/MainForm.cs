@@ -18,7 +18,7 @@ using Program.Sessions;
 using Program.Extensions;
 using Program.StaticClasses;
 
-namespace Program {
+namespace Program.Forms {
   public partial class MainForm : MaterialForm {
     public MainForm() {
       InitializeComponent();
