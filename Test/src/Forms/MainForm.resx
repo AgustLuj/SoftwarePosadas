@@ -117,4 +117,60 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_left_guests.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAzElEQVRIS2NgGAUjNgTYgD7vBOJnQPwU
+        iDuAGCQGA4TkCQYcyMD/aBgkBgOE5AlaAHI5ugXPkXQRkidoAShY0C14gqSLkDxBC7AFQTuBIEKWJ2gB
+        KBJBloBciiuS8ckTtGDoKhAFOj0BiFcC8TUg/gzFIDZIDCQHUgMD+QTk4QrZgaweIP6OJfWgpyaQmi4g
+        BukBgTloetDlwYoWEmEwukXzoRZo49ALkwcrI8bl2HwC0suCwwKQmXCArplYPswAXOrpZwGyb0bZwywE
+        AHQ4nt9WhvfVAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btn_left_security.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7O
+        HOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAZiS0dEAAAAAAAA
+        +UO7fwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOC0wOC0yM1QxMjo1OTowNSswMDowMBVGvG0AAAAldEVY
+        dGRhdGU6bW9kaWZ5ADIwMTgtMDgtMjNUMTI6NTk6MDUrMDA6MDBkGwTRAAAAKHRFWHRzdmc6YmFzZS11
+        cmkAZmlsZTovLy90bXAvbWFnaWNrLTY4YjNGUEhEyRSzkgAAANFJREFUSEvVVEsKwkAU6zH83kel4m30
+        BIUeSHSnPYt6AnXjyibwupG+Zpix0A6Ewstrkvlm2UDGDjkq4G244rv9V7YSQl8HRaoJk1P8A+yBmeFg
+        NXJ5igmXhSIU/B2skbukGLxMZNoiMjHumWLQrL2noXjprQQU32qwQfXRcXK8E3XHP2sZGQ1s9ERU/RZi
+        oEQULz2UgOKHa3BEtDmwAE4d+xQ9Awo3YzlKAy4LZ8H05z5moE5P8K0OFfL6ojc51Fga9P5U8MGKMeE7
+        tJLxR9dQA3Fr8FzAJplPAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="materialFlatButton2.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAOklEQVRIS2NgGAWjIUDtEPgPNJAaGKe7
+        qGE4yIxRQH4I0DwOaG4B+X4fMTppHgc0t2DERNWoR6kYAgCpQmuV3H+FkAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btn_addG.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA0ElEQVRIS2NgGAVDMQRkgY5eA8SfoHg9
+        kFanlkdAhr8F4v9o+B2QD5KjGIBcjm44jL+KWNNhGrCpBwULLgs+0tqCD9SwABShuHywEp8FuDShBxco
+        tYAiFF39G6CYDDUsAJkBSi2gCAWFOQiDXI7XcHSL8UUyscGMV92AWaAKdFY+EG8F4mtA/BmKQewtQJwH
+        xCA1JANLoI4jeFIPeoQfBqq1INaWYKDC3yQYDrMMpCeIGEsekGE4zJL7xFhAKH8QkidoByEDCMkTtGBU
+        Ae1DAAB0052L9ZpugQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="materialRaisedButtonws1.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABa0lEQVRIS92UTTJDQRSFIxLGZmRixm4Q
+        EnYRM7GFYBEGYRmsgKkoP4tIVCmKer6j+lV1tds/MeNWnUq/2+fekz73vW40/nVUVbUEDsAlmIAXB60v
+        wL44vzKBwj3wBHLxCKFbLAJ5EZzluhr7I3LNrFCk+Rv5I9BxGPKrXBijpICzxfrzw7AQkkSssO3SsID8
+        tGLNEFiNcJ/JL/84CUm9LbHoGAKyKxZ9S0CvYiwsi44T/LElcJ8o0EDleW7IdYuJJTBLCMy7NbMEpgVd
+        6i85R52WWvRKp3PQBSt1kdZg1+2JE4ZpUTjkG6rWc1+mOOA2UDCHrIvLj41cc+9Em0Ftz7KoDenBIw7m
+        EDj06nRB2jes87XmfrAYgIWYkPaAmn96Atu5++g0OO4Vz1ug5VnScrnrgJu+7NSAgiY4CQr1+A50fEHr
+        MMqua+9f7gQzMXp+pzS3tC0JjzX4PhiDO6CvXdBauR5ol74Mf5P3BX3jSDmq9oQxAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

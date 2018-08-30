@@ -7,6 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
+using Program.Forms;
 using System.Windows.Forms;
 
 namespace Program.Forms {
@@ -20,9 +21,11 @@ namespace Program.Forms {
     [STAThread]
     private static void Main(string[] args) {
       Application.EnableVisualStyles();
-      Application.SetCompatibleTextRenderingDefault(true);
-      Ayuda.formAddGuestHome=new FormAddGuestHome();
-      Ayuda.formAddGuestHome.Show();
+      Application.SetCompatibleTextRenderingDefault(false);
+      
+      var l = new Load();
+      l.Show(); 
+      
       Application.Run();
     }
 		

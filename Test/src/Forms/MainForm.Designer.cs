@@ -32,139 +32,157 @@ namespace Program.Forms {
     /// not be able to load this method if it was changed manually.
     /// </summary>
     private void InitializeComponent() {
-      this.label1 = new MaterialSkin.Controls.MaterialLabel();
-      this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-      this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-      this.uname = new MaterialSkin.Controls.MaterialSingleLineTextField();
-      this.pass = new MaterialSkin.Controls.MaterialSingleLineTextField();
-      this.login = new MaterialSkin.Controls.MaterialRaisedButton();
-      this.panel1 = new System.Windows.Forms.Panel();
+      this.components = new System.ComponentModel.Container();
+      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+      this.btn_left_guests = new MaterialSkin.Controls.MaterialFlatButton();
+      this.panel2 = new System.Windows.Forms.Panel();
+      this.btn_left_security = new MaterialSkin.Controls.MaterialFlatButton();
+      this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
+      this.panel3 = new System.Windows.Forms.Panel();
+      this.btn_addG = new MaterialSkin.Controls.MaterialFlatButton();
+      this.materialRaisedButtonws1 = new MaterialSkin.Controls.MaterialRaisedButtonws();
+      this.timer1 = new System.Windows.Forms.Timer(this.components);
+      this.panel2.SuspendLayout();
       this.SuspendLayout();
       // 
-      // label1
+      // btn_left_guests
       // 
-      this.label1.BackColor = System.Drawing.Color.Transparent;
-      this.label1.Depth = 0;
-      this.label1.Font = new System.Drawing.Font("Roboto", 11F);
-      this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-      this.label1.Location = new System.Drawing.Point(84, 75);
-      this.label1.MouseState = MaterialSkin.MouseState.HOVER;
-      this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(107, 204);
-      this.label1.TabIndex = 0;
-      this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      this.btn_left_guests.AutoSize = true;
+      this.btn_left_guests.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+      this.btn_left_guests.Depth = 0;
+      this.btn_left_guests.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.btn_left_guests.Icon = ((System.Drawing.Image)(resources.GetObject("btn_left_guests.Icon")));
+      this.btn_left_guests.Location = new System.Drawing.Point(3, 42);
+      this.btn_left_guests.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+      this.btn_left_guests.MouseState = MaterialSkin.MouseState.HOVER;
+      this.btn_left_guests.Name = "btn_left_guests";
+      this.btn_left_guests.Primary = true;
+      this.btn_left_guests.selected = false;
+      this.btn_left_guests.Size = new System.Drawing.Size(125, 36);
+      this.btn_left_guests.TabIndex = 8;
+      this.btn_left_guests.Text = "Huespedes";
+      this.btn_left_guests.UseVisualStyleBackColor = true;
+      this.btn_left_guests.Click += new System.EventHandler(this.LeftBarClick);
       // 
-      // materialLabel1
+      // panel2
       // 
-      this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
-      this.materialLabel1.Depth = 0;
-      this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-      this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-      this.materialLabel1.Location = new System.Drawing.Point(12, 75);
-      this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-      this.materialLabel1.Name = "materialLabel1";
-      this.materialLabel1.Size = new System.Drawing.Size(100, 23);
-      this.materialLabel1.TabIndex = 1;
-      this.materialLabel1.Text = "Username:";
+      this.panel2.Controls.Add(this.btn_left_security);
+      this.panel2.Controls.Add(this.materialFlatButton2);
+      this.panel2.Controls.Add(this.btn_left_guests);
+      this.panel2.Location = new System.Drawing.Point(0, 64);
+      this.panel2.Name = "panel2";
+      this.panel2.Size = new System.Drawing.Size(42, 537);
+      this.panel2.TabIndex = 9;
+      this.panel2.Tag = "w = 42 -> 185";
       // 
-      // materialLabel2
+      // btn_left_security
       // 
-      this.materialLabel2.BackColor = System.Drawing.Color.Transparent;
-      this.materialLabel2.Depth = 0;
-      this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-      this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-      this.materialLabel2.Location = new System.Drawing.Point(12, 104);
-      this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-      this.materialLabel2.Name = "materialLabel2";
-      this.materialLabel2.Size = new System.Drawing.Size(100, 23);
-      this.materialLabel2.TabIndex = 2;
-      this.materialLabel2.Text = "Password:";
+      this.btn_left_security.AutoSize = true;
+      this.btn_left_security.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+      this.btn_left_security.Depth = 0;
+      this.btn_left_security.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.btn_left_security.Icon = ((System.Drawing.Image)(resources.GetObject("btn_left_security.Icon")));
+      this.btn_left_security.Location = new System.Drawing.Point(3, 78);
+      this.btn_left_security.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+      this.btn_left_security.MouseState = MaterialSkin.MouseState.HOVER;
+      this.btn_left_security.Name = "btn_left_security";
+      this.btn_left_security.Primary = true;
+      this.btn_left_security.selected = false;
+      this.btn_left_security.Size = new System.Drawing.Size(125, 36);
+      this.btn_left_security.TabIndex = 10;
+      this.btn_left_security.Text = "Seguridad ";
+      this.btn_left_security.UseVisualStyleBackColor = true;
+      this.btn_left_security.Click += new System.EventHandler(this.LeftBarClick);
       // 
-      // uname
+      // materialFlatButton2
       // 
-      this.uname.Depth = 0;
-      this.uname.Hint = "";
-      this.uname.Location = new System.Drawing.Point(116, 75);
-      this.uname.MaxLength = 32767;
-      this.uname.MouseState = MaterialSkin.MouseState.HOVER;
-      this.uname.Name = "uname";
-      this.uname.PasswordChar = '\0';
-      this.uname.SelectedText = "";
-      this.uname.SelectionLength = 0;
-      this.uname.SelectionStart = 0;
-      this.uname.Size = new System.Drawing.Size(75, 23);
-      this.uname.TabIndex = 3;
-      this.uname.TabStop = false;
-      this.uname.UseSystemPasswordChar = false;
-      this.uname.KeyUp += new System.Windows.Forms.KeyEventHandler(this.PassKeyUp);
+      this.materialFlatButton2.AutoSize = true;
+      this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+      this.materialFlatButton2.Depth = 0;
+      this.materialFlatButton2.Icon = ((System.Drawing.Image)(resources.GetObject("materialFlatButton2.Icon")));
+      this.materialFlatButton2.Location = new System.Drawing.Point(1, 6);
+      this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+      this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
+      this.materialFlatButton2.Name = "materialFlatButton2";
+      this.materialFlatButton2.Primary = false;
+      this.materialFlatButton2.selected = false;
+      this.materialFlatButton2.Size = new System.Drawing.Size(44, 36);
+      this.materialFlatButton2.TabIndex = 9;
+      this.materialFlatButton2.UseVisualStyleBackColor = true;
+      this.materialFlatButton2.Click += new System.EventHandler(this.MaterialFlatButton2Click);
       // 
-      // pass
+      // panel3
       // 
-      this.pass.Depth = 0;
-      this.pass.Hint = "";
-      this.pass.Location = new System.Drawing.Point(116, 104);
-      this.pass.MaxLength = 32767;
-      this.pass.MouseState = MaterialSkin.MouseState.HOVER;
-      this.pass.Name = "pass";
-      this.pass.PasswordChar = '\0';
-      this.pass.SelectedText = "";
-      this.pass.SelectionLength = 0;
-      this.pass.SelectionStart = 0;
-      this.pass.Size = new System.Drawing.Size(75, 23);
-      this.pass.TabIndex = 4;
-      this.pass.TabStop = false;
-      this.pass.UseSystemPasswordChar = true;
-      this.pass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.PassKeyUp);
+      this.panel3.Location = new System.Drawing.Point(47, 70);
+      this.panel3.Name = "panel3";
+      this.panel3.Size = new System.Drawing.Size(741, 518);
+      this.panel3.TabIndex = 10;
       // 
-      // login
+      // btn_addG
       // 
-      this.login.AutoSize = true;
-      this.login.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-      this.login.Depth = 0;
-      this.login.Icon = null;
-      this.login.Location = new System.Drawing.Point(116, 240);
-      this.login.MouseState = MaterialSkin.MouseState.HOVER;
-      this.login.Name = "login";
-      this.login.Primary = true;
-      this.login.Size = new System.Drawing.Size(61, 36);
-      this.login.TabIndex = 6;
-      this.login.Text = "LogIn";
-      this.login.UseVisualStyleBackColor = true;
-      this.login.Click += new System.EventHandler(this.OnClick);
+      this.btn_addG.AutoSize = true;
+      this.btn_addG.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+      this.btn_addG.Depth = 0;
+      this.btn_addG.Icon = ((System.Drawing.Image)(resources.GetObject("btn_addG.Icon")));
+      this.btn_addG.Location = new System.Drawing.Point(704, 64);
+      this.btn_addG.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+      this.btn_addG.MouseState = MaterialSkin.MouseState.HOVER;
+      this.btn_addG.Name = "btn_addG";
+      this.btn_addG.Primary = false;
+      this.btn_addG.selected = false;
+      this.btn_addG.Size = new System.Drawing.Size(44, 36);
+      this.btn_addG.TabIndex = 12;
+      this.btn_addG.Tag = "64/28";
+      this.btn_addG.UseVisualStyleBackColor = true;
       // 
-      // panel1
+      // materialRaisedButtonws1
       // 
-      this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-      this.panel1.Location = new System.Drawing.Point(12, 133);
-      this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(260, 100);
-      this.panel1.TabIndex = 7;
+      this.materialRaisedButtonws1.AutoSize = true;
+      this.materialRaisedButtonws1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+      this.materialRaisedButtonws1.Depth = 0;
+      this.materialRaisedButtonws1.Icon = ((System.Drawing.Image)(resources.GetObject("materialRaisedButtonws1.Icon")));
+      this.materialRaisedButtonws1.Location = new System.Drawing.Point(744, 28);
+      this.materialRaisedButtonws1.MouseState = MaterialSkin.MouseState.HOVER;
+      this.materialRaisedButtonws1.Name = "materialRaisedButtonws1";
+      this.materialRaisedButtonws1.Primary = true;
+      this.materialRaisedButtonws1.Size = new System.Drawing.Size(44, 36);
+      this.materialRaisedButtonws1.TabIndex = 13;
+      this.materialRaisedButtonws1.UseVisualStyleBackColor = true;
+      // 
+      // timer1
+      // 
+      this.timer1.Enabled = true;
+      this.timer1.Interval = 5;
+      this.timer1.Tick += new System.EventHandler(this.Timer1Tick);
       // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(284, 288);
-      this.Controls.Add(this.login);
-      this.Controls.Add(this.pass);
-      this.Controls.Add(this.uname);
-      this.Controls.Add(this.materialLabel2);
-      this.Controls.Add(this.materialLabel1);
-      this.Controls.Add(this.label1);
-      this.Controls.Add(this.panel1);
+      this.ClientSize = new System.Drawing.Size(800, 600);
+      this.Controls.Add(this.materialRaisedButtonws1);
+      this.Controls.Add(this.panel2);
+      this.Controls.Add(this.panel3);
+      this.Controls.Add(this.btn_addG);
+      this.Location = new System.Drawing.Point(600, 500);
       this.Name = "MainForm";
-      this.Text = "Login";
+      this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+      this.Text = "Main Screen";
+      this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainFormFormClosed);
       this.Load += new System.EventHandler(this.Form_Load);
+      this.panel2.ResumeLayout(false);
+      this.panel2.PerformLayout();
       this.ResumeLayout(false);
       this.PerformLayout();
     }
-    private System.Windows.Forms.Panel panel1;
-    private MaterialSkin.Controls.MaterialRaisedButton login;
-    private MaterialSkin.Controls.MaterialSingleLineTextField pass;
-    private MaterialSkin.Controls.MaterialSingleLineTextField uname;
-    private MaterialSkin.Controls.MaterialLabel materialLabel2;
-    private MaterialSkin.Controls.MaterialLabel materialLabel1;
-    private MaterialSkin.Controls.MaterialLabel label1;
+    private System.Windows.Forms.Timer timer1;
+    private MaterialSkin.Controls.MaterialFlatButton btn_left_security;
+    private MaterialSkin.Controls.MaterialRaisedButtonws materialRaisedButtonws1;
+    private MaterialSkin.Controls.MaterialFlatButton btn_addG;
+    private System.Windows.Forms.Panel panel3;
+    private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
+    private System.Windows.Forms.Panel panel2;
+    private MaterialSkin.Controls.MaterialFlatButton btn_left_guests;
     
   }
 }

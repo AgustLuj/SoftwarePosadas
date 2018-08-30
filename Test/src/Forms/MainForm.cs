@@ -20,6 +20,11 @@ using Program.StaticClasses;
 
 namespace Program.Forms {
   public partial class MainForm : MaterialForm {
+    
+    bool displayed = false;
+    
+    List<MaterialFlatButton> leftbtns = new List<MaterialFlatButton>();
+    
     public MainForm() {
       InitializeComponent();
       
@@ -27,6 +32,8 @@ namespace Program.Forms {
       SkinManager.AddFormToManage(this);
       SkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
       //SkinManager.ColorScheme = new ColorScheme((Primary)0xed9936, (Primary)0xd58930, Primary.Brown600, Accent.Blue400, TextShade.BLACK);
+    
+      leftbtns.AddRange(new []{btn_left_guests, btn_left_security});
     }
     
     public void Form_Load(object sender, EventArgs e) {
@@ -38,10 +45,11 @@ namespace Program.Forms {
       //month.general.huespedes.Add(new Huesped() {Nombre = "Velcic", Ficha = 2, DNI = 34849790 });
       //DBConn.UpdateJson(2000, "enero", JsonConvert.SerializeObject(month));
 
-      label1.Text = (month.IsNull()) ? "No values" : month.general.huespedes.First().Nombre;
+      //label1.Text = (month.IsNull()) ? "No values" : month.general.huespedes.First().Nombre;
       
       //label1.Text = ;
       //panel1.Dock = DockStyle.Fill;
+      
 //      var f = new Form1();
 //      f.TopLevel = false;
 //      panel1.Controls.Add(f);
@@ -49,20 +57,45 @@ namespace Program.Forms {
 //      f.Show();
     }
     
-    public void OnClick(object sender, EventArgs e) {
-      label1.Text = Session.Login(uname.Text, pass.Text).ToString();
-      
-      Transition t = new Transition(new TransitionType_Flash(2, 800));
-      t.add(login, "Left", 100);
-      t.add(login, "Top", 50);
-      t.TransitionCompletedEvent += (x, ev) => login.Text = "Completed";
-      t.run();
+    void MainFormFormClosed(object sender, FormClosedEventArgs e)
+    {
+      Application.Exit();
     }
     
-    public void PassKeyUp(object sender, System.Windows.Forms.KeyEventArgs e) {
-      if (e.KeyCode == Keys.Return) {
-        label1.Text = Session.Login(uname.Text, pass.Text).ToString();
-      }
+    void MaterialFlatButton2Click(object sender, EventArgs e)
+    {
+      Transition t = new Transition(new TransitionType_Deceleration(600));
+      t.add(panel2, "Width", (displayed) ? 42 : 185);
+      t.run();
+      displayed = !displayed;
+    }
+    
+    void MaterialRaisedButton1Click(object sender, EventArgs e)
+    {
+    	var b = sender as Button;
+    	b.FlatStyle = FlatStyle.Flat;
+    	b.FlatAppearance.BorderSize = 0;
+    	b.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+    	b.ForeColor = Color.Transparent;
+    }
+    
+    void LeftBarClick(object sender, EventArgs e)
+    {
+      var s = sender as MaterialFlatButton;
+
+      
+      var t = new Transition(new TransitionType_Deceleration(500));
+      t.add(btn_addG, "Top", (s.Name == "btn_left_guests") ? 28 : 64);
+      t.run();
+    	    	
+    	leftbtns.FindAll(x => x != s).ForEach(x => x.selected = false);
+    	s.selected = true;
+    	
+    }
+    
+    void Timer1Tick(object sender, EventArgs e)
+    {
+      leftbtns.ForEach(x => x.Refresh());
     }
   }
 }
