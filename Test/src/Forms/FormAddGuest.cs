@@ -72,14 +72,14 @@ namespace Program.Forms
 				materialLabel9.Visible=true;
 				text_localidad.Visible=true;
 				text_provincia.Visible=false;
-				combo_localidad.Visible=false;
-				
+				combo_localidad.Visible=true;
 			}else{
 				
 				combo_provincia.Visible=false;
-				materialLabel9.Visible=false;
-				text_localidad.Visible=false;
+				materialLabel9.Visible=true;
+				text_localidad.Visible=true;
 				text_provincia.Visible=true;
+				combo_localidad.Visible=false;
 			}
 		}
 
@@ -89,21 +89,59 @@ namespace Program.Forms
 				
 				label_servicio.Visible=false;
 				combo_servicio.Visible=false;
+				combo_servicio.Enabled=false;
 				
 			}else{
 				
 				label_servicio.Visible=true;
 				combo_servicio.Visible=true;
+				combo_servicio.Enabled=true;
 			}
 		}
 		
 		void MaterialFlatButton1Click(object sender, EventArgs e)
 		{
-			nombre = text_nombre.Text;
-			apellido = text_apellido.Text;
-			Ayuda.formAddGuestHome.addButton1(1);
-			Ayuda.formAddGuestHome.ChangeBtn(nombre,apellido);
-			this.Close();
+			if(text_apellido.Text != "" && text_nombre.Text != "" && text_habitacion.Text != "" && text_locker.Text != ""){
+				
+				if(combo_pais.SelectedIndex != -1){
+					if(combo_pais.SelectedText != "Argentina"){
+						
+						if(combo_localidad.SelectedIndex != -1 && combo_provincia.SelectedIndex != -1){
+							
+							nombre = text_nombre.Text;
+							apellido = text_apellido.Text;
+							Ayuda.formAddGuestHome.addButton1(1);
+							Ayuda.formAddGuestHome.ChangeBtn(nombre,apellido);
+							this.Close();			
+							
+						}else{
+							label_error.ForeColor = Color.FromArgb(0xB00020);
+							label_error.Text="Porfavor complete las casillas";
+						}	
+						
+					}else if(text_localidad.Text != "" && text_provincia.Text != ""){
+						
+						nombre = text_nombre.Text;
+						apellido = text_apellido.Text;
+						Ayuda.formAddGuestHome.addButton1(1);
+						Ayuda.formAddGuestHome.ChangeBtn(nombre,apellido);
+						this.Close();
+						
+					}else{
+						
+						label_error.ForeColor = Color.FromArgb(0xB00020);
+						label_error.Text="Porfavor complete las casillas";
+					} 
+				}else{
+					
+					label_error.ForeColor = Color.FromArgb(0xB00020);
+					label_error.Text="Porfavor complete las casillas";
+				}
+			}else{
+				
+				label_error.ForeColor = Color.FromArgb(0xB00020);
+				label_error.Text="Porfavor complete las casillas";
+			}
 		}
 		
 		void MaterialFlatButton2Click(object sender, EventArgs e)

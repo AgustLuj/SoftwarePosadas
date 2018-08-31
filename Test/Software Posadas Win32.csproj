@@ -97,10 +97,6 @@
     </Compile>
     <Compile Include="src\Classes\Month.cs" />
     <Compile Include="src\Classes\User.cs" />
-    <Compile Include="src\Forms\Form1.cs" />
-    <Compile Include="src\Forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="src\Forms\Load.cs" />
     <Compile Include="src\Forms\Load.Designer.cs">
       <DependentUpon>Load.cs</DependentUpon>
@@ -128,9 +124,6 @@
     <EmbeddedResource Include="Resources\Images.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="src\Forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\Forms\Load.resx">
       <DependentUpon>Load.cs</DependentUpon>

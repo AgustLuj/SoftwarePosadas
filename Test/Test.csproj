@@ -11,7 +11,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <NoWin32Manifest>False</NoWin32Manifest>
-    <ApplicationIcon>..\..\..\Downloads\home-account.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\home-account.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -131,6 +131,12 @@
     <Folder Include="src\Classes" />
     <Folder Include="src\Forms" />
     <Folder Include="src\Static Classes" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MaterialSkin-master\MaterialSkin.csproj">
+      <Project>{8EB7611B-68CD-4B8B-987A-11717E2B250C}</Project>
+      <Name>MaterialSkin</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -21,10 +21,9 @@ namespace Program.Forms {
     [STAThread]
     private static void Main(string[] args) {
       Application.EnableVisualStyles();
-      Application.SetCompatibleTextRenderingDefault(false);
-      
-      var l = new Load();
-      l.Show(); 
+Application.SetCompatibleTextRenderingDefault(true);
+      Ayuda.formAddGuestHome=new FormAddGuestHome();
+      Ayuda.formAddGuestHome.Show(); 
       
       Application.Run();
     }

@@ -46,6 +46,7 @@ namespace Program.Forms
 			this.text_numeroCama = new MaterialSkin.Controls.MaterialSingleLineTextField();
 			this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
 			this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+			this.label_error = new MaterialSkin.Controls.MaterialLabel();
 			this.SuspendLayout();
 			// 
 			// label_nombre
@@ -202,6 +203,7 @@ namespace Program.Forms
 			this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
 			this.materialFlatButton2.Name = "materialFlatButton2";
 			this.materialFlatButton2.Primary = false;
+			this.materialFlatButton2.selected = false;
 			this.materialFlatButton2.Size = new System.Drawing.Size(73, 36);
 			this.materialFlatButton2.TabIndex = 34;
 			this.materialFlatButton2.Text = "CERRAR";
@@ -219,17 +221,30 @@ namespace Program.Forms
 			this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
 			this.materialFlatButton1.Name = "materialFlatButton1";
 			this.materialFlatButton1.Primary = false;
+			this.materialFlatButton1.selected = false;
 			this.materialFlatButton1.Size = new System.Drawing.Size(70, 36);
 			this.materialFlatButton1.TabIndex = 33;
 			this.materialFlatButton1.Text = "Añadir";
 			this.materialFlatButton1.UseVisualStyleBackColor = true;
 			this.materialFlatButton1.Click += new System.EventHandler(this.MaterialFlatButton1Click);
 			// 
+			// label_error
+			// 
+			this.label_error.Depth = 0;
+			this.label_error.Font = new System.Drawing.Font("Roboto", 11F);
+			this.label_error.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label_error.Location = new System.Drawing.Point(149, 397);
+			this.label_error.MouseState = MaterialSkin.MouseState.HOVER;
+			this.label_error.Name = "label_error";
+			this.label_error.Size = new System.Drawing.Size(481, 23);
+			this.label_error.TabIndex = 35;
+			// 
 			// FormAddPatient
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(741, 518);
+			this.Controls.Add(this.label_error);
 			this.Controls.Add(this.materialFlatButton2);
 			this.Controls.Add(this.materialFlatButton1);
 			this.Controls.Add(this.label_numeroCama);
@@ -247,6 +262,7 @@ namespace Program.Forms
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private MaterialSkin.Controls.MaterialLabel label_error;
 		private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
 		private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
 		private MaterialSkin.Controls.MaterialSingleLineTextField text_numeroCama;

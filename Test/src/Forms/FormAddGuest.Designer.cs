@@ -61,6 +61,7 @@ namespace Program.Forms
 			this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
 			this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
 			this.combo_localidad = new System.Windows.Forms.ComboBox();
+			this.label_error = new MaterialSkin.Controls.MaterialLabel();
 			((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -427,7 +428,7 @@ namespace Program.Forms
 			this.text_provincia.BackColor = System.Drawing.SystemColors.Control;
 			this.text_provincia.Depth = 0;
 			this.text_provincia.Hint = "Ingrese la provincia";
-			this.text_provincia.Location = new System.Drawing.Point(30, 253);
+			this.text_provincia.Location = new System.Drawing.Point(30, 254);
 			this.text_provincia.MaxLength = 32767;
 			this.text_provincia.MouseState = MaterialSkin.MouseState.HOVER;
 			this.text_provincia.Name = "text_provincia";
@@ -451,6 +452,7 @@ namespace Program.Forms
 			this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
 			this.materialFlatButton1.Name = "materialFlatButton1";
 			this.materialFlatButton1.Primary = false;
+			this.materialFlatButton1.selected = false;
 			this.materialFlatButton1.Size = new System.Drawing.Size(70, 36);
 			this.materialFlatButton1.TabIndex = 31;
 			this.materialFlatButton1.Text = "Añadir";
@@ -468,6 +470,7 @@ namespace Program.Forms
 			this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
 			this.materialFlatButton2.Name = "materialFlatButton2";
 			this.materialFlatButton2.Primary = false;
+			this.materialFlatButton2.selected = false;
 			this.materialFlatButton2.Size = new System.Drawing.Size(73, 36);
 			this.materialFlatButton2.TabIndex = 32;
 			this.materialFlatButton2.Text = "CERRAR";
@@ -595,11 +598,23 @@ namespace Program.Forms
 			this.combo_localidad.Sorted = true;
 			this.combo_localidad.TabIndex = 33;
 			// 
+			// label_error
+			// 
+			this.label_error.Depth = 0;
+			this.label_error.Font = new System.Drawing.Font("Roboto", 11F);
+			this.label_error.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.label_error.Location = new System.Drawing.Point(204, 458);
+			this.label_error.MouseState = MaterialSkin.MouseState.HOVER;
+			this.label_error.Name = "label_error";
+			this.label_error.Size = new System.Drawing.Size(354, 23);
+			this.label_error.TabIndex = 34;
+			// 
 			// FormAddGuest
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(741, 518);
+			this.Controls.Add(this.label_error);
 			this.Controls.Add(this.combo_localidad);
 			this.Controls.Add(this.materialFlatButton2);
 			this.Controls.Add(this.materialFlatButton1);
@@ -634,6 +649,7 @@ namespace Program.Forms
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private MaterialSkin.Controls.MaterialLabel label_error;
 		private System.Windows.Forms.ComboBox combo_localidad;
 		private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
 		private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;

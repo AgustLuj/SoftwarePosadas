@@ -33,11 +33,16 @@ namespace Program.Forms
 		
 		void MaterialFlatButton1Click(object sender, EventArgs e)
 		{
-			nombre = text_nombre.Text;
-			apellido = text_apellido.Text;
-			Ayuda.formAddGuestHome.addButton1(2);
-			Ayuda.formAddGuestHome.ChangeBtn(nombre,apellido);
-			this.Close();
+			if(text_nombre.Text != "" && text_apellido.Text != "" && combo_servicio.SelectedIndex != -1 ){
+				nombre = text_nombre.Text;
+				apellido = text_apellido.Text;
+				Ayuda.formAddGuestHome.addButton1(2);
+				Ayuda.formAddGuestHome.ChangeBtn(nombre,apellido);
+				this.Close();	
+			}else{
+				label_error.ForeColor = Color.FromArgb(0xB00020);
+				label_error.Text="Porfavor complete las casillas, N° de camas no es obligatorio";
+			}
 		}
 		
 		void MaterialFlatButton2Click(object sender, EventArgs e)
