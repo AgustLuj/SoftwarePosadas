@@ -2,12 +2,16 @@
 using System.Drawing;
 using System.Windows.Forms;
 
+using Transitions;
+
+using Program.StaticClasses;
+
 namespace Program.Forms
 {
 	public partial class FormAddGuest : Form
 	{
-		public string nombre =" ";
-		public string apellido =" ";
+		public string nombre = " ";
+		public string apellido = " ";
 		public FormAddGuest()
 		{
 			InitializeComponent();
@@ -27,40 +31,40 @@ namespace Program.Forms
 		{
 			if(check_hoy.Checked == false){
 				
-				text_fecha.Enabled=true;
+				text_fecha.Enabled = true;
 				text_fecha.Text = "";
 				
 			}else{
 				
-				text_fecha.Enabled=false;
+				text_fecha.Enabled = false;
 				text_fecha.Text = "23/06/2017";
 			}
 		}
 		
 		void FormAddGuestLoad(object sender, EventArgs e)
 		{
-			this.Location=Ayuda.formAddGuestHome.Location;
+			this.Location = StaticForms.formAddGuestHome.Location;
 			text_fecha.Text = "23/06/2017";
 			
-			combo_provincia.Visible=false;
-			materialLabel9.Visible=false;
-			text_localidad.Visible=false;
-			label_servicio.Visible=false;
-			combo_servicio.Visible=false;
-			combo_localidad.Visible=false;
+			combo_provincia.Visible = false;
+			materialLabel9.Visible = false;
+			text_localidad.Visible = false;
+			label_servicio.Visible = false;
+			combo_servicio.Visible = false;
+			combo_localidad.Visible = false;
 		}
 		
 		void ComboBox3SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if(combo_provincia.Text == "Buenos Aires"){
 				
-				text_localidad.Visible=false;
-				combo_localidad.Visible=true;
+				text_localidad.Visible = false;
+				combo_localidad.Visible = true;
 				
 			}else{
 				
-				text_localidad.Visible=true;
-				combo_localidad.Visible=false;
+				text_localidad.Visible = true;
+				combo_localidad.Visible = false;
 			}
 		}
 		
@@ -86,7 +90,6 @@ namespace Program.Forms
 		void Check_pacienteCheckedChanged(object sender, EventArgs e)
 		{
 			if(check_paciente.Checked == false){
-				
 				label_servicio.Visible=false;
 				combo_servicio.Visible=false;
 				combo_servicio.Enabled=false;
@@ -146,7 +149,10 @@ namespace Program.Forms
 		
 		void MaterialFlatButton2Click(object sender, EventArgs e)
 		{
-			this.Close();
+			var t = new Transition(new TransitionType_Acceleration(500));
+				t.add(this, "Top", -this.Height);
+				t.TransitionCompletedEvent += (_, __) => this.Close();
+				t.run();
 		}
 		
 		void Combo_servicioSelectedIndexChanged(object sender, EventArgs e)

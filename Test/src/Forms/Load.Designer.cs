@@ -42,8 +42,7 @@ namespace Program.Forms
       // 
       // timer1
       // 
-      this.timer1.Enabled = true;
-      this.timer1.Interval = 2000;
+      this.timer1.Interval = 600;
       this.timer1.Tick += new System.EventHandler(this.Timer1Tick);
       // 
       // timer2
@@ -68,6 +67,7 @@ namespace Program.Forms
       this.ClientSize = new System.Drawing.Size(284, 262);
       this.Controls.Add(this.progressSpinner1);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
       this.Name = "Load";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Load";

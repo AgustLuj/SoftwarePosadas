@@ -16,7 +16,7 @@ namespace Program.Forms
   /// </summary>
   public partial class Load : Form
   {
-    MainForm f;
+    Form f;
     
     public Load()
     {
@@ -24,7 +24,7 @@ namespace Program.Forms
       
       TransparencyKey = BackColor = Color.White;
       
-      f = new MainForm();
+      f = new Login();
       f.Show();
       f.Visible = false;
       f.Location = new Point((Screen.PrimaryScreen.Bounds.Width >> 1) - (f.Width >> 1), Screen.PrimaryScreen.Bounds.Height);
@@ -33,19 +33,22 @@ namespace Program.Forms
     void Timer1Tick(object sender, EventArgs e)
     {
       timer1.Enabled = false;
-      Transition t = new Transition(new TransitionType_CriticalDamping(1200));
-      t.add(f, "Top", (Screen.PrimaryScreen.Bounds.Height >> 1) - (f.Height >> 1));
-      f.Visible = true;
-      t.run();
+      
+      Transition t = new Transition(new TransitionType_CriticalDamping(800));
+        t.add(f, "Top", (Screen.PrimaryScreen.Bounds.Height >> 1) - (f.Height >> 1));
+        f.Visible = true;
+        t.run();
+        
       this.Close();
     }
     
     void Timer2Tick(object sender, EventArgs e)
     {
       timer2.Enabled = false;
+      timer1.Enabled = true;
       
-      Transition t = new Transition(new TransitionType_Acceleration(1100));
-      t.add(this, "Top", -400);
+      Transition t = new Transition(new TransitionType_Acceleration(700));
+      t.add(this, "Top", -Height);
       
       t.run();
     }

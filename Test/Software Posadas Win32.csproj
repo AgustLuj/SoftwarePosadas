@@ -101,6 +101,10 @@
     <Compile Include="src\Forms\Load.Designer.cs">
       <DependentUpon>Load.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\Forms\Login.cs" />
+    <Compile Include="src\Forms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\Forms\MainForm.cs" />
     <Compile Include="src\Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -113,25 +117,30 @@
     <Compile Include="src\Namespaces\Session.cs" />
     <Compile Include="src\Program.cs" />
     <Compile Include="src\Static Classes\DBConn.cs" />
+    <Compile Include="src\Static Classes\Forms.cs" />
     <Compile Include="src\Static Classes\MySQLUtil.cs" />
     <Compile Include="Test1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Resources\normal.cur">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Images.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\Forms\Load.resx">
-      <DependentUpon>Load.cs</DependentUpon>
+    <EmbeddedResource Include="src\Forms\FormAddGuest.resx">
+      <DependentUpon>FormAddGuest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\Forms\MainForm.resx">
-      <DependentUpon>MainForm.Designer.cs</DependentUpon>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>MainForm.Designer1.cs</LastGenOutput>
+    <EmbeddedResource Include="src\Forms\FormAddGuestHome.resx">
+      <DependentUpon>FormAddGuestHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Forms\FormAddPatient.resx">
+      <DependentUpon>FormAddPatient.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

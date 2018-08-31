@@ -10,6 +10,8 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
+using Program.StaticClasses;
+
 namespace Program.Forms
 {
 	/// <summary>
@@ -52,7 +54,7 @@ namespace Program.Forms
 		
 		void FormAddPatientLoad(object sender, EventArgs e)
 		{
-			this.Location=Ayuda.formAddGuestHome.Location;			
+			this.Location = StaticForms.formAddGuestHome.Location;			
 		}
 	}
 }

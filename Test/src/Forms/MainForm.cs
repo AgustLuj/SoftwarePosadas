@@ -22,6 +22,7 @@ namespace Program.Forms {
   public partial class MainForm : MaterialForm {
     
     bool displayed = false;
+    bool closing = false;
     
     List<MaterialFlatButton> leftbtns = new List<MaterialFlatButton>();
     
@@ -33,7 +34,14 @@ namespace Program.Forms {
       SkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
       //SkinManager.ColorScheme = new ColorScheme((Primary)0xed9936, (Primary)0xd58930, Primary.Brown600, Accent.Blue400, TextShade.BLACK);
     
-      leftbtns.AddRange(new []{btn_left_guests, btn_left_security});
+      leftbtns.AddRange(new []{btn_left_guests, btn_left_security, btn_left_stats});
+    }
+    
+    public void LoadPermissions(){
+      if (Session.user.permissions == "all") {
+        btn_left_admin.Visible = true;
+        leftbtns.Add(btn_left_admin);
+      }
     }
     
     public void Form_Load(object sender, EventArgs e) {
@@ -48,13 +56,28 @@ namespace Program.Forms {
       //label1.Text = (month.IsNull()) ? "No values" : month.general.huespedes.First().Nombre;
       
       //label1.Text = ;
-      //panel1.Dock = DockStyle.Fill;
       
-//      var f = new Form1();
-//      f.TopLevel = false;
-//      panel1.Controls.Add(f);
-//      panel1.Tag = f;
-//      f.Show();
+      StaticForms.formAddGuestHome = new FormAddGuestHome();
+	      StaticForms.formAddGuestHome.TopLevel = false;
+	      panel3.Controls.Add(StaticForms.formAddGuestHome);
+	      panel3.Tag = StaticForms.formAddGuestHome;
+	      StaticForms.formAddGuestHome.Parent = panel3;
+	      StaticForms.formAddGuestHome.Show();
+    }
+    
+    void MainFormFormClosing(object sender, FormClosingEventArgs e)
+    {
+		if(!closing){
+    		
+    		e.Cancel = true;
+    		
+			var t = new Transition(new TransitionType_Acceleration(600));
+				t.add(this, "Top", Screen.PrimaryScreen.Bounds.Height);
+				t.TransitionCompletedEvent += (_, __) => this.Close();
+				t.run();
+				
+			closing = true;
+		}
     }
     
     void MainFormFormClosed(object sender, FormClosedEventArgs e)
@@ -82,7 +105,6 @@ namespace Program.Forms {
     void LeftBarClick(object sender, EventArgs e)
     {
       var s = sender as MaterialFlatButton;
-
       
       var t = new Transition(new TransitionType_Deceleration(500));
       t.add(btn_addG, "Top", (s.Name == "btn_left_guests") ? 28 : 64);

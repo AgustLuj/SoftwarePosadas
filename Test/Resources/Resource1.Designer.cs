@@ -88,6 +88,27 @@ namespace SP.Resources {
       }
     }
     
+    internal static System.Drawing.Bitmap icons8_bar_chart_24 {
+      get {
+        object obj = ResourceManager.GetObject("icons8-bar-chart-24", resourceCulture);
+        return ((System.Drawing.Bitmap)(obj));
+      }
+    }
+    
+    internal static System.Drawing.Bitmap icons8_businessman_24 {
+      get {
+        object obj = ResourceManager.GetObject("icons8-businessman-24", resourceCulture);
+        return ((System.Drawing.Bitmap)(obj));
+      }
+    }
+    
+    internal static System.Drawing.Bitmap key {
+      get {
+        object obj = ResourceManager.GetObject("key", resourceCulture);
+        return ((System.Drawing.Bitmap)(obj));
+      }
+    }
+    
     internal static System.Drawing.Bitmap Ripple_1s_200px {
       get {
         object obj = ResourceManager.GetObject("Ripple-1s-200px", resourceCulture);
