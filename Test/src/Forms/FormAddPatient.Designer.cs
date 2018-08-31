@@ -36,6 +36,7 @@ namespace Program.Forms
 		/// </summary>
 		private void InitializeComponent()
 		{
+
 			this.label_nombre = new MaterialSkin.Controls.MaterialLabel();
 			this.text_nombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
 			this.label_apellido = new MaterialSkin.Controls.MaterialLabel();

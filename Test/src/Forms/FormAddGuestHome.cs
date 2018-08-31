@@ -57,8 +57,18 @@ namespace Program.Forms
 				name = fa.Name;
 			
 			FormAddPatient f = new FormAddPatient();
-				f.ShowDialog();
-				f.Location = this.Location;
+				f.TopLevel = false;
+				(this.Parent as Panel).Controls.Add(f);
+				f.Parent = this;
+				f.Show();
+				f.Top = - f.Height;
+				f.BringToFront();
+			
+			var t = new Transition(new TransitionType_Deceleration(500));
+				t.add(f, "Top", 0);
+				t.run();
+				
+				//f.Location = this.Location;
 		}
 		
 		void FormAddGuestHomeFormClosed(object sender, FormClosedEventArgs e)

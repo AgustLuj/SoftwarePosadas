@@ -10,6 +10,8 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
+using Transitions;
+
 using Program.StaticClasses;
 
 namespace Program.Forms
@@ -49,7 +51,10 @@ namespace Program.Forms
 		
 		void MaterialFlatButton2Click(object sender, EventArgs e)
 		{
-			Application.Exit();
+			var t = new Transition(new TransitionType_Acceleration(500));
+				t.add(this, "Top", -this.Height);
+				t.TransitionCompletedEvent += (_, __) => this.Close();
+				t.run();
 		}
 		
 		void FormAddPatientLoad(object sender, EventArgs e)
