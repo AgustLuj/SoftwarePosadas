@@ -91,12 +91,20 @@
       <DependentUpon>Images.resx</DependentUpon>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="Resources\Resource1.Designer.cs">
-      <DependentUpon>Images.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Include="src\Classes\Month.cs" />
     <Compile Include="src\Classes\User.cs" />
+    <Compile Include="src\Forms\FormAddGuest.cs" />
+    <Compile Include="src\Forms\FormAddGuest.Designer.cs">
+      <DependentUpon>FormAddGuest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Forms\FormAddGuestHome.cs" />
+    <Compile Include="src\Forms\FormAddGuestHome.Designer.cs">
+      <DependentUpon>FormAddGuestHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Forms\FormAddPatient.cs" />
+    <Compile Include="src\Forms\FormAddPatient.Designer.cs">
+      <DependentUpon>FormAddPatient.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\Forms\Load.cs" />
     <Compile Include="src\Forms\Load.Designer.cs">
       <DependentUpon>Load.cs</DependentUpon>
@@ -117,8 +125,8 @@
     <Compile Include="src\Namespaces\Session.cs" />
     <Compile Include="src\Program.cs" />
     <Compile Include="src\Static Classes\DBConn.cs" />
-    <Compile Include="src\Static Classes\Forms.cs" />
     <Compile Include="src\Static Classes\MySQLUtil.cs" />
+    <Compile Include="src\Static Classes\StaticForms.cs" />
     <Compile Include="Test1.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -131,7 +139,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\Images.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Images.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="src\Forms\FormAddGuest.resx">
       <DependentUpon>FormAddGuest.cs</DependentUpon>
