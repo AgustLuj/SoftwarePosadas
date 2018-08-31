@@ -2,7 +2,7 @@
 
 using Program.Forms;
 
-namespace Program.StaticClasses
+namespace Program.Forms 
 {
 
 	public static class StaticForms

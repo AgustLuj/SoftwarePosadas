@@ -104,49 +104,45 @@ namespace Program.Forms
 		
 		void MaterialFlatButton1Click(object sender, EventArgs e)
 		{
-			if(text_apellido.Text != "" && text_nombre.Text != "" && text_habitacion.Text != "" && text_locker.Text != ""){
-				
+			/*if(text_apellido.Text != "" && text_nombre.Text != "" && text_habitacion.Text != "" && text_locker.Text != ""){
 				if(combo_pais.SelectedIndex != -1){
 					if(combo_pais.SelectedText != "Argentina"){
-						
-						if(combo_localidad.SelectedIndex != -1 && combo_provincia.SelectedIndex != -1){
-							
-							nombre = text_nombre.Text;
-							apellido = text_apellido.Text;
-							Ayuda.formAddGuestHome.addButton1(1);
-							Ayuda.formAddGuestHome.ChangeBtn(nombre,apellido);
-							this.Close();			
-							
-						}else{
-							label_error.ForeColor = Color.FromArgb(0xB00020);
-							label_error.Text="Porfavor complete las casillas";
-						}	
-						
-					}else if(text_localidad.Text != "" && text_provincia.Text != ""){
-						
-						nombre = text_nombre.Text;
-						apellido = text_apellido.Text;
-						Ayuda.formAddGuestHome.addButton1(1);
-						Ayuda.formAddGuestHome.ChangeBtn(nombre,apellido);
-						this.Close();
-						
+						if(combo_provincia.SelectedText != "Buenos Aires"){
+							if(combo_localidad.SelectedIndex != -1 && combo_provincia.SelectedIndex != -1){
+								addForm();
+								
+							}else{
+								addlabel();
+							}	
+						}else if(text_localidad.Text != "" && text_provincia.Text != ""){
+								addForm();
+						}
 					}else{
-						
-						label_error.ForeColor = Color.FromArgb(0xB00020);
-						label_error.Text="Porfavor complete las casillas";
+						if(text_localidad.Text != "" && text_provincia.Text != ""){
+							addForm();
+						}else{
+							addlabel();
+						}
 					} 
 				}else{
-					
-					label_error.ForeColor = Color.FromArgb(0xB00020);
-					label_error.Text="Porfavor complete las casillas";
+					addlabel();
 				}
 			}else{
-				
-				label_error.ForeColor = Color.FromArgb(0xB00020);
-				label_error.Text="Porfavor complete las casillas";
-			}
+				addlabel();
+			}*/
+			addForm();
 		}
-		
+		void addForm(){
+			nombre = text_nombre.Text;
+			apellido = text_apellido.Text;
+			StaticForms.formAddGuestHome.addButton1(1);
+			StaticForms.formAddGuestHome.ChangeBtn(nombre,apellido);
+			this.Close();			
+		}
+		void addlabel(){
+			label_error.ForeColor = Color.FromArgb(0xB00020);
+			label_error.Text="Porfavor complete las casillas";
+		}
 		void MaterialFlatButton2Click(object sender, EventArgs e)
 		{
 			var t = new Transition(new TransitionType_Acceleration(500));

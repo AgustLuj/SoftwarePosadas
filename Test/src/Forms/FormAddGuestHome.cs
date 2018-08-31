@@ -38,7 +38,7 @@ namespace Program.Forms
 			
 			FormAddGuest f = new FormAddGuest();
 				f.TopLevel = false;
-				(this.Parent as Panel).Controls.Add(f);
+				//(this.Parent as Panel).Controls.Add(f);
 				f.Parent = this;
 				f.Show();
 				f.Top = - f.Height;

@@ -38,8 +38,8 @@ namespace Program.Forms
 			if(text_nombre.Text != "" && text_apellido.Text != "" && combo_servicio.SelectedIndex != -1 ){
 				nombre = text_nombre.Text;
 				apellido = text_apellido.Text;
-				Ayuda.formAddGuestHome.addButton1(2);
-				Ayuda.formAddGuestHome.ChangeBtn(nombre,apellido);
+				StaticForms.formAddGuestHome.addButton1(2);
+				StaticForms.formAddGuestHome.ChangeBtn(nombre,apellido);
 				this.Close();	
 			}else{
 				label_error.ForeColor = Color.FromArgb(0xB00020);
