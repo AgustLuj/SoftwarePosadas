@@ -35,7 +35,7 @@ namespace Program.Forms
 		/// not be able to load this method if it was changed manually.
 		/// </summary>
 		private void InitializeComponent()
-		{
+		{		  
 		  this.label_nombre = new MaterialSkin.Controls.MaterialLabel();
 		  this.text_nombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
 		  this.label_apellido = new MaterialSkin.Controls.MaterialLabel();
@@ -123,6 +123,8 @@ namespace Program.Forms
 		  // 
 		  // combo_servicio
 		  // 
+		  this.combo_servicio.Font = new System.Drawing.Font("Roboto", 11F);
+		  this.combo_servicio.ForeColor = this.label_servicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));;
 		  this.combo_servicio.FormattingEnabled = true;
 		  this.combo_servicio.Items.AddRange(new object[] {
 		  		  		  "Cardiologia Adulto",
@@ -158,7 +160,7 @@ namespace Program.Forms
 		  		  		  "Urologia"});
 		  this.combo_servicio.Location = new System.Drawing.Point(265, 288);
 		  this.combo_servicio.Name = "combo_servicio";
-		  this.combo_servicio.Size = new System.Drawing.Size(201, 21);
+		  this.combo_servicio.Size = new System.Drawing.Size(201, 26);
 		  this.combo_servicio.Sorted = true;
 		  this.combo_servicio.TabIndex = 23;
 		  // 

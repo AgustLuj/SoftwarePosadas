@@ -25,14 +25,7 @@ namespace Program.Forms
 		public string apellido =" ";
 		public FormAddPatient()
 		{
-			//
-			// The InitializeComponent() call is required for Windows Forms designer support.
-			//
 			InitializeComponent();
-			
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
 		}
 		
 		void MaterialFlatButton1Click(object sender, EventArgs e)

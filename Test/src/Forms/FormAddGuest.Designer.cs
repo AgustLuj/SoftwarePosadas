@@ -262,6 +262,8 @@ namespace Program.Forms
 			// combo_servicio
 			// 
 			this.combo_servicio.FormattingEnabled = true;
+			this.combo_servicio.Font = new System.Drawing.Font("Roboto", 11F);
+			this.combo_servicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.combo_servicio.Items.AddRange(new object[] {
 									"Cardiologia Adulto",
 									"Cardiologia Infantil",
@@ -370,6 +372,8 @@ namespace Program.Forms
 			// combo_pais
 			// 
 			this.combo_pais.FormattingEnabled = true;
+			this.combo_pais.Font = new System.Drawing.Font("Roboto", 11F);
+			this.combo_pais.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 			this.combo_pais.Items.AddRange(new object[] {
 									"Argentina",
 									"Bolivia",

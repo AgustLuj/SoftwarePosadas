@@ -34,7 +34,6 @@ namespace Program.Forms
     private void InitializeComponent()
     {
       this.components = new System.ComponentModel.Container();
-      System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Load));
       this.timer1 = new System.Windows.Forms.Timer(this.components);
       this.timer2 = new System.Windows.Forms.Timer(this.components);
       this.progressSpinner1 = new CNSpinner.ProgressSpinner();
@@ -53,7 +52,7 @@ namespace Program.Forms
       // 
       // progressSpinner1
       // 
-      this.progressSpinner1.LoadGIFImage = ((System.Drawing.Image)(resources.GetObject("progressSpinner1.LoadGIFImage")));
+      this.progressSpinner1.LoadGIFImage = global::SP.Resources.Images.Ripple_1s_200px;
       this.progressSpinner1.Location = new System.Drawing.Point(73, 63);
       this.progressSpinner1.Name = "progressSpinner1";
       this.progressSpinner1.Size = new System.Drawing.Size(128, 128);
@@ -67,7 +66,7 @@ namespace Program.Forms
       this.ClientSize = new System.Drawing.Size(284, 262);
       this.Controls.Add(this.progressSpinner1);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-      this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+      this.Icon = global::SP.Resources.Images.home_account;
       this.Name = "Load";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Load";

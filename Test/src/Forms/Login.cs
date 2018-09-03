@@ -40,39 +40,7 @@ namespace Program.Forms
     
     void LoginClick(object sender, EventArgs e)
     {
-      logging = true;
-      
-      if(Session.Login(txt_uname.Text, txt_pass.Text)){
-        
-        Transition t = new Transition(new TransitionType_Deceleration(150));
-          t.add(this, "Top", this.Top + 40);
-          t.TransitionCompletedEvent += (a, b) => {
-            Transition tt = new Transition(new TransitionType_EaseInEaseOut(550));
-            tt.add(this, "Top", -Height);
-            tt.run();
-          };
-          
-          t.run();
-
-        timer1.Enabled = true;
-      } else {
-      	
-      	logging = false;
-        lbl_err.ForeColor = Color.FromArgb(0xB00020);
-        
-        if(!err){
-          Transition mt = new Transition(new TransitionType_EaseInEaseOut(400));
-            mt.add(this, "Height", 348);
-            mt.add(lbl_err, "Top", 284);
-            mt.TransitionCompletedEvent += (x, y) => err = true;
-            mt.run();
-        } else {
-          Transition mt = new Transition(new TransitionType_Bounce(400));
-            mt.add(lbl_err, "Top", 264);
-            mt.TransitionCompletedEvent += (x, y) => lbl_err.Top = 284;
-            mt.run();
-        }
-      }
+      Log();
     }
     
     void Changed(object sender, EventArgs e)
@@ -112,6 +80,49 @@ namespace Program.Forms
 				
 			closing = true;
 		}
+    }
+    
+    void Txt_KeyPress(object sender, KeyPressEventArgs e)
+    {
+      if (e.KeyChar == (char)Keys.Return) {
+        Log();
+      }
+    }
+    
+    void Log(){
+      logging = true;
+      
+      if(Session.Login(txt_uname.Text, txt_pass.Text)){
+        
+        Transition t = new Transition(new TransitionType_Deceleration(150));
+          t.add(this, "Top", this.Top + 40);
+          t.TransitionCompletedEvent += (a, b) => {
+            Transition tt = new Transition(new TransitionType_EaseInEaseOut(550));
+            tt.add(this, "Top", -Height);
+            tt.run();
+          };
+          
+          t.run();
+
+        timer1.Enabled = true;
+      } else {
+      	
+      	logging = false;
+        lbl_err.ForeColor = Color.FromArgb(0xB00020);
+        
+        if(!err){
+          Transition mt = new Transition(new TransitionType_EaseInEaseOut(400));
+            mt.add(this, "Height", 348);
+            mt.add(lbl_err, "Top", 284);
+            mt.TransitionCompletedEvent += (x, y) => err = true;
+            mt.run();
+        } else {
+          Transition mt = new Transition(new TransitionType_Bounce(400));
+            mt.add(lbl_err, "Top", 264);
+            mt.TransitionCompletedEvent += (x, y) => lbl_err.Top = 284;
+            mt.run();
+        }
+      }
     }
   }
 }
