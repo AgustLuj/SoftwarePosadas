@@ -52,6 +52,7 @@
     <Reference Include="CNSpinner">
       <HintPath>CNSpinner.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="Microsoft.CSharp">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -105,6 +106,10 @@
     <Compile Include="src\Forms\FormAddPatient.Designer.cs">
       <DependentUpon>FormAddPatient.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\Forms\FormSearchGuest.cs" />
+    <Compile Include="src\Forms\FormSearchGuest.Designer.cs">
+      <DependentUpon>FormSearchGuest.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\Forms\Load.cs" />
     <Compile Include="src\Forms\Load.Designer.cs">
       <DependentUpon>Load.cs</DependentUpon>
@@ -149,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\Forms\FormAddPatient.resx">
       <DependentUpon>FormAddPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Forms\FormSearchGuest.resx">
+      <DependentUpon>FormSearchGuest.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
