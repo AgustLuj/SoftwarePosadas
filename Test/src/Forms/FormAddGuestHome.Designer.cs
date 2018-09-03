@@ -91,7 +91,7 @@ namespace Program.Forms
 			this.button_paciente.TabIndex = 2;
 			this.button_paciente.Text = "+ Añadir Paciente";
 			this.button_paciente.UseVisualStyleBackColor = true;
-			this.button_paciente.Click += new System.EventHandler(this.MaterialFlatButton1Click);
+			this.button_paciente.Click += new System.EventHandler(this.Button_pacienteClick);
 			// 
 			// materialToolStripMenuItem1
 			// 
@@ -156,5 +156,6 @@ namespace Program.Forms
 		private MaterialSkin.Controls.MaterialFlatButton button_paciente;
 		private MaterialSkin.Controls.MaterialFlatButton button_huesped;
 		private MaterialSkin.Controls.MaterialLabel label_ficha;
+		
 	}
 }

@@ -38,7 +38,7 @@ namespace Program.Forms
 			
 			FormAddGuest f = new FormAddGuest();
 				f.TopLevel = false;
-				//(this.Parent as Panel).Controls.Add(f);
+				(this.Parent as Panel).Controls.Add(f);
 				f.Parent = this;
 				f.Show();
 				f.Top = - f.Height;
@@ -51,7 +51,7 @@ namespace Program.Forms
 			//f.Location = this.Location;		
 		}
 		
-		void MaterialFlatButton1Click(object sender, EventArgs e)
+		void Button_pacienteClick(object sender, EventArgs e)
 		{
 			var fa = sender as MaterialFlatButton;
 				name = fa.Name;
@@ -100,7 +100,7 @@ namespace Program.Forms
 				btn.Location = new System.Drawing.Point(x,y);
 				btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
 				btn.MouseState = MaterialSkin.MouseState.HOVER;
-				btn.Name = (str == "+ añadir huesped ") ? "btn" : "btnP" + count_btn1;
+				btn.Name = (str == "+ añadir huesped ") ? "btn"+ count_btn1 : "btnP" + count_btn2;
 				btn.Primary = false;
 				btn.Size = new System.Drawing.Size(145, 36);
 				btn.TabIndex = 1;
@@ -123,14 +123,23 @@ namespace Program.Forms
 			}
 		}
 		public void ChangeBtn(string a, string b){
+			
 			var xa = lista.Find(x => x.Name == name );
-				xa.Text = " + " + a + " " + b;
-				xa.Enabled = false;
+			
+			Console.WriteLine(name);
+			
+			xa.Text = " + " + a + " " + b;
+			xa.Enabled = false;
 		}
 		
 		void MaterialFlatButton2Click(object sender, EventArgs e)
 		{
 			Application.Exit();
+		}
+		
+		void MaterialFlatButton1Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
