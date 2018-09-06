@@ -52,7 +52,6 @@
     <Reference Include="CNSpinner">
       <HintPath>CNSpinner.dll</HintPath>
     </Reference>
-    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="Microsoft.CSharp">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -92,6 +91,10 @@
       <DependentUpon>Images.resx</DependentUpon>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="src\Classes\Guest.cs" />
+    <Compile Include="src\Classes\Guest.Designer.cs">
+      <DependentUpon>Guest.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\Classes\Month.cs" />
     <Compile Include="src\Classes\User.cs" />
     <Compile Include="src\Forms\FormAddGuest.cs" />
@@ -105,6 +108,10 @@
     <Compile Include="src\Forms\FormAddPatient.cs" />
     <Compile Include="src\Forms\FormAddPatient.Designer.cs">
       <DependentUpon>FormAddPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Forms\FormGuests.cs" />
+    <Compile Include="src\Forms\FormGuests.Designer.cs">
+      <DependentUpon>FormGuests.cs</DependentUpon>
     </Compile>
     <Compile Include="src\Forms\FormSearchGuest.cs" />
     <Compile Include="src\Forms\FormSearchGuest.Designer.cs">
@@ -135,8 +142,10 @@
     <Compile Include="Test1.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="src\Forms\FormGuests.resx">
+      <DependentUpon>FormGuests.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="packages.config" />
     <None Include="Resources\normal.cur">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -170,13 +179,13 @@
     <Folder Include="src\Static Classes" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\Ripple-1s-200px.gif" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\MaterialSkin-master\MaterialSkin.csproj">
       <Project>{8EB7611B-68CD-4B8B-987A-11717E2B250C}</Project>
       <Name>MaterialSkin</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Ripple-1s-200px.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
