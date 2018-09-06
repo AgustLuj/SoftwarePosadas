@@ -18,5 +18,20 @@ namespace Program.Forms
     {
       InitializeComponent();
     }
+    
+    void MaterialFlatButton1Click(object sender, EventArgs e)
+    {
+      materialFlatButton1.Text = "Clicked";
+    }
+    
+    void MaterialLabel3Click(object sender, EventArgs e)
+    {
+      MaterialFlatButton1Click(sender, e);
+    }
+    
+    void MaterialLabel3MouseEnter(object sender, EventArgs e)
+    {
+      materialFlatButton1.MouseEnter();
+    }
   }
 }
