@@ -59,9 +59,15 @@ namespace Program.Forms
 			this.radio_leerEscMan = new MaterialSkin.Controls.MaterialRadioButton();
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+			this.radio_admin = new MaterialSkin.Controls.MaterialRadioButton();
+			this.radio_operador = new MaterialSkin.Controls.MaterialRadioButton();
+			this.panel4 = new System.Windows.Forms.Panel();
+			this.radio_invitado = new MaterialSkin.Controls.MaterialRadioButton();
+			this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.panel3.SuspendLayout();
+			this.panel4.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// label_nombre
@@ -69,7 +75,7 @@ namespace Program.Forms
 			this.label_nombre.Depth = 0;
 			this.label_nombre.Font = new System.Drawing.Font("Roboto", 11F);
 			this.label_nombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label_nombre.Location = new System.Drawing.Point(32, 32);
+			this.label_nombre.Location = new System.Drawing.Point(52, 115);
 			this.label_nombre.MouseState = MaterialSkin.MouseState.HOVER;
 			this.label_nombre.Name = "label_nombre";
 			this.label_nombre.Size = new System.Drawing.Size(215, 23);
@@ -81,7 +87,7 @@ namespace Program.Forms
 			this.text_apellido.BackColor = System.Drawing.SystemColors.Control;
 			this.text_apellido.Depth = 0;
 			this.text_apellido.Hint = "Ingrese el apellido";
-			this.text_apellido.Location = new System.Drawing.Point(37, 125);
+			this.text_apellido.Location = new System.Drawing.Point(57, 208);
 			this.text_apellido.MaxLength = 32767;
 			this.text_apellido.MouseState = MaterialSkin.MouseState.HOVER;
 			this.text_apellido.Name = "text_apellido";
@@ -90,7 +96,7 @@ namespace Program.Forms
 			this.text_apellido.SelectionLength = 0;
 			this.text_apellido.SelectionStart = 0;
 			this.text_apellido.Size = new System.Drawing.Size(198, 23);
-			this.text_apellido.TabIndex = 7;
+			this.text_apellido.TabIndex = 2;
 			this.text_apellido.TabStop = false;
 			this.text_apellido.UseSystemPasswordChar = false;
 			this.text_apellido.TextChanged += new System.EventHandler(this.Text_apellidoTextChanged);
@@ -100,7 +106,7 @@ namespace Program.Forms
 			this.materialLabel1.Depth = 0;
 			this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
 			this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.materialLabel1.Location = new System.Drawing.Point(32, 99);
+			this.materialLabel1.Location = new System.Drawing.Point(52, 182);
 			this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
 			this.materialLabel1.Name = "materialLabel1";
 			this.materialLabel1.Size = new System.Drawing.Size(215, 23);
@@ -111,14 +117,14 @@ namespace Program.Forms
 			// 
 			this.check_operadores.Depth = 0;
 			this.check_operadores.Font = new System.Drawing.Font("Roboto", 10F);
-			this.check_operadores.Location = new System.Drawing.Point(37, 199);
+			this.check_operadores.Location = new System.Drawing.Point(57, 282);
 			this.check_operadores.Margin = new System.Windows.Forms.Padding(0);
 			this.check_operadores.MouseLocation = new System.Drawing.Point(-1, -1);
 			this.check_operadores.MouseState = MaterialSkin.MouseState.HOVER;
 			this.check_operadores.Name = "check_operadores";
 			this.check_operadores.Ripple = true;
 			this.check_operadores.Size = new System.Drawing.Size(104, 24);
-			this.check_operadores.TabIndex = 8;
+			this.check_operadores.TabIndex = 3;
 			this.check_operadores.Text = "Operadores";
 			this.check_operadores.UseVisualStyleBackColor = true;
 			this.check_operadores.CheckedChanged += new System.EventHandler(this.MaterialCheckBox1CheckedChanged);
@@ -127,7 +133,7 @@ namespace Program.Forms
 			// 
 			this.check_social.Depth = 0;
 			this.check_social.Font = new System.Drawing.Font("Roboto", 10F);
-			this.check_social.Location = new System.Drawing.Point(37, 271);
+			this.check_social.Location = new System.Drawing.Point(57, 354);
 			this.check_social.Margin = new System.Windows.Forms.Padding(0);
 			this.check_social.MouseLocation = new System.Drawing.Point(-1, -1);
 			this.check_social.MouseState = MaterialSkin.MouseState.HOVER;
@@ -143,7 +149,7 @@ namespace Program.Forms
 			// 
 			this.check_seguridad.Depth = 0;
 			this.check_seguridad.Font = new System.Drawing.Font("Roboto", 10F);
-			this.check_seguridad.Location = new System.Drawing.Point(37, 234);
+			this.check_seguridad.Location = new System.Drawing.Point(57, 317);
 			this.check_seguridad.Margin = new System.Windows.Forms.Padding(0);
 			this.check_seguridad.MouseLocation = new System.Drawing.Point(-1, -1);
 			this.check_seguridad.MouseState = MaterialSkin.MouseState.HOVER;
@@ -159,7 +165,7 @@ namespace Program.Forms
 			// 
 			this.check_mantenimiento.Depth = 0;
 			this.check_mantenimiento.Font = new System.Drawing.Font("Roboto", 10F);
-			this.check_mantenimiento.Location = new System.Drawing.Point(34, 305);
+			this.check_mantenimiento.Location = new System.Drawing.Point(54, 388);
 			this.check_mantenimiento.Margin = new System.Windows.Forms.Padding(0);
 			this.check_mantenimiento.MouseLocation = new System.Drawing.Point(-1, -1);
 			this.check_mantenimiento.MouseState = MaterialSkin.MouseState.HOVER;
@@ -176,7 +182,7 @@ namespace Program.Forms
 			this.materialLabel2.Depth = 0;
 			this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
 			this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.materialLabel2.Location = new System.Drawing.Point(468, 32);
+			this.materialLabel2.Location = new System.Drawing.Point(488, 115);
 			this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
 			this.materialLabel2.Name = "materialLabel2";
 			this.materialLabel2.Size = new System.Drawing.Size(215, 23);
@@ -189,7 +195,7 @@ namespace Program.Forms
 			this.text_usuario.Depth = 0;
 			this.text_usuario.Enabled = false;
 			this.text_usuario.Hint = "Nombre_Apellido";
-			this.text_usuario.Location = new System.Drawing.Point(473, 61);
+			this.text_usuario.Location = new System.Drawing.Point(493, 144);
 			this.text_usuario.MaxLength = 32767;
 			this.text_usuario.MouseState = MaterialSkin.MouseState.HOVER;
 			this.text_usuario.Name = "text_usuario";
@@ -207,7 +213,7 @@ namespace Program.Forms
 			this.text_nombre.BackColor = System.Drawing.SystemColors.Control;
 			this.text_nombre.Depth = 0;
 			this.text_nombre.Hint = "Ingrese el nombre";
-			this.text_nombre.Location = new System.Drawing.Point(37, 61);
+			this.text_nombre.Location = new System.Drawing.Point(57, 144);
 			this.text_nombre.MaxLength = 32767;
 			this.text_nombre.MouseState = MaterialSkin.MouseState.HOVER;
 			this.text_nombre.Name = "text_nombre";
@@ -216,7 +222,7 @@ namespace Program.Forms
 			this.text_nombre.SelectionLength = 0;
 			this.text_nombre.SelectionStart = 0;
 			this.text_nombre.Size = new System.Drawing.Size(198, 23);
-			this.text_nombre.TabIndex = 14;
+			this.text_nombre.TabIndex = 1;
 			this.text_nombre.TabStop = false;
 			this.text_nombre.UseSystemPasswordChar = false;
 			this.text_nombre.TextChanged += new System.EventHandler(this.Text_nombreTextChanged);
@@ -243,7 +249,7 @@ namespace Program.Forms
 			// 
 			this.radio_leerOp.Depth = 0;
 			this.radio_leerOp.Font = new System.Drawing.Font("Roboto", 10F);
-			this.radio_leerOp.Location = new System.Drawing.Point(187, 199);
+			this.radio_leerOp.Location = new System.Drawing.Point(207, 282);
 			this.radio_leerOp.Margin = new System.Windows.Forms.Padding(0);
 			this.radio_leerOp.MouseLocation = new System.Drawing.Point(-1, -1);
 			this.radio_leerOp.MouseState = MaterialSkin.MouseState.HOVER;
@@ -259,7 +265,7 @@ namespace Program.Forms
 			// 
 			this.radio_leerEscOp.Depth = 0;
 			this.radio_leerEscOp.Font = new System.Drawing.Font("Roboto", 10F);
-			this.radio_leerEscOp.Location = new System.Drawing.Point(258, 198);
+			this.radio_leerEscOp.Location = new System.Drawing.Point(278, 281);
 			this.radio_leerEscOp.Margin = new System.Windows.Forms.Padding(0);
 			this.radio_leerEscOp.MouseLocation = new System.Drawing.Point(-1, -1);
 			this.radio_leerEscOp.MouseState = MaterialSkin.MouseState.HOVER;
@@ -308,7 +314,7 @@ namespace Program.Forms
 			// 
 			this.panel1.Controls.Add(this.radio_leerEscSeg);
 			this.panel1.Controls.Add(this.radio_leerSeg);
-			this.panel1.Location = new System.Drawing.Point(172, 234);
+			this.panel1.Location = new System.Drawing.Point(192, 317);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(200, 24);
 			this.panel1.TabIndex = 27;
@@ -349,7 +355,7 @@ namespace Program.Forms
 			// 
 			this.panel2.Controls.Add(this.radio_leerEscSo);
 			this.panel2.Controls.Add(this.radio_leerSo);
-			this.panel2.Location = new System.Drawing.Point(187, 261);
+			this.panel2.Location = new System.Drawing.Point(207, 344);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(200, 31);
 			this.panel2.TabIndex = 28;
@@ -390,7 +396,7 @@ namespace Program.Forms
 			// 
 			this.panel3.Controls.Add(this.radio_leerEscMan);
 			this.panel3.Controls.Add(this.radio_leerMan);
-			this.panel3.Location = new System.Drawing.Point(187, 305);
+			this.panel3.Location = new System.Drawing.Point(207, 388);
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(200, 28);
 			this.panel3.TabIndex = 29;
@@ -412,11 +418,86 @@ namespace Program.Forms
 			this.materialFlatButton1.Text = "Añadir";
 			this.materialFlatButton1.UseVisualStyleBackColor = true;
 			// 
+			// radio_admin
+			// 
+			this.radio_admin.Depth = 0;
+			this.radio_admin.Font = new System.Drawing.Font("Roboto", 10F);
+			this.radio_admin.Location = new System.Drawing.Point(0, 0);
+			this.radio_admin.Margin = new System.Windows.Forms.Padding(0);
+			this.radio_admin.MouseLocation = new System.Drawing.Point(-1, -1);
+			this.radio_admin.MouseState = MaterialSkin.MouseState.HOVER;
+			this.radio_admin.Name = "radio_admin";
+			this.radio_admin.Ripple = true;
+			this.radio_admin.Size = new System.Drawing.Size(157, 24);
+			this.radio_admin.TabIndex = 31;
+			this.radio_admin.TabStop = true;
+			this.radio_admin.Text = "Administrador";
+			this.radio_admin.UseVisualStyleBackColor = true;
+			this.radio_admin.CheckedChanged += new System.EventHandler(this.Radio_adminCheckedChanged);
+			// 
+			// radio_operador
+			// 
+			this.radio_operador.Depth = 0;
+			this.radio_operador.Font = new System.Drawing.Font("Roboto", 10F);
+			this.radio_operador.Location = new System.Drawing.Point(157, 0);
+			this.radio_operador.Margin = new System.Windows.Forms.Padding(0);
+			this.radio_operador.MouseLocation = new System.Drawing.Point(-1, -1);
+			this.radio_operador.MouseState = MaterialSkin.MouseState.HOVER;
+			this.radio_operador.Name = "radio_operador";
+			this.radio_operador.Ripple = true;
+			this.radio_operador.Size = new System.Drawing.Size(157, 24);
+			this.radio_operador.TabIndex = 33;
+			this.radio_operador.TabStop = true;
+			this.radio_operador.Text = "Operador";
+			this.radio_operador.UseVisualStyleBackColor = true;
+			this.radio_operador.CheckedChanged += new System.EventHandler(this.Radio_operadorCheckedChanged);
+			// 
+			// panel4
+			// 
+			this.panel4.Controls.Add(this.radio_invitado);
+			this.panel4.Controls.Add(this.radio_admin);
+			this.panel4.Controls.Add(this.radio_operador);
+			this.panel4.Location = new System.Drawing.Point(149, 52);
+			this.panel4.Name = "panel4";
+			this.panel4.Size = new System.Drawing.Size(422, 26);
+			this.panel4.TabIndex = 34;
+			// 
+			// radio_invitado
+			// 
+			this.radio_invitado.Depth = 0;
+			this.radio_invitado.Font = new System.Drawing.Font("Roboto", 10F);
+			this.radio_invitado.Location = new System.Drawing.Point(314, 0);
+			this.radio_invitado.Margin = new System.Windows.Forms.Padding(0);
+			this.radio_invitado.MouseLocation = new System.Drawing.Point(-1, -1);
+			this.radio_invitado.MouseState = MaterialSkin.MouseState.HOVER;
+			this.radio_invitado.Name = "radio_invitado";
+			this.radio_invitado.Ripple = true;
+			this.radio_invitado.Size = new System.Drawing.Size(94, 24);
+			this.radio_invitado.TabIndex = 34;
+			this.radio_invitado.TabStop = true;
+			this.radio_invitado.Text = "Invitado";
+			this.radio_invitado.UseVisualStyleBackColor = true;
+			this.radio_invitado.CheckedChanged += new System.EventHandler(this.Radio_invitadoCheckedChanged);
+			// 
+			// materialLabel3
+			// 
+			this.materialLabel3.Depth = 0;
+			this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+			this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.materialLabel3.Location = new System.Drawing.Point(149, 23);
+			this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+			this.materialLabel3.Name = "materialLabel3";
+			this.materialLabel3.Size = new System.Drawing.Size(215, 23);
+			this.materialLabel3.TabIndex = 35;
+			this.materialLabel3.Text = "Tipo de usuario";
+			// 
 			// FormAddUser
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(741, 518);
+			this.Controls.Add(this.materialLabel3);
+			this.Controls.Add(this.panel4);
 			this.Controls.Add(this.materialFlatButton1);
 			this.Controls.Add(this.panel3);
 			this.Controls.Add(this.panel2);
@@ -441,9 +522,15 @@ namespace Program.Forms
 			this.panel1.ResumeLayout(false);
 			this.panel2.ResumeLayout(false);
 			this.panel3.ResumeLayout(false);
+			this.panel4.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private MaterialSkin.Controls.MaterialLabel materialLabel3;
+		private MaterialSkin.Controls.MaterialRadioButton radio_invitado;
+		private System.Windows.Forms.Panel panel4;
+		private MaterialSkin.Controls.MaterialRadioButton radio_operador;
+		private MaterialSkin.Controls.MaterialRadioButton radio_admin;
 		private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Panel panel2;

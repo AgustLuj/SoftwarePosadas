@@ -102,5 +102,53 @@ namespace Program.Forms
 				radio_leerMan.Checked=true;
 			}			
 		}
+		
+		void Radio_adminCheckedChanged(object sender, EventArgs e)
+		{
+			show(true);
+			selectall(true);
+		}
+		
+		void Radio_operadorCheckedChanged(object sender, EventArgs e)
+		{
+			show(true);
+			selectall(false);
+		}
+		
+		
+		void Radio_invitadoCheckedChanged(object sender, EventArgs e)
+		{
+			show(false);
+		}
+		void show(bool t){
+			
+			check_operadores.Visible = t;
+			check_seguridad.Visible = t;
+			check_social.Visible = t;
+			check_mantenimiento.Visible = t;
+			radio_leerEscMan.Visible=t;
+			radio_leerEscSo.Visible=t;
+			radio_leerEscSeg.Visible=t;
+			radio_leerEscOp.Visible=t;
+			radio_leerMan.Visible=t;
+			radio_leerSo.Visible=t;
+			radio_leerSeg.Visible=t;
+			radio_leerOp.Visible=t;		
+		}
+		void selectall(bool t){
+			
+			check_operadores.Checked = t;
+			check_seguridad.Checked = t;
+			check_social.Checked = t;
+			check_mantenimiento.Checked = t;
+			radio_leerEscMan.Checked=t;
+			radio_leerEscSo.Checked=t;
+			radio_leerEscSeg.Checked=t;
+			radio_leerEscOp.Checked=t;
+			radio_leerMan.Checked=false;
+			radio_leerSo.Checked=false;
+			radio_leerSeg.Checked=false;
+			radio_leerOp.Checked=false;
+		}
 	}
 }

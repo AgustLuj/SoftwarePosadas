@@ -61,7 +61,7 @@ namespace Program.Forms
 			this.materialLabel2.Location = new System.Drawing.Point(64, 96);
 			this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
 			this.materialLabel2.Name = "materialLabel2";
-			this.materialLabel2.Size = new System.Drawing.Size(517, 165);
+			this.materialLabel2.Size = new System.Drawing.Size(517, 373);
 			this.materialLabel2.TabIndex = 1;
 			this.materialLabel2.Text = "04/09/2018    El usuario MATEO_PIDAL modifico la tabla huespedes hola";
 			// 
