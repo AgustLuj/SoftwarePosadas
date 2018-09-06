@@ -18,7 +18,8 @@ namespace Program.StaticClasses {
 
       return MySQLUtil.GetDBConnection(host, port, database, username, password);
     }
-
+    
+    #region JSON Related
     public static string GetJSON(int year, string month) {
       var conn = GetDBConnection();
 
@@ -77,5 +78,10 @@ namespace Program.StaticClasses {
         throw;
       }
     }
+    #endregion
+    
+    /*public static List<Guest> getGuests() {
+      
+    }*/
   }
 }

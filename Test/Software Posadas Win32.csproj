@@ -97,6 +97,10 @@
     </Compile>
     <Compile Include="src\Classes\Month.cs" />
     <Compile Include="src\Classes\User.cs" />
+    <Compile Include="src\Forms\FormAddUser.cs" />
+    <Compile Include="src\Forms\FormAddUser.Designer.cs">
+      <DependentUpon>FormAddUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\Forms\FormAddGuest.cs" />
     <Compile Include="src\Forms\FormAddGuest.Designer.cs">
       <DependentUpon>FormAddGuest.cs</DependentUpon>
@@ -112,6 +116,9 @@
     <Compile Include="src\Forms\FormGuests.cs" />
     <Compile Include="src\Forms\FormGuests.Designer.cs">
       <DependentUpon>FormGuests.cs</DependentUpon>
+    <Compile Include="src\Forms\FormHistory.cs" />
+    <Compile Include="src\Forms\FormHistory.Designer.cs">
+      <DependentUpon>FormHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="src\Forms\FormSearchGuest.cs" />
     <Compile Include="src\Forms\FormSearchGuest.Designer.cs">
@@ -142,8 +149,16 @@
     <Compile Include="Test1.cs" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <EmbeddedResource Include="src\Forms\FormGuests.resx">
       <DependentUpon>FormGuests.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="src\Forms\FormAddUser.resx">
+      <DependentUpon>FormAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Forms\FormHistory.resx">
+      <DependentUpon>FormHistory.cs</DependentUpon>
+>>>>>>> d018bd7de40b40d9788945134773eccbe07914e3
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Resources\normal.cur">

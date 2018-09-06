@@ -126,8 +126,6 @@ namespace Program.Forms
 			
 			var xa = lista.Find(x => x.Name == name );
 			
-			Console.WriteLine(name);
-			
 			xa.Text = " + " + a + " " + b;
 			xa.Enabled = false;
 		}
