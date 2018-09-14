@@ -6,7 +6,7 @@
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
-namespace SP.Forms
+namespace Program.Forms
 {
 	partial class FormSearchGuest
 	{
@@ -39,6 +39,10 @@ namespace SP.Forms
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.text_apellido = new MaterialSkin.Controls.MaterialSingleLineTextField();
 			this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+			this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
+			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// comboBox1
@@ -87,21 +91,59 @@ namespace SP.Forms
 			this.materialFlatButton1.TabIndex = 5;
 			this.materialFlatButton1.Text = "materialFlatButton1";
 			this.materialFlatButton1.UseVisualStyleBackColor = true;
+			this.materialFlatButton1.Click += new System.EventHandler(this.MaterialFlatButton1Click);
+			// 
+			// materialFlatButton2
+			// 
+			this.materialFlatButton2.AutoSize = true;
+			this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.materialFlatButton2.Depth = 0;
+			this.materialFlatButton2.Icon = null;
+			this.materialFlatButton2.Location = new System.Drawing.Point(203, 366);
+			this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+			this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
+			this.materialFlatButton2.Name = "materialFlatButton2";
+			this.materialFlatButton2.Primary = false;
+			this.materialFlatButton2.selected = false;
+			this.materialFlatButton2.Size = new System.Drawing.Size(73, 36);
+			this.materialFlatButton2.TabIndex = 6;
+			this.materialFlatButton2.Text = "CERRAR";
+			this.materialFlatButton2.UseVisualStyleBackColor = true;
+			this.materialFlatButton2.Click += new System.EventHandler(this.MaterialFlatButton2Click);
+			// 
+			// openFileDialog1
+			// 
+			this.openFileDialog1.FileName = "openFileDialog1";
+			// 
+			// pictureBox1
+			// 
+			this.pictureBox1.Location = new System.Drawing.Point(81, 182);
+			this.pictureBox1.Name = "pictureBox1";
+			this.pictureBox1.Size = new System.Drawing.Size(254, 150);
+			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+			this.pictureBox1.TabIndex = 7;
+			this.pictureBox1.TabStop = false;
 			// 
 			// FormSearchGuest
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(741, 518);
+			this.Controls.Add(this.pictureBox1);
+			this.Controls.Add(this.materialFlatButton2);
 			this.Controls.Add(this.materialFlatButton1);
 			this.Controls.Add(this.text_apellido);
 			this.Controls.Add(this.comboBox1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "FormSearchGuest";
 			this.Text = "FormSearchGuest";
+			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.OpenFileDialog openFileDialog1;
+		private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
 		private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
 		private MaterialSkin.Controls.MaterialSingleLineTextField text_apellido;
 		private System.Windows.Forms.ComboBox comboBox1;

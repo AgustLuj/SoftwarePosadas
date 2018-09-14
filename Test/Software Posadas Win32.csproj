@@ -91,6 +91,7 @@
       <DependentUpon>Images.resx</DependentUpon>
       <AutoGen>True</AutoGen>
     </Compile>
+    <Compile Include="src\Classes\Class1.cs" />
     <Compile Include="src\Classes\Guest.cs" />
     <Compile Include="src\Classes\Month.cs" />
     <Compile Include="src\Classes\User.cs" />
