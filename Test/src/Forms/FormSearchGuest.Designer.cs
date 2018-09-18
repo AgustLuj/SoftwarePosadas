@@ -109,7 +109,6 @@ namespace Program.Forms
 			this.materialFlatButton2.TabIndex = 6;
 			this.materialFlatButton2.Text = "CERRAR";
 			this.materialFlatButton2.UseVisualStyleBackColor = true;
-			this.materialFlatButton2.Click += new System.EventHandler(this.MaterialFlatButton2Click);
 			// 
 			// openFileDialog1
 			// 

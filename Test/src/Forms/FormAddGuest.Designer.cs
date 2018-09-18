@@ -62,6 +62,8 @@ namespace Program.Forms
 			this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
 			this.combo_localidad = new System.Windows.Forms.ComboBox();
 			this.label_error = new MaterialSkin.Controls.MaterialLabel();
+			this.materialFlatButton3 = new MaterialSkin.Controls.MaterialFlatButton();
+			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -71,6 +73,7 @@ namespace Program.Forms
 			this.picture.Location = new System.Drawing.Point(506, 27);
 			this.picture.Name = "picture";
 			this.picture.Size = new System.Drawing.Size(210, 210);
+			this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.picture.TabIndex = 0;
 			this.picture.TabStop = false;
 			// 
@@ -138,7 +141,7 @@ namespace Program.Forms
 			// 
 			this.check_paciente.Depth = 0;
 			this.check_paciente.Font = new System.Drawing.Font("Roboto", 10F);
-			this.check_paciente.Location = new System.Drawing.Point(507, 265);
+			this.check_paciente.Location = new System.Drawing.Point(507, 296);
 			this.check_paciente.Margin = new System.Windows.Forms.Padding(0);
 			this.check_paciente.MouseLocation = new System.Drawing.Point(-1, -1);
 			this.check_paciente.MouseState = MaterialSkin.MouseState.HOVER;
@@ -261,9 +264,9 @@ namespace Program.Forms
 			// 
 			// combo_servicio
 			// 
-			this.combo_servicio.FormattingEnabled = true;
-			this.combo_servicio.Font = new System.Drawing.Font("Roboto", 11F);
+			this.combo_servicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.combo_servicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.combo_servicio.FormattingEnabled = true;
 			this.combo_servicio.Items.AddRange(new object[] {
 									"Cardiologia Adulto",
 									"Cardiologia Infantil",
@@ -296,9 +299,9 @@ namespace Program.Forms
 									"Unidad Coronaria Adultos",
 									"Unidad Terapia Intensiva Pediatrica",
 									"Urologia"});
-			this.combo_servicio.Location = new System.Drawing.Point(510, 338);
+			this.combo_servicio.Location = new System.Drawing.Point(510, 369);
 			this.combo_servicio.Name = "combo_servicio";
-			this.combo_servicio.Size = new System.Drawing.Size(206, 21);
+			this.combo_servicio.Size = new System.Drawing.Size(206, 26);
 			this.combo_servicio.Sorted = true;
 			this.combo_servicio.TabIndex = 20;
 			this.combo_servicio.SelectedIndexChanged += new System.EventHandler(this.Combo_servicioSelectedIndexChanged);
@@ -308,7 +311,7 @@ namespace Program.Forms
 			this.label_servicio.Depth = 0;
 			this.label_servicio.Font = new System.Drawing.Font("Roboto", 11F);
 			this.label_servicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label_servicio.Location = new System.Drawing.Point(506, 308);
+			this.label_servicio.Location = new System.Drawing.Point(506, 339);
 			this.label_servicio.MouseState = MaterialSkin.MouseState.HOVER;
 			this.label_servicio.Name = "label_servicio";
 			this.label_servicio.Size = new System.Drawing.Size(178, 23);
@@ -371,9 +374,9 @@ namespace Program.Forms
 			// 
 			// combo_pais
 			// 
-			this.combo_pais.FormattingEnabled = true;
-			this.combo_pais.Font = new System.Drawing.Font("Roboto", 11F);
+			this.combo_pais.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.combo_pais.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.combo_pais.FormattingEnabled = true;
 			this.combo_pais.Items.AddRange(new object[] {
 									"Argentina",
 									"Bolivia",
@@ -388,7 +391,7 @@ namespace Program.Forms
 									"Venezula"});
 			this.combo_pais.Location = new System.Drawing.Point(30, 191);
 			this.combo_pais.Name = "combo_pais";
-			this.combo_pais.Size = new System.Drawing.Size(198, 21);
+			this.combo_pais.Size = new System.Drawing.Size(198, 26);
 			this.combo_pais.Sorted = true;
 			this.combo_pais.TabIndex = 28;
 			this.combo_pais.SelectedIndexChanged += new System.EventHandler(this.ComboBox2SelectedIndexChanged);
@@ -613,12 +616,35 @@ namespace Program.Forms
 			this.label_error.Size = new System.Drawing.Size(354, 23);
 			this.label_error.TabIndex = 34;
 			// 
+			// materialFlatButton3
+			// 
+			this.materialFlatButton3.AutoSize = true;
+			this.materialFlatButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.materialFlatButton3.Depth = 0;
+			this.materialFlatButton3.Icon = null;
+			this.materialFlatButton3.Location = new System.Drawing.Point(508, 243);
+			this.materialFlatButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+			this.materialFlatButton3.MouseState = MaterialSkin.MouseState.HOVER;
+			this.materialFlatButton3.Name = "materialFlatButton3";
+			this.materialFlatButton3.Primary = false;
+			this.materialFlatButton3.selected = false;
+			this.materialFlatButton3.Size = new System.Drawing.Size(30, 36);
+			this.materialFlatButton3.TabIndex = 35;
+			this.materialFlatButton3.Text = "x";
+			this.materialFlatButton3.UseVisualStyleBackColor = true;
+			this.materialFlatButton3.Click += new System.EventHandler(this.MaterialFlatButton3Click);
+			// 
+			// openFileDialog1
+			// 
+			this.openFileDialog1.FileName = "openFileDialog1";
+			// 
 			// FormAddGuest
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(741, 518);
+			this.Controls.Add(this.materialFlatButton3);
 			this.Controls.Add(this.label_error);
 			this.Controls.Add(this.combo_localidad);
 			this.Controls.Add(this.materialFlatButton2);
@@ -654,6 +680,8 @@ namespace Program.Forms
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.OpenFileDialog openFileDialog1;
+		private MaterialSkin.Controls.MaterialFlatButton materialFlatButton3;
 		private MaterialSkin.Controls.MaterialLabel label_error;
 		private System.Windows.Forms.ComboBox combo_localidad;
 		private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
