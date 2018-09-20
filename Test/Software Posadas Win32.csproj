@@ -119,6 +119,10 @@
     <Compile Include="src\Forms\FormHistory.Designer.cs">
       <DependentUpon>FormHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\Forms\FormLoadPicture.cs" />
+    <Compile Include="src\Forms\FormLoadPicture.Designer.cs">
+      <DependentUpon>FormLoadPicture.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\Forms\FormSearchGuest.cs" />
     <Compile Include="src\Forms\FormSearchGuest.Designer.cs">
       <DependentUpon>FormSearchGuest.cs</DependentUpon>
@@ -156,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\Forms\FormHistory.resx">
       <DependentUpon>FormHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Forms\FormLoadPicture.resx">
+      <DependentUpon>FormLoadPicture.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Resources\normal.cur">
