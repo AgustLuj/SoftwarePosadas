@@ -57,7 +57,7 @@ namespace Program.Forms
 		  this.combo_pais = new System.Windows.Forms.ComboBox();
 		  this.combo_provincia = new System.Windows.Forms.ComboBox();
 		  this.text_provincia = new MaterialSkin.Controls.MaterialSingleLineTextField();
-		  this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+		  this.btn_add = new MaterialSkin.Controls.MaterialFlatButton();
 		  this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
 		  this.combo_localidad = new System.Windows.Forms.ComboBox();
 		  this.label_error = new MaterialSkin.Controls.MaterialLabel();
@@ -358,18 +358,6 @@ namespace Program.Forms
 		  this.combo_pais.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 		  this.combo_pais.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 		  this.combo_pais.FormattingEnabled = true;
-		  this.combo_pais.Items.AddRange(new object[] {
-		  		  		  "Argentina",
-		  		  		  "Bolivia",
-		  		  		  "Brasil",
-		  		  		  "Chile",
-		  		  		  "Colombia",
-		  		  		  "Ecuador",
-		  		  		  "México",
-		  		  		  "Paraguay",
-		  		  		  "Perú",
-		  		  		  "Uruguay",
-		  		  		  "Venezula"});
 		  this.combo_pais.Location = new System.Drawing.Point(30, 191);
 		  this.combo_pais.Name = "combo_pais";
 		  this.combo_pais.Size = new System.Drawing.Size(198, 26);
@@ -429,23 +417,23 @@ namespace Program.Forms
 		  this.text_provincia.TabStop = false;
 		  this.text_provincia.UseSystemPasswordChar = false;
 		  // 
-		  // materialFlatButton1
+		  // btn_add
 		  // 
-		  this.materialFlatButton1.AutoSize = true;
-		  this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-		  this.materialFlatButton1.Depth = 0;
-		  this.materialFlatButton1.Icon = null;
-		  this.materialFlatButton1.Location = new System.Drawing.Point(565, 458);
-		  this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-		  this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
-		  this.materialFlatButton1.Name = "materialFlatButton1";
-		  this.materialFlatButton1.Primary = false;
-		  this.materialFlatButton1.selected = false;
-		  this.materialFlatButton1.Size = new System.Drawing.Size(70, 36);
-		  this.materialFlatButton1.TabIndex = 31;
-		  this.materialFlatButton1.Text = "Añadir";
-		  this.materialFlatButton1.UseVisualStyleBackColor = true;
-		  this.materialFlatButton1.Click += new System.EventHandler(this.MaterialFlatButton1Click);
+		  this.btn_add.AutoSize = true;
+		  this.btn_add.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+		  this.btn_add.Depth = 0;
+		  this.btn_add.Icon = null;
+		  this.btn_add.Location = new System.Drawing.Point(565, 458);
+		  this.btn_add.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+		  this.btn_add.MouseState = MaterialSkin.MouseState.HOVER;
+		  this.btn_add.Name = "btn_add";
+		  this.btn_add.Primary = false;
+		  this.btn_add.selected = false;
+		  this.btn_add.Size = new System.Drawing.Size(70, 36);
+		  this.btn_add.TabIndex = 31;
+		  this.btn_add.Text = "Añadir";
+		  this.btn_add.UseVisualStyleBackColor = true;
+		  this.btn_add.Click += new System.EventHandler(this.btn_addClick);
 		  // 
 		  // materialFlatButton2
 		  // 
@@ -650,7 +638,7 @@ namespace Program.Forms
 		  this.Controls.Add(this.label_error);
 		  this.Controls.Add(this.combo_localidad);
 		  this.Controls.Add(this.materialFlatButton2);
-		  this.Controls.Add(this.materialFlatButton1);
+		  this.Controls.Add(this.btn_add);
 		  this.Controls.Add(this.text_provincia);
 		  this.Controls.Add(this.combo_provincia);
 		  this.Controls.Add(this.combo_pais);
@@ -687,7 +675,7 @@ namespace Program.Forms
 		private MaterialSkin.Controls.MaterialLabel label_error;
 		private System.Windows.Forms.ComboBox combo_localidad;
 		private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
-		private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
+		private MaterialSkin.Controls.MaterialFlatButton btn_add;
 		private MaterialSkin.Controls.MaterialSingleLineTextField text_provincia;
 		private System.Windows.Forms.ComboBox combo_provincia;
 		private System.Windows.Forms.ComboBox combo_pais;

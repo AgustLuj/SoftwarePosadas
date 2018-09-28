@@ -17,7 +17,9 @@ namespace Program.Classes
     
     public Person paciente, internado;
     
-    public string ficha, locker, procedencia, servicio;
+    public string ficha, locker, procedencia, servicio, telefono;
+    
+    public DateTime ingreso, egreso;
     
     public Guest(string ficha, string nh, string ah,
                  int hab, string locker, string ni,

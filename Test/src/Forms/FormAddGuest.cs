@@ -1,7 +1,10 @@
 ﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
 using System.IO;
+using System.Linq;
+using System.Drawing;
+using System.Globalization;
+using System.Windows.Forms;
+using System.Collections.Generic;
 
 using Transitions;
 
@@ -11,11 +14,13 @@ namespace Program.Forms
 {
 	public partial class FormAddGuest : Form
 	{
-		public string nombre = " ";
-		public string apellido = " ";
+		public string nombre = "";
+		public string apellido = "";
+		
 		public FormAddGuest()
 		{
 			InitializeComponent();
+			combo_pais.Items.AddRange(GetAllCountries());
 		}
 		
 		void button_cerrarClick(object sender, EventArgs e)
@@ -108,8 +113,9 @@ namespace Program.Forms
 			}
 		}
 		
-		void MaterialFlatButton1Click(object sender, EventArgs e)
+		void btn_addClick(object sender, EventArgs e)
 		{
+		  
 			if(text_apellido.Text != "" && text_nombre.Text != "" && text_habitacion.Text != "" && text_locker.Text != ""){
 				if(combo_pais.SelectedIndex != -1){
 					if(combo_pais.SelectedText != "Argentina"){
@@ -139,6 +145,10 @@ namespace Program.Forms
 			insertGuest();
 		}
 		void insertGuest(){
+		  
+		  foreach (var element in GetAllCountries()) {
+		    Console.WriteLine(element);
+		  }
 			//nombre = text_nombre.Text; 
 			//TODO: INSERT INTO `huespedes`(`id`, `nficha`, `nombre`, `apellido`, `paciente`, `nombre_internado`, `apellido_internado`, `nhabit`, `nlocker`, `ingreso`, `egreso`, `ncamhos`, `tel`, `Totalhospedados`, `procedencia`, `servicio`) VALUES (0,"001C", "LOl","Lel","1","a","a","6","6c","2018-09-17",NULL,0,5491131086234,5,"SJ","OSDE")
 			
@@ -151,7 +161,7 @@ namespace Program.Forms
 		}
 		void showErrorLabel(){
 			label_error.ForeColor = Color.FromArgb(0xB00020);
-			label_error.Text="Porfavor complete las casillas";
+			label_error.Text="Por favor complete las casillas";
 		}
 		void MaterialFlatButton2Click(object sender, EventArgs e)
 		{
@@ -177,6 +187,24 @@ namespace Program.Forms
 		{
 					
 		}
+		
+		public string[] GetAllCountries(){
+		  
+      Dictionary<string, string> objDic = new Dictionary<string, string>();
+
+      foreach (CultureInfo ObjCultureInfo in CultureInfo.GetCultures(CultureTypes.SpecificCultures))
+      {
+        RegionInfo objRegionInfo = new RegionInfo(ObjCultureInfo.Name);
+        if (!objDic.ContainsKey(objRegionInfo.EnglishName))
+        {
+          objDic.Add(objRegionInfo.EnglishName, objRegionInfo.TwoLetterISORegionName.ToLower());
+        }
+      }
+
+      var obj = objDic.OrderBy(p => p.Key);
+      var y = obj.Select(t => t.Key);
+		  return y.ToArray();
+	   }
 	}
 }
 

@@ -122,18 +122,22 @@ namespace Program.StaticClasses {
         cmd.Parameters.Add("@ficha", MySqlDbType.Text).Value = g.ficha;
         cmd.Parameters.Add("@nombre", MySqlDbType.Text).Value = g.paciente.name;
         cmd.Parameters.Add("@apellido", MySqlDbType.Text).Value = g.paciente.surname;
-        cmd.Parameters.Add("@paciente", MySqlDbType.Text).Value = g.ficha;
-        cmd.Parameters.Add("@inombre", MySqlDbType.Text).Value = g.ficha;
-        cmd.Parameters.Add("@iapellido", MySqlDbType.Text).Value = g.ficha;
-        cmd.Parameters.Add("@habit", MySqlDbType.Text).Value = g.ficha;
-        cmd.Parameters.Add("@locker", MySqlDbType.Text).Value = g.ficha;
-        cmd.Parameters.Add("@ingreso", MySqlDbType.Text).Value = g.ficha;
-        cmd.Parameters.Add("@egreso", MySqlDbType.Text).Value = g.ficha;
-        cmd.Parameters.Add("@ncama", MySqlDbType.Text).Value = g.ficha;
-        cmd.Parameters.Add("@tel", MySqlDbType.Text).Value = g.ficha;
-        cmd.Parameters.Add("@th", MySqlDbType.Text).Value = g.ficha;
-        cmd.Parameters.Add("@proc", MySqlDbType.Text).Value = g.ficha;
-        cmd.Parameters.Add("@servicio", MySqlDbType.Text).Value = g.ficha;
+        cmd.Parameters.Add("@paciente", MySqlDbType.Text).Value = "";
+        cmd.Parameters.Add("@inombre", MySqlDbType.Text).Value = g.internado.name;
+        cmd.Parameters.Add("@iapellido", MySqlDbType.Text).Value = g.internado.surname;
+        cmd.Parameters.Add("@habit", MySqlDbType.Int32).Value = g.hab;
+        cmd.Parameters.Add("@locker", MySqlDbType.Text).Value = g.locker;
+        cmd.Parameters.Add("@ingreso", MySqlDbType.DateTime).Value = g.ingreso;
+        cmd.Parameters.Add("@egreso", MySqlDbType.DateTime).Value = g.egreso;
+        cmd.Parameters.Add("@ncama", MySqlDbType.Int32).Value = 0;
+        cmd.Parameters.Add("@tel", MySqlDbType.Int32).Value = g.telefono;
+        cmd.Parameters.Add("@th", MySqlDbType.Text).Value = 0;
+        cmd.Parameters.Add("@proc", MySqlDbType.Text).Value = g.procedencia;
+        cmd.Parameters.Add("@servicio", MySqlDbType.Text).Value = g.servicio;
+        
+        Console.WriteLine(cmd.ExecuteNonQuery());
+        
+        return true;
         
       } catch (Exception) {
         return false;
