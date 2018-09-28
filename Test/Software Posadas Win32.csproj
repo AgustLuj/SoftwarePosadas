@@ -96,6 +96,7 @@
     </Compile>
     <Compile Include="src\Classes\Guest.cs" />
     <Compile Include="src\Classes\Month.cs" />
+    <Compile Include="src\Classes\Photo.cs" />
     <Compile Include="src\Classes\User.cs" />
     <Compile Include="src\Forms\FormAddUser.cs" />
     <Compile Include="src\Forms\FormAddUser.Designer.cs">
@@ -120,6 +121,10 @@
     <Compile Include="src\Forms\FormHistory.cs" />
     <Compile Include="src\Forms\FormHistory.Designer.cs">
       <DependentUpon>FormHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Forms\FormLoadPicture.cs" />
+    <Compile Include="src\Forms\FormLoadPicture.Designer.cs">
+      <DependentUpon>FormLoadPicture.cs</DependentUpon>
     </Compile>
     <Compile Include="src\Forms\FormSearchGuest.cs" />
     <Compile Include="src\Forms\FormSearchGuest.Designer.cs">
@@ -158,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\Forms\FormHistory.resx">
       <DependentUpon>FormHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Forms\FormLoadPicture.resx">
+      <DependentUpon>FormLoadPicture.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Resources\normal.cur">

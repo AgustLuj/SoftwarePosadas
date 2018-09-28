@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
 
 using Transitions;
 
@@ -33,6 +34,8 @@ namespace Program.Forms
 				
 				txt_date.Enabled = true;
 				txt_date.Text = "";
+				
+				txt_date.Focus();
 				
 			}else{
 				
@@ -169,5 +172,11 @@ namespace Program.Forms
 				Application.Exit();
 			}
 		}
+		
+		void MaterialFlatButton3Click(object sender, EventArgs e)
+		{
+					
+		}
 	}
 }
+
