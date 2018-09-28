@@ -88,6 +88,13 @@ namespace SP.Resources {
       }
     }
     
+    internal static System.Drawing.Bitmap history {
+      get {
+        object obj = ResourceManager.GetObject("history", resourceCulture);
+        return ((System.Drawing.Bitmap)(obj));
+      }
+    }
+    
     internal static System.Drawing.Icon home_account {
       get {
         object obj = ResourceManager.GetObject("home-account", resourceCulture);

@@ -35,6 +35,7 @@ namespace Program.Forms {
       this.components = new System.ComponentModel.Container();
       this.btn_left_guests = new MaterialSkin.Controls.MaterialFlatButton();
       this.panel2 = new System.Windows.Forms.Panel();
+      this.btn_history = new MaterialSkin.Controls.MaterialFlatButton();
       this.btn_left_stats = new MaterialSkin.Controls.MaterialFlatButton();
       this.btn_left_admin = new MaterialSkin.Controls.MaterialFlatButton();
       this.btn_left_security = new MaterialSkin.Controls.MaterialFlatButton();
@@ -58,7 +59,7 @@ namespace Program.Forms {
       this.btn_left_guests.MouseState = MaterialSkin.MouseState.HOVER;
       this.btn_left_guests.Name = "btn_left_guests";
       this.btn_left_guests.Primary = true;
-      this.btn_left_guests.selected = false;
+      this.btn_left_guests.selected = true;
       this.btn_left_guests.Size = new System.Drawing.Size(142, 36);
       this.btn_left_guests.TabIndex = 8;
       this.btn_left_guests.Text = "Huespedes        ";
@@ -67,6 +68,7 @@ namespace Program.Forms {
       // 
       // panel2
       // 
+      this.panel2.Controls.Add(this.btn_history);
       this.panel2.Controls.Add(this.btn_left_stats);
       this.panel2.Controls.Add(this.btn_left_admin);
       this.panel2.Controls.Add(this.btn_left_security);
@@ -77,6 +79,25 @@ namespace Program.Forms {
       this.panel2.Size = new System.Drawing.Size(42, 537);
       this.panel2.TabIndex = 9;
       this.panel2.Tag = "w = 42 -> 185";
+      // 
+      // btn_history
+      // 
+      this.btn_history.AutoSize = true;
+      this.btn_history.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+      this.btn_history.Depth = 0;
+      this.btn_history.ForeColor = System.Drawing.SystemColors.ControlText;
+      this.btn_history.Icon = global::SP.Resources.Images.history;
+      this.btn_history.Location = new System.Drawing.Point(3, 150);
+      this.btn_history.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+      this.btn_history.MouseState = MaterialSkin.MouseState.HOVER;
+      this.btn_history.Name = "btn_history";
+      this.btn_history.Primary = true;
+      this.btn_history.selected = false;
+      this.btn_history.Size = new System.Drawing.Size(142, 36);
+      this.btn_history.TabIndex = 13;
+      this.btn_history.Text = "Historial           ";
+      this.btn_history.UseVisualStyleBackColor = true;
+      this.btn_history.Click += new System.EventHandler(this.LeftBarClick);
       // 
       // btn_left_stats
       // 
@@ -104,7 +125,7 @@ namespace Program.Forms {
       this.btn_left_admin.Depth = 0;
       this.btn_left_admin.ForeColor = System.Drawing.SystemColors.ControlText;
       this.btn_left_admin.Icon = global::SP.Resources.Images.key;
-      this.btn_left_admin.Location = new System.Drawing.Point(3, 150);
+      this.btn_left_admin.Location = new System.Drawing.Point(3, 186);
       this.btn_left_admin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
       this.btn_left_admin.MouseState = MaterialSkin.MouseState.HOVER;
       this.btn_left_admin.Name = "btn_left_admin";
@@ -165,17 +186,18 @@ namespace Program.Forms {
       this.btn_addG.AutoSize = true;
       this.btn_addG.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
       this.btn_addG.Depth = 0;
-      this.btn_addG.Icon = null;
-      this.btn_addG.Location = new System.Drawing.Point(704, 64);
+      this.btn_addG.Icon = global::SP.Resources.Images.account_plus;
+      this.btn_addG.Location = new System.Drawing.Point(704, 28);
       this.btn_addG.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
       this.btn_addG.MouseState = MaterialSkin.MouseState.HOVER;
       this.btn_addG.Name = "btn_addG";
       this.btn_addG.Primary = false;
       this.btn_addG.selected = false;
-      this.btn_addG.Size = new System.Drawing.Size(16, 36);
+      this.btn_addG.Size = new System.Drawing.Size(44, 36);
       this.btn_addG.TabIndex = 12;
       this.btn_addG.Tag = "64/28";
       this.btn_addG.UseVisualStyleBackColor = true;
+      this.btn_addG.Click += new System.EventHandler(this.Btn_addGClick);
       // 
       // materialRaisedButtonws1
       // 
@@ -218,6 +240,7 @@ namespace Program.Forms {
       this.ResumeLayout(false);
       this.PerformLayout();
     }
+    private MaterialSkin.Controls.MaterialFlatButton btn_history;
     private MaterialSkin.Controls.MaterialFlatButton btn_left_stats;
     private MaterialSkin.Controls.MaterialFlatButton btn_left_admin;
     private System.Windows.Forms.Timer timer1;

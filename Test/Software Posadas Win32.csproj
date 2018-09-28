@@ -52,6 +52,9 @@
     <Reference Include="CNSpinner">
       <HintPath>CNSpinner.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin">
+      <HintPath>MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -191,12 +194,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Ripple-1s-200px.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\MaterialSkin-master\MaterialSkin.csproj">
-      <Project>{8EB7611B-68CD-4B8B-987A-11717E2B250C}</Project>
-      <Name>MaterialSkin</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

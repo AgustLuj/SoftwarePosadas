@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using Newtonsoft.Json;
+
 using Program.Classes;
 
 namespace Program.StaticClasses {
@@ -80,8 +81,65 @@ namespace Program.StaticClasses {
     }
     #endregion
     
-    /*public static List<Guest> getGuests() {
+    public static List<Guest> getGuests() {
+      var conn = GetDBConnection();
+      var guests = new List<Guest>();
       
-    }*/
+      try {
+        conn.Open();
+        
+        var cmd = new MySqlCommand("Select * from huespedes, hospedados" +
+                                   "  where huespedes.id = hospedados.idhus", conn);
+        
+        using (var reader = cmd.ExecuteReader()) {
+          while (reader.Read()) {
+            guests.Add(new Guest(reader.GetString("nficha"), reader.GetString("nombre"),
+                                 reader.GetString("apellido"), reader.GetInt32("nhabit"),
+                                 reader.GetString("nlocker"), reader.GetString("nombre_internado"),
+                                 reader.GetString("apellido_internado"), reader.GetString("procedencia"),
+                                 reader.GetString("servicio")));
+          }
+        }
+      } catch (Exception) {
+        
+        throw;
+      }
+    
+      return guests;
+    }
+    
+    public static bool insertGuest(Guest g){
+      var conn = GetDBConnection();
+      
+      try {
+        conn.Open();
+        
+        MySqlCommand cmd = new MySqlCommand("Insert into huespedes(id, nficha, nombre, apellido, `paciente`, `nombre_internado`, `apellido_internado`, `nhabit`, `nlocker`, `ingreso`, `egreso`, `ncamhos`, `tel`, `Totalhospedados`, `procedencia`, `servicio`) values " +
+                                            "(0, @ficha, @nombre, @apellido, @paciente," +
+                                            "@inombre, @iapellido, @habit, @locker, @ingreso," +
+                                            "@egreso, @ncama, @tel, @th, @proc, @servicio)");
+        
+        cmd.Parameters.Add("@ficha", MySqlDbType.Text).Value = g.ficha;
+        cmd.Parameters.Add("@nombre", MySqlDbType.Text).Value = g.paciente.name;
+        cmd.Parameters.Add("@apellido", MySqlDbType.Text).Value = g.paciente.surname;
+        cmd.Parameters.Add("@paciente", MySqlDbType.Text).Value = g.ficha;
+        cmd.Parameters.Add("@inombre", MySqlDbType.Text).Value = g.ficha;
+        cmd.Parameters.Add("@iapellido", MySqlDbType.Text).Value = g.ficha;
+        cmd.Parameters.Add("@habit", MySqlDbType.Text).Value = g.ficha;
+        cmd.Parameters.Add("@locker", MySqlDbType.Text).Value = g.ficha;
+        cmd.Parameters.Add("@ingreso", MySqlDbType.Text).Value = g.ficha;
+        cmd.Parameters.Add("@egreso", MySqlDbType.Text).Value = g.ficha;
+        cmd.Parameters.Add("@ncama", MySqlDbType.Text).Value = g.ficha;
+        cmd.Parameters.Add("@tel", MySqlDbType.Text).Value = g.ficha;
+        cmd.Parameters.Add("@th", MySqlDbType.Text).Value = g.ficha;
+        cmd.Parameters.Add("@proc", MySqlDbType.Text).Value = g.ficha;
+        cmd.Parameters.Add("@servicio", MySqlDbType.Text).Value = g.ficha;
+        
+      } catch (Exception) {
+        return false;
+      }
+      
+      return false;
+    }
   }
 }

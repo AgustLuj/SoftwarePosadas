@@ -31,20 +31,20 @@ namespace Program.Forms
 		{
 			if(check_hoy.Checked == false){
 				
-				text_fecha.Enabled = true;
-				text_fecha.Text = "";
+				txt_date.Enabled = true;
+				txt_date.Text = "";
 				
 			}else{
 				
-				text_fecha.Enabled = false;
-				text_fecha.Text = "23/06/2017";
+				txt_date.Enabled = false;
+				txt_date.Text = DateTime.Today.ToString("yyyy-MM-dd");
 			}
 		}
 		
 		void FormAddGuestLoad(object sender, EventArgs e)
 		{
-			this.Location = StaticForms.formAddGuestHome.Location;
-			text_fecha.Text = "23/06/2017";
+			
+			txt_date.Text = DateTime.Today.ToString("yyyy-MM-dd");
 			
 			combo_provincia.Visible = false;
 			materialLabel9.Visible = false;
@@ -52,6 +52,9 @@ namespace Program.Forms
 			label_servicio.Visible = false;
 			combo_servicio.Visible = false;
 			combo_localidad.Visible = false;
+			
+			Console.WriteLine(txt_date.Text);
+			Console.WriteLine(DateTime.Parse("17-09-2018").ToString("yyyy-MM-dd"));
 		}
 		
 		void ComboBox3SelectedIndexChanged(object sender, EventArgs e)
@@ -104,42 +107,46 @@ namespace Program.Forms
 		
 		void MaterialFlatButton1Click(object sender, EventArgs e)
 		{
-			/*if(text_apellido.Text != "" && text_nombre.Text != "" && text_habitacion.Text != "" && text_locker.Text != ""){
+			if(text_apellido.Text != "" && text_nombre.Text != "" && text_habitacion.Text != "" && text_locker.Text != ""){
 				if(combo_pais.SelectedIndex != -1){
 					if(combo_pais.SelectedText != "Argentina"){
 						if(combo_provincia.SelectedText != "Buenos Aires"){
 							if(combo_localidad.SelectedIndex != -1 && combo_provincia.SelectedIndex != -1){
-								addForm();
+								insertGuest();
 								
 							}else{
-								addlabel();
+								showErrorLabel();
 							}	
 						}else if(text_localidad.Text != "" && text_provincia.Text != ""){
-								addForm();
+								insertGuest();
 						}
 					}else{
 						if(text_localidad.Text != "" && text_provincia.Text != ""){
-							addForm();
+							insertGuest();
 						}else{
-							addlabel();
+							showErrorLabel();
 						}
 					} 
 				}else{
-					addlabel();
+					showErrorLabel();
 				}
 			}else{
-				addlabel();
-			}*/
-			addForm();
+				showErrorLabel();
+			}
+			insertGuest();
 		}
-		void addForm(){
-			nombre = text_nombre.Text;
-			apellido = text_apellido.Text;
-			StaticForms.formAddGuestHome.addButton1(1);
-			StaticForms.formAddGuestHome.ChangeBtn(nombre,apellido);
+		void insertGuest(){
+			//nombre = text_nombre.Text; 
+			//TODO: INSERT INTO `huespedes`(`id`, `nficha`, `nombre`, `apellido`, `paciente`, `nombre_internado`, `apellido_internado`, `nhabit`, `nlocker`, `ingreso`, `egreso`, `ncamhos`, `tel`, `Totalhospedados`, `procedencia`, `servicio`) VALUES (0,"001C", "LOl","Lel","1","a","a","6","6c","2018-09-17",NULL,0,5491131086234,5,"SJ","OSDE")
+			
+			
+			//apellido = text_apellido.Text;
+			//StaticForms.formAddGuestHome.addButton1(1);
+			//StaticForms.formAddGuestHome.ChangeBtn(nombre,apellido);
+			
 			this.Close();			
 		}
-		void addlabel(){
+		void showErrorLabel(){
 			label_error.ForeColor = Color.FromArgb(0xB00020);
 			label_error.Text="Porfavor complete las casillas";
 		}

@@ -34,6 +34,15 @@ namespace Program.Extensions {
 			}
   			return false;
 		}
+    
+    public static bool containsType(this Control.ControlCollection cs, Type T){
+      foreach (var c in cs) {
+        if(c.GetType() == T){
+          return true;
+        }
+      }
+      return false;
+    }
 	}
 }
 

@@ -36,7 +36,7 @@ namespace Program.Forms {
       SkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
       //SkinManager.ColorScheme = new ColorScheme((Primary)0xed9936, (Primary)0xd58930, Primary.Brown600, Accent.Blue400, TextShade.BLACK);
     
-      leftbtns.AddRange(new []{btn_left_guests, btn_left_security, btn_left_stats});
+      leftbtns.AddRange(new []{btn_left_guests, btn_left_security, btn_left_stats, btn_history});
     }
     
     public void LoadPermissions(){
@@ -47,10 +47,8 @@ namespace Program.Forms {
     }
     
     public void Form_Load(object sender, EventArgs e) {
-      
-      Console.WriteLine("Getting conn");
       //var month = new Month() {general = new General() {huespedes = new List<Huesped> { new Huesped() {Nombre = "Mateo", DNI = 42149747, Ficha = 1 } } } };
-      var month = JsonConvert.DeserializeObject<Month>(DBConn.GetJSON(2018, "enero"));
+      //var month = JsonConvert.DeserializeObject<Month>(DBConn.GetJSON(2018, "enero"));
 
       //month.general.huespedes.Add(new Huesped() {Nombre = "Velcic", Ficha = 2, DNI = 34849790 });
       //DBConn.UpdateJson(2000, "enero", JsonConvert.SerializeObject(month));
@@ -59,12 +57,12 @@ namespace Program.Forms {
       
       //label1.Text = ;
       
-      StaticForms.formAddGuestHome = new FormAddGuestHome();
-	      StaticForms.formAddGuestHome.TopLevel = false;
-	      panel3.Controls.Add(StaticForms.formAddGuestHome);
-	      panel3.Tag = StaticForms.formAddGuestHome;
-	      StaticForms.formAddGuestHome.Parent = panel3;
-	      StaticForms.formAddGuestHome.Show();
+      var f = new FormGuests();
+	      f.TopLevel = false;
+	      panel3.Controls.Add(f);
+	      panel3.Tag = f;
+	      f.Parent = panel3;
+	      f.Show();
     }
     
     void MainFormFormClosing(object sender, FormClosingEventArgs e)
@@ -120,6 +118,25 @@ namespace Program.Forms {
     void Timer1Tick(object sender, EventArgs e)
     {
       leftbtns.ForEach(x => x.Refresh());
+    }
+    
+    void Btn_addGClick(object sender, EventArgs e)
+    {
+      if(!panel3.Controls.containsType(typeof(FormAddGuest))){
+      
+        var t = new FormAddGuest();
+  	      t.TopLevel = false;
+  	      panel3.Controls.Add(t);
+  	      panel3.Tag = t;
+  	      t.Parent = panel3;
+  	      t.Show();
+  	      t.Top = -t.Height;
+  	      t.BringToFront();
+  	      
+  	    var tr = new Transition(new TransitionType_Deceleration(500));
+  	      tr.add(t, "Top", 0);
+  	      tr.run();
+      }
     }
   }
 }
