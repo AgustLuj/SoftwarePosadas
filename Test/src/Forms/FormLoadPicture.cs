@@ -128,7 +128,7 @@ namespace Program.Forms
 		
 		void Button1Click(object sender, EventArgs e)
 		{
-			if (button1.Text == "Iniciar"){
+			if (button12.Text == "Iniciar"){
 				
 				if (ExistenDispositivos){
 					
@@ -136,7 +136,7 @@ namespace Program.Forms
 					FuenteDeVideo.NewFrame += new NewFrameEventHandler(video_NuevoFrame);
 					FuenteDeVideo.Start();
 					
-					button1.Text = "Detener";
+					button12.Text = "Detener";
 					
 					comboBox1.Enabled = false;
 					comboBox1.Text = DispositivosDeVideo[comboBox1.SelectedIndex].Name.ToString();
@@ -146,7 +146,7 @@ namespace Program.Forms
 			}else{
 				if(FuenteDeVideo.IsRunning){
 					TerminarFuenteDeVideo();
-					button1.Text = "Iniciar";
+					button12.Text = "Iniciar";
 					comboBox1.Enabled=true;
 				}
 			}

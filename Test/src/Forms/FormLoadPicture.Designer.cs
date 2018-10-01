@@ -44,9 +44,10 @@ namespace Program.Forms
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.materialToolStripMenuItem1 = new MaterialSkin.Controls.MaterialToolStripMenuItem();
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
-			this.button1 = new MaterialSkin.Controls.MaterialFlatButton();
+			this.button12 = new MaterialSkin.Controls.MaterialFlatButton();
 			this.trackBar1 = new System.Windows.Forms.TrackBar();
 			this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+			this.button1 = new MaterialSkin.Controls.MaterialFlatButton();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -85,7 +86,7 @@ namespace Program.Forms
 			this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.materialFlatButton2.Depth = 0;
 			this.materialFlatButton2.Icon = null;
-			this.materialFlatButton2.Location = new System.Drawing.Point(46, 109);
+			this.materialFlatButton2.Location = new System.Drawing.Point(56, 381);
 			this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
 			this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
 			this.materialFlatButton2.Name = "materialFlatButton2";
@@ -121,23 +122,23 @@ namespace Program.Forms
 			this.comboBox1.Size = new System.Drawing.Size(126, 21);
 			this.comboBox1.TabIndex = 6;
 			// 
-			// button1
+			// button12
 			// 
-			this.button1.AutoSize = true;
-			this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.button1.Depth = 0;
-			this.button1.Icon = null;
-			this.button1.Location = new System.Drawing.Point(67, 227);
-			this.button1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-			this.button1.MouseState = MaterialSkin.MouseState.HOVER;
-			this.button1.Name = "button1";
-			this.button1.Primary = false;
-			this.button1.selected = false;
-			this.button1.Size = new System.Drawing.Size(69, 36);
-			this.button1.TabIndex = 7;
-			this.button1.Text = "Iniciar";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.Button1Click);
+			this.button12.AutoSize = true;
+			this.button12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.button12.Depth = 0;
+			this.button12.Icon = null;
+			this.button12.Location = new System.Drawing.Point(67, 227);
+			this.button12.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+			this.button12.MouseState = MaterialSkin.MouseState.HOVER;
+			this.button12.Name = "button12";
+			this.button12.Primary = false;
+			this.button12.selected = false;
+			this.button12.Size = new System.Drawing.Size(69, 36);
+			this.button12.TabIndex = 7;
+			this.button12.Text = "Iniciar";
+			this.button12.UseVisualStyleBackColor = true;
+			this.button12.Click += new System.EventHandler(this.Button1Click);
 			// 
 			// trackBar1
 			// 
@@ -165,13 +166,30 @@ namespace Program.Forms
 			this.materialFlatButton1.UseVisualStyleBackColor = true;
 			this.materialFlatButton1.Click += new System.EventHandler(this.MaterialFlatButton1Click);
 			// 
+			// button1
+			// 
+			this.button1.Depth = 0;
+			this.button1.Icon = null;
+			this.button1.Location = new System.Drawing.Point(38, 109);
+			this.button1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+			this.button1.MouseState = MaterialSkin.MouseState.HOVER;
+			this.button1.Name = "button1";
+			this.button1.Primary = false;
+			this.button1.selected = false;
+			this.button1.Size = new System.Drawing.Size(98, 23);
+			this.button1.TabIndex = 9;
+			this.button1.Text = "Sacar foto";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.MaterialFlatButton3Click);
+			// 
 			// FormLoadPicture
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(741, 518);
-			this.Controls.Add(this.trackBar1);
 			this.Controls.Add(this.button1);
+			this.Controls.Add(this.trackBar1);
+			this.Controls.Add(this.button12);
 			this.Controls.Add(this.comboBox1);
 			this.Controls.Add(this.pictureBox2);
 			this.Controls.Add(this.materialFlatButton2);
@@ -187,8 +205,9 @@ namespace Program.Forms
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
-		private System.Windows.Forms.TrackBar trackBar1;
 		private MaterialSkin.Controls.MaterialFlatButton button1;
+		private System.Windows.Forms.TrackBar trackBar1;
+		private MaterialSkin.Controls.MaterialFlatButton button12;
 		private System.Windows.Forms.ComboBox comboBox1;
 		private MaterialSkin.Controls.MaterialToolStripMenuItem materialToolStripMenuItem1;
 		public System.Windows.Forms.PictureBox pictureBox2;
