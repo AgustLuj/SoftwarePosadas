@@ -39,16 +39,22 @@ namespace Program.Forms
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLoadPicture));
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
+			this.materialToolStripMenuItem1 = new MaterialSkin.Controls.MaterialToolStripMenuItem();
+			this.comboBox1 = new System.Windows.Forms.ComboBox();
+			this.button1 = new MaterialSkin.Controls.MaterialFlatButton();
+			this.trackBar1 = new System.Windows.Forms.TrackBar();
+			this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// pictureBox1
 			// 
+			this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
 			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
 			this.pictureBox1.ImageLocation = "";
 			this.pictureBox1.Location = new System.Drawing.Point(211, 61);
@@ -62,11 +68,84 @@ namespace Program.Forms
 			this.label1.BackColor = System.Drawing.Color.Transparent;
 			this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.label1.ForeColor = System.Drawing.Color.Black;
-			this.label1.Location = new System.Drawing.Point(392, 199);
+			this.label1.Location = new System.Drawing.Point(396, 238);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(100, 100);
 			this.label1.TabIndex = 2;
 			this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Label1MouseDown);
+			this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Label1MouseMove);
+			// 
+			// openFileDialog1
+			// 
+			this.openFileDialog1.FileName = "openFileDialog1";
+			// 
+			// materialFlatButton2
+			// 
+			this.materialFlatButton2.AutoSize = true;
+			this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.materialFlatButton2.Depth = 0;
+			this.materialFlatButton2.Icon = null;
+			this.materialFlatButton2.Location = new System.Drawing.Point(46, 109);
+			this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+			this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
+			this.materialFlatButton2.Name = "materialFlatButton2";
+			this.materialFlatButton2.Primary = false;
+			this.materialFlatButton2.selected = false;
+			this.materialFlatButton2.Size = new System.Drawing.Size(90, 36);
+			this.materialFlatButton2.TabIndex = 4;
+			this.materialFlatButton2.Text = "RECORTAR";
+			this.materialFlatButton2.UseVisualStyleBackColor = true;
+			this.materialFlatButton2.Click += new System.EventHandler(this.MaterialFlatButton2Click);
+			// 
+			// pictureBox2
+			// 
+			this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pictureBox2.Location = new System.Drawing.Point(46, 272);
+			this.pictureBox2.Name = "pictureBox2";
+			this.pictureBox2.Size = new System.Drawing.Size(100, 100);
+			this.pictureBox2.TabIndex = 5;
+			this.pictureBox2.TabStop = false;
+			// 
+			// materialToolStripMenuItem1
+			// 
+			this.materialToolStripMenuItem1.AutoSize = false;
+			this.materialToolStripMenuItem1.Name = "materialToolStripMenuItem1";
+			this.materialToolStripMenuItem1.Size = new System.Drawing.Size(120, 30);
+			this.materialToolStripMenuItem1.Text = "materialToolStripMenuItem1";
+			// 
+			// comboBox1
+			// 
+			this.comboBox1.FormattingEnabled = true;
+			this.comboBox1.Location = new System.Drawing.Point(36, 154);
+			this.comboBox1.Name = "comboBox1";
+			this.comboBox1.Size = new System.Drawing.Size(126, 21);
+			this.comboBox1.TabIndex = 6;
+			// 
+			// button1
+			// 
+			this.button1.AutoSize = true;
+			this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.button1.Depth = 0;
+			this.button1.Icon = null;
+			this.button1.Location = new System.Drawing.Point(67, 227);
+			this.button1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+			this.button1.MouseState = MaterialSkin.MouseState.HOVER;
+			this.button1.Name = "button1";
+			this.button1.Primary = false;
+			this.button1.selected = false;
+			this.button1.Size = new System.Drawing.Size(69, 36);
+			this.button1.TabIndex = 7;
+			this.button1.Text = "Iniciar";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.Button1Click);
+			// 
+			// trackBar1
+			// 
+			this.trackBar1.Location = new System.Drawing.Point(36, 181);
+			this.trackBar1.Maximum = 50;
+			this.trackBar1.Name = "trackBar1";
+			this.trackBar1.Size = new System.Drawing.Size(126, 45);
+			this.trackBar1.TabIndex = 8;
 			// 
 			// materialFlatButton1
 			// 
@@ -86,55 +165,33 @@ namespace Program.Forms
 			this.materialFlatButton1.UseVisualStyleBackColor = true;
 			this.materialFlatButton1.Click += new System.EventHandler(this.MaterialFlatButton1Click);
 			// 
-			// openFileDialog1
-			// 
-			this.openFileDialog1.FileName = "openFileDialog1";
-			// 
-			// materialFlatButton2
-			// 
-			this.materialFlatButton2.AutoSize = true;
-			this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.materialFlatButton2.Depth = 0;
-			this.materialFlatButton2.Icon = null;
-			this.materialFlatButton2.Location = new System.Drawing.Point(32, 131);
-			this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-			this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
-			this.materialFlatButton2.Name = "materialFlatButton2";
-			this.materialFlatButton2.Primary = false;
-			this.materialFlatButton2.selected = false;
-			this.materialFlatButton2.Size = new System.Drawing.Size(90, 36);
-			this.materialFlatButton2.TabIndex = 4;
-			this.materialFlatButton2.Text = "RECORTAR";
-			this.materialFlatButton2.UseVisualStyleBackColor = true;
-			this.materialFlatButton2.Click += new System.EventHandler(this.MaterialFlatButton2Click);
-			// 
-			// pictureBox2
-			// 
-			this.pictureBox2.Location = new System.Drawing.Point(36, 238);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(100, 100);
-			this.pictureBox2.TabIndex = 5;
-			this.pictureBox2.TabStop = false;
-			// 
 			// FormLoadPicture
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(741, 518);
+			this.Controls.Add(this.trackBar1);
+			this.Controls.Add(this.button1);
+			this.Controls.Add(this.comboBox1);
 			this.Controls.Add(this.pictureBox2);
 			this.Controls.Add(this.materialFlatButton2);
 			this.Controls.Add(this.materialFlatButton1);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.pictureBox1);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Name = "FormLoadPicture";
 			this.Text = "FormLoadPicture";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
-		private System.Windows.Forms.PictureBox pictureBox2;
+		private System.Windows.Forms.TrackBar trackBar1;
+		private MaterialSkin.Controls.MaterialFlatButton button1;
+		private System.Windows.Forms.ComboBox comboBox1;
+		private MaterialSkin.Controls.MaterialToolStripMenuItem materialToolStripMenuItem1;
+		public System.Windows.Forms.PictureBox pictureBox2;
 		private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 		private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
