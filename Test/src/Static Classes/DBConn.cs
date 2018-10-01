@@ -142,8 +142,6 @@ namespace Program.StaticClasses {
       } catch (Exception) {
         return false;
       }
-      
-      return false;
     }
   }
 }

@@ -52,6 +52,13 @@ namespace Program.Forms
 		       
 		       try
 		       {
+		       	
+		       		pictureBox2.Visible=true;
+					button4.Visible=true;
+					trackBar1.Visible=true;
+					button1.Visible=false;
+					pictureBox2.Visible=true;
+		       	
 		          string text = File.ReadAllText(file);
 		          size = text.Length;
 		          
@@ -64,11 +71,10 @@ namespace Program.Forms
 		          		rgb[y * 100 + x] = Classes.Photo.RGBtoUint(bmp.GetPixel(x,y).R,bmp.GetPixel(x,y).G,bmp.GetPixel(x,y).B);
 		          	}
 		          }
+		          string numb = Classes.Photo.Send(rgb);
+		          String ret = Classes.Photo.getToServerNumb(numb);
 		          
-		          Classes.Photo.Send(rgb);
-		          String ret = Classes.Photo.Get();
-		          
-		          Bitmap bmp2 = new Bitmap(file);
+		          Bitmap bmp2 = new Bitmap(bmp);
 		          UInt32[] rgb2 = new UInt32[100*100];
 		          
 		          int f = 0;
@@ -89,15 +95,13 @@ namespace Program.Forms
 		          		n += c;
 		          	}
 		          }
-		          
 		          for(int x = 0;x < 100;x++){
 		          	for(int y = 0; y < 100;y++){		
-		          			
-		          		bmp2.SetPixel(x,y,Color.FromArgb((int)(rgb2[y * 100 + x])));
+		          		bmp2.SetPixel(x,y,Color.FromArgb((int)(rgb2[y*x])));
 		          	}
 		          }
 		          
-		          pictureBox1.Image = bmp2;
+		          pictureBox1.Image = bmp;
 		       }
 		       catch (IOException){}	
 		}
@@ -105,7 +109,7 @@ namespace Program.Forms
 		
 		void MaterialFlatButton2Click(object sender, EventArgs e)
 		{
-			Bitmap picture = new Bitmap(file);
+			Bitmap picture = new Bitmap(pictureBox1.Image);
 			Bitmap crop = new Bitmap(100,100);
 			
 			for(int x = 0;x < 100;x++){
@@ -124,11 +128,10 @@ namespace Program.Forms
 			
 			pictureBox2.Image = crop;
 		}
-		int a = 0;
 		
 		void Button1Click(object sender, EventArgs e)
 		{
-			if (button12.Text == "Iniciar"){
+			if (button1.Text == "Iniciar"){
 				
 				if (ExistenDispositivos){
 					
@@ -136,7 +139,10 @@ namespace Program.Forms
 					FuenteDeVideo.NewFrame += new NewFrameEventHandler(video_NuevoFrame);
 					FuenteDeVideo.Start();
 					
-					button12.Text = "Detener";
+					button1.Text = "Detener";
+					
+					pictureBox2.Visible=true;
+					button4.Visible=true;
 					
 					comboBox1.Enabled = false;
 					comboBox1.Text = DispositivosDeVideo[comboBox1.SelectedIndex].Name.ToString();
@@ -146,8 +152,16 @@ namespace Program.Forms
 			}else{
 				if(FuenteDeVideo.IsRunning){
 					TerminarFuenteDeVideo();
-					button12.Text = "Iniciar";
+					button1.Text = "Iniciar";
 					comboBox1.Enabled=true;
+					
+					comboBox1.Visible=false;
+					button3.Visible=true;
+					button2.Visible=true;
+					trackBar1.Visible=false;
+					button1.Visible=false;
+					pictureBox2.Visible=false;
+					button4.Visible=false;
 				}
 			}
 		}
@@ -218,6 +232,15 @@ namespace Program.Forms
 			zoom = 1 + (trackBar1.Value) / 10f;
 				
 			label1.Size = new Size(new Point((int) (zoom * 100),(int) (zoom * 100)));
+		}
+		void Button2Click(object sender, System.EventArgs e)
+		{
+			comboBox1.Visible=true;
+			button3.Visible=false;
+			button2.Visible=false;
+			trackBar1.Visible=true;
+			button1.Visible=true;
+			
 		}
 	}
 	}

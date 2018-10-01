@@ -23,7 +23,7 @@ namespace Program.Forms {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(true);
       
-      var f = new MainForm();
+      var f = new FormLoadPicture();
       f.Show();
       
       Application.Run();
