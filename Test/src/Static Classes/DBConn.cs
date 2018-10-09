@@ -114,36 +114,48 @@ namespace Program.StaticClasses {
       try {
         conn.Open();
         
-        MySqlCommand cmd = new MySqlCommand("Insert into huespedes(id, nficha, nombre, apellido, `paciente`, `nombre_internado`, `apellido_internado`, `nhabit`, `nlocker`, `ingreso`, `egreso`, `ncamhos`, `tel`, `Totalhospedados`, `procedencia`, `servicio`) values " +
+        var cmds = "Insert into huespedes(id, nficha, nombre, apellido, `paciente`, `nombre_internado`, `apellido_internado`, `nhabit`, `nlocker`, `ingreso`, `egreso`, `ncamhos`, `tel`, `Totalhospedados`, `procedencia`, `servicio`) values " +
                                             "(0, @ficha, @nombre, @apellido, @paciente," +
-                                            "@inombre, @iapellido, @habit, @locker, @ingreso," +
-                                            "@egreso, @ncama, @tel, @th, @proc, @servicio)");
+                                            "@inombre, @iapellido, @habit, @locker, @ingreso," + 
+                                            "@egreso, @ncama, @tel, @th, @proc, @servicio)";
         
-        cmd.Parameters.Add("@ficha", MySqlDbType.Text).Value = g.ficha;
-        cmd.Parameters.Add("@nombre", MySqlDbType.Text).Value = g.paciente.name;
-        cmd.Parameters.Add("@apellido", MySqlDbType.Text).Value = g.paciente.surname;
-        cmd.Parameters.Add("@paciente", MySqlDbType.Text).Value = "";
-        cmd.Parameters.Add("@inombre", MySqlDbType.Text).Value = g.internado.name;
-        cmd.Parameters.Add("@iapellido", MySqlDbType.Text).Value = g.internado.surname;
-        cmd.Parameters.Add("@habit", MySqlDbType.Int32).Value = g.hab;
-        cmd.Parameters.Add("@locker", MySqlDbType.Text).Value = g.locker;
-        cmd.Parameters.Add("@ingreso", MySqlDbType.DateTime).Value = g.ingreso;
-        cmd.Parameters.Add("@egreso", MySqlDbType.DateTime).Value = g.egreso;
-        cmd.Parameters.Add("@ncama", MySqlDbType.Int32).Value = 0;
-        cmd.Parameters.Add("@tel", MySqlDbType.Int32).Value = g.telefono;
-        cmd.Parameters.Add("@th", MySqlDbType.Text).Value = 0;
-        cmd.Parameters.Add("@proc", MySqlDbType.Text).Value = g.procedencia;
-        cmd.Parameters.Add("@servicio", MySqlDbType.Text).Value = g.servicio;
+        
+        MySqlCommand cmd = new MySqlCommand(cmds, conn);
+          cmd.Parameters.Add("@ficha", MySqlDbType.Text).Value = g.ficha;
+          cmd.Parameters.Add("@nombre", MySqlDbType.Text).Value = g.paciente.name;
+          cmd.Parameters.Add("@apellido", MySqlDbType.Text).Value = g.paciente.surname;
+          cmd.Parameters.Add("@paciente", MySqlDbType.Text).Value = "l";
+          cmd.Parameters.Add("@inombre", MySqlDbType.Text).Value = g.internado.name;
+          cmd.Parameters.Add("@iapellido", MySqlDbType.Text).Value = g.internado.surname;
+          cmd.Parameters.Add("@habit", MySqlDbType.Int32).Value = g.hab;
+          cmd.Parameters.Add("@locker", MySqlDbType.Text).Value = g.locker;
+          cmd.Parameters.Add("@ingreso", MySqlDbType.String).Value = g.ingreso.ToString("yyyy-MM-dd");
+          cmd.Parameters.Add("@egreso", MySqlDbType.String).Value = g.egreso.ToString("yyyy-MM-dd");
+          cmd.Parameters.Add("@ncama", MySqlDbType.Int32).Value = 0;
+          cmd.Parameters.Add("@tel", MySqlDbType.Text).Value = g.telefono;
+          cmd.Parameters.Add("@th", MySqlDbType.Text).Value = 0;
+          cmd.Parameters.Add("@proc", MySqlDbType.Text).Value = g.procedencia;
+          cmd.Parameters.Add("@servicio", MySqlDbType.Text).Value = g.servicio;
         
         Console.WriteLine(cmd.ExecuteNonQuery());
+        var id = cmd.LastInsertedId;
+        
+        cmds = "INSERT INTO `hospedados`(`id`, `Idhus`, `nhuespedes`) VALUES (0, @id, 1)";
+        cmd = new MySqlCommand(cmds, conn);
+          cmd.Parameters.AddWithValue("@id", id);
+        
+        cmd.ExecuteNonQuery();
+        
+        conn.Close();
         
         return true;
         
-      } catch (Exception) {
-        return false;
+      } catch (Exception e) {
+        throw(e);
       }
       
       return false;
     }
+    
   }
 }

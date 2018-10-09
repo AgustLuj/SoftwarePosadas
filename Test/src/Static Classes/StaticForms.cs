@@ -7,8 +7,10 @@ namespace Program.Forms
 
 	public static class StaticForms
 	{
-		
+
 		public static FormAddGuestHome formAddGuestHome;
+		public static FormGuests FG;                                                       
 		
 	}
 }
+

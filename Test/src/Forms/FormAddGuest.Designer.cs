@@ -64,6 +64,13 @@ namespace Program.Forms
 		  this.materialFlatButton3 = new MaterialSkin.Controls.MaterialFlatButton();
 		  this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 		  this.txt_date = new MaterialSkin.Controls.MaterialSingleLineMaskedTextField();
+		  this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+		  this.txt_ficha = new MaterialSkin.Controls.MaterialSingleLineTextField();
+		  this.lbl_phone = new MaterialSkin.Controls.MaterialLabel();
+		  this.txt_phone = new MaterialSkin.Controls.MaterialSingleLineMaskedTextField();
+		  this.txt_odate = new MaterialSkin.Controls.MaterialSingleLineMaskedTextField();
+		  this.chk_odate_undef = new MaterialSkin.Controls.MaterialCheckBox();
+		  this.lbl_odate = new MaterialSkin.Controls.MaterialLabel();
 		  ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
 		  this.SuspendLayout();
 		  // 
@@ -82,7 +89,7 @@ namespace Program.Forms
 		  this.label_nombre.Depth = 0;
 		  this.label_nombre.Font = new System.Drawing.Font("Roboto", 11F);
 		  this.label_nombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-		  this.label_nombre.Location = new System.Drawing.Point(25, 27);
+		  this.label_nombre.Location = new System.Drawing.Point(25, 83);
 		  this.label_nombre.MouseState = MaterialSkin.MouseState.HOVER;
 		  this.label_nombre.Name = "label_nombre";
 		  this.label_nombre.Size = new System.Drawing.Size(100, 23);
@@ -94,7 +101,7 @@ namespace Program.Forms
 		  this.text_nombre.BackColor = System.Drawing.SystemColors.Control;
 		  this.text_nombre.Depth = 0;
 		  this.text_nombre.Hint = "Ingrese el nombre";
-		  this.text_nombre.Location = new System.Drawing.Point(30, 53);
+		  this.text_nombre.Location = new System.Drawing.Point(30, 109);
 		  this.text_nombre.MaxLength = 32767;
 		  this.text_nombre.MouseState = MaterialSkin.MouseState.HOVER;
 		  this.text_nombre.Name = "text_nombre";
@@ -103,7 +110,7 @@ namespace Program.Forms
 		  this.text_nombre.SelectionLength = 0;
 		  this.text_nombre.SelectionStart = 0;
 		  this.text_nombre.Size = new System.Drawing.Size(198, 23);
-		  this.text_nombre.TabIndex = 2;
+		  this.text_nombre.TabIndex = 1;
 		  this.text_nombre.TabStop = false;
 		  this.text_nombre.UseSystemPasswordChar = false;
 		  // 
@@ -112,7 +119,7 @@ namespace Program.Forms
 		  this.text_apellido.BackColor = System.Drawing.SystemColors.Control;
 		  this.text_apellido.Depth = 0;
 		  this.text_apellido.Hint = "Ingrese el apellido";
-		  this.text_apellido.Location = new System.Drawing.Point(30, 126);
+		  this.text_apellido.Location = new System.Drawing.Point(30, 182);
 		  this.text_apellido.MaxLength = 32767;
 		  this.text_apellido.MouseState = MaterialSkin.MouseState.HOVER;
 		  this.text_apellido.Name = "text_apellido";
@@ -121,7 +128,7 @@ namespace Program.Forms
 		  this.text_apellido.SelectionLength = 0;
 		  this.text_apellido.SelectionStart = 0;
 		  this.text_apellido.Size = new System.Drawing.Size(198, 23);
-		  this.text_apellido.TabIndex = 3;
+		  this.text_apellido.TabIndex = 2;
 		  this.text_apellido.TabStop = false;
 		  this.text_apellido.UseSystemPasswordChar = false;
 		  // 
@@ -130,7 +137,7 @@ namespace Program.Forms
 		  this.label_apellido.Depth = 0;
 		  this.label_apellido.Font = new System.Drawing.Font("Roboto", 11F);
 		  this.label_apellido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-		  this.label_apellido.Location = new System.Drawing.Point(25, 98);
+		  this.label_apellido.Location = new System.Drawing.Point(25, 154);
 		  this.label_apellido.MouseState = MaterialSkin.MouseState.HOVER;
 		  this.label_apellido.Name = "label_apellido";
 		  this.label_apellido.Size = new System.Drawing.Size(100, 23);
@@ -148,7 +155,7 @@ namespace Program.Forms
 		  this.check_paciente.Name = "check_paciente";
 		  this.check_paciente.Ripple = true;
 		  this.check_paciente.Size = new System.Drawing.Size(178, 24);
-		  this.check_paciente.TabIndex = 10;
+		  this.check_paciente.TabIndex = 11;
 		  this.check_paciente.Text = "Paciente del Hospital";
 		  this.check_paciente.UseVisualStyleBackColor = true;
 		  this.check_paciente.CheckedChanged += new System.EventHandler(this.Check_pacienteCheckedChanged);
@@ -158,7 +165,7 @@ namespace Program.Forms
 		  this.label_habitacion.Depth = 0;
 		  this.label_habitacion.Font = new System.Drawing.Font("Roboto", 11F);
 		  this.label_habitacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-		  this.label_habitacion.Location = new System.Drawing.Point(278, 27);
+		  this.label_habitacion.Location = new System.Drawing.Point(278, 83);
 		  this.label_habitacion.MouseState = MaterialSkin.MouseState.HOVER;
 		  this.label_habitacion.Name = "label_habitacion";
 		  this.label_habitacion.Size = new System.Drawing.Size(109, 23);
@@ -169,9 +176,9 @@ namespace Program.Forms
 		  // 
 		  this.text_habitacion.BackColor = System.Drawing.SystemColors.Control;
 		  this.text_habitacion.Depth = 0;
-		  this.text_habitacion.Hint = "";
-		  this.text_habitacion.Location = new System.Drawing.Point(283, 53);
-		  this.text_habitacion.MaxLength = 32767;
+		  this.text_habitacion.Hint = "N°";
+		  this.text_habitacion.Location = new System.Drawing.Point(283, 109);
+		  this.text_habitacion.MaxLength = 2;
 		  this.text_habitacion.MouseState = MaterialSkin.MouseState.HOVER;
 		  this.text_habitacion.Name = "text_habitacion";
 		  this.text_habitacion.PasswordChar = '\0';
@@ -179,7 +186,7 @@ namespace Program.Forms
 		  this.text_habitacion.SelectionLength = 0;
 		  this.text_habitacion.SelectionStart = 0;
 		  this.text_habitacion.Size = new System.Drawing.Size(132, 23);
-		  this.text_habitacion.TabIndex = 11;
+		  this.text_habitacion.TabIndex = 7;
 		  this.text_habitacion.TabStop = false;
 		  this.text_habitacion.UseSystemPasswordChar = false;
 		  // 
@@ -188,7 +195,7 @@ namespace Program.Forms
 		  this.label_locker.Depth = 0;
 		  this.label_locker.Font = new System.Drawing.Font("Roboto", 11F);
 		  this.label_locker.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-		  this.label_locker.Location = new System.Drawing.Point(278, 98);
+		  this.label_locker.Location = new System.Drawing.Point(278, 154);
 		  this.label_locker.MouseState = MaterialSkin.MouseState.HOVER;
 		  this.label_locker.Name = "label_locker";
 		  this.label_locker.Size = new System.Drawing.Size(109, 23);
@@ -200,8 +207,8 @@ namespace Program.Forms
 		  this.text_locker.BackColor = System.Drawing.SystemColors.Control;
 		  this.text_locker.Depth = 0;
 		  this.text_locker.Hint = "";
-		  this.text_locker.Location = new System.Drawing.Point(283, 125);
-		  this.text_locker.MaxLength = 32767;
+		  this.text_locker.Location = new System.Drawing.Point(283, 181);
+		  this.text_locker.MaxLength = 3;
 		  this.text_locker.MouseState = MaterialSkin.MouseState.HOVER;
 		  this.text_locker.Name = "text_locker";
 		  this.text_locker.PasswordChar = '\0';
@@ -209,7 +216,7 @@ namespace Program.Forms
 		  this.text_locker.SelectionLength = 0;
 		  this.text_locker.SelectionStart = 0;
 		  this.text_locker.Size = new System.Drawing.Size(132, 23);
-		  this.text_locker.TabIndex = 13;
+		  this.text_locker.TabIndex = 8;
 		  this.text_locker.TabStop = false;
 		  this.text_locker.UseSystemPasswordChar = false;
 		  // 
@@ -218,7 +225,7 @@ namespace Program.Forms
 		  this.label_ingreso.Depth = 0;
 		  this.label_ingreso.Font = new System.Drawing.Font("Roboto", 11F);
 		  this.label_ingreso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-		  this.label_ingreso.Location = new System.Drawing.Point(278, 167);
+		  this.label_ingreso.Location = new System.Drawing.Point(278, 223);
 		  this.label_ingreso.MouseState = MaterialSkin.MouseState.HOVER;
 		  this.label_ingreso.Name = "label_ingreso";
 		  this.label_ingreso.Size = new System.Drawing.Size(159, 23);
@@ -231,14 +238,14 @@ namespace Program.Forms
 		  this.check_hoy.CheckState = System.Windows.Forms.CheckState.Checked;
 		  this.check_hoy.Depth = 0;
 		  this.check_hoy.Font = new System.Drawing.Font("Roboto", 10F);
-		  this.check_hoy.Location = new System.Drawing.Point(424, 196);
+		  this.check_hoy.Location = new System.Drawing.Point(424, 252);
 		  this.check_hoy.Margin = new System.Windows.Forms.Padding(0);
 		  this.check_hoy.MouseLocation = new System.Drawing.Point(-1, -1);
 		  this.check_hoy.MouseState = MaterialSkin.MouseState.HOVER;
 		  this.check_hoy.Name = "check_hoy";
 		  this.check_hoy.Ripple = true;
 		  this.check_hoy.Size = new System.Drawing.Size(63, 24);
-		  this.check_hoy.TabIndex = 17;
+		  this.check_hoy.TabIndex = 10;
 		  this.check_hoy.Text = "Hoy";
 		  this.check_hoy.UseVisualStyleBackColor = true;
 		  this.check_hoy.CheckedChanged += new System.EventHandler(this.MaterialCheckBox2CheckedChanged);
@@ -284,7 +291,7 @@ namespace Program.Forms
 		  this.combo_servicio.Name = "combo_servicio";
 		  this.combo_servicio.Size = new System.Drawing.Size(206, 26);
 		  this.combo_servicio.Sorted = true;
-		  this.combo_servicio.TabIndex = 20;
+		  this.combo_servicio.TabIndex = 12;
 		  this.combo_servicio.SelectedIndexChanged += new System.EventHandler(this.Combo_servicioSelectedIndexChanged);
 		  // 
 		  // label_servicio
@@ -304,7 +311,7 @@ namespace Program.Forms
 		  this.label_pais.Depth = 0;
 		  this.label_pais.Font = new System.Drawing.Font("Roboto", 11F);
 		  this.label_pais.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-		  this.label_pais.Location = new System.Drawing.Point(25, 160);
+		  this.label_pais.Location = new System.Drawing.Point(25, 216);
 		  this.label_pais.MouseState = MaterialSkin.MouseState.HOVER;
 		  this.label_pais.Name = "label_pais";
 		  this.label_pais.Size = new System.Drawing.Size(100, 23);
@@ -316,7 +323,7 @@ namespace Program.Forms
 		  this.label_provincia.Depth = 0;
 		  this.label_provincia.Font = new System.Drawing.Font("Roboto", 11F);
 		  this.label_provincia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-		  this.label_provincia.Location = new System.Drawing.Point(25, 226);
+		  this.label_provincia.Location = new System.Drawing.Point(25, 282);
 		  this.label_provincia.MouseState = MaterialSkin.MouseState.HOVER;
 		  this.label_provincia.Name = "label_provincia";
 		  this.label_provincia.Size = new System.Drawing.Size(100, 23);
@@ -328,7 +335,7 @@ namespace Program.Forms
 		  this.materialLabel9.Depth = 0;
 		  this.materialLabel9.Font = new System.Drawing.Font("Roboto", 11F);
 		  this.materialLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-		  this.materialLabel9.Location = new System.Drawing.Point(25, 291);
+		  this.materialLabel9.Location = new System.Drawing.Point(25, 347);
 		  this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
 		  this.materialLabel9.Name = "materialLabel9";
 		  this.materialLabel9.Size = new System.Drawing.Size(100, 23);
@@ -340,7 +347,7 @@ namespace Program.Forms
 		  this.text_localidad.BackColor = System.Drawing.SystemColors.Control;
 		  this.text_localidad.Depth = 0;
 		  this.text_localidad.Hint = "Ingrese la Localidad";
-		  this.text_localidad.Location = new System.Drawing.Point(30, 321);
+		  this.text_localidad.Location = new System.Drawing.Point(30, 377);
 		  this.text_localidad.MaxLength = 32767;
 		  this.text_localidad.MouseState = MaterialSkin.MouseState.HOVER;
 		  this.text_localidad.Name = "text_localidad";
@@ -358,11 +365,11 @@ namespace Program.Forms
 		  this.combo_pais.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 		  this.combo_pais.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
 		  this.combo_pais.FormattingEnabled = true;
-		  this.combo_pais.Location = new System.Drawing.Point(30, 191);
+		  this.combo_pais.Location = new System.Drawing.Point(30, 247);
 		  this.combo_pais.Name = "combo_pais";
 		  this.combo_pais.Size = new System.Drawing.Size(198, 26);
 		  this.combo_pais.Sorted = true;
-		  this.combo_pais.TabIndex = 28;
+		  this.combo_pais.TabIndex = 3;
 		  this.combo_pais.SelectedIndexChanged += new System.EventHandler(this.ComboBox2SelectedIndexChanged);
 		  // 
 		  // combo_provincia
@@ -392,7 +399,7 @@ namespace Program.Forms
 		  		  		  "Santiago del Estero",
 		  		  		  "Tierra del Fuego",
 		  		  		  "Tucumán"});
-		  this.combo_provincia.Location = new System.Drawing.Point(30, 254);
+		  this.combo_provincia.Location = new System.Drawing.Point(30, 310);
 		  this.combo_provincia.Name = "combo_provincia";
 		  this.combo_provincia.Size = new System.Drawing.Size(201, 21);
 		  this.combo_provincia.Sorted = true;
@@ -404,7 +411,7 @@ namespace Program.Forms
 		  this.text_provincia.BackColor = System.Drawing.SystemColors.Control;
 		  this.text_provincia.Depth = 0;
 		  this.text_provincia.Hint = "Ingrese la provincia";
-		  this.text_provincia.Location = new System.Drawing.Point(30, 254);
+		  this.text_provincia.Location = new System.Drawing.Point(30, 310);
 		  this.text_provincia.MaxLength = 32767;
 		  this.text_provincia.MouseState = MaterialSkin.MouseState.HOVER;
 		  this.text_provincia.Name = "text_provincia";
@@ -413,7 +420,7 @@ namespace Program.Forms
 		  this.text_provincia.SelectionLength = 0;
 		  this.text_provincia.SelectionStart = 0;
 		  this.text_provincia.Size = new System.Drawing.Size(201, 23);
-		  this.text_provincia.TabIndex = 30;
+		  this.text_provincia.TabIndex = 4;
 		  this.text_provincia.TabStop = false;
 		  this.text_provincia.UseSystemPasswordChar = false;
 		  // 
@@ -568,11 +575,11 @@ namespace Program.Forms
 		  		  		  "Virrey del Pino",
 		  		  		  "Willian Morris",
 		  		  		  "Zarate"});
-		  this.combo_localidad.Location = new System.Drawing.Point(30, 321);
+		  this.combo_localidad.Location = new System.Drawing.Point(30, 377);
 		  this.combo_localidad.Name = "combo_localidad";
 		  this.combo_localidad.Size = new System.Drawing.Size(198, 21);
 		  this.combo_localidad.Sorted = true;
-		  this.combo_localidad.TabIndex = 33;
+		  this.combo_localidad.TabIndex = 5;
 		  // 
 		  // label_error
 		  // 
@@ -612,8 +619,8 @@ namespace Program.Forms
 		  this.txt_date.Depth = 0;
 		  this.txt_date.Enabled = false;
 		  this.txt_date.Hint = "";
-		  this.txt_date.Location = new System.Drawing.Point(283, 197);
-		  this.txt_date.Mask = "0000-00-00";
+		  this.txt_date.Location = new System.Drawing.Point(283, 253);
+		  this.txt_date.Mask = "00-00-0000";
 		  this.txt_date.MaxLength = 32767;
 		  this.txt_date.MouseState = MaterialSkin.MouseState.HOVER;
 		  this.txt_date.Name = "txt_date";
@@ -622,10 +629,122 @@ namespace Program.Forms
 		  this.txt_date.SelectionLength = 0;
 		  this.txt_date.SelectionStart = 0;
 		  this.txt_date.Size = new System.Drawing.Size(132, 23);
-		  this.txt_date.TabIndex = 36;
+		  this.txt_date.TabIndex = 9;
 		  this.txt_date.TabStop = false;
-		  this.txt_date.Text = "    -  -";
+		  this.txt_date.Text = "  -  -";
 		  this.txt_date.UseSystemPasswordChar = false;
+		  // 
+		  // materialLabel1
+		  // 
+		  this.materialLabel1.Depth = 0;
+		  this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+		  this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+		  this.materialLabel1.Location = new System.Drawing.Point(25, 10);
+		  this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+		  this.materialLabel1.Name = "materialLabel1";
+		  this.materialLabel1.Size = new System.Drawing.Size(100, 23);
+		  this.materialLabel1.TabIndex = 37;
+		  this.materialLabel1.Text = "Ficha";
+		  // 
+		  // txt_ficha
+		  // 
+		  this.txt_ficha.Depth = 0;
+		  this.txt_ficha.Hint = "N°";
+		  this.txt_ficha.Location = new System.Drawing.Point(30, 38);
+		  this.txt_ficha.MaxLength = 5;
+		  this.txt_ficha.MouseState = MaterialSkin.MouseState.HOVER;
+		  this.txt_ficha.Name = "txt_ficha";
+		  this.txt_ficha.PasswordChar = '\0';
+		  this.txt_ficha.SelectedText = "";
+		  this.txt_ficha.SelectionLength = 0;
+		  this.txt_ficha.SelectionStart = 0;
+		  this.txt_ficha.Size = new System.Drawing.Size(198, 23);
+		  this.txt_ficha.TabIndex = 0;
+		  this.txt_ficha.TabStop = false;
+		  this.txt_ficha.UseSystemPasswordChar = false;
+		  // 
+		  // lbl_phone
+		  // 
+		  this.lbl_phone.Depth = 0;
+		  this.lbl_phone.Font = new System.Drawing.Font("Roboto", 11F);
+		  this.lbl_phone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+		  this.lbl_phone.Location = new System.Drawing.Point(278, 10);
+		  this.lbl_phone.MouseState = MaterialSkin.MouseState.HOVER;
+		  this.lbl_phone.Name = "lbl_phone";
+		  this.lbl_phone.Size = new System.Drawing.Size(100, 23);
+		  this.lbl_phone.TabIndex = 39;
+		  this.lbl_phone.Text = "Telefono";
+		  // 
+		  // txt_phone
+		  // 
+		  this.txt_phone.Depth = 0;
+		  this.txt_phone.Hint = "";
+		  this.txt_phone.Location = new System.Drawing.Point(278, 36);
+		  this.txt_phone.Mask = "+00 (000) 0000-0000";
+		  this.txt_phone.MaxLength = 32767;
+		  this.txt_phone.MouseState = MaterialSkin.MouseState.HOVER;
+		  this.txt_phone.Name = "txt_phone";
+		  this.txt_phone.PasswordChar = '\0';
+		  this.txt_phone.SelectedText = "";
+		  this.txt_phone.SelectionLength = 0;
+		  this.txt_phone.SelectionStart = 15;
+		  this.txt_phone.Size = new System.Drawing.Size(137, 23);
+		  this.txt_phone.TabIndex = 6;
+		  this.txt_phone.TabStop = false;
+		  this.txt_phone.Text = "+54 (911)     -";
+		  this.txt_phone.UseSystemPasswordChar = false;
+		  this.txt_phone.GotFocus += new System.EventHandler(this.Txt_phoneGotFocus);
+		  // 
+		  // txt_odate
+		  // 
+		  this.txt_odate.Depth = 0;
+		  this.txt_odate.Enabled = false;
+		  this.txt_odate.Hint = "";
+		  this.txt_odate.Location = new System.Drawing.Point(283, 312);
+		  this.txt_odate.Mask = "00-00-0000";
+		  this.txt_odate.MaxLength = 32767;
+		  this.txt_odate.MouseState = MaterialSkin.MouseState.HOVER;
+		  this.txt_odate.Name = "txt_odate";
+		  this.txt_odate.PasswordChar = '\0';
+		  this.txt_odate.SelectedText = "";
+		  this.txt_odate.SelectionLength = 0;
+		  this.txt_odate.SelectionStart = 10;
+		  this.txt_odate.Size = new System.Drawing.Size(132, 23);
+		  this.txt_odate.TabIndex = 40;
+		  this.txt_odate.TabStop = false;
+		  this.txt_odate.Text = "01-01-0001";
+		  this.txt_odate.UseSystemPasswordChar = false;
+		  // 
+		  // chk_odate_undef
+		  // 
+		  this.chk_odate_undef.Checked = true;
+		  this.chk_odate_undef.CheckState = System.Windows.Forms.CheckState.Checked;
+		  this.chk_odate_undef.Depth = 0;
+		  this.chk_odate_undef.Font = new System.Drawing.Font("Roboto", 10F);
+		  this.chk_odate_undef.Location = new System.Drawing.Point(424, 311);
+		  this.chk_odate_undef.Margin = new System.Windows.Forms.Padding(0);
+		  this.chk_odate_undef.MouseLocation = new System.Drawing.Point(-1, -1);
+		  this.chk_odate_undef.MouseState = MaterialSkin.MouseState.HOVER;
+		  this.chk_odate_undef.Name = "chk_odate_undef";
+		  this.chk_odate_undef.Ripple = true;
+		  this.chk_odate_undef.Size = new System.Drawing.Size(63, 24);
+		  this.chk_odate_undef.TabIndex = 41;
+		  this.chk_odate_undef.Text = "Indef";
+		  this.chk_odate_undef.UseVisualStyleBackColor = true;
+		  this.chk_odate_undef.CheckedChanged += new System.EventHandler(this.Chk_odate_undefCheckedChanged);
+		  // 
+		  // lbl_odate
+		  // 
+		  this.lbl_odate.Depth = 0;
+		  this.lbl_odate.Enabled = false;
+		  this.lbl_odate.Font = new System.Drawing.Font("Roboto", 11F);
+		  this.lbl_odate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+		  this.lbl_odate.Location = new System.Drawing.Point(278, 282);
+		  this.lbl_odate.MouseState = MaterialSkin.MouseState.HOVER;
+		  this.lbl_odate.Name = "lbl_odate";
+		  this.lbl_odate.Size = new System.Drawing.Size(159, 23);
+		  this.lbl_odate.TabIndex = 42;
+		  this.lbl_odate.Text = "Fecha de Egreso";
 		  // 
 		  // FormAddGuest
 		  // 
@@ -633,6 +752,13 @@ namespace Program.Forms
 		  this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 		  this.BackColor = System.Drawing.Color.White;
 		  this.ClientSize = new System.Drawing.Size(741, 518);
+		  this.Controls.Add(this.txt_odate);
+		  this.Controls.Add(this.chk_odate_undef);
+		  this.Controls.Add(this.lbl_odate);
+		  this.Controls.Add(this.txt_phone);
+		  this.Controls.Add(this.lbl_phone);
+		  this.Controls.Add(this.txt_ficha);
+		  this.Controls.Add(this.materialLabel1);
 		  this.Controls.Add(this.txt_date);
 		  this.Controls.Add(this.materialFlatButton3);
 		  this.Controls.Add(this.label_error);
@@ -669,6 +795,13 @@ namespace Program.Forms
 		  this.ResumeLayout(false);
 		  this.PerformLayout();
 		}
+		private MaterialSkin.Controls.MaterialLabel lbl_odate;
+		private MaterialSkin.Controls.MaterialCheckBox chk_odate_undef;
+		private MaterialSkin.Controls.MaterialSingleLineMaskedTextField txt_odate;
+		private MaterialSkin.Controls.MaterialSingleLineMaskedTextField txt_phone;
+		private MaterialSkin.Controls.MaterialLabel lbl_phone;
+		private MaterialSkin.Controls.MaterialSingleLineTextField txt_ficha;
+		private MaterialSkin.Controls.MaterialLabel materialLabel1;
 		private MaterialSkin.Controls.MaterialSingleLineMaskedTextField txt_date;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 		private MaterialSkin.Controls.MaterialFlatButton materialFlatButton3;

@@ -62,8 +62,9 @@ namespace Program.Forms
       guestControls = new List<FormGuests.guestControl>();
     }
     
-    void OnLoad(object sender, EventArgs e)
-    {
+    public void updateGuests(){
+      panel1.Controls.Clear();
+      guestControls.Clear();
       DBConn.getGuests().ForEach(x => guestControls.Add(new guestControl(x, guestControls.Count)));
       guestControls.ForEach(x => {
                               panel1.Controls.Add(x.ficha);
@@ -75,6 +76,11 @@ namespace Program.Forms
                               panel1.Controls.Add(x.psurname);
                               panel1.Controls.Add(x.proc);
                             });
+    }
+    
+    void OnLoad(object sender, EventArgs e)
+    {
+      updateGuests();
     }
     
     void Text_Changed(object sender, KeyEventArgs e)

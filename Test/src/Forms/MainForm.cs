@@ -57,12 +57,12 @@ namespace Program.Forms {
       
       //label1.Text = ;
       
-      var f = new FormGuests();
-	      f.TopLevel = false;
-	      panel3.Controls.Add(f);
-	      panel3.Tag = f;
-	      f.Parent = panel3;
-	      f.Show();
+      StaticForms.FG = new FormGuests();
+	      StaticForms.FG.TopLevel = false;
+	      panel3.Controls.Add(StaticForms.FG);
+	      panel3.Tag = StaticForms.FG;
+	      StaticForms.FG.Parent = panel3;
+	      StaticForms.FG.Show();
     }
     
     void MainFormFormClosing(object sender, FormClosingEventArgs e)

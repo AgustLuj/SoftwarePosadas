@@ -8,6 +8,8 @@ using System.Collections.Generic;
 
 using Transitions;
 
+using Program.Forms;
+using Program.Classes;
 using Program.StaticClasses;
 
 namespace Program.Forms
@@ -21,6 +23,18 @@ namespace Program.Forms
 		{
 			InitializeComponent();
 			combo_pais.Items.AddRange(GetAllCountries());
+			
+			//sadboys sadboys
+			
+			txt_ficha.Text = "1001C";
+			text_nombre.Text = "Mateo";
+		 text_apellido.Text = "Pidal";
+		  combo_pais.Text = "Argentina";
+		  combo_provincia.Text = "Buenos Aires";
+		  txt_phone.Text = "+54 (911) 3108-6234";
+		  text_habitacion.Text = "12";
+		  text_locker.Text = "12C";
+		  
 		}
 		
 		void button_cerrarClick(object sender, EventArgs e)
@@ -35,24 +49,20 @@ namespace Program.Forms
 		
 		void MaterialCheckBox2CheckedChanged(object sender, EventArgs e)
 		{
-			if(check_hoy.Checked == false){
-				
-				txt_date.Enabled = true;
+		  txt_date.Enabled = !check_hoy.Checked;
+		  
+			if(!check_hoy.Checked){
 				txt_date.Text = "";
-				
 				txt_date.Focus();
-				
 			}else{
-				
-				txt_date.Enabled = false;
-				txt_date.Text = DateTime.Today.ToString("yyyy-MM-dd");
+				txt_date.Text = DateTime.Today.ToString("dd-MM-yyyy");
 			}
 		}
 		
 		void FormAddGuestLoad(object sender, EventArgs e)
 		{
 			
-			txt_date.Text = DateTime.Today.ToString("yyyy-MM-dd");
+			txt_date.Text = DateTime.Today.ToString("dd-MM-yyyy");
 			
 			combo_provincia.Visible = false;
 			materialLabel9.Visible = false;
@@ -60,9 +70,6 @@ namespace Program.Forms
 			label_servicio.Visible = false;
 			combo_servicio.Visible = false;
 			combo_localidad.Visible = false;
-			
-			Console.WriteLine(txt_date.Text);
-			Console.WriteLine(DateTime.Parse("17-09-2018").ToString("yyyy-MM-dd"));
 		}
 		
 		void ComboBox3SelectedIndexChanged(object sender, EventArgs e)
@@ -115,23 +122,28 @@ namespace Program.Forms
 		
 		void btn_addClick(object sender, EventArgs e)
 		{
+		  var panel3 = Parent as Panel;
+		  var FG = panel3.Controls[0] as FormGuests;
 		  
+		  Console.WriteLine(int.Parse(text_habitacion.Text));
 			if(text_apellido.Text != "" && text_nombre.Text != "" && text_habitacion.Text != "" && text_locker.Text != ""){
 				if(combo_pais.SelectedIndex != -1){
 					if(combo_pais.SelectedText != "Argentina"){
 						if(combo_provincia.SelectedText != "Buenos Aires"){
 							if(combo_localidad.SelectedIndex != -1 && combo_provincia.SelectedIndex != -1){
 								insertGuest();
-								
+								StaticForms.FG.updateGuests();
 							}else{
 								showErrorLabel();
 							}	
 						}else if(text_localidad.Text != "" && text_provincia.Text != ""){
 								insertGuest();
+								StaticForms.FG.updateGuests();
 						}
 					}else{
 						if(text_localidad.Text != "" && text_provincia.Text != ""){
 							insertGuest();
+							StaticForms.FG.updateGuests();
 						}else{
 							showErrorLabel();
 						}
@@ -143,21 +155,20 @@ namespace Program.Forms
 				showErrorLabel();
 			}
 			insertGuest();
+			StaticForms.FG.updateGuests();
 		}
 		void insertGuest(){
 		  
-		  foreach (var element in GetAllCountries()) {
-		    Console.WriteLine(element);
-		  }
-			//nombre = text_nombre.Text; 
-			//TODO: INSERT INTO `huespedes`(`id`, `nficha`, `nombre`, `apellido`, `paciente`, `nombre_internado`, `apellido_internado`, `nhabit`, `nlocker`, `ingreso`, `egreso`, `ncamhos`, `tel`, `Totalhospedados`, `procedencia`, `servicio`) VALUES (0,"001C", "LOl","Lel","1","a","a","6","6c","2018-09-17",NULL,0,5491131086234,5,"SJ","OSDE")
-			
+		  DBConn.insertGuest(new Guest(txt_ficha.Text, text_nombre.Text, text_apellido.Text, int.Parse(text_habitacion.Text), text_locker.Text, "", "", combo_pais.Text, combo_servicio.Text){telefono = txt_phone.Text, internado = new Classes.Person(){name = "", surname = ""}, ingreso = DateTime.ParseExact(txt_date.Text, "dd-MM-yyyy", null)});
+			//nombre = text_nombre.Text; 			
 			
 			//apellido = text_apellido.Text;
 			//StaticForms.formAddGuestHome.addButton1(1);
 			//StaticForms.formAddGuestHome.ChangeBtn(nombre,apellido);
-			
-			this.Close();			
+			var t = new Transition(new TransitionType_Acceleration(500));
+				t.add(this, "Top", -this.Height);
+				t.TransitionCompletedEvent += (_, __) => this.Close();
+				t.run();
 		}
 		void showErrorLabel(){
 			label_error.ForeColor = Color.FromArgb(0xB00020);
@@ -183,11 +194,6 @@ namespace Program.Forms
 			}
 		}
 		
-		void MaterialFlatButton3Click(object sender, EventArgs e)
-		{
-					
-		}
-		
 		public string[] GetAllCountries(){
 		  
       Dictionary<string, string> objDic = new Dictionary<string, string>();
@@ -205,6 +211,29 @@ namespace Program.Forms
       var y = obj.Select(t => t.Key);
 		  return y.ToArray();
 	   }
+		
+		void Txt_phoneGotFocus(object sender, EventArgs e)
+		{
+		  txt_phone.SelectionStart = 10;
+		}
+		
+		void Chk_odate_undefCheckedChanged(object sender, EventArgs e)
+		{
+      var s = sender as MaterialSkin.Controls.MaterialCheckBox;
+
+      txt_odate.Enabled = !s.Checked;
+      lbl_odate.Enabled = !s.Checked;
+      
+      txt_odate.Text = (s.Checked) ? "01-01-0001" : "";
+      
+      if(!s.Checked)
+        txt_odate.Focus();
+		}
+		
+		void MaterialFlatButton3Click(object sender, EventArgs e)
+		{
+		  
+		}
 	}
 }
 
