@@ -54,7 +54,7 @@ namespace Program.Forms
     }
     
     List<guestControl> guestControls;
-    List<guestControl> visibleGuestControls;
+    //List<guestControl> visibleGuestControls;
     
     public FormGuests()
     {

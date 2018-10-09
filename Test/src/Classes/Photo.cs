@@ -8,7 +8,7 @@ namespace Program.Classes
 {
 	public static class Photo
 	{
-		public static void SendToServer(string json){
+		public static string SendToServer(string json){
 			
 	      var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://localhost:8080/");
 	      
@@ -17,7 +17,7 @@ namespace Program.Classes
 	      
 	      using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream())){
 	      	
-	         string json2 = "{\"user\":"+json+",\"name\":\"hola1.json\"}";
+	         string json2 = "{\"user\":"+json+"}";
 	         
 	         streamWriter.Write(json2);
 	         streamWriter.Flush();
@@ -26,7 +26,7 @@ namespace Program.Classes
 	      var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
 	      
 	      using (var streamReader = new StreamReader(httpResponse.GetResponseStream())){
-	      		var result = streamReader.ReadToEnd();
+	      		return streamReader.ReadToEnd();
 	      		//Console.WriteLine (result);
    			}		
 		}
@@ -43,8 +43,42 @@ namespace Program.Classes
 		    	return reader.ReadToEnd();
 		    }
 		}		
+		public static String GetFromServerNumber()
+		{
+		    HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://localhost:8080/numb");
+		    request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
 		
-		public static void Send(UInt32[] rgb){
+		    using(HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+		    using(Stream stream = response.GetResponseStream())
+		    using(StreamReader reader = new StreamReader(stream))
+		    {
+		    	return reader.ReadToEnd();
+		    }
+		}
+		public static string getToServerNumb(string name){
+			
+	      var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://localhost:8080/numb");
+	      
+	      httpWebRequest.ContentType = "application/json";
+	      httpWebRequest.Method = "POST";
+	      
+	      using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream())){
+	      	
+	         string json2 = "{\"foto\":"+name+"}";
+	         
+	         streamWriter.Write(json2);
+	         streamWriter.Flush();
+	         streamWriter.Close();
+	      }
+	      var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+	      
+	      using (var streamReader = new StreamReader(httpResponse.GetResponseStream())){
+	      		return streamReader.ReadToEnd();
+	      		//Console.WriteLine (result);
+   			}		
+		}
+		
+		public static string Send(UInt32[] rgb){
 			
 			int size = rgb.Length;
 			int size2 = rgb.Length / 2;
@@ -62,13 +96,12 @@ namespace Program.Classes
 			
 			json += "]}";
 		
-			SendToServer(json);
+			return SendToServer(json);
 		}
 		
 		public static UInt32 RGBtoUint(int r,int g,int b){
 			return (UInt32) ((r << 16) | (g << 8) | b);
 		}
-		
 		public static String Get(){
 			return GetFromServer();
 		}

@@ -153,8 +153,6 @@ namespace Program.StaticClasses {
       } catch (Exception e) {
         throw(e);
       }
-      
-      return false;
     }
     
   }
