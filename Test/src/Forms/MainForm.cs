@@ -109,10 +109,14 @@ namespace Program.Forms {
       var i = leftbtns.FindIndex(x => x == s);
       
       if(!s.selected) {
-        var tt = new Transition(new TransitionType_Acceleration(600));
-          tt.add(panel3.Controls[0], "Top", 518);
-          tt.TransitionCompletedEvent += (_, __) => panel3.Controls.Clear();
-          tt.run();
+        int a = 0;
+        panel3.Controls.forEach(x => {
+                                var tt = new Transition(new TransitionType_Acceleration(500 + a++ * 100));
+                                  tt.add(x, "Top", 518);
+                                  tt.TransitionCompletedEvent += (_, __) => panel3.Controls.Remove(x);
+                                  tt.run();
+                                });
+        
       }
       
       var t = new Transition(new TransitionType_Deceleration(500));

@@ -26,8 +26,12 @@ namespace Program.Forms {
       
       StaticForms.MF = new MainForm();
       
-      //var f = new MainForm();
-      StaticForms.MF.Show();
+      #if DEBUG
+        StaticForms.MF.Show();
+      #else
+        var f = new Load();
+        f.Show();
+      #endif
       
       Application.Run();
     }
