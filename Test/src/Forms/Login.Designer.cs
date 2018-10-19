@@ -72,7 +72,7 @@ namespace Program.Forms
       this.lbl_err.Depth = 0;
       this.lbl_err.Font = new System.Drawing.Font("Roboto", 11F);
       this.lbl_err.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-      this.lbl_err.Location = new System.Drawing.Point(48, 300);
+      this.lbl_err.Location = new System.Drawing.Point(53, 300);
       this.lbl_err.MouseState = MaterialSkin.MouseState.HOVER;
       this.lbl_err.Name = "lbl_err";
       this.lbl_err.Size = new System.Drawing.Size(192, 39);
@@ -83,6 +83,7 @@ namespace Program.Forms
       // 
       // panel1
       // 
+      this.panel1.Controls.Add(this.lbl_err);
       this.panel1.Controls.Add(this.btn_login);
       this.panel1.Controls.Add(this.lbl_pass);
       this.panel1.Controls.Add(this.txt_pass);
@@ -90,7 +91,7 @@ namespace Program.Forms
       this.panel1.Controls.Add(this.txt_uname);
       this.panel1.Location = new System.Drawing.Point(1, 63);
       this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(298, 236);
+      this.panel1.Size = new System.Drawing.Size(298, 348);
       this.panel1.TabIndex = 6;
       // 
       // btn_login
@@ -180,7 +181,6 @@ namespace Program.Forms
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(300, 300);
       this.Controls.Add(this.panel1);
-      this.Controls.Add(this.lbl_err);
       this.Icon = global::SP.Resources.Images.home_account;
       this.Name = "Login";
       this.Tag = "300/348";

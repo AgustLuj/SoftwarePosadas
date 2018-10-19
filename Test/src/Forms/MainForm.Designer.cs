@@ -180,6 +180,7 @@ namespace Program.Forms {
       this.panel3.Name = "panel3";
       this.panel3.Size = new System.Drawing.Size(741, 518);
       this.panel3.TabIndex = 10;
+      this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel3Paint);
       // 
       // btn_addG
       // 
@@ -247,7 +248,7 @@ namespace Program.Forms {
     private MaterialSkin.Controls.MaterialFlatButton btn_left_security;
     private MaterialSkin.Controls.MaterialRaisedButtonws materialRaisedButtonws1;
     private MaterialSkin.Controls.MaterialFlatButton btn_addG;
-    private System.Windows.Forms.Panel panel3;
+    public System.Windows.Forms.Panel panel3;
     private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
     private System.Windows.Forms.Panel panel2;
     private MaterialSkin.Controls.MaterialFlatButton btn_left_guests;

@@ -20,11 +20,14 @@ namespace Program.Forms {
     /// </summary>
     [STAThread]
     private static void Main(string[] args) {
+      
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(true);
       
-      var f = new Load();
-      f.Show();
+      StaticForms.MF = new MainForm();
+      
+      //var f = new MainForm();
+      StaticForms.MF.Show();
       
       Application.Run();
     }

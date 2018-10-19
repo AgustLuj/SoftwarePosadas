@@ -61,7 +61,7 @@ namespace Program.Forms
 		  this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
 		  this.combo_localidad = new System.Windows.Forms.ComboBox();
 		  this.label_error = new MaterialSkin.Controls.MaterialLabel();
-		  this.materialFlatButton3 = new MaterialSkin.Controls.MaterialFlatButton();
+		  this.btn_addpic = new MaterialSkin.Controls.MaterialFlatButton();
 		  this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 		  this.txt_date = new MaterialSkin.Controls.MaterialSingleLineMaskedTextField();
 		  this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -71,18 +71,20 @@ namespace Program.Forms
 		  this.txt_odate = new MaterialSkin.Controls.MaterialSingleLineMaskedTextField();
 		  this.chk_odate_undef = new MaterialSkin.Controls.MaterialCheckBox();
 		  this.lbl_odate = new MaterialSkin.Controls.MaterialLabel();
+		  this.btn_addphoto = new MaterialSkin.Controls.MaterialFlatButton();
 		  ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
 		  this.SuspendLayout();
 		  // 
 		  // picture
 		  // 
 		  this.picture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-		  this.picture.Location = new System.Drawing.Point(506, 27);
+		  this.picture.Location = new System.Drawing.Point(499, 27);
 		  this.picture.Name = "picture";
 		  this.picture.Size = new System.Drawing.Size(210, 210);
 		  this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 		  this.picture.TabIndex = 0;
 		  this.picture.TabStop = false;
+		  this.picture.Click += new System.EventHandler(this.PictureClick);
 		  // 
 		  // label_nombre
 		  // 
@@ -447,6 +449,7 @@ namespace Program.Forms
 		  this.materialFlatButton2.AutoSize = true;
 		  this.materialFlatButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 		  this.materialFlatButton2.Depth = 0;
+		  this.materialFlatButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 41F);
 		  this.materialFlatButton2.Icon = null;
 		  this.materialFlatButton2.Location = new System.Drawing.Point(643, 458);
 		  this.materialFlatButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
@@ -592,23 +595,23 @@ namespace Program.Forms
 		  this.label_error.Size = new System.Drawing.Size(354, 23);
 		  this.label_error.TabIndex = 34;
 		  // 
-		  // materialFlatButton3
+		  // btn_addpic
 		  // 
-		  this.materialFlatButton3.AutoSize = true;
-		  this.materialFlatButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-		  this.materialFlatButton3.Depth = 0;
-		  this.materialFlatButton3.Icon = null;
-		  this.materialFlatButton3.Location = new System.Drawing.Point(508, 243);
-		  this.materialFlatButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-		  this.materialFlatButton3.MouseState = MaterialSkin.MouseState.HOVER;
-		  this.materialFlatButton3.Name = "materialFlatButton3";
-		  this.materialFlatButton3.Primary = false;
-		  this.materialFlatButton3.selected = false;
-		  this.materialFlatButton3.Size = new System.Drawing.Size(30, 36);
-		  this.materialFlatButton3.TabIndex = 35;
-		  this.materialFlatButton3.Text = "x";
-		  this.materialFlatButton3.UseVisualStyleBackColor = true;
-		  this.materialFlatButton3.Click += new System.EventHandler(this.MaterialFlatButton3Click);
+		  this.btn_addpic.AutoSize = true;
+		  this.btn_addpic.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+		  this.btn_addpic.Depth = 0;
+		  this.btn_addpic.Icon = null;
+		  this.btn_addpic.Location = new System.Drawing.Point(587, 242);
+		  this.btn_addpic.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+		  this.btn_addpic.MouseState = MaterialSkin.MouseState.HOVER;
+		  this.btn_addpic.Name = "btn_addpic";
+		  this.btn_addpic.Primary = false;
+		  this.btn_addpic.selected = false;
+		  this.btn_addpic.Size = new System.Drawing.Size(30, 36);
+		  this.btn_addpic.TabIndex = 35;
+		  this.btn_addpic.Text = "x";
+		  this.btn_addpic.UseVisualStyleBackColor = true;
+		  this.btn_addpic.Click += new System.EventHandler(this.btn_pic);
 		  // 
 		  // openFileDialog1
 		  // 
@@ -746,12 +749,29 @@ namespace Program.Forms
 		  this.lbl_odate.TabIndex = 42;
 		  this.lbl_odate.Text = "Fecha de Egreso";
 		  // 
+		  // btn_addphoto
+		  // 
+		  this.btn_addphoto.Depth = 0;
+		  this.btn_addphoto.Icon = null;
+		  this.btn_addphoto.Location = new System.Drawing.Point(501, 29);
+		  this.btn_addphoto.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+		  this.btn_addphoto.MouseState = MaterialSkin.MouseState.HOVER;
+		  this.btn_addphoto.Name = "btn_addphoto";
+		  this.btn_addphoto.Primary = false;
+		  this.btn_addphoto.selected = false;
+		  this.btn_addphoto.Size = new System.Drawing.Size(206, 206);
+		  this.btn_addphoto.TabIndex = 43;
+		  this.btn_addphoto.Text = "+";
+		  this.btn_addphoto.UseVisualStyleBackColor = true;
+		  this.btn_addphoto.Click += new System.EventHandler(this.Btn_addphotoClick);
+		  // 
 		  // FormAddGuest
 		  // 
 		  this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 		  this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 		  this.BackColor = System.Drawing.Color.White;
 		  this.ClientSize = new System.Drawing.Size(741, 518);
+		  this.Controls.Add(this.btn_addphoto);
 		  this.Controls.Add(this.txt_odate);
 		  this.Controls.Add(this.chk_odate_undef);
 		  this.Controls.Add(this.lbl_odate);
@@ -760,7 +780,7 @@ namespace Program.Forms
 		  this.Controls.Add(this.txt_ficha);
 		  this.Controls.Add(this.materialLabel1);
 		  this.Controls.Add(this.txt_date);
-		  this.Controls.Add(this.materialFlatButton3);
+		  this.Controls.Add(this.btn_addpic);
 		  this.Controls.Add(this.label_error);
 		  this.Controls.Add(this.combo_localidad);
 		  this.Controls.Add(this.materialFlatButton2);
@@ -795,6 +815,7 @@ namespace Program.Forms
 		  this.ResumeLayout(false);
 		  this.PerformLayout();
 		}
+		private MaterialSkin.Controls.MaterialFlatButton btn_addphoto;
 		private MaterialSkin.Controls.MaterialLabel lbl_odate;
 		private MaterialSkin.Controls.MaterialCheckBox chk_odate_undef;
 		private MaterialSkin.Controls.MaterialSingleLineMaskedTextField txt_odate;
@@ -804,7 +825,7 @@ namespace Program.Forms
 		private MaterialSkin.Controls.MaterialLabel materialLabel1;
 		private MaterialSkin.Controls.MaterialSingleLineMaskedTextField txt_date;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
-		private MaterialSkin.Controls.MaterialFlatButton materialFlatButton3;
+		private MaterialSkin.Controls.MaterialFlatButton btn_addpic;
 		private MaterialSkin.Controls.MaterialLabel label_error;
 		private System.Windows.Forms.ComboBox combo_localidad;
 		private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;

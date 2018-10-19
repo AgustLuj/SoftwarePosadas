@@ -49,11 +49,14 @@
     <DefineConstants>TRACE</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>AForge.dll</HintPath>
+    </Reference>
     <Reference Include="AForge.Video">
-      <HintPath>..\..\..\AForge.Video.dll</HintPath>
+      <HintPath>AForge.Video.dll</HintPath>
     </Reference>
     <Reference Include="AForge.Video.DirectShow">
-      <HintPath>..\..\..\AForge.Video.DirectShow.dll</HintPath>
+      <HintPath>AForge.Video.DirectShow.dll</HintPath>
     </Reference>
     <Reference Include="CNSpinner">
       <HintPath>CNSpinner.dll</HintPath>

@@ -21,8 +21,6 @@ namespace Program.Forms
   public partial class Login : MaterialForm
   {
     
-    MainForm ms;
-    
     bool err = false;
     bool closing = false;
     bool logging = false;
@@ -31,10 +29,10 @@ namespace Program.Forms
     {
       InitializeComponent();
       
-      ms = new MainForm();
-        ms.Show();
-        ms.Visible = false;
-        ms.Location = new Point((Screen.PrimaryScreen.Bounds.Width >> 1) - (ms.Width >> 1), Screen.PrimaryScreen.Bounds.Height);
+      
+        StaticForms.MF.Show();
+        StaticForms.MF.Visible = false;
+        StaticForms.MF.Location = new Point((Screen.PrimaryScreen.Bounds.Width >> 1) - (StaticForms.MF.Width >> 1), Screen.PrimaryScreen.Bounds.Height);
       
     }
     
@@ -58,11 +56,11 @@ namespace Program.Forms
     {
       
       Transition t = new Transition(new TransitionType_CriticalDamping(700));
-        t.add(ms, "Top", (Screen.PrimaryScreen.Bounds.Height >> 1) - (ms.Height >> 1));
+        t.add(StaticForms.MF, "Top", (Screen.PrimaryScreen.Bounds.Height >> 1) - (StaticForms.MF.Height >> 1));
         t.run();
       
-      ms.Visible = true;
-      ms.LoadPermissions();
+      StaticForms.MF.Visible = true;
+      StaticForms.MF.LoadPermissions();
             
       this.Close();
     }
@@ -113,13 +111,14 @@ namespace Program.Forms
         if(!err){
           Transition mt = new Transition(new TransitionType_EaseInEaseOut(400));
             mt.add(this, "Height", 348);
-            mt.add(lbl_err, "Top", 284);
+            mt.add(panel1, "Height", 348);
+            mt.add(lbl_err, "Top", 234);
             mt.TransitionCompletedEvent += (x, y) => err = true;
             mt.run();
         } else {
           Transition mt = new Transition(new TransitionType_Bounce(400));
-            mt.add(lbl_err, "Top", 264);
-            mt.TransitionCompletedEvent += (x, y) => lbl_err.Top = 284;
+            mt.add(lbl_err, "Top", 214);
+            mt.TransitionCompletedEvent += (x, y) => lbl_err.Top = 234;
             mt.run();
         }
       }

@@ -9,7 +9,8 @@ namespace Program.Forms
 	{
 
 		public static FormAddGuestHome formAddGuestHome;
-		public static FormGuests FG;                                                       
+		public static FormGuests FG;
+    public static MainForm MF;		
 		
 	}
 }

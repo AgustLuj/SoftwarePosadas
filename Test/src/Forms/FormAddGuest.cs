@@ -10,6 +10,7 @@ using Transitions;
 
 using Program.Forms;
 using Program.Classes;
+using Program.Extensions;
 using Program.StaticClasses;
 
 namespace Program.Forms
@@ -61,7 +62,7 @@ namespace Program.Forms
 		
 		void FormAddGuestLoad(object sender, EventArgs e)
 		{
-			
+		  btn_addphoto.BigFont();
 			txt_date.Text = DateTime.Today.ToString("dd-MM-yyyy");
 			
 			combo_provincia.Visible = false;
@@ -229,11 +230,36 @@ namespace Program.Forms
       if(!s.Checked)
         txt_odate.Focus();
 		}
+
+		void PictureClick(object sender, EventArgs e){
 		
-		void MaterialFlatButton3Click(object sender, EventArgs e)
-		{
-		  
+        
 		}
-	}
+		  
+		void btn_pic(object sender, EventArgs e)
+		{
+      		  
+		}
+		
+		void Btn_addphotoClick(object sender, EventArgs e)
+		{
+		  if(!StaticForms.MF.panel3.Controls.containsType(typeof(FormLoadPicture))){
+      
+          var t = new FormLoadPicture();
+    	      t.TopLevel = false;
+    	      StaticForms.MF.panel3.Controls.Add(t);
+    	      StaticForms.MF.panel3.Tag = t;
+    	      t.Parent = StaticForms.MF.panel3;
+    	      t.Show();
+    	      t.Top = -t.Height;
+    	      t.BringToFront();
+  	      
+  	      var tr = new Transition(new TransitionType_Deceleration(500));
+    	      tr.add(t, "Top", 0);
+    	      tr.run();
+		  }
+		}
+		}
 }
+
 
