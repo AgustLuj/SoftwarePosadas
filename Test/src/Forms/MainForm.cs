@@ -135,14 +135,6 @@ namespace Program.Forms {
         leftbtns[selectedIndex].selected = false;
     	  s.selected = true;
       }
- 	
-      
-    	
-    	/*Console.WriteLine(panel3.Controls);
-    	Console.WriteLine(panel3.Controls[0]);
-    	Console.WriteLine(panel3.Controls.Count);
-    	panel3.Controls.RemoveAt(0);
-    	Console.WriteLine(panel3.Controls.Count);*/
     }
     
     void Timer1Tick(object sender, EventArgs e)
