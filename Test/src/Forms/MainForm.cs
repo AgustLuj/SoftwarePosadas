@@ -55,8 +55,6 @@ namespace Program.Forms {
 
       //label1.Text = (month.IsNull()) ? "No values" : month.general.huespedes.First().Nombre;
       
-      //label1.Text = ;
-      
       StaticForms.FG = new FormGuests();
 	      StaticForms.FG.TopLevel = false;
 	      panel3.Controls.Add(StaticForms.FG);
@@ -105,6 +103,7 @@ namespace Program.Forms {
     void LeftBarClick(object sender, EventArgs e)
     {
       var s = sender as MaterialFlatButton;
+<<<<<<< HEAD
       
       var t = new Transition(new TransitionType_Deceleration(500));
       t.add(btn_addG, "Top", (s.Name == "btn_left_guests") ? 28 : 64);
@@ -113,11 +112,54 @@ namespace Program.Forms {
     	leftbtns.FindAll(x => x != s).ForEach(x => x.selected = false);
     	s.selected = true;
     	
+=======
+      var i = leftbtns.FindIndex(x => x == s);
+      
+      var selectedIndex = leftbtns.FindIndex(x => x.selected);
+      
+      if(!s.selected) {
+        int a = 0;
+        panel3.Controls.forEach(x => {
+                                  var tt = new Transition(new TransitionType_Acceleration(500 + a++ * 100));
+                                    tt.add(x, "Top", (i < selectedIndex) ? 518 : -x.Height);
+                                    Console.WriteLine(String.Format("{0}, {1}", a, panel3.Controls.Count));
+                                      tt.TransitionCompletedEvent += (_, __) => x.Tag = "ready"; //FIXME: Someone, please explain me why this doesn't work :v
+                                    tt.run();
+                                });
+        
+        var t = new Transition(new TransitionType_Deceleration(500));
+        switch (s.Name) {
+          case "btn_left_guests":
+            panel3.Controls.Add(StaticForms.FG);
+            StaticForms.FG.Top = -StaticForms.FG.Height;
+            StaticForms.FG.Show();
+            
+            t.add(StaticForms.FG, "Top", 0);
+            t.add(btn_addG, "Top", 28);
+            t.run();
+            break;
+          default:
+          	break;
+        }
+        
+        leftbtns[selectedIndex].selected = false;
+    	  s.selected = true;
+      }
+>>>>>>> 1e7bda8d72a0770e1095430235279be8ff5a66f0
     }
     
     void Timer1Tick(object sender, EventArgs e)
     {
       leftbtns.ForEach(x => x.Refresh());
+      
+      var c = panel3.Controls.Count;
+      for (int i = 0; i < c; i++) {
+        if (panel3.Controls[i].Tag == "ready") {
+          panel3.Controls[i].Tag = "";
+          panel3.Controls.RemoveAt(i--);
+          c--;
+        }
+      }
     }
     
     void Btn_addGClick(object sender, EventArgs e)
