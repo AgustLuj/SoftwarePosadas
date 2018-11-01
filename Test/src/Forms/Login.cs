@@ -29,7 +29,7 @@ namespace Program.Forms
     {
       InitializeComponent();
       
-      
+      StaticForms.MF = new MainForm();
         StaticForms.MF.Show();
         StaticForms.MF.Visible = false;
         StaticForms.MF.Location = new Point((Screen.PrimaryScreen.Bounds.Width >> 1) - (StaticForms.MF.Width >> 1), Screen.PrimaryScreen.Bounds.Height);

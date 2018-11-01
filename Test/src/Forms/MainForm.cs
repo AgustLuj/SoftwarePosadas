@@ -106,18 +106,9 @@ namespace Program.Forms {
     {
       var s = sender as MaterialFlatButton;
       
-      var i = leftbtns.FindIndex(x => x == s);
-      
-      if(!s.selected) {
-        var tt = new Transition(new TransitionType_Acceleration(600));
-          tt.add(panel3.Controls[0], "Top", 518);
-          tt.TransitionCompletedEvent += (_, __) => panel3.Controls.Clear();
-          tt.run();
-      }
-      
       var t = new Transition(new TransitionType_Deceleration(500));
-        t.add(btn_addG, "Top", (s.Name == "btn_left_guests") ? 28 : 64);
-        t.run();
+      t.add(btn_addG, "Top", (s.Name == "btn_left_guests") ? 28 : 64);
+      t.run();
     	    	
     	leftbtns.FindAll(x => x != s).ForEach(x => x.selected = false);
     	s.selected = true;

@@ -288,9 +288,9 @@ namespace Program.Forms
   			btn_crop.Visible = false;
   			tbr_zoom.Visible=false;
   			lbl_croparea.Visible = false;
-  		  lbl_devices.Visible = false;
-  		  lbl_zoom.Visible = false;
-  		  pic_photo.Visible = false;
+  		  	lbl_devices.Visible = false;
+  		  	lbl_zoom.Visible = false;
+  		  	pic_photo.Visible = false;
   		  
   		  TerminarFuenteDeVideo();
   		  pic_bigphoto.Image = null;
@@ -308,6 +308,11 @@ namespace Program.Forms
 		void Pic_photoClick(object sender, EventArgs e)
 		{
 		  
+		}
+		
+		void Btn_savepicClick(object sender, EventArgs e)
+		{
+			/*pic_photo.Image.Save("C:/Users/RamiroPC/Desktop");*/
 		}
 	}
 }
