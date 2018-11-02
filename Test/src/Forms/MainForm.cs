@@ -110,14 +110,14 @@ namespace Program.Forms {
       if(!s.selected) {
         int a = 0;
         panel3.Controls.forEach(x => {
-                                  var tt = new Transition(new TransitionType_Acceleration(500 + a++ * 100));
+                                  var tt = new Transition(new TransitionType_Deceleration(500 + a++ * 100));
                                     tt.add(x, "Top", (i < selectedIndex) ? 518 : -x.Height);
                                     Console.WriteLine(String.Format("{0}, {1}", a, panel3.Controls.Count));
-                                      tt.TransitionCompletedEvent += (_, __) => x.Tag = "ready"; //FIXME: Someone, please explain me why this doesn't work :v
+                                      tt.TransitionCompletedEvent += (_, __) => x.Tag = "ready";
                                     tt.run();
                                 });
         
-        var t = new Transition(new TransitionType_Deceleration(500));
+        var t = new Transition(new TransitionType_Deceleration(500 + a * 100));
         switch (s.Name) {
           case "btn_left_guests":
             panel3.Controls.Add(StaticForms.FG);
@@ -125,7 +125,28 @@ namespace Program.Forms {
             StaticForms.FG.Show();
             
             t.add(StaticForms.FG, "Top", 0);
-            t.add(btn_addG, "Top", 28);
+            
+            var t2 = new Transition(new TransitionType_Deceleration(500));
+              t2.add(btn_addG, "Top", 28);
+              t2.run();
+              
+            t.run();
+            break;
+          case "btn_left_admin":
+            var f = new FormAddUser();
+            f.TopLevel = false;
+            
+            panel3.Controls.Add(f);
+            
+            f.Top = 518;
+            f.Show();
+            
+            t.add(f, "Top", 0);
+            
+            var tt = new Transition(new TransitionType_Acceleration(500));
+              tt.add(btn_addG, "Top", 64);
+              tt.run();
+            
             t.run();
             break;
           default:

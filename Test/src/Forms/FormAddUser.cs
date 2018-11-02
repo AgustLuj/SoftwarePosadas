@@ -12,21 +12,11 @@ using System.Windows.Forms;
 
 namespace Program.Forms
 {
-	/// <summary>
-	/// Description of Form1.
-	/// </summary>
 	public partial class FormAddUser : Form
 	{
 		public FormAddUser()
 		{
-			//
-			// The InitializeComponent() call is required for Windows Forms designer support.
-			//
 			InitializeComponent();
-			
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
 		}
 		
 		void Form1Load(object sender, EventArgs e)
@@ -37,12 +27,12 @@ namespace Program.Forms
 		
 		void Text_nombreTextChanged(object sender, EventArgs e)
 		{
-			text_usuario.Text=text_nombre.Text;
+			text_usuario.Text = text_nombre.Text;
 		}
 		
 		void Text_apellidoTextChanged(object sender, EventArgs e)
 		{
-			text_usuario.Text=text_nombre.Text+"_"+text_apellido.Text;
+			text_usuario.Text=text_nombre.Text + "_" + text_apellido.Text;
 		}
 		
 		void MaterialRadioButton2CheckedChanged(object sender, EventArgs e)
@@ -52,13 +42,12 @@ namespace Program.Forms
 		
 		void MaterialCheckBox1CheckedChanged(object sender, EventArgs e)
 		{
-			if(check_operadores.Checked == false){
+			if(!check_operadores.Checked){
 				
-				radio_leerOp.Checked=false;
-				radio_leerEscOp.Checked=false;
-				
+				radio_leerOp.Checked = false;
+				radio_leerEscOp.Checked = false;
 			}else{
-				radio_leerOp.Checked=true;
+				radio_leerOp.Checked = true;
 			}
 		}
 		
@@ -69,37 +58,34 @@ namespace Program.Forms
 		
 		void Check_seguridadCheckedChanged(object sender, EventArgs e)
 		{
-			if(check_seguridad.Checked == false){
+			if(!check_seguridad.Checked){
 				
-				radio_leerSeg.Checked=false;
-				radio_leerEscSeg.Checked=false;
-				
+				radio_leerSeg.Checked = false;
+				radio_leerEscSeg.Checked = false;
 			}else{
-				radio_leerSeg.Checked=true;
+				radio_leerSeg.Checked = true;
 			}			
 		}
 		
 		void Check_socialCheckedChanged(object sender, EventArgs e)
 		{
-			if(check_social.Checked == false){
+			if(!check_social.Checked){
 				
-				radio_leerSo.Checked=false;
-				radio_leerEscSo.Checked=false;
-				
+				radio_leerSo.Checked = false;
+				radio_leerEscSo.Checked = false;
 			}else{
-				radio_leerSo.Checked=true;
+				radio_leerSo.Checked = true;
 			}			
 		}
 		
 		void Check_mantenimientoCheckedChanged(object sender, EventArgs e)
 		{
-			if(check_mantenimiento.Checked == false){
+			if(!check_mantenimiento.Checked){
 				
-				radio_leerMan.Checked=false;
-				radio_leerEscMan.Checked=false;
-				
+				radio_leerMan.Checked = false;
+				radio_leerEscMan.Checked = false;
 			}else{
-				radio_leerMan.Checked=true;
+				radio_leerMan.Checked = true;
 			}			
 		}
 		
@@ -115,25 +101,25 @@ namespace Program.Forms
 			selectall(false);
 		}
 		
-		
 		void Radio_invitadoCheckedChanged(object sender, EventArgs e)
 		{
 			show(false);
 		}
+		
 		void show(bool t){
 			
 			check_operadores.Visible = t;
 			check_seguridad.Visible = t;
 			check_social.Visible = t;
 			check_mantenimiento.Visible = t;
-			radio_leerEscMan.Visible=t;
-			radio_leerEscSo.Visible=t;
-			radio_leerEscSeg.Visible=t;
-			radio_leerEscOp.Visible=t;
-			radio_leerMan.Visible=t;
-			radio_leerSo.Visible=t;
-			radio_leerSeg.Visible=t;
-			radio_leerOp.Visible=t;		
+			radio_leerEscMan.Visible = t;
+			radio_leerEscSo.Visible = t;
+			radio_leerEscSeg.Visible = t;
+			radio_leerEscOp.Visible = t;
+			radio_leerMan.Visible = t;
+			radio_leerSo.Visible = t;
+			radio_leerSeg.Visible = t;
+			radio_leerOp.Visible = t;		
 		}
 		void selectall(bool t){
 			
@@ -141,14 +127,14 @@ namespace Program.Forms
 			check_seguridad.Checked = t;
 			check_social.Checked = t;
 			check_mantenimiento.Checked = t;
-			radio_leerEscMan.Checked=t;
-			radio_leerEscSo.Checked=t;
-			radio_leerEscSeg.Checked=t;
-			radio_leerEscOp.Checked=t;
-			radio_leerMan.Checked=false;
-			radio_leerSo.Checked=false;
-			radio_leerSeg.Checked=false;
-			radio_leerOp.Checked=false;
+			radio_leerEscMan.Checked = t;
+			radio_leerEscSo.Checked = t;
+			radio_leerEscSeg.Checked = t;
+			radio_leerEscOp.Checked = t;
+			radio_leerMan.Checked = false;
+			radio_leerSo.Checked = false;
+			radio_leerSeg.Checked = false;
+			radio_leerOp.Checked = false;
 		}
 	}
 }

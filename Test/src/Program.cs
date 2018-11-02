@@ -27,7 +27,8 @@ namespace Program.Forms {
       StaticForms.MF = new MainForm();
       
       #if DEBUG
-        StaticForms.MF.Show();
+        //StaticForms.MF.Show();
+        new Load().Show();
       #else
         var f = new Load();
         f.Show();
