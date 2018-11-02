@@ -46,7 +46,7 @@ namespace Program.Forms
 		  this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
 		  this.text_usuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
 		  this.text_nombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
-		  this.Button_añadir = new MaterialSkin.Controls.MaterialFlatButton();
+		  this.btn_close = new MaterialSkin.Controls.MaterialFlatButton();
 		  this.radio_leerOp = new MaterialSkin.Controls.MaterialRadioButton();
 		  this.radio_leerEscOp = new MaterialSkin.Controls.MaterialRadioButton();
 		  this.radio_leerSeg = new MaterialSkin.Controls.MaterialRadioButton();
@@ -58,7 +58,7 @@ namespace Program.Forms
 		  this.radio_leerMan = new MaterialSkin.Controls.MaterialRadioButton();
 		  this.radio_leerEscMan = new MaterialSkin.Controls.MaterialRadioButton();
 		  this.panel3 = new System.Windows.Forms.Panel();
-		  this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
+		  this.btn_add = new MaterialSkin.Controls.MaterialFlatButton();
 		  this.radio_admin = new MaterialSkin.Controls.MaterialRadioButton();
 		  this.radio_operador = new MaterialSkin.Controls.MaterialRadioButton();
 		  this.panel4 = new System.Windows.Forms.Panel();
@@ -227,29 +227,29 @@ namespace Program.Forms
 		  this.text_nombre.UseSystemPasswordChar = false;
 		  this.text_nombre.TextChanged += new System.EventHandler(this.Text_nombreTextChanged);
 		  // 
-		  // Button_añadir
+		  // btn_close
 		  // 
-		  this.Button_añadir.AutoSize = true;
-		  this.Button_añadir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-		  this.Button_añadir.Depth = 0;
-		  this.Button_añadir.Icon = null;
-		  this.Button_añadir.Location = new System.Drawing.Point(613, 457);
-		  this.Button_añadir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-		  this.Button_añadir.MouseState = MaterialSkin.MouseState.HOVER;
-		  this.Button_añadir.Name = "Button_añadir";
-		  this.Button_añadir.Primary = false;
-		  this.Button_añadir.selected = false;
-		  this.Button_añadir.Size = new System.Drawing.Size(73, 36);
-		  this.Button_añadir.TabIndex = 23;
-		  this.Button_añadir.Text = "Cerrar";
-		  this.Button_añadir.UseVisualStyleBackColor = true;
-		  this.Button_añadir.Click += new System.EventHandler(this.MaterialFlatButton1Click);
+		  this.btn_close.AutoSize = true;
+		  this.btn_close.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+		  this.btn_close.Depth = 0;
+		  this.btn_close.Icon = null;
+		  this.btn_close.Location = new System.Drawing.Point(613, 457);
+		  this.btn_close.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+		  this.btn_close.MouseState = MaterialSkin.MouseState.HOVER;
+		  this.btn_close.Name = "btn_close";
+		  this.btn_close.Primary = false;
+		  this.btn_close.selected = false;
+		  this.btn_close.Size = new System.Drawing.Size(73, 36);
+		  this.btn_close.TabIndex = 23;
+		  this.btn_close.Text = "Cerrar";
+		  this.btn_close.UseVisualStyleBackColor = true;
+		  this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
 		  // 
 		  // radio_leerOp
 		  // 
 		  this.radio_leerOp.Depth = 0;
 		  this.radio_leerOp.Font = new System.Drawing.Font("Roboto", 10F);
-		  this.radio_leerOp.Location = new System.Drawing.Point(207, 282);
+		  this.radio_leerOp.Location = new System.Drawing.Point(208, 282);
 		  this.radio_leerOp.Margin = new System.Windows.Forms.Padding(0);
 		  this.radio_leerOp.MouseLocation = new System.Drawing.Point(-1, -1);
 		  this.radio_leerOp.MouseState = MaterialSkin.MouseState.HOVER;
@@ -265,7 +265,7 @@ namespace Program.Forms
 		  // 
 		  this.radio_leerEscOp.Depth = 0;
 		  this.radio_leerEscOp.Font = new System.Drawing.Font("Roboto", 10F);
-		  this.radio_leerEscOp.Location = new System.Drawing.Point(278, 281);
+		  this.radio_leerEscOp.Location = new System.Drawing.Point(279, 281);
 		  this.radio_leerEscOp.Margin = new System.Windows.Forms.Padding(0);
 		  this.radio_leerEscOp.MouseLocation = new System.Drawing.Point(-1, -1);
 		  this.radio_leerEscOp.MouseState = MaterialSkin.MouseState.HOVER;
@@ -282,7 +282,7 @@ namespace Program.Forms
 		  // 
 		  this.radio_leerSeg.Depth = 0;
 		  this.radio_leerSeg.Font = new System.Drawing.Font("Roboto", 10F);
-		  this.radio_leerSeg.Location = new System.Drawing.Point(15, 0);
+		  this.radio_leerSeg.Location = new System.Drawing.Point(1, 9);
 		  this.radio_leerSeg.Margin = new System.Windows.Forms.Padding(0);
 		  this.radio_leerSeg.MouseLocation = new System.Drawing.Point(-1, -1);
 		  this.radio_leerSeg.MouseState = MaterialSkin.MouseState.HOVER;
@@ -298,7 +298,7 @@ namespace Program.Forms
 		  // 
 		  this.radio_leerEscSeg.Depth = 0;
 		  this.radio_leerEscSeg.Font = new System.Drawing.Font("Roboto", 10F);
-		  this.radio_leerEscSeg.Location = new System.Drawing.Point(88, 0);
+		  this.radio_leerEscSeg.Location = new System.Drawing.Point(74, 9);
 		  this.radio_leerEscSeg.Margin = new System.Windows.Forms.Padding(0);
 		  this.radio_leerEscSeg.MouseLocation = new System.Drawing.Point(-1, -1);
 		  this.radio_leerEscSeg.MouseState = MaterialSkin.MouseState.HOVER;
@@ -314,16 +314,16 @@ namespace Program.Forms
 		  // 
 		  this.panel1.Controls.Add(this.radio_leerEscSeg);
 		  this.panel1.Controls.Add(this.radio_leerSeg);
-		  this.panel1.Location = new System.Drawing.Point(192, 317);
+		  this.panel1.Location = new System.Drawing.Point(207, 307);
 		  this.panel1.Name = "panel1";
-		  this.panel1.Size = new System.Drawing.Size(200, 24);
+		  this.panel1.Size = new System.Drawing.Size(200, 34);
 		  this.panel1.TabIndex = 27;
 		  // 
 		  // radio_leerSo
 		  // 
 		  this.radio_leerSo.Depth = 0;
 		  this.radio_leerSo.Font = new System.Drawing.Font("Roboto", 10F);
-		  this.radio_leerSo.Location = new System.Drawing.Point(0, 10);
+		  this.radio_leerSo.Location = new System.Drawing.Point(1, 9);
 		  this.radio_leerSo.Margin = new System.Windows.Forms.Padding(0);
 		  this.radio_leerSo.MouseLocation = new System.Drawing.Point(-1, -1);
 		  this.radio_leerSo.MouseState = MaterialSkin.MouseState.HOVER;
@@ -339,7 +339,7 @@ namespace Program.Forms
 		  // 
 		  this.radio_leerEscSo.Depth = 0;
 		  this.radio_leerEscSo.Font = new System.Drawing.Font("Roboto", 10F);
-		  this.radio_leerEscSo.Location = new System.Drawing.Point(71, 8);
+		  this.radio_leerEscSo.Location = new System.Drawing.Point(72, 9);
 		  this.radio_leerEscSo.Margin = new System.Windows.Forms.Padding(0);
 		  this.radio_leerEscSo.MouseLocation = new System.Drawing.Point(-1, -1);
 		  this.radio_leerEscSo.MouseState = MaterialSkin.MouseState.HOVER;
@@ -355,16 +355,16 @@ namespace Program.Forms
 		  // 
 		  this.panel2.Controls.Add(this.radio_leerEscSo);
 		  this.panel2.Controls.Add(this.radio_leerSo);
-		  this.panel2.Location = new System.Drawing.Point(207, 344);
+		  this.panel2.Location = new System.Drawing.Point(207, 345);
 		  this.panel2.Name = "panel2";
-		  this.panel2.Size = new System.Drawing.Size(200, 31);
+		  this.panel2.Size = new System.Drawing.Size(200, 34);
 		  this.panel2.TabIndex = 28;
 		  // 
 		  // radio_leerMan
 		  // 
 		  this.radio_leerMan.Depth = 0;
 		  this.radio_leerMan.Font = new System.Drawing.Font("Roboto", 10F);
-		  this.radio_leerMan.Location = new System.Drawing.Point(0, 0);
+		  this.radio_leerMan.Location = new System.Drawing.Point(1, 7);
 		  this.radio_leerMan.Margin = new System.Windows.Forms.Padding(0);
 		  this.radio_leerMan.MouseLocation = new System.Drawing.Point(-1, -1);
 		  this.radio_leerMan.MouseState = MaterialSkin.MouseState.HOVER;
@@ -380,7 +380,7 @@ namespace Program.Forms
 		  // 
 		  this.radio_leerEscMan.Depth = 0;
 		  this.radio_leerEscMan.Font = new System.Drawing.Font("Roboto", 10F);
-		  this.radio_leerEscMan.Location = new System.Drawing.Point(71, 0);
+		  this.radio_leerEscMan.Location = new System.Drawing.Point(72, 7);
 		  this.radio_leerEscMan.Margin = new System.Windows.Forms.Padding(0);
 		  this.radio_leerEscMan.MouseLocation = new System.Drawing.Point(-1, -1);
 		  this.radio_leerEscMan.MouseState = MaterialSkin.MouseState.HOVER;
@@ -396,33 +396,33 @@ namespace Program.Forms
 		  // 
 		  this.panel3.Controls.Add(this.radio_leerEscMan);
 		  this.panel3.Controls.Add(this.radio_leerMan);
-		  this.panel3.Location = new System.Drawing.Point(207, 388);
+		  this.panel3.Location = new System.Drawing.Point(207, 381);
 		  this.panel3.Name = "panel3";
-		  this.panel3.Size = new System.Drawing.Size(200, 28);
+		  this.panel3.Size = new System.Drawing.Size(200, 35);
 		  this.panel3.TabIndex = 29;
 		  // 
-		  // materialFlatButton1
+		  // btn_add
 		  // 
-		  this.materialFlatButton1.AutoSize = true;
-		  this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-		  this.materialFlatButton1.Depth = 0;
-		  this.materialFlatButton1.Icon = null;
-		  this.materialFlatButton1.Location = new System.Drawing.Point(526, 457);
-		  this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-		  this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
-		  this.materialFlatButton1.Name = "materialFlatButton1";
-		  this.materialFlatButton1.Primary = false;
-		  this.materialFlatButton1.selected = false;
-		  this.materialFlatButton1.Size = new System.Drawing.Size(70, 36);
-		  this.materialFlatButton1.TabIndex = 30;
-		  this.materialFlatButton1.Text = "Añadir";
-		  this.materialFlatButton1.UseVisualStyleBackColor = true;
+		  this.btn_add.AutoSize = true;
+		  this.btn_add.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+		  this.btn_add.Depth = 0;
+		  this.btn_add.Icon = null;
+		  this.btn_add.Location = new System.Drawing.Point(526, 457);
+		  this.btn_add.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+		  this.btn_add.MouseState = MaterialSkin.MouseState.HOVER;
+		  this.btn_add.Name = "btn_add";
+		  this.btn_add.Primary = false;
+		  this.btn_add.selected = false;
+		  this.btn_add.Size = new System.Drawing.Size(70, 36);
+		  this.btn_add.TabIndex = 30;
+		  this.btn_add.Text = "Añadir";
+		  this.btn_add.UseVisualStyleBackColor = true;
 		  // 
 		  // radio_admin
 		  // 
 		  this.radio_admin.Depth = 0;
 		  this.radio_admin.Font = new System.Drawing.Font("Roboto", 10F);
-		  this.radio_admin.Location = new System.Drawing.Point(0, 0);
+		  this.radio_admin.Location = new System.Drawing.Point(4, 2);
 		  this.radio_admin.Margin = new System.Windows.Forms.Padding(0);
 		  this.radio_admin.MouseLocation = new System.Drawing.Point(-1, -1);
 		  this.radio_admin.MouseState = MaterialSkin.MouseState.HOVER;
@@ -439,7 +439,7 @@ namespace Program.Forms
 		  // 
 		  this.radio_operador.Depth = 0;
 		  this.radio_operador.Font = new System.Drawing.Font("Roboto", 10F);
-		  this.radio_operador.Location = new System.Drawing.Point(157, 0);
+		  this.radio_operador.Location = new System.Drawing.Point(161, 2);
 		  this.radio_operador.Margin = new System.Windows.Forms.Padding(0);
 		  this.radio_operador.MouseLocation = new System.Drawing.Point(-1, -1);
 		  this.radio_operador.MouseState = MaterialSkin.MouseState.HOVER;
@@ -457,16 +457,16 @@ namespace Program.Forms
 		  this.panel4.Controls.Add(this.radio_invitado);
 		  this.panel4.Controls.Add(this.radio_admin);
 		  this.panel4.Controls.Add(this.radio_operador);
-		  this.panel4.Location = new System.Drawing.Point(149, 52);
+		  this.panel4.Location = new System.Drawing.Point(149, 49);
 		  this.panel4.Name = "panel4";
-		  this.panel4.Size = new System.Drawing.Size(422, 26);
+		  this.panel4.Size = new System.Drawing.Size(422, 29);
 		  this.panel4.TabIndex = 34;
 		  // 
 		  // radio_invitado
 		  // 
 		  this.radio_invitado.Depth = 0;
 		  this.radio_invitado.Font = new System.Drawing.Font("Roboto", 10F);
-		  this.radio_invitado.Location = new System.Drawing.Point(314, 0);
+		  this.radio_invitado.Location = new System.Drawing.Point(318, 2);
 		  this.radio_invitado.Margin = new System.Windows.Forms.Padding(0);
 		  this.radio_invitado.MouseLocation = new System.Drawing.Point(-1, -1);
 		  this.radio_invitado.MouseState = MaterialSkin.MouseState.HOVER;
@@ -499,11 +499,11 @@ namespace Program.Forms
 		  this.ClientSize = new System.Drawing.Size(741, 518);
 		  this.Controls.Add(this.materialLabel3);
 		  this.Controls.Add(this.panel4);
-		  this.Controls.Add(this.materialFlatButton1);
+		  this.Controls.Add(this.btn_add);
 		  this.Controls.Add(this.panel3);
 		  this.Controls.Add(this.panel2);
 		  this.Controls.Add(this.panel1);
-		  this.Controls.Add(this.Button_añadir);
+		  this.Controls.Add(this.btn_close);
 		  this.Controls.Add(this.radio_leerEscOp);
 		  this.Controls.Add(this.radio_leerOp);
 		  this.Controls.Add(this.text_nombre);
@@ -532,11 +532,11 @@ namespace Program.Forms
 		private System.Windows.Forms.Panel panel4;
 		private MaterialSkin.Controls.MaterialRadioButton radio_operador;
 		private MaterialSkin.Controls.MaterialRadioButton radio_admin;
-		private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
+		private MaterialSkin.Controls.MaterialFlatButton btn_add;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Panel panel1;
-		private MaterialSkin.Controls.MaterialFlatButton Button_añadir;
+		private MaterialSkin.Controls.MaterialFlatButton btn_close;
 		private MaterialSkin.Controls.MaterialRadioButton radio_leerMan;
 		private MaterialSkin.Controls.MaterialRadioButton radio_leerEscMan;
 		private MaterialSkin.Controls.MaterialRadioButton radio_leerSo;

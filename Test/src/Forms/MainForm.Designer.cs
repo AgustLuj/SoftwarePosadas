@@ -44,6 +44,7 @@ namespace Program.Forms {
       this.btn_addG = new MaterialSkin.Controls.MaterialFlatButton();
       this.materialRaisedButtonws1 = new MaterialSkin.Controls.MaterialRaisedButtonws();
       this.timer1 = new System.Windows.Forms.Timer(this.components);
+      this.btn_refresh = new MaterialSkin.Controls.MaterialFlatButton();
       this.panel2.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -180,7 +181,6 @@ namespace Program.Forms {
       this.panel3.Name = "panel3";
       this.panel3.Size = new System.Drawing.Size(741, 518);
       this.panel3.TabIndex = 10;
-      this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel3Paint);
       // 
       // btn_addG
       // 
@@ -220,6 +220,24 @@ namespace Program.Forms {
       this.timer1.Interval = 5;
       this.timer1.Tick += new System.EventHandler(this.Timer1Tick);
       // 
+      // btn_refresh
+      // 
+      this.btn_refresh.AutoSize = true;
+      this.btn_refresh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+      this.btn_refresh.Depth = 0;
+      this.btn_refresh.Icon = null;
+      this.btn_refresh.Location = new System.Drawing.Point(625, 28);
+      this.btn_refresh.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+      this.btn_refresh.MouseState = MaterialSkin.MouseState.HOVER;
+      this.btn_refresh.Name = "btn_refresh";
+      this.btn_refresh.Primary = false;
+      this.btn_refresh.selected = false;
+      this.btn_refresh.Size = new System.Drawing.Size(79, 36);
+      this.btn_refresh.TabIndex = 14;
+      this.btn_refresh.Text = "refresh";
+      this.btn_refresh.UseVisualStyleBackColor = true;
+      this.btn_refresh.Click += new System.EventHandler(this.Btn_refreshClick);
+      // 
       // MainForm
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,6 +247,7 @@ namespace Program.Forms {
       this.Controls.Add(this.panel2);
       this.Controls.Add(this.panel3);
       this.Controls.Add(this.btn_addG);
+      this.Controls.Add(this.btn_refresh);
       this.Location = new System.Drawing.Point(600, 500);
       this.Name = "MainForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -241,6 +260,7 @@ namespace Program.Forms {
       this.ResumeLayout(false);
       this.PerformLayout();
     }
+    private MaterialSkin.Controls.MaterialFlatButton btn_refresh;
     private MaterialSkin.Controls.MaterialFlatButton btn_history;
     private MaterialSkin.Controls.MaterialFlatButton btn_left_stats;
     private MaterialSkin.Controls.MaterialFlatButton btn_left_admin;

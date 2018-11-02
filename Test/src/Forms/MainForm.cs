@@ -118,6 +118,7 @@ namespace Program.Forms {
                                 });
         
         var t = new Transition(new TransitionType_Deceleration(500 + a * 100));
+        
         switch (s.Name) {
           case "btn_left_guests":
             panel3.Controls.Add(StaticForms.FG);
@@ -128,6 +129,7 @@ namespace Program.Forms {
             
             var t2 = new Transition(new TransitionType_Deceleration(500));
               t2.add(btn_addG, "Top", 28);
+              t2.add(btn_refresh, "Top", 28);
               t2.run();
               
             t.run();
@@ -143,9 +145,10 @@ namespace Program.Forms {
             
             t.add(f, "Top", 0);
             
-            var tt = new Transition(new TransitionType_Acceleration(500));
-              tt.add(btn_addG, "Top", 64);
-              tt.run();
+            var t3 = new Transition(new TransitionType_Acceleration(500));
+              t3.add(btn_addG, "Top", 64);
+              t3.add(btn_refresh, "Top", 64);
+              t3.run();
             
             t.run();
             break;
@@ -191,9 +194,9 @@ namespace Program.Forms {
       }
     }
     
-    void Panel3Paint(object sender, PaintEventArgs e)
+    void Btn_refreshClick(object sender, EventArgs e)
     {
-      
+      (panel3.Controls[0] as FormGuests).updateGuests();
     }
   }
 }

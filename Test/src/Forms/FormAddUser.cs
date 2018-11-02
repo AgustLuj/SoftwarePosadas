@@ -10,6 +10,8 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
+using Transitions;
+
 namespace Program.Forms
 {
 	public partial class FormAddUser : Form
@@ -51,9 +53,12 @@ namespace Program.Forms
 			}
 		}
 		
-		void MaterialFlatButton1Click(object sender, EventArgs e)
+		void btn_close_Click(object sender, EventArgs e)
 		{
-			Application.Exit();
+			var t = new Transition(new TransitionType_Acceleration(500));
+				t.add(this, "Top", -this.Height);
+				t.TransitionCompletedEvent += (_, __) => this.Close();
+				t.run();
 		}
 		
 		void Check_seguridadCheckedChanged(object sender, EventArgs e)
