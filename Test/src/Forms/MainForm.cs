@@ -113,8 +113,14 @@ namespace Program.Forms {
     void LeftBarClick(object sender, EventArgs e)
     {
       var s = sender as MaterialFlatButton;
-      var i = leftbtns.FindIndex(x => x == s);
       
+      var t = new Transition(new TransitionType_Deceleration(500));
+      t.add(btn_addG, "Top", (s.Name == "btn_left_guests") ? 28 : 64);
+      t.run();
+    	    	
+    	leftbtns.FindAll(x => x != s).ForEach(x => x.selected = false);
+    	s.selected = true;
+    	
       var selectedIndex = leftbtns.FindIndex(x => x.selected);
       
       if(!s.selected) {
@@ -135,7 +141,7 @@ namespace Program.Forms {
             StaticForms.FG.Top = -StaticForms.FG.Height;
             StaticForms.FG.Show();
             
-            t.add(StaticForms.FAG, "Top", 0);
+            t.add(StaticForms.FG, "Top", 0);
             t.add(btn_addG, "Top", 28);
             t.run();
             break;
@@ -157,6 +163,20 @@ namespace Program.Forms {
     void Timer1Tick(object sender, EventArgs e)
     {
       leftbtns.ForEach(x => x.Refresh());
+      
+      var c = panel3.Controls.Count;
+      for (int i = 0; i < c; i++) {
+        if (panel3.Controls[i].Tag == "ready") {
+          panel3.Controls[i].Tag = "";
+          panel3.Controls.RemoveAt(i--);
+          c--;
+        }
+      }
+    }
+    
+    void Btn_addGClick(object sender, EventArgs e)
+    {
+      if(!panel3.Controls.containsType(typeof(FormAddGuest))){
       
       var c = panel3.Controls.Count;
       for (int i = 0; i < c; i++) {

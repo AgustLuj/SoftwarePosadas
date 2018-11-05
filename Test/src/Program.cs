@@ -13,12 +13,11 @@ namespace Program.Forms {
       Application.SetCompatibleTextRenderingDefault(true);
       
       StaticForms.MF = new MainForm();
-      
       StaticForms.MF.Show();
 
 	  //var f = new FormStatsHome();
 	  //f.Show();
-      
+
       Application.Run();
     }
 		
