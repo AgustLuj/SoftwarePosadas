@@ -8,9 +8,10 @@ namespace Program.Forms
 	public static class StaticForms
 	{
 
-		public static FormAddGuestHome formAddGuestHome;
+		public static FormAddGuestHome FAG;
 		public static FormGuests FG;
-    public static MainForm MF;		
+    	public static MainForm MF;
+		public static FormStatsHome FSH;    	
 		
 	}
 }

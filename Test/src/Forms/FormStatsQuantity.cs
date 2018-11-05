@@ -20,8 +20,10 @@ namespace Program.Forms
     public List<Label> texts = new List<Label>();
     public List<MaterialSkin.Controls.MaterialLabel> texts2 = new List<MaterialSkin.Controls.MaterialLabel>();
     
-    public FormStatsQuantity()
+    public FormStatsQuantity(int[] val)
     {
+    	values = val;
+    	
 		for(int i = 0;i < values.Length;i++){
     		createText((i+1)+"/10",4 + i * 40,205);
 		}

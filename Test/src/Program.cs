@@ -12,11 +12,12 @@ namespace Program.Forms {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(true);
       
-      //StaticForms.MF = new MainForm();
+      StaticForms.MF = new MainForm();
       
-      var f = new Load();
-      //StaticForms.MF.Show();
-      f.Show();
+      StaticForms.MF.Show();
+
+	  //var f = new FormStatsHome();
+	  //f.Show();
       
       Application.Run();
     }

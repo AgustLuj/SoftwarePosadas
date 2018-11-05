@@ -23,18 +23,18 @@ namespace Program.Forms
 	{
 		public string nombre =" ";
 		public string apellido =" ";
-		public FormAddPatient()
+		public string name =" ";
+		public FormAddPatient(string name)
 		{
 			InitializeComponent();
+			this.name=name;
 		}
 		
 		void MaterialFlatButton1Click(object sender, EventArgs e)
 		{
 			if(text_nombre.Text != "" && text_apellido.Text != "" && combo_servicio.SelectedIndex != -1 ){
-				nombre = text_nombre.Text;
-				apellido = text_apellido.Text;
-				StaticForms.formAddGuestHome.addButton1(2);
-				StaticForms.formAddGuestHome.ChangeBtn(nombre,apellido);
+				StaticForms.FAG.addButton1(2);
+				StaticForms.FAG.ChangeBtn(name,text_nombre.Text,text_apellido.Text);
 				this.Close();	
 			}else{
 				label_error.ForeColor = Color.FromArgb(0xB00020);
@@ -52,7 +52,7 @@ namespace Program.Forms
 		
 		void FormAddPatientLoad(object sender, EventArgs e)
 		{
-			this.Location = StaticForms.formAddGuestHome.Location;			
+			this.Location = StaticForms.FAG.Location;			
 		}
 	}
 }

@@ -55,14 +55,22 @@ namespace Program.Forms {
 
       //label1.Text = (month.IsNull()) ? "No values" : month.general.huespedes.First().Nombre;
       
-      //label1.Text = ;
-      
       StaticForms.FG = new FormGuests();
 	      StaticForms.FG.TopLevel = false;
 	      panel3.Controls.Add(StaticForms.FG);
 	      panel3.Tag = StaticForms.FG;
 	      StaticForms.FG.Parent = panel3;
 	      StaticForms.FG.Show();
+	  StaticForms.FSH = new FormStatsHome();
+	      StaticForms.FSH.TopLevel = false;
+	      panel3.Controls.Add(StaticForms.FSH);
+	      panel3.Tag = StaticForms.FSH;
+	      StaticForms.FSH.Parent = panel3;
+	  StaticForms.FAG = new FormAddGuestHome();
+	      StaticForms.FAG.TopLevel = false;
+	      panel3.Controls.Add(StaticForms.FAG);
+	      panel3.Tag = StaticForms.FAG;
+	      StaticForms.FAG.Parent = panel3;
     }
     
     void MainFormFormClosing(object sender, FormClosingEventArgs e)
@@ -105,40 +113,79 @@ namespace Program.Forms {
     void LeftBarClick(object sender, EventArgs e)
     {
       var s = sender as MaterialFlatButton;
+      var i = leftbtns.FindIndex(x => x == s);
       
-      var t = new Transition(new TransitionType_Deceleration(500));
-      t.add(btn_addG, "Top", (s.Name == "btn_left_guests") ? 28 : 64);
-      t.run();
-    	    	
-    	leftbtns.FindAll(x => x != s).ForEach(x => x.selected = false);
-    	s.selected = true;
-    	
+      var selectedIndex = leftbtns.FindIndex(x => x.selected);
+      
+      if(!s.selected) {
+        int a = 0;
+        panel3.Controls.forEach(x => {
+                                  var tt = new Transition(new TransitionType_Acceleration(500 + a++ * 100));
+                                    tt.add(x, "Top", (i < selectedIndex) ? 518 : -x.Height);
+                                    tt.run();
+                                    //Console.WriteLine(String.Format("{0}, {1}", a, panel3.Controls.Count));
+                                    //tt.TransitionCompletedEvent += (_, __) => x.Tag = "ready"; //FIXME: Someone, please explain me why this doesn't work :v
+                                    
+                                });
+        
+        var t = new Transition(new TransitionType_Deceleration(500));
+        switch (s.Name) {
+          case "btn_left_guests":
+            panel3.Controls.Add(StaticForms.FG);
+            StaticForms.FG.Top = -StaticForms.FG.Height;
+            StaticForms.FG.Show();
+            
+            t.add(StaticForms.FAG, "Top", 0);
+            t.add(btn_addG, "Top", 28);
+            t.run();
+            break;
+          case "btn_left_stats":
+            panel3.Controls.Add(StaticForms.FSH);
+            StaticForms.FSH.Top = -StaticForms.FSH.Height;
+            StaticForms.FSH.Show();
+            
+            t.add(StaticForms.FSH, "Top", 0);
+            t.run();
+            break;
+        }
+        
+        leftbtns[selectedIndex].selected = false;
+    	  s.selected = true;
+      }
     }
     
     void Timer1Tick(object sender, EventArgs e)
     {
       leftbtns.ForEach(x => x.Refresh());
-    }
-    
-    void Btn_addGClick(object sender, EventArgs e)
-    {
-      if(!panel3.Controls.containsType(typeof(FormAddGuest))){
       
-        var t = new FormAddGuest();
-  	      t.TopLevel = false;
-  	      panel3.Controls.Add(t);
-  	      panel3.Tag = t;
-  	      t.Parent = panel3;
-  	      t.Show();
-  	      t.Top = -t.Height;
-  	      t.BringToFront();
-  	      
-  	    var tr = new Transition(new TransitionType_Deceleration(500));
-  	      tr.add(t, "Top", 0);
-  	      tr.run();
+      var c = panel3.Controls.Count;
+      for (int i = 0; i < c; i++) {
+        if (panel3.Controls[i].Tag == "ready") {
+          panel3.Controls[i].Tag = "";
+          panel3.Controls.RemoveAt(i--);
+          c--;
+        }
       }
     }
     
+    void Btn_addGClick(object sender, EventArgs e)
+	{
+	    if(!panel3.Controls.containsType(typeof(FormAddGuest))){
+	      
+	        var t = new FormAddGuestHome();
+	  	      t.TopLevel = false;
+	  	      panel3.Controls.Add(t);
+	  	      panel3.Tag = t;
+	  	      t.Parent = panel3;
+	  	      t.Show();
+	  	      t.Top = -t.Height;
+	  	      t.BringToFront();
+	  	      
+	  	    var tr = new Transition(new TransitionType_Deceleration(500));
+	  	      tr.add(t, "Top", 0);
+  	      		tr.run();
+      	}
+    }
     void Panel3Paint(object sender, PaintEventArgs e)
     {
       

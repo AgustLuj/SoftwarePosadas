@@ -15,8 +15,10 @@ namespace Program.Forms
 		public Classes.Image bitmap;
 		public float timer = 0f;
 		
-		public FormStatsOrigin()
+		public FormStatsOrigin(int[] val)
 		{
+			values = val;
+			
 		  	for(var i = 0;i < 24;i++){createText("120",300,300);}
 		  
 			InitializeComponent();
