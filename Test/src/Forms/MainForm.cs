@@ -146,6 +146,7 @@ namespace Program.Forms {
             
             panel3.Controls.Add(StaticForms.FSH);
             StaticForms.FSH.Top = (senderIndex < selectedIndex) ? -StaticForms.FSH.Height : 518;
+            StaticForms.FSH.Parent = panel3;
             StaticForms.FSH.Show();
             
             t.add(StaticForms.FSH, "Top", 0);

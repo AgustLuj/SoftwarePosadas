@@ -19,17 +19,21 @@ namespace Program.Forms
   {
     
       public static int nbig = 1;
-      public static bool big = false;
     
     class guestControl {
+      
       public MaterialLabel ficha, hname, hsurname, hab, locker, pname, psurname, proc;
+      private Guest _g;
+      private bool _big;
       
       public guestControl(Guest g, int c) {
+        
+        _g = g;
 
-        big = (g.ficha.Length > 5) || g.paciente.name.Length > 20;
+        _big = (g.ficha.Length > 5) || g.paciente.name.Length > 20;
         
         int top = nbig * 15 + c * 25;
-        int h = (big) ? 33 : 18;
+        int h = (_big) ? 33 : 18;
 
         ficha = new MaterialLabel(){Top = top, Left = 12, Text = g.ficha, Width = 50, Height = h};
         hname = new MaterialLabel(){Top = top, Left = 65, Text = g.paciente.name, Width = 84, Height = h};
@@ -40,20 +44,25 @@ namespace Program.Forms
         psurname = new MaterialLabel(){Top = top, Left = 518, Text = g.internado.surname, Width = 99, Height = h};
         proc =  new MaterialLabel(){Top = top, Left = 623, Text = g.procedencia, Width = 100, Height = h};
         
-        nbig += (big) ? 1 : 0;
+        nbig += (_big) ? 1 : 0;
         
         ficha.SendToBack();
       }
       
       public void UpdateTop(int c){
-        /*ficha.Top = top;
+        
+        int top = nbig * 15 + c * 25;
+        
+        ficha.Top = top;
         hname.Top = top;
         hsurname.Top = top;
         hab.Top = top;
         locker.Top = top;
         pname.Top = top;
         psurname.Top = top;
-        proc.Top = top;*/
+        proc.Top = top;
+        
+        nbig += (_big) ? 1 : 0;
       }
       
       public List<Control> getControls(){
@@ -84,7 +93,6 @@ namespace Program.Forms
       DBConn.getGuests().ForEach(x => guestControls.Add(new guestControl(x, guestControls.Count)));
       
       nbig = 1;
-      big = false;
       
       guestControls.ForEach(x => {
                               panel1.Controls.Add(x.ficha);
@@ -122,7 +130,6 @@ namespace Program.Forms
                               }});
       
       nbig = 1;
-      big = false;
       
       /*panel1.Controls.Clear();
       
