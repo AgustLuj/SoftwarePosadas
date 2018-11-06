@@ -113,14 +113,9 @@ namespace Program.Forms {
     void LeftBarClick(object sender, EventArgs e)
     {
       var s = sender as MaterialFlatButton;
-      
-      var t = new Transition(new TransitionType_Deceleration(500));
-      t.add(btn_addG, "Top", (s.Name == "btn_left_guests") ? 28 : 64);
-      t.run();
-    	    	
-    	leftbtns.FindAll(x => x != s).ForEach(x => x.selected = false);
-    	s.selected = true;
     	
+      var i = leftbtns.FindIndex(x => x == s);
+      
       var selectedIndex = leftbtns.FindIndex(x => x.selected);
       
       if(!s.selected) {
@@ -128,10 +123,9 @@ namespace Program.Forms {
         panel3.Controls.forEach(x => {
                                   var tt = new Transition(new TransitionType_Acceleration(500 + a++ * 100));
                                     tt.add(x, "Top", (i < selectedIndex) ? 518 : -x.Height);
-                                    tt.run();
                                     //Console.WriteLine(String.Format("{0}, {1}", a, panel3.Controls.Count));
-                                    //tt.TransitionCompletedEvent += (_, __) => x.Tag = "ready"; //FIXME: Someone, please explain me why this doesn't work :v
-                                    
+                                      //tt.TransitionCompletedEvent += (_, __) => x.Tag = "ready"; //FIXME: Someone, please explain me why this doesn't work :v
+                                    tt.run();
                                 });
         
         var t = new Transition(new TransitionType_Deceleration(500));
@@ -174,19 +168,6 @@ namespace Program.Forms {
       }
     }
     
-    void Btn_addGClick(object sender, EventArgs e)
-    {
-      if(!panel3.Controls.containsType(typeof(FormAddGuest))){
-      
-      var c = panel3.Controls.Count;
-      for (int i = 0; i < c; i++) {
-        if (panel3.Controls[i].Tag == "ready") {
-          panel3.Controls[i].Tag = "";
-          panel3.Controls.RemoveAt(i--);
-          c--;
-        }
-      }
-    }
     
     void Btn_addGClick(object sender, EventArgs e)
 	{
