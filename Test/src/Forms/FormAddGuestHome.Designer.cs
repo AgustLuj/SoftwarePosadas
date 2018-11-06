@@ -146,6 +146,7 @@ namespace Program.Forms
 			this.Name = "FormAddGuestHome";
 			this.Text = "FormAddGuestHome";
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAddGuestHomeFormClosed);
+			this.Load += new System.EventHandler(this.FormAddGuestHomeLoad);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}

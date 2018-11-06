@@ -1,23 +1,11 @@
-﻿/*
- * Created by SharpDevelop.
- * User: Alumnos
- * Date: 09/08/2018
- * Time: 14:23
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
- */
-using System;
+﻿using System;
 using Program.Forms;
 using System.Windows.Forms;
 
 namespace Program.Forms {
-  /// <summary>
-  /// Class with program entry point.
-  /// </summary>
+
   internal sealed class Program {
-    /// <summary>
-    /// Program entry point.
-    /// </summary>
+ 
     [STAThread]
     private static void Main(string[] args) {
       
@@ -26,9 +14,18 @@ namespace Program.Forms {
       
       StaticForms.MF = new MainForm();
       
+      StaticForms.FSH = new FormStatsHome();
+	      StaticForms.FSH.TopLevel = false;
+	      
+	  StaticForms.FAG = new FormAddGuestHome();
+	      StaticForms.FAG.TopLevel = false;
+	      
+	  StaticForms.FG = new FormGuests();
+	      StaticForms.FG.TopLevel = false;
+      
       #if DEBUG
-        //StaticForms.MF.Show();
-        new Load().Show();
+        StaticForms.MF.Show();
+        //new Load().Show();
       #else
         var f = new Load();
         f.Show();

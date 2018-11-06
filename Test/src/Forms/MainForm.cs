@@ -55,8 +55,6 @@ namespace Program.Forms {
 
       //label1.Text = (month.IsNull()) ? "No values" : month.general.huespedes.First().Nombre;
       
-      StaticForms.FG = new FormGuests();
-	      StaticForms.FG.TopLevel = false;
 	      panel3.Controls.Add(StaticForms.FG);
 	      panel3.Tag = StaticForms.FG;
 	      StaticForms.FG.Parent = panel3;
@@ -103,7 +101,8 @@ namespace Program.Forms {
     void LeftBarClick(object sender, EventArgs e)
     {
       var s = sender as MaterialFlatButton;
-      var i = leftbtns.FindIndex(x => x == s);
+    	
+      var senderIndex = leftbtns.FindIndex(x => x == s);
       
       var selectedIndex = leftbtns.FindIndex(x => x.selected);
       
@@ -111,7 +110,8 @@ namespace Program.Forms {
         int a = 0;
         panel3.Controls.forEach(x => {
                                   var tt = new Transition(new TransitionType_Deceleration(500 + a++ * 100));
-                                    tt.add(x, "Top", (i < selectedIndex) ? 518 : -x.Height);
+                                    tt.add(x, "Top", (senderIndex < selectedIndex) ? 518 : -x.Height);
+
                                     Console.WriteLine(String.Format("{0}, {1}", a, panel3.Controls.Count));
                                       tt.TransitionCompletedEvent += (_, __) => x.Tag = "ready";
                                     tt.run();
@@ -126,11 +126,6 @@ namespace Program.Forms {
             StaticForms.FG.Show();
             
             t.add(StaticForms.FG, "Top", 0);
-            
-            var t2 = new Transition(new TransitionType_Deceleration(500));
-              t2.add(btn_addG, "Top", 28);
-              t2.add(btn_refresh, "Top", 28);
-              t2.run();
               
             t.run();
             break;
@@ -144,20 +139,31 @@ namespace Program.Forms {
             f.Show();
             
             t.add(f, "Top", 0);
-            
-            var t3 = new Transition(new TransitionType_Acceleration(500));
-              t3.add(btn_addG, "Top", 64);
-              t3.add(btn_refresh, "Top", 64);
-              t3.run();
-            
             t.run();
+            
             break;
-          default:
-          	break;
+          case "btn_left_stats":
+            
+            panel3.Controls.Add(StaticForms.FSH);
+            StaticForms.FSH.Top = (senderIndex < selectedIndex) ? -StaticForms.FSH.Height : 518;
+            StaticForms.FSH.Show();
+            
+            t.add(StaticForms.FSH, "Top", 0);
+            t.run();
+            
+            Console.WriteLine(StaticForms.FSH);
+            break;
         }
+        
+        var t3 = new Transition(new TransitionType_Acceleration(500));
+          t3.add(btn_addG, "Top", (s.Name == "btn_left_guests") ? 28 : 64);
+          t3.add(btn_refresh, "Top", (s.Name == "btn_left_guests") ? 28 : 64);
+          t3.run();
         
         leftbtns[selectedIndex].selected = false;
     	  s.selected = true;
+    	  
+    	  Console.WriteLine(t3);
       }
     }
     
@@ -175,23 +181,24 @@ namespace Program.Forms {
       }
     }
     
+    
     void Btn_addGClick(object sender, EventArgs e)
-    {
-      if(!panel3.Controls.containsType(typeof(FormAddGuest))){
-      
-        var t = new FormAddGuest();
-  	      t.TopLevel = false;
-  	      panel3.Controls.Add(t);
-  	      panel3.Tag = t;
-  	      t.Parent = panel3;
-  	      t.Show();
-  	      t.Top = -t.Height;
-  	      t.BringToFront();
-  	      
-  	    var tr = new Transition(new TransitionType_Deceleration(500));
-  	      tr.add(t, "Top", 0);
-  	      tr.run();
-      }
+	{
+	    if(!panel3.Controls.containsType(typeof(FormAddGuest))){
+	      
+	        var t = new FormAddGuestHome();
+	  	      t.TopLevel = false;
+	  	      panel3.Controls.Add(t);
+	  	      panel3.Tag = t;
+	  	      t.Parent = panel3;
+	  	      t.Show();
+	  	      t.Top = -t.Height;
+	  	      t.BringToFront();
+	  	      
+	  	    var tr = new Transition(new TransitionType_Deceleration(500));
+	  	      tr.add(t, "Top", 0);
+  	      		tr.run();
+      	}
     }
     
     void Btn_refreshClick(object sender, EventArgs e)

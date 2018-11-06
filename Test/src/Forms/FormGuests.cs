@@ -20,6 +20,11 @@ namespace Program.Forms
     
       public static int nbig = 1;
       public static bool big = false;
+      
+      public static void clearBigVars(){
+        nbig = 1;
+        big = false;
+      }
     
     class guestControl {
       public MaterialLabel ficha, hname, hsurname, hab, locker, pname, psurname, proc;
@@ -29,15 +34,16 @@ namespace Program.Forms
         big = (g.ficha.Length > 5) || g.paciente.name.Length > 20;
         
         int top = nbig * 15 + c * 25;
+        int h = (big) ? 33 : 18;
 
-        ficha = new MaterialLabel(){Top = top, Left = 12, Text = g.ficha, Width = 50, Height = (big) ? 33 : 18};
-        hname = new MaterialLabel(){Top = top, Left = 65, Text = g.paciente.name, Width = 84};
-        hsurname =  new MaterialLabel(){Top = top, Left = 165, Text = g.paciente.surname, Width = 84};
-        hab =  new MaterialLabel(){Top = top, Left = 255, Text = g.hab.ToString(), Width = 86};
-        locker =  new MaterialLabel(){Top = top, Left = 347, Text = g.locker, Width = 58};
-        pname =  new MaterialLabel(){Top = top, Left = 411, Text = g.internado.name, Width = 101};
-        psurname = new MaterialLabel(){Top = top, Left = 518, Text = g.internado.surname, Width = 99};
-        proc =  new MaterialLabel(){Top = top, Left = 623, Text = g.procedencia, Width = 100};
+        ficha = new MaterialLabel(){Top = top, Left = 12, Text = g.ficha, Width = 50, Height = h};
+        hname = new MaterialLabel(){Top = top, Left = 65, Text = g.paciente.name, Width = 84, Height = h};
+        hsurname =  new MaterialLabel(){Top = top, Left = 165, Text = g.paciente.surname, Width = 84, Height = h};
+        hab =  new MaterialLabel(){Top = top, Left = 255, Text = g.hab.ToString(), Width = 86, Height = h};
+        locker =  new MaterialLabel(){Top = top, Left = 347, Text = g.locker, Width = 58, Height = h};
+        pname =  new MaterialLabel(){Top = top, Left = 411, Text = g.internado.name, Width = 101, Height = h};
+        psurname = new MaterialLabel(){Top = top, Left = 518, Text = g.internado.surname, Width = 99, Height = h};
+        proc =  new MaterialLabel(){Top = top, Left = 623, Text = g.procedencia, Width = 100, Height = h};
         
         nbig += (big) ? 1 : 0;
         
@@ -144,5 +150,7 @@ namespace Program.Forms
                               });*/
     
     }   
+    
+
   }
 }

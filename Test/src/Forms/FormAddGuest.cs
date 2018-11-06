@@ -124,7 +124,7 @@ namespace Program.Forms
 		void btn_addClick(object sender, EventArgs e)
 		{
 		  var panel3 = Parent as Panel;
-		  var FG = panel3.Controls[0] as FormGuests;
+		  //var FAG = panel3.Controls[0] as FormGuests;
 		  
 		  Console.WriteLine(int.Parse(text_habitacion.Text));
 			if(text_apellido.Text != "" && text_nombre.Text != "" && text_habitacion.Text != "" && text_locker.Text != ""){
@@ -133,18 +133,18 @@ namespace Program.Forms
 						if(combo_provincia.SelectedText != "Buenos Aires"){
 							if(combo_localidad.SelectedIndex != -1 && combo_provincia.SelectedIndex != -1){
 								insertGuest();
-								StaticForms.FG.updateGuests();
+								
 							}else{
 								showErrorLabel();
 							}	
 						}else if(text_localidad.Text != "" && text_provincia.Text != ""){
 								insertGuest();
-								StaticForms.FG.updateGuests();
+								
 						}
 					}else{
 						if(text_localidad.Text != "" && text_provincia.Text != ""){
 							insertGuest();
-							StaticForms.FG.updateGuests();
+							
 						}else{
 							showErrorLabel();
 						}
@@ -161,11 +161,8 @@ namespace Program.Forms
 		void insertGuest(){
 		  
 		  DBConn.insertGuest(new Guest(txt_ficha.Text, text_nombre.Text, text_apellido.Text, int.Parse(text_habitacion.Text), text_locker.Text, "", "", combo_pais.Text, combo_servicio.Text){telefono = txt_phone.Text, internado = new Classes.Person(){name = "", surname = ""}, ingreso = DateTime.ParseExact(txt_date.Text, "dd-MM-yyyy", null)});
-			//nombre = text_nombre.Text; 			
-			
-			//apellido = text_apellido.Text;
-			//StaticForms.formAddGuestHome.addButton1(1);
-			//StaticForms.formAddGuestHome.ChangeBtn(nombre,apellido);
+			StaticForms.FAG.addButton1(1);
+			//StaticForms.FAG.ChangeBtn(text_nombre.Text,text_apellido.Text);
 			var t = new Transition(new TransitionType_Acceleration(500));
 				t.add(this, "Top", -this.Height);
 				t.TransitionCompletedEvent += (_, __) => this.Close();

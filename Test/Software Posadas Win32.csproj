@@ -103,10 +103,15 @@
       <DependentUpon>Images.resx</DependentUpon>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="src\Classes\Guest.cs" />
-    <Compile Include="src\Classes\Month.cs" />
-    <Compile Include="src\Classes\Photo.cs" />
-    <Compile Include="src\Classes\User.cs" />
+    <Compile Include="src\Forms\Classes\Guest.cs" />
+    <Compile Include="src\Forms\Classes\Image.cs" />
+    <Compile Include="src\Forms\Classes\Month.cs" />
+    <Compile Include="src\Forms\Classes\Photo.cs" />
+    <Compile Include="src\Forms\Classes\User.cs" />
+    <Compile Include="src\Forms\FormStatsOrigin.cs" />
+    <Compile Include="src\Forms\FormStatsOrigin.Designer.cs">
+      <DependentUpon>FormStatsOrigin.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\Forms\FormAddUser.cs" />
     <Compile Include="src\Forms\FormAddUser.Designer.cs">
       <DependentUpon>FormAddUser.cs</DependentUpon>
@@ -138,6 +143,14 @@
     <Compile Include="src\Forms\FormSearchGuest.cs" />
     <Compile Include="src\Forms\FormSearchGuest.Designer.cs">
       <DependentUpon>FormSearchGuest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Forms\FormStatsHome.cs" />
+    <Compile Include="src\Forms\FormStatsHome.Designer.cs">
+      <DependentUpon>FormStatsHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Forms\FormStatsQuantity.cs" />
+    <Compile Include="src\Forms\FormStatsQuantity.Designer.cs">
+      <DependentUpon>FormStatsQuantity.cs</DependentUpon>
     </Compile>
     <Compile Include="src\Forms\Load.cs" />
     <Compile Include="src\Forms\Load.Designer.cs">
@@ -176,6 +189,15 @@
     <EmbeddedResource Include="src\Forms\FormLoadPicture.resx">
       <DependentUpon>FormLoadPicture.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\Forms\FormStatsHome.resx">
+      <DependentUpon>FormStatsHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Forms\FormStatsOrigin.resx">
+      <DependentUpon>FormStatsOrigin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Forms\FormStatsQuantity.resx">
+      <DependentUpon>FormStatsQuantity.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Resources\normal.cur">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -205,7 +227,7 @@
     <Folder Include="Resources" />
     <Folder Include="src" />
     <Folder Include="src\Namespaces" />
-    <Folder Include="src\Classes" />
+    <Folder Include="src\Forms\Classes" />
     <Folder Include="src\Forms" />
     <Folder Include="src\Static Classes" />
   </ItemGroup>
