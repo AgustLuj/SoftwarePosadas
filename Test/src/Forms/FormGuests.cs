@@ -77,7 +77,6 @@ namespace Program.Forms
     }
     
     List<guestControl> guestControls;
-    //List<guestControl> visibleGuestControls;
     
     public FormGuests()
     {
@@ -129,34 +128,7 @@ namespace Program.Forms
                                 x.getControls().ForEach(y => y.Visible = false);
                               }});
       
-      nbig = 1;
-      
-      /*panel1.Controls.Clear();
-      
-      visibleGuestControls = guestControls.FindAll(x => 
-                                                   (x.ficha.Text.ToLower().StartsWith(txt_ficha.Text.ToLower()) &&
-                                                    x.hname.Text.ToLower().StartsWith(txt_hname.Text.ToLower()) &&
-                                                    x.hsurname.Text.ToLower().StartsWith(txt_hsurname.Text.ToLower()) &&
-                                                    x.hab.Text.StartsWith(txt_nhab.Text) &&
-                                                    x.locker.Text.ToLower().StartsWith(txt_nlock.Text.ToLower()) &&
-                                                    x.pname.Text.ToLower().StartsWith(txt_pname.Text.ToLower()) &&
-                                                    x.psurname.Text.ToLower().StartsWith(txt_psurname.Text.ToLower()) &&
-                                                    x.proc.Text.ToLower().StartsWith(txt_proc.Text.ToLower())));
-      
-        visibleGuestControls.ForEach(x => x.UpdateTop(visibleGuestControls.IndexOf(x)));
-        visibleGuestControls.ForEach(x => {
-                                panel1.Controls.Add(x.ficha);
-                                panel1.Controls.Add(x.hname);
-                                panel1.Controls.Add(x.hsurname);
-                                panel1.Controls.Add(x.hab);
-                                panel1.Controls.Add(x.locker);
-                                panel1.Controls.Add(x.pname);
-                                panel1.Controls.Add(x.psurname);
-                                panel1.Controls.Add(x.proc);
-                              });*/
-    
+      nbig = 1;    
     }   
-    
-
   }
 }
