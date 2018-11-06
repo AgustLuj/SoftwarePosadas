@@ -20,11 +20,6 @@ namespace Program.Forms
     
       public static int nbig = 1;
       public static bool big = false;
-      
-      public static void clearBigVars(){
-        nbig = 1;
-        big = false;
-      }
     
     class guestControl {
       public MaterialLabel ficha, hname, hsurname, hab, locker, pname, psurname, proc;
@@ -47,8 +42,6 @@ namespace Program.Forms
         
         nbig += (big) ? 1 : 0;
         
-        Console.WriteLine(String.Format("nbig: {0}, c: {1}", nbig, c));
-        Console.WriteLine(String.Format("big: {0}\n", big));
         ficha.SendToBack();
       }
       
@@ -84,9 +77,15 @@ namespace Program.Forms
     }
     
     public void updateGuests(){
+      
       panel1.Controls.Clear();
       guestControls.Clear();
+      
       DBConn.getGuests().ForEach(x => guestControls.Add(new guestControl(x, guestControls.Count)));
+      
+      nbig = 1;
+      big = false;
+      
       guestControls.ForEach(x => {
                               panel1.Controls.Add(x.ficha);
                               panel1.Controls.Add(x.hname);
@@ -122,8 +121,8 @@ namespace Program.Forms
                                 x.getControls().ForEach(y => y.Visible = false);
                               }});
       
-        
-      
+      nbig = 1;
+      big = false;
       
       /*panel1.Controls.Clear();
       
