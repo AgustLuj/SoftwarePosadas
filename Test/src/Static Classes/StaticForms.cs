@@ -10,7 +10,7 @@ namespace Program.Forms
 
 		public static FormAddGuestHome FAG;
 		public static FormGuests FG;
-    public static MainForm MF;
+    	public static MainForm MF;
 		public static FormStatsHome FSH;    	
 		
 	}

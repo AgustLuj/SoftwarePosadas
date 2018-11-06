@@ -44,7 +44,7 @@ namespace Program.Forms
 				f.Parent = this;
 				f.Show();
 				f.Top = - f.Height;
-				//f.BringToFront();
+				f.BringToFront();
 			
 			var t = new Transition(new TransitionType_Deceleration(500));
 				t.add(f, "Top", 0);
@@ -55,7 +55,7 @@ namespace Program.Forms
 		
 		void Button_pacienteClick(object sender, EventArgs e)
 		{
-			/*var fa = sender as MaterialFlatButton;
+			var fa = sender as MaterialFlatButton;
 				name = fa.Name;
 			
 			FormAddPatient f = new FormAddPatient(name);
@@ -69,25 +69,8 @@ namespace Program.Forms
 			var t = new Transition(new TransitionType_Deceleration(500));
 				t.add(f, "Top", 0);
 				t.run();
-			*/	
+				
 				//f.Location = this.Location;
-				var btn = new MaterialFlatButton();	
-				btn.AutoSize = true;
-				btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-				btn.Depth = 0;
-				btn.Icon = null;
-				btn.Location = new System.Drawing.Point(100,100);
-				btn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-				btn.MouseState = MaterialSkin.MouseState.HOVER;
-				btn.Name = "btn"+ 1;
-				btn.Primary = false;
-				btn.Size = new System.Drawing.Size(145, 36);
-				btn.TabIndex = 1;
-				btn.Text = "hola";
-				btn.UseVisualStyleBackColor = true;
-		
-			
-			this.Controls.Add(btn);
 		}
 		
 		void FormAddGuestHomeFormClosed(object sender, FormClosedEventArgs e)
@@ -131,8 +114,8 @@ namespace Program.Forms
 			}else{
 				btn.Click += new System.EventHandler(this.MaterialFlatButton1Click);
 			}
+			(this.Parent as Panel).Controls.Add(btn);
 			
-			this.Controls.Add(btn);
 			lista.Add(btn);
 			
 			if(str == "+ Añadir huesped "){

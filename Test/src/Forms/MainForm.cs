@@ -112,7 +112,7 @@ namespace Program.Forms {
                                   var tt = new Transition(new TransitionType_Deceleration(500 + a++ * 100));
                                     tt.add(x, "Top", (senderIndex < selectedIndex) ? 518 : -x.Height);
 
-                                    Console.WriteLine(String.Format("{0}, {1}", a, panel3.Controls.Count));
+                                    //Console.WriteLine(String.Format("{0}, {1}", a, panel3.Controls.Count));
                                       tt.TransitionCompletedEvent += (_, __) => x.Tag = "ready";
                                     tt.run();
                                 });
@@ -146,13 +146,12 @@ namespace Program.Forms {
             
             panel3.Controls.Add(StaticForms.FSH);
             StaticForms.FSH.Top = (senderIndex < selectedIndex) ? -StaticForms.FSH.Height : 518;
-            StaticForms.FSH.Parent = panel3;
             StaticForms.FSH.Show();
-            
+          
             t.add(StaticForms.FSH, "Top", 0);
             t.run();
             
-            Console.WriteLine(StaticForms.FSH);
+            //Console.WriteLine(StaticForms.FSH);
             break;
         }
         
@@ -164,7 +163,7 @@ namespace Program.Forms {
         leftbtns[selectedIndex].selected = false;
     	  s.selected = true;
     	  
-    	  Console.WriteLine(t3);
+    	  //Console.WriteLine(t3);
       }
     }
     
