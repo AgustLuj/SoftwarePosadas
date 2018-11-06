@@ -174,7 +174,7 @@ namespace Program.Forms {
       
       var c = panel3.Controls.Count;
       for (int i = 0; i < c; i++) {
-        if (panel3.Controls[i].Tag == "ready") {
+        if (panel3.Controls[i].Tag == "ready" && (panel3.Controls[i].Top == 518 || panel3.Controls[i].Top == -panel3.Controls[i].Height)) {
           panel3.Controls[i].Tag = "";
           panel3.Controls.RemoveAt(i--);
           c--;
