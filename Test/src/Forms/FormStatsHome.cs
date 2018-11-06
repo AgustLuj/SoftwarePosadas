@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Transitions;
 
 namespace Program.Forms
 {
@@ -114,9 +115,27 @@ namespace Program.Forms
     
     void MaterialFlatButton2Click(object sender, EventArgs e)
     {
+    	Random rnd = new Random();
+    	int[] values = new int[30];
     	
+		for(int i = 0;i < values.Length;i++){
+			values[i] = rnd.Next(50);
+		}
     	if(radio_origin.Checked && radio_quantity.Checked){
-    		
+    		if(radio_quantity.Checked){
+    			FormStatsQuantity f = new FormStatsQuantity(values);
+					f.TopLevel = false;
+					(this.Parent as Panel).Controls.Add(f);
+					f.Parent = this;
+					f.Show();
+					f.Top = - f.Height;
+					//f.BringToFront();
+				
+				var t = new Transition(new TransitionType_Deceleration(500));
+					t.add(f, "Top", 0);
+					t.run();	
+    			
+    		}
     	}
     }
   }

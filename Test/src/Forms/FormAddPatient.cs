@@ -1,12 +1,4 @@
-﻿/*
- * Created by SharpDevelop.
- * User: lujan
- * Date: 27/8/2018
- * Time: 08:48
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
- */
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -16,9 +8,6 @@ using Program.StaticClasses;
 
 namespace Program.Forms
 {
-	/// <summary>
-	/// Description of FormAddPatient.
-	/// </summary>
 	public partial class FormAddPatient : Form
 	{
 		public string nombre =" ";
