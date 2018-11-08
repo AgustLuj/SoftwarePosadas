@@ -3,6 +3,8 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
 
+using Transitions;
+
 namespace Program.Forms
 {
 	public partial class FormStatsOrigin : Form
@@ -94,7 +96,10 @@ namespace Program.Forms
 		
 		void MaterialFlatButton1Click(object sender, EventArgs e)
 		{
-			this.Close();
+			var t = new Transition(new TransitionType_Acceleration(500));
+				t.add(this, "Top", -this.Height);
+				t.TransitionCompletedEvent += (_, __) => this.Close();
+				t.run();
 		}
 	}
 }

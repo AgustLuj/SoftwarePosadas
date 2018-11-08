@@ -353,15 +353,16 @@ namespace Program.Forms
 			// 
 			// materialFlatButton1
 			// 
+			this.materialFlatButton1.AutoSize = true;
 			this.materialFlatButton1.Depth = 0;
 			this.materialFlatButton1.Icon = null;
-			this.materialFlatButton1.Location = new System.Drawing.Point(618, 461);
+			this.materialFlatButton1.Location = new System.Drawing.Point(589, 416);
 			this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
 			this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
 			this.materialFlatButton1.Name = "materialFlatButton1";
 			this.materialFlatButton1.Primary = false;
 			this.materialFlatButton1.selected = false;
-			this.materialFlatButton1.Size = new System.Drawing.Size(75, 23);
+			this.materialFlatButton1.Size = new System.Drawing.Size(75, 36);
 			this.materialFlatButton1.TabIndex = 26;
 			this.materialFlatButton1.Text = "Cerrar";
 			this.materialFlatButton1.UseVisualStyleBackColor = true;
@@ -372,7 +373,7 @@ namespace Program.Forms
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(725, 479);
+			this.ClientSize = new System.Drawing.Size(741, 518);
 			this.Controls.Add(this.materialFlatButton1);
 			this.Controls.Add(this.pic);
 			this.Controls.Add(this.materialLabel1);
