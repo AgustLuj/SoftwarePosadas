@@ -17,21 +17,10 @@ namespace Program.Forms
     {
     }
     
-    void Radio_historicoCheckedChanged(object sender, EventArgs e)
-    {
-		  if(radio_historico.Checked){
-		    showCustomFilter(false);
-		    showPeriodFilter(false);
-		  }
+    void filterChanged(object sender, EventArgs e){
+      showCustomFilter(rad_filter_personalized.Checked);
+      showPeriodFilter(rad_filter_period.Checked);
     }
-		
-  	void Radio_personalizadoCheckedChanged(object sender, EventArgs e)
-  	{
-  	    if(radio_personalizado.Checked){
-  	      showCustomFilter(true);
-  	      showPeriodFilter(false);
-  		}
-  	}
 	
   	void showCustomFilter(bool show){
       
@@ -56,29 +45,17 @@ namespace Program.Forms
 	
   	void Check_añoCheckedChanged(object sender, EventArgs e)
   	{
-        if(check_año.Checked){
-          combo_año.Enabled = true;
-  		  }else{
-          combo_año.Enabled = false;
-        }
+      combo_año.Enabled = check_año.Checked;
   	}
 	
   	void Check_mesCheckedChanged(object sender, EventArgs e)
   	{
-  	  if(check_mes.Checked){
-  	    combo_mes.Enabled = true;  
-  	  }else{
-  	    combo_mes.Enabled = false;
-  	  }
+      combo_mes.Enabled = check_mes.Checked;
   	}
 	
   	void Check_diaCheckedChanged(object sender, EventArgs e)
   	{
-  	  if(check_dia.Checked){
-  	    combo_dia.Enabled = true;
-  	  }else{
-  	    combo_dia.Enabled = false;
-  	  }
+      combo_dia.Enabled = check_dia.Checked;
   	}
     
     void Button_originClick(object sender, EventArgs e)
@@ -89,14 +66,6 @@ namespace Program.Forms
     void Combo_añoSelectedIndexChanged(object sender, EventArgs e)
     {
     	
-    }
-    
-    void MaterialRadioButton1CheckedChanged(object sender, EventArgs e)
-    {
-    	if(materialRadioButton1.Checked){
-    		showCustomFilter(false);
-    		showPeriodFilter(true);
-    	}
     }
     
     void MaterialLabel3Click(object sender, EventArgs e)
@@ -114,9 +83,9 @@ namespace Program.Forms
     	Random rnd = new Random();
     	int[] values = new int[30];
     	
-		for(int i = 0;i < values.Length;i++){
-			values[i] = rnd.Next(50);
-		}
+  		for(int i = 0;i < values.Length;i++){
+  			values[i] = rnd.Next(50);
+  		}
     	
     	if(radio_quantity.Checked){
     			FormStatsQuantity f = new FormStatsQuantity(values);
