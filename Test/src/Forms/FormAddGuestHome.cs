@@ -8,6 +8,8 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
 
+using Program.Classes;
+
 using MaterialSkin.Controls;
 
 using Transitions;
@@ -21,6 +23,8 @@ namespace Program.Forms
 		public int count_btn2 = 1;
 		
 		private List<MaterialSkin.Controls.MaterialFlatButton> lista;
+		
+		private List<Guest> Guests = new List<Guest>();
 		
 		public FormAddGuestHome()
 		{
@@ -97,7 +101,7 @@ namespace Program.Forms
 		  
 		  Console.WriteLine(String.Format("str: {0}, x: {1}, y: {2}", str, x, y));
 			
-			var btn = new MaterialFlatButton();	
+			var btn = new MaterialFlatButton();
 				btn.AutoSize = true;
 				btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 				btn.Depth = 0;
