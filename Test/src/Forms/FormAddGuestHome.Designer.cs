@@ -43,6 +43,7 @@ namespace Program.Forms
 			this.materialToolStripMenuItem2 = new MaterialSkin.Controls.MaterialToolStripMenuItem();
 			this.materialToolStripMenuItem3 = new MaterialSkin.Controls.MaterialToolStripMenuItem();
 			this.materialFlatButton2 = new MaterialSkin.Controls.MaterialFlatButton();
+			this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
 			this.SuspendLayout();
 			// 
 			// label_ficha
@@ -132,12 +133,30 @@ namespace Program.Forms
 			this.materialFlatButton2.UseVisualStyleBackColor = true;
 			this.materialFlatButton2.Click += new System.EventHandler(this.MaterialFlatButton2Click);
 			// 
+			// materialFlatButton1
+			// 
+			this.materialFlatButton1.AutoSize = true;
+			this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+			this.materialFlatButton1.Depth = 0;
+			this.materialFlatButton1.Icon = null;
+			this.materialFlatButton1.Location = new System.Drawing.Point(511, 441);
+			this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+			this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
+			this.materialFlatButton1.Name = "materialFlatButton1";
+			this.materialFlatButton1.Primary = false;
+			this.materialFlatButton1.selected = false;
+			this.materialFlatButton1.Size = new System.Drawing.Size(70, 36);
+			this.materialFlatButton1.TabIndex = 4;
+			this.materialFlatButton1.Text = "Añadir";
+			this.materialFlatButton1.UseVisualStyleBackColor = true;
+			// 
 			// FormAddGuestHome
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(741, 518);
+			this.Controls.Add(this.materialFlatButton1);
 			this.Controls.Add(this.materialFlatButton2);
 			this.Controls.Add(this.button_paciente);
 			this.Controls.Add(this.button_huesped);
@@ -150,6 +169,7 @@ namespace Program.Forms
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
 		private MaterialSkin.Controls.MaterialFlatButton materialFlatButton2;
 		private MaterialSkin.Controls.MaterialToolStripMenuItem materialToolStripMenuItem3;
 		private MaterialSkin.Controls.MaterialToolStripMenuItem materialToolStripMenuItem2;

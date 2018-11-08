@@ -82,13 +82,16 @@ namespace Program.Forms
 		}
 		
 		public void addButton1(int type){
+			
+			Console.WriteLine(""+count_btn1+" "+count_btn2);
+			
 			if(type == 1){
 				if(count_btn1 < 10){
-					createButton("+ añadir Huesped", button_huesped.Location.X, button_huesped.Location.Y + 40 * count_btn1);
+					createButton("+ Añadir Huesped", button_huesped.Location.X, button_huesped.Location.Y + 40 * count_btn1);
 				}	
 			}else{
 				if(count_btn2 < 10){
-					createButton("+ añadir Paciente", button_paciente.Location.X, button_paciente.Location.Y + 40 * count_btn2);
+					createButton("+ Añadir Paciente", button_paciente.Location.X, button_paciente.Location.Y + 40 * count_btn2);
 				}	
 			}
 		}
@@ -100,27 +103,31 @@ namespace Program.Forms
 				btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 				btn.Depth = 0;
 				btn.Location = new System.Drawing.Point(x,y);
-				btn.Name = (str == "+ añadir Huesped") ? "btn"+ count_btn1 : "btnP" + count_btn2;
+				btn.Name = (str == "+ Añadir Huesped") ? "btn"+ count_btn1 : "btnP" + count_btn2;
 				btn.Primary = false;
 				btn.Size = new System.Drawing.Size(145, 36);
 				btn.Text = str;
 				btn.Visible=true;
-				btn.Click += (str == "+ añadir Huesped") ? new System.EventHandler(this.Button_huespedClick) : new System.EventHandler(this.Button_pacienteClick);
+				btn.Click += (str == "+ Añadir Huesped") ? new System.EventHandler(this.Button_huespedClick) : new System.EventHandler(this.Button_pacienteClick);
+				
 			
 			this.Controls.Add(btn);
-			lista.Add(btn);
-			
-			if(str == "+ Añadir huesped"){
+			lista.Add(btn);	
+		
+			if(str.Equals("+ Añadir Huesped")){
 				count_btn1++;	
 			}else{
 				count_btn2++;
 			}
+			
+			
 		}
 		
 		public void ChangeBtn(string names,string a, string b){
-			Console.WriteLine(names);
+			
 			for(int j = 0;j<this.Controls.Count;j++){
 				if(names == this.Controls[j].Name){
+					
 					this.Controls[j].Text=" + " + a + " " + b;
 					this.Controls[j].Enabled = false;
 				}

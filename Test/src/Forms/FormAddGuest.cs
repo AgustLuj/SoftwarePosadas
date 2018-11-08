@@ -125,44 +125,14 @@ namespace Program.Forms
 		{
 		  var panel3 = Parent as Panel;
 		  //var FAG = panel3.Controls[0] as FormGuests;
-		  
-//		  Console.WriteLine(int.Parse(text_habitacion.Text));
-			if(text_apellido.Text != "" && text_nombre.Text != "" && text_habitacion.Text != "" && text_locker.Text != ""){
-				if(combo_pais.SelectedIndex != -1){
-					if(combo_pais.SelectedText != "Argentina"){
-						if(combo_provincia.SelectedText != "Buenos Aires"){
-							if(combo_localidad.SelectedIndex != -1 && combo_provincia.SelectedIndex != -1){
-								insertGuest();
-								
-							}else{
-								showErrorLabel();
-							}	
-						}else if(text_localidad.Text != "" && text_provincia.Text != ""){
-								insertGuest();
-								
-						}
-					}else{
-						if(text_localidad.Text != "" && text_provincia.Text != ""){
-							insertGuest();
-							
-						}else{
-							showErrorLabel();
-						}
-					} 
-				}else{
-					showErrorLabel();
-				}
-			}else{
-				showErrorLabel();
-			}
-			insertGuest();
-			StaticForms.FG.updateGuests();
+		  insertGuest();
+
 		}
 		void insertGuest()
 		{
-				StaticForms.FAG.addButton1(1);
-				StaticForms.FAG.ChangeBtn(name,text_nombre.Text,text_apellido.Text);
-				this.Close();	
+			StaticForms.FAG.addButton1(1);
+			StaticForms.FAG.ChangeBtn(name,text_nombre.Text,text_apellido.Text);	
+			this.Close();
 		}
 		void showErrorLabel(){
 			label_error.ForeColor = Color.FromArgb(0xB00020);
