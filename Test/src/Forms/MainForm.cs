@@ -177,7 +177,9 @@ namespace Program.Forms {
       
       var c = panel3.Controls.Count;
       for (int i = 0; i < c; i++) {
+        #pragma warning disable 252
         if (panel3.Controls[i].Tag == "ready" && (panel3.Controls[i].Top == 518 || panel3.Controls[i].Top == -panel3.Controls[i].Height)) {
+          #pragma warning restore 252
           panel3.Controls[i].Tag = "";
           panel3.Controls.RemoveAt(i--);
           c--;
