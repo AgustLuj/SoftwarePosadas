@@ -1,0 +1,43 @@
+		public void addButton1(int type){
+			if(type == 1){
+				if(count_btn1 < 10){
+					createButton("+ añadir huesped ", button_huesped.Location.X, button_huesped.Location.Y + 40 * count_btn1);
+				}	
+			}else{
+				if(count_btn2 < 10){
+					createButton("+ añadir Paciente ", button_paciente.Location.X, button_paciente.Location.Y + 40 * count_btn2);
+				}	
+			}
+		}
+		
+	 	void createButton(String str, int x, int y){
+		  
+		  Console.WriteLine(String.Format("str: {0}, x: {1}, y: {2}", str, x, y));
+			
+			var btn = new MaterialFlatButton();	
+				btn.AutoSize = true;
+				btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+				btn.Depth = 0;
+				btn.Location = new System.Drawing.Point(x,y);
+				btn.Name = (str == "+ añadir huesped ") ? "btn"+ count_btn1 : "btnP" + count_btn2;
+				btn.Primary = false;
+				btn.Size = new System.Drawing.Size(145, 36);
+				btn.Text = str;
+			
+			if(str == "+ Añadir huesped "){
+				btn.Click += new System.EventHandler(this.Button_huespedClick);
+			}else{
+				btn.Click += new System.EventHandler(this.MaterialFlatButton1Click);
+			}
+			this.Controls.Add(btn);
+			btn.BringToFront();
+			
+			lista.Add(btn);
+			
+			if(str == "+ Añadir huesped "){
+				count_btn1++;	
+			}else{
+				count_btn2++;
+			}
+		  Console.WriteLine("yep");
+		}

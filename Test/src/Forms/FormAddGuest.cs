@@ -19,12 +19,12 @@ namespace Program.Forms
 	{
 		public string nombre = "";
 		public string apellido = "";
-		
-		public FormAddGuest()
+		public string name =" ";
+		public FormAddGuest(string name)
 		{
 			InitializeComponent();
 			combo_pais.Items.AddRange(GetAllCountries());
-			
+			this.name=name;
 			//sadboys sadboys
 			
 			txt_ficha.Text = "1001C";
@@ -126,7 +126,7 @@ namespace Program.Forms
 		  var panel3 = Parent as Panel;
 		  //var FAG = panel3.Controls[0] as FormGuests;
 		  
-		  Console.WriteLine(int.Parse(text_habitacion.Text));
+//		  Console.WriteLine(int.Parse(text_habitacion.Text));
 			if(text_apellido.Text != "" && text_nombre.Text != "" && text_habitacion.Text != "" && text_locker.Text != ""){
 				if(combo_pais.SelectedIndex != -1){
 					if(combo_pais.SelectedText != "Argentina"){
@@ -158,15 +158,11 @@ namespace Program.Forms
 			insertGuest();
 			StaticForms.FG.updateGuests();
 		}
-		void insertGuest(){
-		  
-		  DBConn.insertGuest(new Guest(txt_ficha.Text, text_nombre.Text, text_apellido.Text, int.Parse(text_habitacion.Text), text_locker.Text, "", "", combo_pais.Text, combo_servicio.Text){telefono = txt_phone.Text, internado = new Classes.Person(){name = "", surname = ""}, ingreso = DateTime.ParseExact(txt_date.Text, "dd-MM-yyyy", null)});
-			StaticForms.FAG.addButton1(1);
-			//StaticForms.FAG.ChangeBtn(text_nombre.Text,text_apellido.Text);
-			var t = new Transition(new TransitionType_Acceleration(500));
-				t.add(this, "Top", -this.Height);
-				t.TransitionCompletedEvent += (_, __) => this.Close();
-				t.run();
+		void insertGuest()
+		{
+				StaticForms.FAG.addButton1(1);
+				StaticForms.FAG.ChangeBtn(name,text_nombre.Text,text_apellido.Text);
+				this.Close();	
 		}
 		void showErrorLabel(){
 			label_error.ForeColor = Color.FromArgb(0xB00020);

@@ -17,6 +17,7 @@ namespace Program.Forms
 	public partial class FormAddGuestHome : Form
 	{	
 		public String name = " ";
+		public String names = " ";
 		public int count_btn1 = 1;
 		public int count_btn2 = 1;
 		
@@ -37,9 +38,9 @@ namespace Program.Forms
 		void Button_huespedClick(object sender, EventArgs e)
 		{
 			var fa = sender as MaterialFlatButton;
-				name = fa.Name;
-			
-			FormAddGuest f = new FormAddGuest();
+				names = fa.Name;
+				
+			FormAddGuest f = new FormAddGuest(names);
 				f.TopLevel = false;
 				(this.Parent as Panel).Controls.Add(f);
 				f.Parent = this;
@@ -58,7 +59,6 @@ namespace Program.Forms
 		{
 			var fa = sender as MaterialFlatButton;
 				name = fa.Name;
-			
 			FormAddPatient f = new FormAddPatient(name);
 				f.TopLevel = false;
 				(this.Parent as Panel).Controls.Add(f);
@@ -84,54 +84,47 @@ namespace Program.Forms
 		public void addButton1(int type){
 			if(type == 1){
 				if(count_btn1 < 10){
-					createButton("+ añadir huesped ", button_huesped.Location.X, button_huesped.Location.Y + 40 * count_btn1);
+					createButton("+ añadir Huesped", button_huesped.Location.X, button_huesped.Location.Y + 40 * count_btn1);
 				}	
 			}else{
 				if(count_btn2 < 10){
-					createButton("+ añadir Paciente ", button_paciente.Location.X, button_paciente.Location.Y + 40 * count_btn2);
+					createButton("+ añadir Paciente", button_paciente.Location.X, button_paciente.Location.Y + 40 * count_btn2);
 				}	
 			}
 		}
 		
 	 	void createButton(String str, int x, int y){
-		  
-		  Console.WriteLine(String.Format("str: {0}, x: {1}, y: {2}", str, x, y));
 			
 			var btn = new MaterialFlatButton();	
 				btn.AutoSize = true;
 				btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 				btn.Depth = 0;
 				btn.Location = new System.Drawing.Point(x,y);
-				btn.Name = (str == "+ añadir huesped ") ? "btn"+ count_btn1 : "btnP" + count_btn2;
+				btn.Name = (str == "+ añadir Huesped") ? "btn"+ count_btn1 : "btnP" + count_btn2;
 				btn.Primary = false;
 				btn.Size = new System.Drawing.Size(145, 36);
 				btn.Text = str;
+				btn.Visible=true;
+				btn.Click += (str == "+ añadir Huesped") ? new System.EventHandler(this.Button_huespedClick) : new System.EventHandler(this.Button_pacienteClick);
 			
-			if(str == "+ Añadir huesped "){
-				btn.Click += new System.EventHandler(this.Button_huespedClick);
-			}else{
-				btn.Click += new System.EventHandler(this.MaterialFlatButton1Click);
-			}
 			this.Controls.Add(btn);
-			btn.BringToFront();
-			
 			lista.Add(btn);
 			
-			if(str == "+ Añadir huesped "){
+			if(str == "+ Añadir huesped"){
 				count_btn1++;	
 			}else{
 				count_btn2++;
 			}
-		  Console.WriteLine("yep");
 		}
 		
 		public void ChangeBtn(string names,string a, string b){
-			/*for(int j = 0;j<this.Controls.Count;j++){
+			Console.WriteLine(names);
+			for(int j = 0;j<this.Controls.Count;j++){
 				if(names == this.Controls[j].Name){
 					this.Controls[j].Text=" + " + a + " " + b;
 					this.Controls[j].Enabled = false;
 				}
-			}*/
+			}
 
 		}
 		
@@ -149,10 +142,15 @@ namespace Program.Forms
 		{
 			
 		}
-		
-		void MaterialRaisedButton1Click(object sender, EventArgs e)
-		{
-		  addButton1(2);
+		void insertGuest(){
+		  
+//		  DBConn.insertGuest(new Guest(txt_ficha.Text, text_nombre.Text, text_apellido.Text, int.Parse(text_habitacion.Text), text_locker.Text, "", "", combo_pais.Text, combo_servicio.Text){telefono = txt_phone.Text, internado = new Classes.Person(){name = "", surname = ""}, ingreso = DateTime.ParseExact(txt_date.Text, "dd-MM-yyyy", null)});
+//			StaticForms.FAG.addButton1(1);		
+//		  	StaticForms.FAG.ChangeBtn(name,text_nombre.Text,text_apellido.Text);
+//			var t = new Transition(new TransitionType_Acceleration(500));
+//				t.add(this, "Top", -this.Height);
+//				t.TransitionCompletedEvent += (_, __) => this.Close();
+//				t.run();
 		}
 	}
 }
