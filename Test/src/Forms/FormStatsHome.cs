@@ -121,21 +121,32 @@ namespace Program.Forms
 		for(int i = 0;i < values.Length;i++){
 			values[i] = rnd.Next(50);
 		}
-    	if(radio_origin.Checked && radio_quantity.Checked){
-    		if(radio_quantity.Checked){
+    	
+    	if(radio_quantity.Checked){
     			FormStatsQuantity f = new FormStatsQuantity(values);
 					f.TopLevel = false;
 					(this.Parent as Panel).Controls.Add(f);
 					f.Parent = this;
 					f.Show();
 					f.Top = - f.Height;
-					//f.BringToFront();
+					f.BringToFront();
 				
 				var t = new Transition(new TransitionType_Deceleration(500));
 					t.add(f, "Top", 0);
 					t.run();	
     			
-    		}
+    	}else if(radio_origin.Checked){
+    		FormStatsOrigin f = new FormStatsOrigin(values);
+					f.TopLevel = false;
+					(this.Parent as Panel).Controls.Add(f);
+					f.Parent = this;
+					f.Show();
+					f.Top = - f.Height;
+					f.BringToFront();
+				
+				var t = new Transition(new TransitionType_Deceleration(500));
+					t.add(f, "Top", 0);
+					t.run();
     	}
     }
   }

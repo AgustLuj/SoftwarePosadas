@@ -91,5 +91,10 @@ namespace Program.Forms
 		  this.Controls.Add(text);
 		  texts.Add(text);
 		}
+		
+		void MaterialFlatButton1Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
 	}
 }

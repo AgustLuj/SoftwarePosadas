@@ -63,6 +63,7 @@ namespace Program.Forms
 			this.pictureBox17 = new System.Windows.Forms.PictureBox();
 			this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
 			this.pic = new System.Windows.Forms.PictureBox();
+			this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -350,12 +351,29 @@ namespace Program.Forms
 			this.pic.TabIndex = 0;
 			this.pic.TabStop = false;
 			// 
+			// materialFlatButton1
+			// 
+			this.materialFlatButton1.Depth = 0;
+			this.materialFlatButton1.Icon = null;
+			this.materialFlatButton1.Location = new System.Drawing.Point(618, 461);
+			this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+			this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
+			this.materialFlatButton1.Name = "materialFlatButton1";
+			this.materialFlatButton1.Primary = false;
+			this.materialFlatButton1.selected = false;
+			this.materialFlatButton1.Size = new System.Drawing.Size(75, 23);
+			this.materialFlatButton1.TabIndex = 26;
+			this.materialFlatButton1.Text = "Cerrar";
+			this.materialFlatButton1.UseVisualStyleBackColor = true;
+			this.materialFlatButton1.Click += new System.EventHandler(this.MaterialFlatButton1Click);
+			// 
 			// FormStatsOrigin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(725, 479);
+			this.Controls.Add(this.materialFlatButton1);
 			this.Controls.Add(this.pic);
 			this.Controls.Add(this.materialLabel1);
 			this.Controls.Add(this.pictureBox17);
@@ -414,6 +432,7 @@ namespace Program.Forms
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private MaterialSkin.Controls.MaterialFlatButton materialFlatButton1;
 		private MaterialSkin.Controls.MaterialLabel materialLabel1;
 		private System.Windows.Forms.PictureBox pictureBox17;
 		private System.Windows.Forms.PictureBox pictureBox24;

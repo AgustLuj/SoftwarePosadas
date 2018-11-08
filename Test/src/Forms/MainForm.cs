@@ -143,11 +143,15 @@ namespace Program.Forms {
             
             break;
           case "btn_left_stats":
-            
-            panel3.Controls.Add(StaticForms.FSH);
-            StaticForms.FSH.Top = (senderIndex < selectedIndex) ? -StaticForms.FSH.Height : 518;
-            StaticForms.FSH.Show();
-          
+         
+            StaticForms.FSH.TopLevel = false;
+	  	      panel3.Controls.Add(StaticForms.FSH);
+	  	      panel3.Tag = StaticForms.FSH;
+	  	      StaticForms.FSH.Parent = panel3;
+  	      	  StaticForms.FSH.Show();
+	  	      StaticForms.FSH.Top = -StaticForms.FSH.Height;
+	  	      StaticForms.FSH.BringToFront();
+	  	      
             t.add(StaticForms.FSH, "Top", 0);
             t.run();
             
@@ -185,8 +189,7 @@ namespace Program.Forms {
     void Btn_addGClick(object sender, EventArgs e)
 	{
 	    if(!panel3.Controls.containsType(typeof(FormAddGuest))){
-	      
-//	        var t = new FormAddGuestHome();
+    		
 	  	      StaticForms.FAG.TopLevel = false;
 	  	      panel3.Controls.Add(StaticForms.FAG);
 	  	      panel3.Tag = StaticForms.FAG;
