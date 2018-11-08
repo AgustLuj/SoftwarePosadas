@@ -186,17 +186,17 @@ namespace Program.Forms {
 	{
 	    if(!panel3.Controls.containsType(typeof(FormAddGuest))){
 	      
-	        var t = new FormAddGuestHome();
-	  	      t.TopLevel = false;
-	  	      panel3.Controls.Add(t);
-	  	      panel3.Tag = t;
-	  	      t.Parent = panel3;
-	  	      t.Show();
-	  	      t.Top = -t.Height;
-	  	      t.BringToFront();
+//	        var t = new FormAddGuestHome();
+	  	      StaticForms.FAG.TopLevel = false;
+	  	      panel3.Controls.Add(StaticForms.FAG);
+	  	      panel3.Tag = StaticForms.FAG;
+	  	      StaticForms.FAG.Parent = panel3;
+  	      	  StaticForms.FAG.Show();
+	  	      StaticForms.FAG.Top = -StaticForms.FAG.Height;
+	  	      StaticForms.FAG.BringToFront();
 	  	      
 	  	    var tr = new Transition(new TransitionType_Deceleration(500));
-	  	      tr.add(t, "Top", 0);
+	  	      tr.add(StaticForms.FAG, "Top", 0);
   	      		tr.run();
       	}
     }
