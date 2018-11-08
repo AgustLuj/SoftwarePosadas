@@ -186,14 +186,12 @@ namespace Program.Forms {
     
     void Btn_addGClick(object sender, EventArgs e)
 	{
-	    if(!panel3.Controls.containsType(typeof(FormAddGuest))){
-	      
-//	        var t = new FormAddGuestHome();
-	  	      StaticForms.FAG.TopLevel = false;
-	  	      panel3.Controls.Add(StaticForms.FAG);
+	    if(!panel3.Controls.containsType(typeof(FormAddGuestHome))){
+	    
 	  	      panel3.Tag = StaticForms.FAG;
 	  	      StaticForms.FAG.Parent = panel3;
-  	      	  StaticForms.FAG.Show();
+	  	      panel3.Controls.Add(StaticForms.FAG);
+  	      	StaticForms.FAG.Show();
 	  	      StaticForms.FAG.Top = -StaticForms.FAG.Height;
 	  	      StaticForms.FAG.BringToFront();
 	  	      
