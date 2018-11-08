@@ -103,11 +103,11 @@
       <DependentUpon>Images.resx</DependentUpon>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="src\Forms\Classes\Guest.cs" />
-    <Compile Include="src\Forms\Classes\Image.cs" />
-    <Compile Include="src\Forms\Classes\Month.cs" />
-    <Compile Include="src\Forms\Classes\Photo.cs" />
-    <Compile Include="src\Forms\Classes\User.cs" />
+    <Compile Include="src\Classes\Guest.cs" />
+    <Compile Include="src\Classes\Image.cs" />
+    <Compile Include="src\Classes\Month.cs" />
+    <Compile Include="src\Classes\Photo.cs" />
+    <Compile Include="src\Classes\User.cs" />
     <Compile Include="src\Forms\FormStatsOrigin.cs" />
     <Compile Include="src\Forms\FormStatsOrigin.Designer.cs">
       <DependentUpon>FormStatsOrigin.cs</DependentUpon>
@@ -226,8 +226,8 @@
   <ItemGroup>
     <Folder Include="Resources" />
     <Folder Include="src" />
+    <Folder Include="src\Classes" />
     <Folder Include="src\Namespaces" />
-    <Folder Include="src\Forms\Classes" />
     <Folder Include="src\Forms" />
     <Folder Include="src\Static Classes" />
   </ItemGroup>
