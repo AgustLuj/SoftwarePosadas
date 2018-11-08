@@ -10,80 +10,76 @@ namespace Program.Forms
   {
     public FormStatsHome()
     {
-      
       InitializeComponent();
-      
-   
     }
     
     void FormStatsHomeLoad(object sender, EventArgs e)
     {
-    	
     }
     
     void Radio_historicoCheckedChanged(object sender, EventArgs e)
-	{
+    {
 		  if(radio_historico.Checked){
 		    showCustomFilter(false);
 		    showPeriodFilter(false);
 		  }
-	}
+    }
 		
-	void Radio_personalizadoCheckedChanged(object sender, EventArgs e)
-	{
-	    if(radio_personalizado.Checked){
-	      showCustomFilter(true);
-	      showPeriodFilter(false);
-		}
-	}
+  	void Radio_personalizadoCheckedChanged(object sender, EventArgs e)
+  	{
+  	    if(radio_personalizado.Checked){
+  	      showCustomFilter(true);
+  	      showPeriodFilter(false);
+  		}
+  	}
 	
-	void showCustomFilter(bool show){
-	    
-      	check_año.Visible = show;
-	    combo_año.Visible = show;
-	    
-	    check_mes.Visible = show;
-	    combo_mes.Visible = show;
-	    
-	    check_dia.Visible = show;
-	    combo_dia.Visible = show;
-	}
+  	void showCustomFilter(bool show){
+      
+      check_año.Visible = show;
+      combo_año.Visible = show;
+      
+      check_mes.Visible = show;
+      combo_mes.Visible = show;
+      
+      check_dia.Visible = show;
+      combo_dia.Visible = show;
+  	}
 	
-	void showPeriodFilter(bool show){
-		
-		label_from.Visible = show;
-		label_to.Visible = show;
-		
-		field_from.Visible = show;
-		field_to.Visible = show;
-	}
+  	void showPeriodFilter(bool show){
+  		
+  		label_from.Visible = show;
+  		label_to.Visible = show;
+  		
+  		field_from.Visible = show;
+  		field_to.Visible = show;
+  	}
 	
-	void Check_añoCheckedChanged(object sender, EventArgs e)
-	{
-      if(check_año.Checked){
-        combo_año.Enabled = true;
-		  }else{
-        combo_año.Enabled = false;
-      }
-	}
+  	void Check_añoCheckedChanged(object sender, EventArgs e)
+  	{
+        if(check_año.Checked){
+          combo_año.Enabled = true;
+  		  }else{
+          combo_año.Enabled = false;
+        }
+  	}
 	
-	void Check_mesCheckedChanged(object sender, EventArgs e)
-	{
-	  if(check_mes.Checked){
-	    combo_mes.Enabled = true;  
-	  }else{
-	    combo_mes.Enabled = false;
-	  }
-	}
+  	void Check_mesCheckedChanged(object sender, EventArgs e)
+  	{
+  	  if(check_mes.Checked){
+  	    combo_mes.Enabled = true;  
+  	  }else{
+  	    combo_mes.Enabled = false;
+  	  }
+  	}
 	
-	void Check_diaCheckedChanged(object sender, EventArgs e)
-	{
-	  if(check_dia.Checked){
-	    combo_dia.Enabled = true;
-	  }else{
-	    combo_dia.Enabled = false;
-	  }
-	}
+  	void Check_diaCheckedChanged(object sender, EventArgs e)
+  	{
+  	  if(check_dia.Checked){
+  	    combo_dia.Enabled = true;
+  	  }else{
+  	    combo_dia.Enabled = false;
+  	  }
+  	}
     
     void Button_originClick(object sender, EventArgs e)
     {
@@ -121,21 +117,32 @@ namespace Program.Forms
 		for(int i = 0;i < values.Length;i++){
 			values[i] = rnd.Next(50);
 		}
-    	if(radio_origin.Checked && radio_quantity.Checked){
-    		if(radio_quantity.Checked){
+    	
+    	if(radio_quantity.Checked){
     			FormStatsQuantity f = new FormStatsQuantity(values);
 					f.TopLevel = false;
 					(this.Parent as Panel).Controls.Add(f);
 					f.Parent = this;
 					f.Show();
 					f.Top = - f.Height;
-					//f.BringToFront();
+					f.BringToFront();
 				
 				var t = new Transition(new TransitionType_Deceleration(500));
 					t.add(f, "Top", 0);
 					t.run();	
     			
-    		}
+    	}else if(radio_origin.Checked){
+    		FormStatsOrigin f = new FormStatsOrigin(values);
+					f.TopLevel = false;
+					(this.Parent as Panel).Controls.Add(f);
+					f.Parent = this;
+					f.Show();
+					f.Top = - f.Height;
+					f.BringToFront();
+				
+				var t = new Transition(new TransitionType_Deceleration(500));
+					t.add(f, "Top", 0);
+					t.run();
     	}
     }
   }

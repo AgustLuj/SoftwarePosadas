@@ -143,15 +143,14 @@ namespace Program.Forms {
             
             break;
           case "btn_left_stats":
-            
-            panel3.Controls.Add(StaticForms.FSH);
-            StaticForms.FSH.Top = (senderIndex < selectedIndex) ? -StaticForms.FSH.Height : 518;
-            StaticForms.FSH.Show();
-          
+         
+	  	      panel3.Controls.Add(StaticForms.FSH);
+	  	      StaticForms.FSH.Parent = panel3;
+  	      	StaticForms.FSH.Show();
+	  	      StaticForms.FSH.Top = (senderIndex < selectedIndex) ? -StaticForms.FSH.Height : 518;
+	  	      
             t.add(StaticForms.FSH, "Top", 0);
             t.run();
-            
-            //Console.WriteLine(StaticForms.FSH);
             break;
         }
         
