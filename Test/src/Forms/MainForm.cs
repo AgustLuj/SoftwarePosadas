@@ -143,7 +143,6 @@ namespace Program.Forms {
             
             break;
           case "btn_left_stats":
-         
             StaticForms.FSH.TopLevel = false;
 	  	      panel3.Controls.Add(StaticForms.FSH);
 	  	      panel3.Tag = StaticForms.FSH;
