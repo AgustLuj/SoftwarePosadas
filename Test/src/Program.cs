@@ -10,7 +10,6 @@ namespace Program.Forms {
     private static void Main(string[] args) {
       
     Application.EnableVisualStyles();
-    Application.SetCompatibleTextRenderingDefault(true);
     
     StaticForms.MF = new MainForm();
     
