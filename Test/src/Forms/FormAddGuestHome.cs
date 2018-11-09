@@ -36,6 +36,10 @@ namespace Program.Forms
 				lista.Add(button_paciente);
 		}
 		
+		public void addGuest(Guest g){
+		  Guests.Add(g);
+		}
+		
 		void Button_huespedClick(object sender, EventArgs e)
 		{
 			var fa = sender as MaterialFlatButton;

@@ -225,16 +225,15 @@ namespace Program.Forms {
       this.btn_refresh.AutoSize = true;
       this.btn_refresh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
       this.btn_refresh.Depth = 0;
-      this.btn_refresh.Icon = null;
-      this.btn_refresh.Location = new System.Drawing.Point(625, 28);
+      this.btn_refresh.Icon = global::SP.Resources.Images.refresh;
+      this.btn_refresh.Location = new System.Drawing.Point(660, 28);
       this.btn_refresh.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
       this.btn_refresh.MouseState = MaterialSkin.MouseState.HOVER;
       this.btn_refresh.Name = "btn_refresh";
       this.btn_refresh.Primary = false;
       this.btn_refresh.selected = false;
-      this.btn_refresh.Size = new System.Drawing.Size(79, 36);
+      this.btn_refresh.Size = new System.Drawing.Size(44, 36);
       this.btn_refresh.TabIndex = 14;
-      this.btn_refresh.Text = "refresh";
       this.btn_refresh.UseVisualStyleBackColor = true;
       this.btn_refresh.Click += new System.EventHandler(this.Btn_refreshClick);
       // 

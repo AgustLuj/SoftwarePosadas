@@ -234,5 +234,8 @@
   <ItemGroup>
     <Resource Include="Resources\Ripple-1s-200px.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Software Posadas Win32.cd" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
