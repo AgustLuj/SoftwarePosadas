@@ -29,12 +29,16 @@ namespace Program.Classes {
      * 
      * "Online Guests" "All Guests" "History" "Admin Area"
      * 
-     * 7777 == Admin
+     * 3310 == Normal Operator
+     * 5550 == "FIX_ME GUY"
+     * 7710 == Supervisor
+     * 7773 == Normal Admin
+     * 7777 == SuperUser
      */
     
     public override string ToString() {
 		return string.Format("[User Id: {0}, Name: {1}, Permissions: {2}]", id, name, permissions);
-	  }
+    }
 
   }
 }
