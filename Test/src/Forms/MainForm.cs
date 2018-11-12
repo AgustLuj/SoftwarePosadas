@@ -40,7 +40,7 @@ namespace Program.Forms {
     }
     
     public void LoadPermissions(){
-      if (Session.user.permissions == "all") {
+      if ((Session.user.permissions[3] & 7) == 7) {
         btn_left_admin.Visible = true;
         leftbtns.Add(btn_left_admin);
       }

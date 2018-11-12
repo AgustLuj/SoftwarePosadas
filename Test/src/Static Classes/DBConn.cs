@@ -81,15 +81,15 @@ namespace Program.StaticClasses {
     }
     #endregion
     
-    public static List<Guest> getGuests() {
+    public static List<Guest> getTotalGuests(string options = ""){
       var conn = GetDBConnection();
       var guests = new List<Guest>();
       
       try {
         conn.Open();
         
-        var cmd = new MySqlCommand("Select * from huespedes, hospedados" +
-                                   "  where huespedes.id = hospedados.idhus", conn);
+        var cmd = new MySqlCommand("Select * from huespedes " +
+                                   options, conn);
         
         using (var reader = cmd.ExecuteReader()) {
           while (reader.Read()) {
@@ -97,7 +97,7 @@ namespace Program.StaticClasses {
                                  reader.GetString("apellido"), reader.GetInt32("nhabit"),
                                  reader.GetString("nlocker"), reader.GetString("nombre_internado"),
                                  reader.GetString("apellido_internado"), reader.GetString("procedencia"),
-                                 reader.GetString("servicio")));
+                                 reader.GetString("servicio"), reader.GetDateTime("ingreso")));
           }
         }
       } catch (Exception) {
@@ -106,6 +106,10 @@ namespace Program.StaticClasses {
       }
     
       return guests;
+    }
+    
+    public static List<Guest> getGuests() {
+      return getTotalGuests(", hospedados where huespedes.id = hospedados.idhus");
     }
     
     public static bool insertGuest(Guest g){

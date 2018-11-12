@@ -23,7 +23,7 @@ namespace Program.Classes
     
     public Guest(string ficha, string nh, string ah,
                  int hab, string locker, string ni,
-                 string ai, string proc, string serv) {
+                 string ai, string proc, string serv, DateTime ing) {
       this.ficha = ficha;
       this.paciente = new Person(){name = nh, surname = ah};
       this.hab = hab;
@@ -31,6 +31,7 @@ namespace Program.Classes
       this.internado = new Person{name = ni, surname = ai};
       this.procedencia = proc;
       this.servicio = serv;
+      this.ingreso = ing;
     }
     
     public override string ToString()

@@ -4,11 +4,14 @@
  * Time: 10:53 a.m.
  */
 using System;
+using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
 
 using Transitions;
+
+using Program.StaticClasses;
 
 namespace Program.Forms
 {
@@ -45,12 +48,16 @@ namespace Program.Forms
 		
 		bitmap = new Classes.Image(pic.Width,pic.Height);
 		
-		//loading of values
+		//loading of values		
+		var guests = DBConn.getTotalGuests("where ingreso > '2018-09-30' and ingreso < '2018-11-1'")/*from g in DBConn.getGuests()
+		  where g.ingreso > DateTime.Parse("30/9/2018") && g.ingreso < DateTime.Parse("1/11/2018")
+		  select g*/;
 		
-		Random rnd = new Random();
+		guests.ForEach(x => Console.WriteLine(x.ingreso.ToShortDateString()));
 		
 		for(int i = 0;i < values.Length;i++){
-			values[i] = rnd.Next(50);
+		  var s = (i + 1).ToString() + "/10/2018";
+		  values[i] = guests.FindAll(x => x.ingreso.Date == DateTime.Parse(s)).Count;
 		}
 		
 		//get of max value
@@ -63,12 +70,12 @@ namespace Program.Forms
 		
 		for(int i = 0;i < values.Length;i++){
 			
-			bitmap.graph(i * 40,200,values[i]/max_value,36,170,0);
+		  bitmap.graph(i * 40,200,values[i]/((max_value == 0) ? 1 : max_value),36,170,0);
 			
 			int offx = 5;
 			if(values[i] < 10){offx = 10;}
 			
-			texts2[i].Location = new System.Drawing.Point(pic.Location.X + offx + 40 * i,(int) (pic.Location.Y + 175 - ((float) (values[i] / max_value) * 170)));
+			texts2[i].Location = new System.Drawing.Point(pic.Location.X + offx + 40 * i,(int) (pic.Location.Y + 175 - ((float) (values[i] / ((max_value == 0) ? 1 : max_value)) * 170)));
 			texts2[i].Text = "" + values[i];
 		}
 		
@@ -99,16 +106,6 @@ namespace Program.Forms
 		
 		texts2.Add(text);
 	}
-    
-    void MaterialSingleLineTextField1Click(object sender, EventArgs e)
-    {
-    	
-    }
-    
-    void FormStatsQuantityLoad(object sender, EventArgs e)
-    {
-    	
-    }
     
     void MaterialFlatButton1Click(object sender, EventArgs e)
     {
