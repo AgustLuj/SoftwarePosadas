@@ -39,6 +39,10 @@
       this.radio_quantity = new MaterialSkin.Controls.MaterialRadioButton();
       this.panel1 = new System.Windows.Forms.Panel();
       this.panel_filter = new System.Windows.Forms.Panel();
+      this.cmb_month = new System.Windows.Forms.ComboBox();
+      this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+      this.cmb_year = new System.Windows.Forms.ComboBox();
+      this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
       this.panel1.SuspendLayout();
       this.panel_filter.SuspendLayout();
       this.SuspendLayout();
@@ -136,7 +140,6 @@
       this.combo_año.Size = new System.Drawing.Size(121, 21);
       this.combo_año.TabIndex = 40;
       this.combo_año.Visible = false;
-      this.combo_año.SelectedIndexChanged += new System.EventHandler(this.Combo_añoSelectedIndexChanged);
       // 
       // rad_filter_personalized
       // 
@@ -308,7 +311,6 @@
       this.radio_origin.TabStop = true;
       this.radio_origin.Text = "ORIGEN DE LOS HUÉSPEDES";
       this.radio_origin.UseVisualStyleBackColor = true;
-      this.radio_origin.CheckedChanged += new System.EventHandler(this.MaterialRadioButton2CheckedChanged);
       // 
       // radio_quantity
       // 
@@ -357,12 +359,72 @@
       this.panel_filter.Size = new System.Drawing.Size(364, 145);
       this.panel_filter.TabIndex = 60;
       // 
+      // cmb_month
+      // 
+      this.cmb_month.Enabled = false;
+      this.cmb_month.FormattingEnabled = true;
+      this.cmb_month.Items.AddRange(new object[] {
+                  "Enero",
+                  "Febrero",
+                  "Marzo",
+                  "Abril",
+                  "Mayo",
+                  "Junio",
+                  "Julio",
+                  "Agosto",
+                  "Septiembre",
+                  "Octubre",
+                  "Noviembre",
+                  "Diciembre"});
+      this.cmb_month.Location = new System.Drawing.Point(548, 282);
+      this.cmb_month.Name = "cmb_month";
+      this.cmb_month.Size = new System.Drawing.Size(121, 21);
+      this.cmb_month.TabIndex = 55;
+      this.cmb_month.SelectedIndexChanged += new System.EventHandler(this.Cmb_monthSelectedIndexChanged);
+      // 
+      // materialLabel3
+      // 
+      this.materialLabel3.Depth = 0;
+      this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+      this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+      this.materialLabel3.Location = new System.Drawing.Point(412, 282);
+      this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+      this.materialLabel3.Name = "materialLabel3";
+      this.materialLabel3.Size = new System.Drawing.Size(100, 23);
+      this.materialLabel3.TabIndex = 61;
+      this.materialLabel3.Text = "Mes";
+      // 
+      // cmb_year
+      // 
+      this.cmb_year.FormattingEnabled = true;
+      this.cmb_year.Location = new System.Drawing.Point(548, 255);
+      this.cmb_year.Name = "cmb_year";
+      this.cmb_year.Size = new System.Drawing.Size(121, 21);
+      this.cmb_year.TabIndex = 62;
+      this.cmb_year.SelectedIndexChanged += new System.EventHandler(this.Cmb_yearSelectedIndexChanged);
+      // 
+      // materialLabel4
+      // 
+      this.materialLabel4.Depth = 0;
+      this.materialLabel4.Font = new System.Drawing.Font("Roboto", 11F);
+      this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+      this.materialLabel4.Location = new System.Drawing.Point(412, 253);
+      this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
+      this.materialLabel4.Name = "materialLabel4";
+      this.materialLabel4.Size = new System.Drawing.Size(100, 23);
+      this.materialLabel4.TabIndex = 63;
+      this.materialLabel4.Text = "Año";
+      // 
       // FormStatsHome
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.White;
       this.ClientSize = new System.Drawing.Size(741, 518);
+      this.Controls.Add(this.materialLabel4);
+      this.Controls.Add(this.cmb_year);
+      this.Controls.Add(this.materialLabel3);
+      this.Controls.Add(this.cmb_month);
       this.Controls.Add(this.panel_filter);
       this.Controls.Add(this.panel1);
       this.Controls.Add(this.materialFlatButton2);
@@ -370,11 +432,14 @@
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
       this.Name = "FormStatsHome";
       this.Text = "FormStatsHome";
-      this.Load += new System.EventHandler(this.FormStatsHomeLoad);
       this.panel1.ResumeLayout(false);
       this.panel_filter.ResumeLayout(false);
       this.ResumeLayout(false);
     }
+    private MaterialSkin.Controls.MaterialLabel materialLabel4;
+    private System.Windows.Forms.ComboBox cmb_year;
+    private MaterialSkin.Controls.MaterialLabel materialLabel3;
+    private System.Windows.Forms.ComboBox cmb_month;
     private System.Windows.Forms.Panel panel_filter;
     private System.Windows.Forms.Panel panel1;
     private MaterialSkin.Controls.MaterialRadioButton radio_quantity;
