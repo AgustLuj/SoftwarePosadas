@@ -143,7 +143,7 @@ namespace Program.Forms
 		{
 			var t = new Transition(new TransitionType_Acceleration(500));
 				t.add(this, "Top", -this.Height);
-				t.TransitionCompletedEvent += (_, __) => this.Close();
+				t.TransitionCompletedEvent += (_, __) => (Parent as Panel).Controls.Remove(this);
 				t.run();
 		}
 		

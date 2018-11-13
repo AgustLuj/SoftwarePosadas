@@ -36,7 +36,7 @@ namespace Program.Forms {
       SkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
       //SkinManager.ColorScheme = new ColorScheme((Primary)0xed9936, (Primary)0xd58930, Primary.Brown600, Accent.Blue400, TextShade.BLACK);
     
-      leftbtns.AddRange(new []{btn_left_guests, btn_left_security, btn_left_stats, btn_history});
+      leftbtns.AddRange(new []{btn_left_guests, btn_left_security, btn_left_stats, btn_left_history});
     }
     
     public void LoadPermissions(){
@@ -145,16 +145,24 @@ namespace Program.Forms {
           case "btn_left_stats":
             StaticForms.FSH.TopLevel = false;
 	  	      panel3.Controls.Add(StaticForms.FSH);
-	  	      panel3.Tag = StaticForms.FSH;
 	  	      StaticForms.FSH.Parent = panel3;
-  	      	  StaticForms.FSH.Show();
-	  	      StaticForms.FSH.Top = -StaticForms.FSH.Height;
-	  	      StaticForms.FSH.BringToFront();
+  	      	StaticForms.FSH.Show();
+	  	      StaticForms.FSH.Top = (senderIndex < selectedIndex) ? -StaticForms.FSH.Height : 518;
 	  	      
             t.add(StaticForms.FSH, "Top", 0);
             t.run();
+            break;
+           case "btn_left_history":
+            var g = new FormHistory();
+            g.TopLevel = false;
             
-            //Console.WriteLine(StaticForms.FSH);
+            panel3.Controls.Add(g);
+            
+            g.Top = 518;
+            g.Show();
+            
+            t.add(g, "Top", 0);
+            t.run();
             break;
         }
         
@@ -189,13 +197,12 @@ namespace Program.Forms {
     
     void Btn_addGClick(object sender, EventArgs e)
 	{
-	    if(!panel3.Controls.containsType(typeof(FormAddGuest))){
-    		
-	  	      StaticForms.FAG.TopLevel = false;
-	  	      panel3.Controls.Add(StaticForms.FAG);
+	    if(!panel3.Controls.containsType(typeof(FormAddGuestHome))){
+	    
 	  	      panel3.Tag = StaticForms.FAG;
 	  	      StaticForms.FAG.Parent = panel3;
-  	      	  StaticForms.FAG.Show();
+	  	      panel3.Controls.Add(StaticForms.FAG);
+  	      	StaticForms.FAG.Show();
 	  	      StaticForms.FAG.Top = -StaticForms.FAG.Height;
 	  	      StaticForms.FAG.BringToFront();
 	  	      

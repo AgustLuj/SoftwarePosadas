@@ -19,14 +19,8 @@ namespace Program.Forms
 	{
 		public FormHistory()
 		{
-			//
-			// The InitializeComponent() call is required for Windows Forms designer support.
-			//
 			InitializeComponent();
-			
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
+			materialLabel2.Text += Classes.History.send(1,"la tabla Huéspedes");
 		}
 	}
 }

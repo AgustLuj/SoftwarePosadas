@@ -48,7 +48,7 @@ namespace Program.Forms
 			this.materialLabel1.Location = new System.Drawing.Point(64, 32);
 			this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
 			this.materialLabel1.Name = "materialLabel1";
-			this.materialLabel1.Size = new System.Drawing.Size(167, 41);
+			this.materialLabel1.Size = new System.Drawing.Size(68, 21);
 			this.materialLabel1.TabIndex = 0;
 			this.materialLabel1.Text = "Historial";
 			// 
@@ -58,17 +58,17 @@ namespace Program.Forms
 			this.materialLabel2.Depth = 0;
 			this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
 			this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.materialLabel2.Location = new System.Drawing.Point(64, 96);
+			this.materialLabel2.Location = new System.Drawing.Point(12, 96);
 			this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
 			this.materialLabel2.Name = "materialLabel2";
-			this.materialLabel2.Size = new System.Drawing.Size(517, 373);
+			this.materialLabel2.Size = new System.Drawing.Size(717, 373);
 			this.materialLabel2.TabIndex = 1;
-			this.materialLabel2.Text = "04/09/2018    El usuario MATEO_PIDAL modifico la tabla huespedes hola";
 			// 
 			// FormHistory
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.Gainsboro;
 			this.ClientSize = new System.Drawing.Size(741, 518);
 			this.Controls.Add(this.materialLabel2);
 			this.Controls.Add(this.materialLabel1);
