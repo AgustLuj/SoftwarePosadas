@@ -3,6 +3,8 @@ using System.Drawing;
 using System.Windows.Forms;
 using Transitions;
 
+using Program.StaticClasses;
+
 namespace Program.Forms
 {
 
@@ -69,7 +71,7 @@ namespace Program.Forms
   		}
     	
     	if(radio_quantity.Checked){
-    			FormStatsQuantity f = new FormStatsQuantity(values);
+    	  FormStatsQuantity f = new FormStatsQuantity(values, cmb_month.SelectedIndex + 1, int.Parse(cmb_year.Text));
 					f.TopLevel = false;
 					(this.Parent as Panel).Controls.Add(f);
 					f.Parent = this;

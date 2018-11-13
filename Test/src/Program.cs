@@ -23,8 +23,8 @@ namespace Program.Forms {
       StaticForms.FG.TopLevel = false;
       
     #if DEBUG
-    //  StaticForms.MF.Show();
-      new Load().Show();
+      StaticForms.MF.Show();
+      //new Load().Show();
     #else
       var f = new FormHistory();
       f.Show();

@@ -63,17 +63,17 @@ namespace Program.Forms {
     
     void MainFormFormClosing(object sender, FormClosingEventArgs e)
     {
-		if(!closing){
-    		
-    		e.Cancel = true;
-    		
-			var t = new Transition(new TransitionType_Acceleration(600));
-				t.add(this, "Top", Screen.PrimaryScreen.Bounds.Height);
-				t.TransitionCompletedEvent += (_, __) => this.Close();
-				t.run();
-				
-			closing = true;
-		}
+  		if(!closing){
+      		
+      	e.Cancel = true;
+      		
+  			var t = new Transition(new TransitionType_Acceleration(600));
+  				t.add(this, "Top", Screen.PrimaryScreen.Bounds.Height);
+  				t.TransitionCompletedEvent += (_, __) => this.Close();
+  				t.run();
+  				
+        closing = true;
+  		}
     }
     
     void MainFormFormClosed(object sender, FormClosedEventArgs e)
@@ -84,18 +84,18 @@ namespace Program.Forms {
     void MaterialFlatButton2Click(object sender, EventArgs e)
     {
       Transition t = new Transition(new TransitionType_Deceleration(600));
-      t.add(panel2, "Width", (displayed) ? 42 : 185);
-      t.run();
+        t.add(panel2, "Width", (displayed) ? 42 : 185);
+        t.run();
       displayed = !displayed;
     }
     
     void MaterialRaisedButton1Click(object sender, EventArgs e)
     {
     	var b = sender as Button;
-    	b.FlatStyle = FlatStyle.Flat;
-    	b.FlatAppearance.BorderSize = 0;
-    	b.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
-    	b.ForeColor = Color.Transparent;
+      	b.FlatStyle = FlatStyle.Flat;
+      	b.FlatAppearance.BorderSize = 0;
+      	b.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255);
+      	b.ForeColor = Color.Transparent;
     }
     
     void LeftBarClick(object sender, EventArgs e)
