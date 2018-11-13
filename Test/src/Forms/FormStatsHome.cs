@@ -13,13 +13,13 @@ namespace Program.Forms
       InitializeComponent();
     }
     
-    void FormStatsHomeLoad(object sender, EventArgs e)
-    {
-    }
-    
     void filterChanged(object sender, EventArgs e){
       showCustomFilter(rad_filter_personalized.Checked);
       showPeriodFilter(rad_filter_period.Checked);
+      
+      for (int i = 2016; i < DateTime.Now.Year + 1; i++) {
+        cmb_year.Items.Add(i);
+      }
     }
 	
   	void showCustomFilter(bool show){
@@ -58,33 +58,14 @@ namespace Program.Forms
       combo_dia.Enabled = check_dia.Checked;
   	}
     
-    void Button_originClick(object sender, EventArgs e)
-    {
-    	
-    }
-    
-    void Combo_añoSelectedIndexChanged(object sender, EventArgs e)
-    {
-    	
-    }
-    
-    void MaterialLabel3Click(object sender, EventArgs e)
-    {
-    	
-    }
-    
-    void MaterialRadioButton2CheckedChanged(object sender, EventArgs e)
-    {
-    	
-    }
-    
     void MaterialFlatButton2Click(object sender, EventArgs e)
     {
-    	Random rnd = new Random();
-    	int[] values = new int[30];
+    	int[] values = new int[getNDays(cmb_month.SelectedIndex + 1)];
+    	var guests = DBConn.getTotalGuests("where ingreso > '2018-09-30' and ingreso < '2018-11-1'");
     	
   		for(int i = 0;i < values.Length;i++){
-  			values[i] = rnd.Next(50);
+  			var s = (i + 1).ToString() + "/10/2018";
+		  values[i] = guests.FindAll(x => x.ingreso.Date == DateTime.Parse(s)).Count;
   		}
     	
     	if(radio_quantity.Checked){
@@ -113,6 +94,46 @@ namespace Program.Forms
 					t.add(f, "Top", 0);
 					t.run();
     	}
+    }
+    
+    void Cmb_monthSelectedIndexChanged(object sender, EventArgs e)
+    {
+      Console.WriteLine(getNDays(cmb_month.SelectedIndex + 1));
+    }
+    
+    int getNDays(int month){
+      switch (month) {
+        case 1:
+          return 31;
+        case 2:
+          return (int.Parse(cmb_year.Text) % 4 == 0) ? 29 : 28;
+        case 3:
+          return 31;
+        case 4:
+          return 30;
+        case 5:
+          return 31;
+        case 6:
+          return 30;
+        case 7:
+          return 31;
+        case 8:
+          return 31;
+        case 9:
+          return 30;
+        case 10:
+          return 31;
+        case 11:
+          return 30;
+        case 12:
+          return 31;
+      }
+      return -1;
+    }
+    
+    void Cmb_yearSelectedIndexChanged(object sender, EventArgs e)
+    {
+      cmb_month.Enabled = true;
     }
   }
 }

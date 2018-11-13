@@ -130,6 +130,13 @@ namespace SP.Resources {
       }
     }
     
+    internal static System.Drawing.Bitmap refresh {
+      get {
+        object obj = ResourceManager.GetObject("refresh", resourceCulture);
+        return ((System.Drawing.Bitmap)(obj));
+      }
+    }
+    
     internal static System.Drawing.Bitmap Ripple_1s_200px {
       get {
         object obj = ResourceManager.GetObject("Ripple-1s-200px", resourceCulture);

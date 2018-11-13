@@ -131,7 +131,7 @@ namespace Program.Forms
 		void insertGuest()
 		{
 			StaticForms.FAG.addButton1(1);
-			StaticForms.FAG.ChangeBtn(name,text_nombre.Text,text_apellido.Text);	
+			StaticForms.FAG.ChangeBtn(name, text_nombre.Text, text_apellido.Text);	
 			this.Close();
 		}
 		void showErrorLabel(){

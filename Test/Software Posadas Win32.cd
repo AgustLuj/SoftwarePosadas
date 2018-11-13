@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ClassDiagram Zoom="1" MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Program.Forms.MainForm" Collapsed="False">
+    <Position X="0.5" Y="0.5" Width="1.3" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Classes.Guest" Collapsed="False">
+    <Position X="0.5" Y="5" Width="1" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Classes.Person" Collapsed="False">
+    <Position X="0.5" Y="6.4" Width="1" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Forms.FormAddGuestHome" Collapsed="False">
+    <Position X="0.5" Y="7.9" Width="1.6" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Classes.Image" Collapsed="False">
+    <Position X="0.5" Y="9.3" Width="1" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Classes.Month" Collapsed="False">
+    <Position X="0.5" Y="10.7" Width="1" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Classes.General" Collapsed="False">
+    <Position X="0.5" Y="12" Width="1" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Classes.Huesped" Collapsed="False">
+    <Position X="0.5" Y="13.2" Width="1" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Classes.Photo" Collapsed="False">
+    <Position X="0.5" Y="14.4" Width="2.2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Classes.User" Collapsed="False">
+    <Position X="0.5" Y="15.6" Width="1" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Forms.FormStatsOrigin" Collapsed="False">
+    <Position X="0.5" Y="17.1" Width="1.4" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Forms.FormStatsQuantity" Collapsed="False">
+    <Position X="0.5" Y="18.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Forms.Load" Collapsed="False">
+    <Position X="0.5" Y="19.9" Width="1.3" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Forms.FormAddPatient" Collapsed="False">
+    <Position X="0.5" Y="21.4" Width="1.4" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Forms.FormLoadPicture" Collapsed="False">
+    <Position X="0.5" Y="22.8" Width="1.4" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Forms.FormStatsHome" Collapsed="False">
+    <Position X="2.1" Y="0.5" Width="1.4" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="SP.Resources.Images" Collapsed="False">
+    <Position X="3.7" Y="0.5" Width="1" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="True" />
+      <Compartment Name="Methods" Collapsed="True" />
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Sessions.Session" Collapsed="False">
+    <Position X="3.9" Y="23.8" Width="2.2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Extensions.Extensions" Collapsed="False">
+    <Position X="2.5" Y="24" Width="2.2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Forms.FormSearchGuest" Collapsed="False">
+    <Position X="2.4" Y="23.7" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Forms.Login" Collapsed="False">
+    <Position X="1.7" Y="23.4" Width="1.3" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Forms.Program" Collapsed="False">
+    <Position X="5.9" Y="23.3" Width="1.4" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.StaticClasses.MySQLUtil" Collapsed="False">
+    <Position X="4.2" Y="23.2" Width="2.3" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.StaticClasses.DBConn" Collapsed="False">
+    <Position X="4" Y="23.1" Width="2.3" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Forms.FormGuests" Collapsed="False">
+    <Position X="4.7" Y="23.3" Width="1.3" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+      <Compartment Name="Fields" Collapsed="True" />
+      <Compartment Name="Nested Types" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="SP.Forms.MainForm" Collapsed="False">
+    <Position X="4" Y="22.8" Width="1.1" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="True" />
+      <Compartment Name="Methods" Collapsed="True" />
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Forms.FormAddGuest" Collapsed="False">
+    <Position X="3.9" Y="22.3" Width="1.3" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Forms.FormHistory" Collapsed="False">
+    <Position X="4.2" Y="22.5" Width="1.3" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Test1" Collapsed="False">
+    <Position X="3.4" Y="22.3" Width="1" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Forms.FormAddUser" Collapsed="False">
+    <Position X="5.2" Y="22.1" Width="1.3" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="True" />
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+  <Class Name="Program.Forms.StaticForms" Collapsed="False">
+    <Position X="5.9" Y="22.4" Width="2.2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="True" />
+    </Compartments>
+  </Class>
+</ClassDiagram>

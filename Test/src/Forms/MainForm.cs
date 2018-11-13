@@ -40,7 +40,7 @@ namespace Program.Forms {
     }
     
     public void LoadPermissions(){
-      if (Session.user.permissions == "all") {
+      if ((Session.user.permissions[3] & 7) == 7) {
         btn_left_admin.Visible = true;
         leftbtns.Add(btn_left_admin);
       }
@@ -198,13 +198,15 @@ namespace Program.Forms {
     void Btn_addGClick(object sender, EventArgs e)
 	{
 	    if(!panel3.Controls.containsType(typeof(FormAddGuestHome))){
-	    
-	  	      panel3.Tag = StaticForms.FAG;
-	  	      StaticForms.FAG.Parent = panel3;
-	  	      panel3.Controls.Add(StaticForms.FAG);
-  	      	StaticForms.FAG.Show();
-	  	      StaticForms.FAG.Top = -StaticForms.FAG.Height;
-	  	      StaticForms.FAG.BringToFront();
+          
+        StaticForms.FAG = new FormAddGuestHome();
+          StaticForms.FAG.TopLevel = false;
+  	      panel3.Tag = StaticForms.FAG;
+  	      StaticForms.FAG.Parent = panel3;
+  	      panel3.Controls.Add(StaticForms.FAG);
+	      	StaticForms.FAG.Show();
+  	      StaticForms.FAG.Top = -StaticForms.FAG.Height;
+  	      StaticForms.FAG.BringToFront();
 	  	      
 	  	    var tr = new Transition(new TransitionType_Deceleration(500));
 	  	      tr.add(StaticForms.FAG, "Top", 0);

@@ -29,14 +29,15 @@ namespace Program.Forms
 		
 		public FormAddGuestHome()
 		{
-	
 			InitializeComponent();
-			
 			
 			lista = new List<MaterialSkin.Controls.MaterialFlatButton>();
 				lista.Add(button_huesped);
 				lista.Add(button_paciente);
-				
+		}
+		
+		public void addGuest(Guest g){
+		  Guests.Add(g);
 		}
 		
 		void Button_huespedClick(object sender, EventArgs e)
@@ -55,8 +56,6 @@ namespace Program.Forms
 			var t = new Transition(new TransitionType_Deceleration(500));
 				t.add(f, "Top", 0);
 				t.run();
-
-			//f.Location = this.Location;		
 		}
 		
 		void Button_pacienteClick(object sender, EventArgs e)
@@ -68,26 +67,17 @@ namespace Program.Forms
 				(this.Parent as Panel).Controls.Add(f);
 				f.Parent = this;
 				f.Show();
-				f.Top = - f.Height;
+				f.Top = -f.Height;
 				f.BringToFront();
 			
 			var t = new Transition(new TransitionType_Deceleration(500));
 				t.add(f, "Top", 0);
 				t.run();
-				
-				//f.Location = this.Location;
-		}
-		
-		void FormAddGuestHomeFormClosed(object sender, FormClosedEventArgs e)
-		{
-			if (Application.OpenForms.Count == 0) {
-				Application.Exit();
-			}
 		}
 		
 		public void addButton1(int type){
 			
-			Console.WriteLine(""+count_btn1+" "+count_btn2);
+			Console.WriteLine("" + count_btn1 + " " + count_btn2);
 			
 			if(type == 1){
 				if(count_btn1 < 10){
@@ -107,14 +97,13 @@ namespace Program.Forms
 				btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 				btn.Depth = 0;
 				btn.Location = new System.Drawing.Point(x,y);
-				btn.Name = (str == "+ Añadir Huesped") ? "btn"+ count_btn1 : "btnP" + count_btn2;
+				btn.Name = (str == "+ Añadir Huesped") ? "btn" + count_btn1 : "btnP" + count_btn2;
 				btn.Primary = false;
 				btn.Size = new System.Drawing.Size(145, 36);
 				btn.Text = str;
 				btn.Visible=true;
 				btn.Click += (str == "+ Añadir Huesped") ? new System.EventHandler(this.Button_huespedClick) : new System.EventHandler(this.Button_pacienteClick);
-				
-			
+
 			this.Controls.Add(btn);
 			lista.Add(btn);	
 		
