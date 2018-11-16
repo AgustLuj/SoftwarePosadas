@@ -1,18 +1,12 @@
-﻿/*
- * Created By 42476232
- * On 30/10/2018
- * Time: 10:53 a.m.
- */
-using System;
+﻿using System;
 using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
-
 using Transitions;
-
 using Program.StaticClasses;
 
+//PIDAAAAAAL COMENTA EL CODIGO
 namespace Program.Forms
 {
 

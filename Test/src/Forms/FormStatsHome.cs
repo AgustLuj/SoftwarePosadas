@@ -2,7 +2,9 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Transitions;
+using Program.StaticClasses;
 
+//PIDAAAAAAL COMENTA EL CODIGO
 namespace Program.Forms
 {
 

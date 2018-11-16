@@ -1,18 +1,13 @@
-﻿/*
- * Created By 42476232
- * On 04/09/2018
- * Time: 10:11 a.m.
- */
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
-
 using MaterialSkin.Controls;
-
 using Program.Classes;
 using Program.StaticClasses;
 
+
+///////PIDAAAAAAL COMENTA EL CODIGO
 namespace Program.Forms
 {
   public partial class FormGuests : Form

@@ -66,7 +66,6 @@ namespace Program.Forms
 			this.pic_photo.TabIndex = 5;
 			this.pic_photo.TabStop = false;
 			this.pic_photo.Visible = false;
-			this.pic_photo.Click += new System.EventHandler(this.Pic_photoClick);
 			// 
 			// lbl_croparea
 			// 
@@ -159,7 +158,6 @@ namespace Program.Forms
 			this.btn_loadpic.TabIndex = 3;
 			this.btn_loadpic.Text = "Cargar imagen";
 			this.btn_loadpic.UseVisualStyleBackColor = true;
-			this.btn_loadpic.Click += new System.EventHandler(this.MaterialFlatButton1Click);
 			// 
 			// btn_takepic
 			// 
@@ -210,7 +208,6 @@ namespace Program.Forms
 			this.pic_bigphoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pic_bigphoto.TabIndex = 13;
 			this.pic_bigphoto.TabStop = false;
-			this.pic_bigphoto.Click += new System.EventHandler(this.Pic_bigphotoClick);
 			// 
 			// btn_ok
 			// 

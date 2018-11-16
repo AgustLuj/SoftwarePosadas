@@ -3,12 +3,11 @@ using System.IO;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-
 using AForge.Video;
 using AForge.Video.DirectShow;
-
 using Transitions;
 
+//PIDAAAAAAL COMENTA EL CODIGO
 namespace Program.Forms
 {
 	public partial class FormLoadPicture : Form
@@ -24,10 +23,9 @@ namespace Program.Forms
 		{
 			InitializeComponent();
 	        
-	    lbl_croparea.Parent = pic_bigphoto;
+	    	lbl_croparea.Parent = pic_bigphoto;
 			Cursor.Current = Cursors.Default;
 		} 
-				
 		
 		[DllImport("user32.dll",EntryPoint = "ReleaseCapture")]
 		private extern static void ReleaseCapture();
@@ -43,7 +41,7 @@ namespace Program.Forms
 		void MaterialFlatButton1Click(object sender, EventArgs e)
 		{
 		  
-			  int size = -1;
+			int size = -1;
 		    DialogResult result = openFileDialog1.ShowDialog(); // Show the dialog.
 		    
 		    if (result == DialogResult.OK) // Test result.
@@ -53,28 +51,27 @@ namespace Program.Forms
 		       try
 		       {
 		       		pic_photo.Visible=true;
-    					btn_crop.Visible=true;
-    					btn_loadpic.Visible=false;
+    				btn_crop.Visible=true;
+    				btn_loadpic.Visible=false;
 			        btn_takepic.Visible=false;
-    					tbr_zoom.Visible=true;
-    					pic_photo.Visible=true;
-    					lbl_zoom.Visible = true;
-    					lbl_croparea.Visible = true;
+    				tbr_zoom.Visible=true;
+    				pic_photo.Visible=true;
+    				lbl_zoom.Visible = true;
+    				lbl_croparea.Visible = true;
 		       	
-		          string text = File.ReadAllText(file);
-		          size = text.Length;
+		          	string text = File.ReadAllText(file);
+		          	size = text.Length;
 		          
-		          Bitmap bmp = new Bitmap(file);
-		          Bitmap bmp2 = new Bitmap(bmp);
+		         	Bitmap bmp = new Bitmap(file);
+		          	Bitmap bmp2 = new Bitmap(bmp);
 		          
-		          UInt32[] rgb = new UInt32[100*100];
+		          	UInt32[] rgb = new UInt32[100*100];
 		          
-		          for(int x = 0;x < 100;x++){
-		          	for(int y = 0; y < 100;y++){
-		          		
-		          		rgb[y * 100 + x] = Classes.Photo.RGBtoUint(bmp.GetPixel(x,y).R,bmp.GetPixel(x,y).G,bmp.GetPixel(x,y).B);
+		          	for(int x = 0;x < 100;x++){
+		          		for(int y = 0; y < 100;y++){
+		          			rgb[y * 100 + x] = Classes.Photo.RGBtoUint(bmp.GetPixel(x,y).R,bmp.GetPixel(x,y).G,bmp.GetPixel(x,y).B);
+		          		}
 		          	}
-		          }
 		          
 		         /* String numb = Classes.Photo.Send(rgb);
 		          String ret = Classes.Photo.getToServerNumb(numb);
@@ -101,8 +98,7 @@ namespace Program.Forms
 		          }*/
 		          
 		          for(int x = 0;x < 100;x++){
-		          	for(int y = 0; y < 100;y++){		
-		          		//bmp2.SetPixel(x,y,Color.FromArgb((int)(rgb2[y * 100 + x])));
+		         	for(int y = 0; y < 100;y++){
 		          		bmp2.SetPixel(x,y,Color.FromArgb((int)(rgb[y * 100 + x])));
 		          	}
 		          }
@@ -137,11 +133,6 @@ namespace Program.Forms
 			pic_photo.Image = crop;
 		}
 		
-		void Button1Click(object sender, EventArgs e)
-		{
-				
-				
-		}
 		public void CargarDispositivos(FilterInfoCollection Dispositivos){
 			
 			for (int i = 0; i < Dispositivos.Count; i++){
@@ -271,13 +262,6 @@ namespace Program.Forms
 		    lbl_zoom.Visible = false;
 		}
 		
-		
-		
-		void Pic_bigphotoClick(object sender, EventArgs e)
-		{
-		  
-		}
-		
 		void Btn_opbackClick(object sender, EventArgs e)
 		{  
 		  if(pic_photo.Visible) {
@@ -301,13 +285,6 @@ namespace Program.Forms
   				t.TransitionCompletedEvent += (_, __) => this.Close();
   				t.run();
 		  }
-		}
-		
-
-		
-		void Pic_photoClick(object sender, EventArgs e)
-		{
-		  
 		}
 		
 		void Btn_savepicClick(object sender, EventArgs e)
