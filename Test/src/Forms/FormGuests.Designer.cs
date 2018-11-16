@@ -42,12 +42,12 @@ namespace Program.Forms
     	this.materialLabel8 = new MaterialSkin.Controls.MaterialLabel();
     	this.txt_ficha = new MaterialSkin.Controls.MaterialSingleLineTextField();
     	this.txt_hname = new MaterialSkin.Controls.MaterialSingleLineTextField();
-    	this.txt_hsurname = new MaterialSkin.Controls.MaterialSingleLineTextField();
     	this.txt_nhab = new MaterialSkin.Controls.MaterialSingleLineTextField();
     	this.txt_nlock = new MaterialSkin.Controls.MaterialSingleLineTextField();
     	this.txt_pname = new MaterialSkin.Controls.MaterialSingleLineTextField();
     	this.txt_psurname = new MaterialSkin.Controls.MaterialSingleLineTextField();
     	this.txt_proc = new MaterialSkin.Controls.MaterialSingleLineTextField();
+    	this.txt_hsurname = new MaterialSkin.Controls.MaterialSingleLineTextField();
     	this.SuspendLayout();
     	// 
     	// panel1
@@ -59,7 +59,6 @@ namespace Program.Forms
     	this.panel1.Name = "panel1";
     	this.panel1.Size = new System.Drawing.Size(741, 439);
     	this.panel1.TabIndex = 0;
-    	/*this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1Paint);*/
     	// 
     	// materialLabel1
     	// 
@@ -155,7 +154,7 @@ namespace Program.Forms
     	// 
     	this.txt_hname.Depth = 0;
     	this.txt_hname.Hint = "Nombre";
-    	this.txt_hname.Location = new System.Drawing.Point(65, 50);
+    	this.txt_hname.Location = new System.Drawing.Point(156, 50);
     	this.txt_hname.MaxLength = 32767;
     	this.txt_hname.MouseState = MaterialSkin.MouseState.HOVER;
     	this.txt_hname.Name = "txt_hname";
@@ -168,24 +167,6 @@ namespace Program.Forms
     	this.txt_hname.TabStop = false;
     	this.txt_hname.UseSystemPasswordChar = false;
     	this.txt_hname.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Text_Changed);
-    	// 
-    	// txt_hsurname
-    	// 
-    	this.txt_hsurname.Depth = 0;
-    	this.txt_hsurname.Hint = "Apellido";
-    	this.txt_hsurname.Location = new System.Drawing.Point(165, 50);
-    	this.txt_hsurname.MaxLength = 32767;
-    	this.txt_hsurname.MouseState = MaterialSkin.MouseState.HOVER;
-    	this.txt_hsurname.Name = "txt_hsurname";
-    	this.txt_hsurname.PasswordChar = '\0';
-    	this.txt_hsurname.SelectedText = "";
-    	this.txt_hsurname.SelectionLength = 0;
-    	this.txt_hsurname.SelectionStart = 0;
-    	this.txt_hsurname.Size = new System.Drawing.Size(84, 23);
-    	this.txt_hsurname.TabIndex = 11;
-    	this.txt_hsurname.TabStop = false;
-    	this.txt_hsurname.UseSystemPasswordChar = false;
-    	this.txt_hsurname.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Text_Changed);
     	// 
     	// txt_nhab
     	// 
@@ -227,7 +208,7 @@ namespace Program.Forms
     	// 
     	this.txt_pname.Depth = 0;
     	this.txt_pname.Hint = "Nombre";
-    	this.txt_pname.Location = new System.Drawing.Point(411, 50);
+    	this.txt_pname.Location = new System.Drawing.Point(519, 50);
     	this.txt_pname.MaxLength = 32767;
     	this.txt_pname.MouseState = MaterialSkin.MouseState.HOVER;
     	this.txt_pname.Name = "txt_pname";
@@ -245,7 +226,7 @@ namespace Program.Forms
     	// 
     	this.txt_psurname.Depth = 0;
     	this.txt_psurname.Hint = "Apellido";
-    	this.txt_psurname.Location = new System.Drawing.Point(518, 50);
+    	this.txt_psurname.Location = new System.Drawing.Point(413, 50);
     	this.txt_psurname.MaxLength = 32767;
     	this.txt_psurname.MouseState = MaterialSkin.MouseState.HOVER;
     	this.txt_psurname.Name = "txt_psurname";
@@ -277,18 +258,36 @@ namespace Program.Forms
     	this.txt_proc.UseSystemPasswordChar = false;
     	this.txt_proc.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Text_Changed);
     	// 
+    	// txt_hsurname
+    	// 
+    	this.txt_hsurname.Depth = 0;
+    	this.txt_hsurname.Hint = "Apellido";
+    	this.txt_hsurname.Location = new System.Drawing.Point(66, 50);
+    	this.txt_hsurname.MaxLength = 32767;
+    	this.txt_hsurname.MouseState = MaterialSkin.MouseState.HOVER;
+    	this.txt_hsurname.Name = "txt_hsurname";
+    	this.txt_hsurname.PasswordChar = '\0';
+    	this.txt_hsurname.SelectedText = "";
+    	this.txt_hsurname.SelectionLength = 0;
+    	this.txt_hsurname.SelectionStart = 0;
+    	this.txt_hsurname.Size = new System.Drawing.Size(84, 23);
+    	this.txt_hsurname.TabIndex = 17;
+    	this.txt_hsurname.TabStop = false;
+    	this.txt_hsurname.UseSystemPasswordChar = false;
+    	this.txt_hsurname.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Text_Changed);
+    	// 
     	// FormGuests
     	// 
     	this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
     	this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
     	this.BackColor = System.Drawing.Color.White;
     	this.ClientSize = new System.Drawing.Size(741, 518);
+    	this.Controls.Add(this.txt_hsurname);
     	this.Controls.Add(this.txt_proc);
     	this.Controls.Add(this.txt_psurname);
     	this.Controls.Add(this.txt_pname);
     	this.Controls.Add(this.txt_nlock);
     	this.Controls.Add(this.txt_nhab);
-    	this.Controls.Add(this.txt_hsurname);
     	this.Controls.Add(this.txt_hname);
     	this.Controls.Add(this.txt_ficha);
     	this.Controls.Add(this.materialLabel8);

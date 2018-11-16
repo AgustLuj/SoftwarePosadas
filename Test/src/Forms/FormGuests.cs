@@ -17,7 +17,7 @@ namespace Program.Forms
     
     class guestControl {
       
-      public MaterialLabel ficha, hname, hsurname, hab, locker, pname, psurname, proc;
+      public MaterialLabel ficha,hsurname, hname, hab, locker, pname, psurname, proc;
       private Guest _g;
       private bool _big;
       
@@ -31,12 +31,12 @@ namespace Program.Forms
         int h = (_big) ? 33 : 18;
 
         ficha = new MaterialLabel(){Top = top, Left = 12, Text = g.ficha, Width = 50, Height = h};
-        hname = new MaterialLabel(){Top = top, Left = 65, Text = g.paciente.name, Width = 84, Height = h};
-        hsurname =  new MaterialLabel(){Top = top, Left = 165, Text = g.paciente.surname, Width = 84, Height = h};
+        hsurname = new MaterialLabel(){Top = top, Left = 65, Text = g.paciente.surname, Width = 84, Height = h};
+        hname =  new MaterialLabel(){Top = top, Left = 165, Text = g.paciente.name, Width = 84, Height = h};
         hab =  new MaterialLabel(){Top = top, Left = 255, Text = g.hab.ToString(), Width = 86, Height = h};
         locker =  new MaterialLabel(){Top = top, Left = 347, Text = g.locker, Width = 58, Height = h};
-        pname =  new MaterialLabel(){Top = top, Left = 411, Text = g.internado.name, Width = 101, Height = h};
-        psurname = new MaterialLabel(){Top = top, Left = 518, Text = g.internado.surname, Width = 99, Height = h};
+        pname = new MaterialLabel(){Top = top, Left = 518, Text = g.internado.name, Width = 99, Height = h};
+        psurname = new MaterialLabel(){Top = top, Left = 411, Text = g.internado.surname, Width = 101, Height = h};
         proc =  new MaterialLabel(){Top = top, Left = 623, Text = g.procedencia, Width = 100, Height = h};
         
         nbig += (_big) ? 1 : 0;
@@ -49,8 +49,8 @@ namespace Program.Forms
         int top = nbig * 15 + c * 25;
         
         ficha.Top = top;
-        hname.Top = top;
         hsurname.Top = top;
+        hname.Top = top;
         hab.Top = top;
         locker.Top = top;
         pname.Top = top;
@@ -63,8 +63,8 @@ namespace Program.Forms
       public List<Control> getControls(){
         List<Control> l = new List<Control>();
         
-        l.AddRange(new []{ficha, hname,
-                    hsurname, hab, locker,
+        l.AddRange(new []{ficha,hsurname, hname,
+                     hab, locker,
                     pname, psurname, proc});
         
         return l;
@@ -90,8 +90,8 @@ namespace Program.Forms
       
       guestControls.ForEach(x => {
                               panel1.Controls.Add(x.ficha);
-                              panel1.Controls.Add(x.hname);
                               panel1.Controls.Add(x.hsurname);
+                              panel1.Controls.Add(x.hname);                             
                               panel1.Controls.Add(x.hab);
                               panel1.Controls.Add(x.locker);
                               panel1.Controls.Add(x.pname);
@@ -110,8 +110,8 @@ namespace Program.Forms
       int a = 0;
       
       guestControls.ForEach(x => {if(x.ficha.Text.ToLower().StartsWith(txt_ficha.Text.ToLower()) &&
-                                                    x.hname.Text.ToLower().StartsWith(txt_hname.Text.ToLower()) &&
                                                     x.hsurname.Text.ToLower().StartsWith(txt_hsurname.Text.ToLower()) &&
+                                                    x.hname.Text.ToLower().StartsWith(txt_hname.Text.ToLower()) &&
                                                     x.hab.Text.StartsWith(txt_nhab.Text) &&
                                                     x.locker.Text.ToLower().StartsWith(txt_nlock.Text.ToLower()) &&
                                                     x.pname.Text.ToLower().StartsWith(txt_pname.Text.ToLower()) &&
