@@ -164,7 +164,6 @@ namespace Program.Forms
 		  this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 		  this.Name = "FormAddGuestHome";
 		  this.Text = "FormAddGuestHome";
-		  this.Load += new System.EventHandler(this.FormAddGuestHomeLoad);
 		  this.ResumeLayout(false);
 		  this.PerformLayout();
 		}

@@ -3,26 +3,21 @@
  * User: lujan
  * Date: 9/11/2018
  * Time: 10:05
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
 
 namespace Program.Classes
 {
-	/// <summary>
-	/// Description of History.
-	/// </summary>
 	public class History
 	{
 		public History()
 		{
-			
+			InitializeComponent();
 		}
 		
 		public static string send(int code,string str){
 			
-			string action = "-";
+			string action;
 			
 			switch(code){
 				case 1:
@@ -35,11 +30,11 @@ namespace Program.Classes
 					action = "ANULÓ";
 					break;
 				default:
-					action = ""+code;
+					action = code.ToString();
 					break;
 			}
 			
-			return "["+DateTime.Now+"]: "+Sessions.Session.user.name+" "+action+" "+str+ " \n";
+			return "[" + DateTime.Now + "]: " + Sessions.Session.user.name + " " + action + " " + str + " \n";
 		}
 	}
 }

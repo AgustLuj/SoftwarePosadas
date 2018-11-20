@@ -62,6 +62,7 @@ namespace Program.Forms
 		{
 			var fa = sender as MaterialFlatButton;
 				name = fa.Name;
+				
 			FormAddPatient f = new FormAddPatient(name);
 				f.TopLevel = false;
 				(this.Parent as Panel).Controls.Add(f);
@@ -112,8 +113,6 @@ namespace Program.Forms
 			}else{
 				count_btn2++;
 			}
-			
-			
 		}
 		
 		public void ChangeBtn(string names,string a, string b){
@@ -136,15 +135,6 @@ namespace Program.Forms
 				t.run();
 		}
 		
-		void MaterialFlatButton1Click(object sender, EventArgs e)
-		{
-
-		}
-		
-		void FormAddGuestHomeLoad(object sender, EventArgs e)
-		{
-			
-		}
 		void insertGuest(){
 		  
 //		  DBConn.insertGuest(new Guest(txt_ficha.Text, text_nombre.Text, text_apellido.Text, int.Parse(text_habitacion.Text), text_locker.Text, "", "", combo_pais.Text, combo_servicio.Text){telefono = txt_phone.Text, internado = new Classes.Person(){name = "", surname = ""}, ingreso = DateTime.ParseExact(txt_date.Text, "dd-MM-yyyy", null)});

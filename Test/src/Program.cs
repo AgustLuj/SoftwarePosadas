@@ -26,7 +26,7 @@ namespace Program.Forms {
       StaticForms.MF.Show();
       //new Load().Show();
     #else
-      var f = new FormHistory();
+      var f = new Load();
       f.Show();
     #endif
     
