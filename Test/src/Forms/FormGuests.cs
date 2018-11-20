@@ -6,8 +6,6 @@ using MaterialSkin.Controls;
 using Program.Classes;
 using Program.StaticClasses;
 
-
-///////PIDAAAAAAL COMENTA EL CODIGO
 namespace Program.Forms
 {
   public partial class FormGuests : Form
@@ -25,18 +23,18 @@ namespace Program.Forms
         
         _g = g;
 
-        _big = (g.ficha.Length > 5) || g.paciente.name.Length > 20;
+        _big = (g.ficha.Length > 5) || (g.paciente.name.Length > 20);
         
         int top = nbig * 15 + c * 25;
         int h = (_big) ? 33 : 18;
 
         ficha = new MaterialLabel(){Top = top, Left = 12, Text = g.ficha, Width = 50, Height = h};
-        hsurname = new MaterialLabel(){Top = top, Left = 65, Text = g.paciente.surname, Width = 84, Height = h};
-        hname =  new MaterialLabel(){Top = top, Left = 165, Text = g.paciente.name, Width = 84, Height = h};
+        hsurname = new MaterialLabel(){Top = top, Left = 66, Text = g.paciente.surname, Width = 84, Height = h};
+        hname =  new MaterialLabel(){Top = top, Left = 156, Text = g.paciente.name, Width = 84, Height = h};
         hab =  new MaterialLabel(){Top = top, Left = 255, Text = g.hab.ToString(), Width = 86, Height = h};
         locker =  new MaterialLabel(){Top = top, Left = 347, Text = g.locker, Width = 58, Height = h};
-        pname = new MaterialLabel(){Top = top, Left = 518, Text = g.internado.name, Width = 99, Height = h};
-        psurname = new MaterialLabel(){Top = top, Left = 411, Text = g.internado.surname, Width = 101, Height = h};
+        pname = new MaterialLabel(){Top = top, Left = 519, Text = g.internado.name, Width = 99, Height = h};
+        psurname = new MaterialLabel(){Top = top, Left = 413, Text = g.internado.surname, Width = 101, Height = h};
         proc =  new MaterialLabel(){Top = top, Left = 623, Text = g.procedencia, Width = 100, Height = h};
         
         nbig += (_big) ? 1 : 0;

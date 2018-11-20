@@ -28,6 +28,8 @@ namespace Program.Forms
 		public string apellido = "";
 		public string name =" ";
 		
+		List<Guest> Guests;
+		
 		public FormAddGuest(string name)
 		{
 			InitializeComponent();
@@ -37,12 +39,29 @@ namespace Program.Forms
 			txt_ficha.Text = "1001C";
 			text_nombre.Text = "Mateo";
 		 	text_apellido.Text = "Pidal";
-		  	combo_pais.Text = "Argentina";
-		  	combo_provincia.Text = "Buenos Aires";
-		  	txt_phone.Text = "+54 (911) 3108-6234";
-		  	text_habitacion.Text = "12";
-		  	text_locker.Text = "12C";
+		  combo_pais.Text = "Argentina";
+		  combo_provincia.Text = "Buenos Aires";
+		  txt_phone.Text = "+54 (911) 3108-6234";
+		  text_habitacion.Text = "12";
+		  text_locker.Text = "12C";
 		  
+		}
+		
+		public FormAddGuest(ref List<Guest> lg)
+		{
+		  InitializeComponent();
+			combo_pais.Items.AddRange(GetAllCountries());//se agrega la lista de paises por medio una funcion interna
+			
+			txt_ficha.Text = "1001C";
+			text_nombre.Text = "Mateo";
+		 	text_apellido.Text = "Pidal";
+	  	combo_pais.Text = "Argentina";
+	  	combo_provincia.Text = "Buenos Aires";
+	  	txt_phone.Text = "+54 (911) 3108-6234";
+	  	text_habitacion.Text = "12";
+	  	text_locker.Text = "12C";
+	  	
+	  	Guests = lg;
 		}
 		
 		void button_cerrarClick(object sender, EventArgs e)
@@ -51,7 +70,11 @@ namespace Program.Forms
 		}
 		void button_añadirClick(object sender, EventArgs e)
 		{
-			Application.Exit();
+			Guests.Add(new Guest(txt_ficha.Text, text_nombre.Text, text_apellido.Text, int.Parse(text_habitacion.Text), text_locker.Text, "", "", combo_pais.Text, combo_servicio.Text, DateTime.Now){telefono = txt_phone.Text, internado = new Classes.Person(){name = "", surname = ""}, ingreso = DateTime.Now/*Parse(txt_date.Text)*/});
+			
+			var t = new Transition(new TransitionType_Acceleration(600));
+			t.add(this, "Top", -this.Height);
+			t.TransitionCompletedEvent += (_, __) => this.Close();
 		}
 		
 		void MaterialCheckBox2CheckedChanged(object sender, EventArgs e)
@@ -74,12 +97,12 @@ namespace Program.Forms
 		  btn_addphoto.BigFont();
 			txt_date.Text = DateTime.Today.ToString("dd-MM-yyyy");
 			
-			combo_provincia.Visible = false;
+			//combo_provincia.Visible = false;
 			materialLabel9.Visible = false;
 			text_localidad.Visible = false;
 			label_servicio.Visible = false;
 			combo_servicio.Visible = false;
-			combo_localidad.Visible = false;
+			//combo_localidad.Visible = false;
 		}
 		
 		void ComboBox3SelectedIndexChanged(object sender, EventArgs e)
@@ -89,7 +112,6 @@ namespace Program.Forms
 				
 				text_localidad.Visible = false;
 				combo_localidad.Visible = true;
-				
 			}else{
 				
 				text_localidad.Visible = true;
@@ -119,10 +141,10 @@ namespace Program.Forms
 		void Check_pacienteCheckedChanged(object sender, EventArgs e)
 		{
 			if(check_paciente.Checked == false){
+		    
 				label_servicio.Visible=false;
 				combo_servicio.Visible=false;
 				combo_servicio.Enabled=false;
-				
 			}else{
 				
 				label_servicio.Visible=true;
@@ -132,11 +154,17 @@ namespace Program.Forms
 		}
 		
 		void btn_addClick(object sender, EventArgs e)
-		{
-		  var panel3 = Parent as Panel;
-		  insertGuest();
-
+		{		  
+		  Console.WriteLine(text_habitacion.Text);
+		  
+		  Guests.Add(new Guest(txt_ficha.Text, text_nombre.Text, text_apellido.Text, int.Parse(text_habitacion.Text), text_locker.Text, "", "", combo_pais.Text, combo_servicio.Text, DateTime.Now){telefono = txt_phone.Text, internado = new Classes.Person(){name = "", surname = ""}, ingreso = DateTime.Parse(txt_date.Text)});
+			
+			var t = new Transition(new TransitionType_Acceleration(600));
+			 t.add(this, "Top", -this.Height);
+			 t.TransitionCompletedEvent += (_, __) => insertGuest();
+			 t.run();
 		}
+		
 		void insertGuest()
 		{
 			StaticForms.FAG.addButton1(1);//llama a la funcion addbutton del formulario principal de FormAddGuestHome y le pasa el parametro 1 para deintificar que es de guest 

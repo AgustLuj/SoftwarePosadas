@@ -28,7 +28,7 @@ namespace Program.Classes
 	  this.paciente = new Person(){name = nh, surname = ah};
 	  this.hab = hab;
 	  this.locker = locker;
-	  this.internado = new Person{name = ni, surname = ai};
+	  this.internado = new Person(){name = ni, surname = ai};
 	  this.procedencia = proc;
 	  this.servicio = serv;
 	  this.ingreso = ing;

@@ -16,6 +16,7 @@ namespace Program.Forms
 		public string nombre =" ";
 		public string apellido =" ";
 		public string name =" ";
+		
 		public FormAddPatient(string name)
 		{
 			InitializeComponent();

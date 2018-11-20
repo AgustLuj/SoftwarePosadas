@@ -22,7 +22,8 @@ namespace Program.Forms
 		
 		private List<MaterialSkin.Controls.MaterialFlatButton> lista;
 		
-		private List<Guest> Guests = new List<Guest>();
+		public List<Guest> Guests = new List<Guest>();
+		public List<Patient> Patients = new List<Patient>();
 		
 		public FormAddGuestHome()
 		{
@@ -42,7 +43,7 @@ namespace Program.Forms
 			var fa = sender as MaterialFlatButton; // se localiza el nombre del botón
 				names = fa.Name;
 			// Se crea formulario para añadir huésped 	
-			FormAddGuest f = new FormAddGuest(names); // el argumento que se envía es el nombre del botón
+			FormAddGuest f = new FormAddGuest(ref Guests); // el argumento que se envía es el nombre del botón
 				f.TopLevel = false;
 				(this.Parent as Panel).Controls.Add(f);
 				f.Parent = this;
@@ -53,6 +54,9 @@ namespace Program.Forms
 			var t = new Transition(new TransitionType_Deceleration(500));
 				t.add(f, "Top", 0);
 				t.run();
+				
+				Guests.ForEach(x => Console.WriteLine(x.paciente.name));
+				Console.WriteLine(Guests.Count);
 		}
 		
 		void Button_pacienteClick(object sender, EventArgs e)
