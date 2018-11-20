@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Transitions;
-
 using Program.StaticClasses;
 
 namespace Program.Forms

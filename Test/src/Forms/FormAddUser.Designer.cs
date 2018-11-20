@@ -276,7 +276,6 @@ namespace Program.Forms
 		  this.radio_leerEscOp.TabStop = true;
 		  this.radio_leerEscOp.Text = "Leer/Escribir";
 		  this.radio_leerEscOp.UseVisualStyleBackColor = true;
-		  this.radio_leerEscOp.CheckedChanged += new System.EventHandler(this.MaterialRadioButton2CheckedChanged);
 		  // 
 		  // radio_leerSeg
 		  // 

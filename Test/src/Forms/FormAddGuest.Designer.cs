@@ -150,7 +150,7 @@ namespace Program.Forms
 			// 
 			this.check_paciente.Depth = 0;
 			this.check_paciente.Font = new System.Drawing.Font("Roboto", 10F);
-			this.check_paciente.Location = new System.Drawing.Point(507, 296);
+			this.check_paciente.Location = new System.Drawing.Point(519, 265);
 			this.check_paciente.Margin = new System.Windows.Forms.Padding(0);
 			this.check_paciente.MouseLocation = new System.Drawing.Point(-1, -1);
 			this.check_paciente.MouseState = MaterialSkin.MouseState.HOVER;
@@ -289,7 +289,7 @@ namespace Program.Forms
 									"Unidad Coronaria Adultos",
 									"Unidad Terapia Intensiva Pediatrica",
 									"Urologia"});
-			this.combo_servicio.Location = new System.Drawing.Point(510, 369);
+			this.combo_servicio.Location = new System.Drawing.Point(522, 338);
 			this.combo_servicio.Name = "combo_servicio";
 			this.combo_servicio.Size = new System.Drawing.Size(206, 26);
 			this.combo_servicio.Sorted = true;
@@ -301,7 +301,7 @@ namespace Program.Forms
 			this.label_servicio.Depth = 0;
 			this.label_servicio.Font = new System.Drawing.Font("Roboto", 11F);
 			this.label_servicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.label_servicio.Location = new System.Drawing.Point(506, 339);
+			this.label_servicio.Location = new System.Drawing.Point(518, 308);
 			this.label_servicio.MouseState = MaterialSkin.MouseState.HOVER;
 			this.label_servicio.Name = "label_servicio";
 			this.label_servicio.Size = new System.Drawing.Size(178, 23);
@@ -601,7 +601,7 @@ namespace Program.Forms
 			this.btn_addpic.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.btn_addpic.Depth = 0;
 			this.btn_addpic.Icon = null;
-			this.btn_addpic.Location = new System.Drawing.Point(587, 242);
+			this.btn_addpic.Location = new System.Drawing.Point(579, -27);
 			this.btn_addpic.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
 			this.btn_addpic.MouseState = MaterialSkin.MouseState.HOVER;
 			this.btn_addpic.Name = "btn_addpic";
@@ -611,6 +611,7 @@ namespace Program.Forms
 			this.btn_addpic.TabIndex = 35;
 			this.btn_addpic.Text = "x";
 			this.btn_addpic.UseVisualStyleBackColor = true;
+			this.btn_addpic.Visible = false;
 			this.btn_addpic.Click += new System.EventHandler(this.btn_pic);
 			// 
 			// openFileDialog1

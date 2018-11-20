@@ -36,12 +36,7 @@ namespace Program.Forms
 		{
 			text_usuario.Text=text_nombre.Text + "_" + text_apellido.Text;
 		}
-		
-		void MaterialRadioButton2CheckedChanged(object sender, EventArgs e)
-		{
-			
-		}
-		
+				
 		void MaterialCheckBox1CheckedChanged(object sender, EventArgs e)
 		{
 			if(!check_operadores.Checked){
@@ -55,12 +50,13 @@ namespace Program.Forms
 		
 		void btn_close_Click(object sender, EventArgs e)
 		{
+			// Transcición de cierre de formulario
 			var t = new Transition(new TransitionType_Acceleration(500));
 				t.add(this, "Top", -this.Height);
 				t.TransitionCompletedEvent += (_, __) => this.Close();
 				t.run();
 		}
-		
+/////////////////////////////////Cambios en botones ///////////////////////////////////////////////
 		void Check_seguridadCheckedChanged(object sender, EventArgs e)
 		{
 			if(!check_seguridad.Checked){

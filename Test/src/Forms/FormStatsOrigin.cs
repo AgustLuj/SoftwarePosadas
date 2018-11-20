@@ -2,9 +2,9 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
-
 using Transitions;
 
+//PIDAAAAAAL COMENTA EL CODIGO
 namespace Program.Forms
 {
 	public partial class FormStatsOrigin : Form

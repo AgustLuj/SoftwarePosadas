@@ -1,20 +1,9 @@
-﻿/*
- * Created by SharpDevelop.
- * User: lujan
- * Date: 4/9/2018
- * Time: 08:52
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
- */
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-
+//no completadoo
 namespace Program.Forms
 {
-	/// <summary>
-	/// Description of FormHistory.
-	/// </summary>
 	public partial class FormHistory : Form
 	{
 		public FormHistory()

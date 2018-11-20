@@ -12,7 +12,13 @@ using Program.Forms;
 using Program.Classes;
 using Program.Extensions;
 using Program.StaticClasses;
-
+/*
+	 
+ 	Formulario de agregar huesped.
+ 	Para añadir un huessped se tiene que completar todos los campos y apretar añadir
+ 
+*/
+//PIDAAAAAAL COMENTA EL CODIGO
 namespace Program.Forms
 {
 	public partial class FormAddGuest : Form
@@ -23,8 +29,8 @@ namespace Program.Forms
 		public FormAddGuest(string name)
 		{
 			InitializeComponent();
-			combo_pais.Items.AddRange(GetAllCountries());
-			this.name=name;
+			combo_pais.Items.AddRange(GetAllCountries());//se agrega la lista de paises por medio una funcion interna
+			this.name=name;//recibe el nombre del boton donde se abrio y se declara un variable local
 			//sadboys sadboys
 			
 			txt_ficha.Text = "1001C";
@@ -46,16 +52,17 @@ namespace Program.Forms
 		{
 			Application.Exit();
 		}
-
-		
 		void MaterialCheckBox2CheckedChanged(object sender, EventArgs e)
 		{
-		  txt_date.Enabled = !check_hoy.Checked;
+		  //Se hace una validacion para saber si esta checked el checkbox 
+			txt_date.Enabled = !check_hoy.Checked;
 		  
 			if(!check_hoy.Checked){
+				//si no esta checked se habilita el inputbox para que pueda añadir la fecha manual 
 				txt_date.Text = "";
 				txt_date.Focus();
 			}else{
+				//en caso de que este chekeado la fecha se autocompleta con la fecha del pc
 				txt_date.Text = DateTime.Today.ToString("dd-MM-yyyy");
 			}
 		}
@@ -75,6 +82,7 @@ namespace Program.Forms
 		
 		void ComboBox3SelectedIndexChanged(object sender, EventArgs e)
 		{
+			//Se realiza una validacion para comprar si es de buenos aires y que le aparezca automaticamente los municipios
 			if(combo_provincia.Text == "Buenos Aires"){
 				
 				text_localidad.Visible = false;
@@ -123,23 +131,23 @@ namespace Program.Forms
 		
 		void btn_addClick(object sender, EventArgs e)
 		{
-		  var panel3 = Parent as Panel;
+		  var panel3 = Parent as Panel; //
 		  //var FAG = panel3.Controls[0] as FormGuests;
 		  insertGuest();
 
 		}
 		void insertGuest()
 		{
-			StaticForms.FAG.addButton1(1);
-			StaticForms.FAG.ChangeBtn(name, text_nombre.Text, text_apellido.Text);	
-			this.Close();
+			StaticForms.FAG.addButton1(1);//llama a la funcion addbutton del formulario principal de FormAddGuestHome y le pasa el parametro 1 para deintificar que es de guest 
+			StaticForms.FAG.ChangeBtn(name, text_nombre.Text, text_apellido.Text);//llama a la funcion changeBTN para que cambiarle el nombre al boton
+			this.Close();//se cierra el formulario
 		}
-		void showErrorLabel(){
+		void showErrorLabel(){ 
 			label_error.ForeColor = Color.FromArgb(0xB00020);
 			label_error.Text="Por favor complete las casillas";
 		}
 		void MaterialFlatButton2Click(object sender, EventArgs e)
-		{
+		{ // Transcición de cierre de formulario
 			var t = new Transition(new TransitionType_Acceleration(500));
 				t.add(this, "Top", -this.Height);
 				t.TransitionCompletedEvent += (_, __) => this.Close();
@@ -159,9 +167,9 @@ namespace Program.Forms
 		}
 		
 		public string[] GetAllCountries(){
-		  
+		// función que obtiene todos los países  
       Dictionary<string, string> objDic = new Dictionary<string, string>();
-
+       
       foreach (CultureInfo ObjCultureInfo in CultureInfo.GetCultures(CultureTypes.SpecificCultures))
       {
         RegionInfo objRegionInfo = new RegionInfo(ObjCultureInfo.Name);
@@ -207,19 +215,20 @@ namespace Program.Forms
 		void Btn_addphotoClick(object sender, EventArgs e)
 		{
 		  if(!StaticForms.MF.panel3.Controls.containsType(typeof(FormLoadPicture))){
-      
+      // se crea formulario para de captura de imagen
           var t = new FormLoadPicture();
     	      t.TopLevel = false;
-    	      StaticForms.MF.panel3.Controls.Add(t);
+    	      StaticForms.MF.panel3.Controls.Add(t);//se agrega al panel3 el formulario
     	      StaticForms.MF.panel3.Tag = t;
     	      t.Parent = StaticForms.MF.panel3;
     	      t.Show();
     	      t.Top = -t.Height;
     	      t.BringToFront();
-  	      
+  	     //transicion de muestra de formulario 
   	      var tr = new Transition(new TransitionType_Deceleration(500));
     	      tr.add(t, "Top", 0);
     	      tr.run();
+    	    
 		  }
 		}
 		}
