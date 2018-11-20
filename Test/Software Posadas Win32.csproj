@@ -107,6 +107,7 @@
     <Compile Include="src\Classes\History.cs" />
     <Compile Include="src\Classes\Image.cs" />
     <Compile Include="src\Classes\Month.cs" />
+    <Compile Include="src\Classes\Person.cs" />
     <Compile Include="src\Classes\Photo.cs" />
     <Compile Include="src\Classes\User.cs" />
     <Compile Include="src\Forms\FormStatsOrigin.cs" />

@@ -12,13 +12,14 @@ using Program.Forms;
 using Program.Classes;
 using Program.Extensions;
 using Program.StaticClasses;
+
 /*
 	 
  	Formulario de agregar huesped.
  	Para añadir un huessped se tiene que completar todos los campos y apretar añadir
  
 */
-//PIDAAAAAAL COMENTA EL CODIGO
+
 namespace Program.Forms
 {
 	public partial class FormAddGuest : Form
@@ -26,21 +27,21 @@ namespace Program.Forms
 		public string nombre = "";
 		public string apellido = "";
 		public string name =" ";
+		
 		public FormAddGuest(string name)
 		{
 			InitializeComponent();
 			combo_pais.Items.AddRange(GetAllCountries());//se agrega la lista de paises por medio una funcion interna
-			this.name=name;//recibe el nombre del boton donde se abrio y se declara un variable local
-			//sadboys sadboys
+			this.name = name;//recibe el nombre del boton donde se abrio y se declara un variable local
 			
 			txt_ficha.Text = "1001C";
 			text_nombre.Text = "Mateo";
-		 text_apellido.Text = "Pidal";
-		  combo_pais.Text = "Argentina";
-		  combo_provincia.Text = "Buenos Aires";
-		  txt_phone.Text = "+54 (911) 3108-6234";
-		  text_habitacion.Text = "12";
-		  text_locker.Text = "12C";
+		 	text_apellido.Text = "Pidal";
+		  	combo_pais.Text = "Argentina";
+		  	combo_provincia.Text = "Buenos Aires";
+		  	txt_phone.Text = "+54 (911) 3108-6234";
+		  	text_habitacion.Text = "12";
+		  	text_locker.Text = "12C";
 		  
 		}
 		
@@ -52,13 +53,14 @@ namespace Program.Forms
 		{
 			Application.Exit();
 		}
+		
 		void MaterialCheckBox2CheckedChanged(object sender, EventArgs e)
 		{
-		  //Se hace una validacion para saber si esta checked el checkbox 
+		  //Se hace una validacion para saber si esta checkeado el checkbox 
 			txt_date.Enabled = !check_hoy.Checked;
 		  
 			if(!check_hoy.Checked){
-				//si no esta checked se habilita el inputbox para que pueda añadir la fecha manual 
+				//si no esta checkeado se habilita el inputbox para que pueda añadir la fecha manual 
 				txt_date.Text = "";
 				txt_date.Focus();
 			}else{
@@ -131,8 +133,7 @@ namespace Program.Forms
 		
 		void btn_addClick(object sender, EventArgs e)
 		{
-		  var panel3 = Parent as Panel; //
-		  //var FAG = panel3.Controls[0] as FormGuests;
+		  var panel3 = Parent as Panel;
 		  insertGuest();
 
 		}
@@ -168,19 +169,19 @@ namespace Program.Forms
 		
 		public string[] GetAllCountries(){
 		// función que obtiene todos los países  
-      Dictionary<string, string> objDic = new Dictionary<string, string>();
-       
-      foreach (CultureInfo ObjCultureInfo in CultureInfo.GetCultures(CultureTypes.SpecificCultures))
-      {
-        RegionInfo objRegionInfo = new RegionInfo(ObjCultureInfo.Name);
-        if (!objDic.ContainsKey(objRegionInfo.EnglishName))
-        {
-          objDic.Add(objRegionInfo.EnglishName, objRegionInfo.TwoLetterISORegionName.ToLower());
-        }
-      }
-
-      var obj = objDic.OrderBy(p => p.Key);
-      var y = obj.Select(t => t.Key);
+	      Dictionary<string, string> objDic = new Dictionary<string, string>();
+	       
+	      foreach (CultureInfo ObjCultureInfo in CultureInfo.GetCultures(CultureTypes.SpecificCultures))
+	      {
+	        RegionInfo objRegionInfo = new RegionInfo(ObjCultureInfo.Name);
+	        if (!objDic.ContainsKey(objRegionInfo.EnglishName))
+	        {
+	          objDic.Add(objRegionInfo.EnglishName, objRegionInfo.TwoLetterISORegionName.ToLower());
+	        }
+	      }
+	
+	      var obj = objDic.OrderBy(p => p.Key);
+	      var y = obj.Select(t => t.Key);
 		  return y.ToArray();
 	   }
 		
@@ -191,15 +192,15 @@ namespace Program.Forms
 		
 		void Chk_odate_undefCheckedChanged(object sender, EventArgs e)
 		{
-      var s = sender as MaterialSkin.Controls.MaterialCheckBox;
-
-      txt_odate.Enabled = !s.Checked;
-      lbl_odate.Enabled = !s.Checked;
-      
-      txt_odate.Text = (s.Checked) ? "01-01-0001" : "";
-      
-      if(!s.Checked)
-        txt_odate.Focus();
+	      var s = sender as MaterialSkin.Controls.MaterialCheckBox;
+	
+	      txt_odate.Enabled = !s.Checked;
+	      lbl_odate.Enabled = !s.Checked;
+	      
+	      txt_odate.Text = (s.Checked) ? "01-01-0001" : "";
+	      
+	      if(!s.Checked)
+	        txt_odate.Focus();
 		}
 
 		void PictureClick(object sender, EventArgs e){
@@ -215,7 +216,7 @@ namespace Program.Forms
 		void Btn_addphotoClick(object sender, EventArgs e)
 		{
 		  if(!StaticForms.MF.panel3.Controls.containsType(typeof(FormLoadPicture))){
-      // se crea formulario para de captura de imagen
+		  //se crea formulario para de captura de imagen
           var t = new FormLoadPicture();
     	      t.TopLevel = false;
     	      StaticForms.MF.panel3.Controls.Add(t);//se agrega al panel3 el formulario
@@ -231,7 +232,7 @@ namespace Program.Forms
     	    
 		  }
 		}
-		}
+	}
 }
 
 

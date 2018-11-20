@@ -9,7 +9,6 @@ using Program.StaticClasses;
 
 */
 
-//PIDAAAAAAL COMENTA EL CODIGO
 namespace Program.Forms
 {
 	public partial class FormAddPatient : Form

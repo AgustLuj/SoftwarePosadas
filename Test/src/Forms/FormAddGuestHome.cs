@@ -11,8 +11,6 @@ Formulario principal de ingreso de huésped y paciente
 
 */
 
-
-//PIDAAAAAAL COMENTA EL CODIGO
 namespace Program.Forms
 {
 	public partial class FormAddGuestHome : Form
@@ -61,7 +59,7 @@ namespace Program.Forms
 		{
 			var fa = sender as MaterialFlatButton; // se localiza el nombre del botón
 				name = fa.Name;
-			// Se crea formulario para añadir huésped 
+			// Se crea formulario para añadir el paciente 
 			FormAddPatient f = new FormAddPatient(name); // el argumento que se envía es el nombre del botón
 				f.TopLevel = false;
 				(this.Parent as Panel).Controls.Add(f);
@@ -95,7 +93,7 @@ namespace Program.Forms
 		}
 		
 	 	void createButton(String str, int x, int y){
-		// Creación del botón y sus respectivos 	
+		// Creación del botón y sus respectivos TODO: RESPECTIVOS QUE??? LUJIIII!	
 			var btn = new MaterialFlatButton();
 				btn.AutoSize = true;
 				btn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;

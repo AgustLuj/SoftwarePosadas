@@ -13,42 +13,30 @@ namespace Program.Classes
   public class Guest
   {
     
-    public int hab;
+	public int hab;
+	
+	public Person paciente, internado;
+	
+	public string ficha, locker, procedencia, servicio, telefono;
+	
+	public DateTime ingreso, egreso;
+	
+	public Guest(string ficha, string nh, string ah,
+	             int hab, string locker, string ni,
+	             string ai, string proc, string serv, DateTime ing) {
+	  this.ficha = ficha;
+	  this.paciente = new Person(){name = nh, surname = ah};
+	  this.hab = hab;
+	  this.locker = locker;
+	  this.internado = new Person{name = ni, surname = ai};
+	  this.procedencia = proc;
+	  this.servicio = serv;
+	  this.ingreso = ing;
+	}
     
-    public Person paciente, internado;
-    
-    public string ficha, locker, procedencia, servicio, telefono;
-    
-    public DateTime ingreso, egreso;
-    
-    public Guest(string ficha, string nh, string ah,
-                 int hab, string locker, string ni,
-                 string ai, string proc, string serv, DateTime ing) {
-      this.ficha = ficha;
-      this.paciente = new Person(){name = nh, surname = ah};
-      this.hab = hab;
-      this.locker = locker;
-      this.internado = new Person{name = ni, surname = ai};
-      this.procedencia = proc;
-      this.servicio = serv;
-      this.ingreso = ing;
-    }
-    
-    public override string ToString()
-  {
-    return string.Format("[Guest Hab={0}, Paciente={1}, Internado={2}, Ficha={3}, Locker={4}, Procedencia={5}, Servicio={6}]", hab, paciente, internado, ficha, locker, procedencia, servicio);
-  }
-
-  }
-  
-  public class Person {
-    public string name;
-    public string surname;
-    
-    public override string ToString()
-  {
-    return string.Format("[Person Name={0}, Surname={1}]", name, surname);
-  }
-
+	public override string ToString()
+	{
+		return string.Format("[Guest Hab={0}, Paciente={1}, Internado={2}, Ficha={3}, Locker={4}, Procedencia={5}, Servicio={6}]", hab, paciente, internado, ficha, locker, procedencia, servicio);
+	}
   }
 }

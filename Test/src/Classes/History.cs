@@ -12,10 +12,9 @@ namespace Program.Classes
 	{
 		public History()
 		{
-			InitializeComponent();
 		}
 		
-		public static string send(int code,string str){
+		public static string send(int code, string str){
 			
 			string action;
 			
