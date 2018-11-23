@@ -28,7 +28,7 @@ namespace Program.Forms
 		public string apellido = "";
 		public string name =" ";
 		
-		List<Guest> Guests;
+		private List<Guest> Guests;
 		
 		public FormAddGuest(string name)
 		{

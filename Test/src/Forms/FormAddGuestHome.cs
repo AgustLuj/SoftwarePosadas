@@ -34,10 +34,6 @@ namespace Program.Forms
 				lista.Add(button_paciente);
 		}
 		
-		public void addGuest(Guest g){
-		  Guests.Add(g);
-		}
-		
 		void Button_huespedClick(object sender, EventArgs e)
 		{
 			var fa = sender as MaterialFlatButton; // se localiza el nombre del botón
@@ -120,12 +116,22 @@ namespace Program.Forms
 			}
 		}
 		
-		public void ChangeBtn(string names,string a, string b){
+		/// <summary>
+		/// Función para cambiar el texto de un botón según el apellido y nombre del
+		/// paciente
+		/// </summary>
+		/// <param name="name"></param>
+		/// <param name="pName"></param>
+		/// <param name="pSurname"></param>
+		public void ChangeBtn(string name, string pName, string pSurname){
 			// for para encontrar el botón con el nombre recibido
+			var aa = Controls.Find(name, false);
+			Console.WriteLine(aa.Length);
+			Console.WriteLine(aa[0].Name);
 			for(int j = 0;j<this.Controls.Count;j++){
-				if(names == this.Controls[j].Name){
+				if(name == this.Controls[j].Name){
 				// se cambia el texto del botón y se deshabilita				
-					this.Controls[j].Text=" + " + a + " " + b;
+					this.Controls[j].Text=" + " + pSurname + " " + pName;
 					this.Controls[j].Enabled = false;
 				}
 			}

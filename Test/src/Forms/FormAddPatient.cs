@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Collections.Generic;
+
 using Transitions;
+
+using Program.Classes;
 using Program.StaticClasses;
 /*
 
@@ -15,19 +19,28 @@ namespace Program.Forms
 	{
 		public string nombre =" ";
 		public string apellido =" ";
-		public string name =" ";
+		public string name ="button_paciente";
 		
-		public FormAddPatient(string name)
+		private List<Patient> Patients; 
+		
+		public FormAddPatient(string n)
 		{
 			InitializeComponent();
-			this.name=name;//recibe el nombre del boton donde se abrio y se declara un variable local
+			name = n;//recibe el nombre del boton donde se abrio y se declara un variable local
+		}
+		
+		public FormAddPatient(ref List<Patient> pats)
+		{
+			InitializeComponent();
+		
+		  Patients = pats;
 		}
 		
 		void MaterialFlatButton1Click(object sender, EventArgs e)
 		{
 			if(text_nombre.Text != "" && text_apellido.Text != "" && combo_servicio.SelectedIndex != -1 ){
 				StaticForms.FAG.addButton1(2);//llama a la funcion addbutton del formulario principal de FormAddGuestHome y le pasa el parametro 2 para deintificar que es de guest
-				StaticForms.FAG.ChangeBtn(name,text_nombre.Text,text_apellido.Text);//llama a la funcion changeBTN para que cambiarle el nombre al boton
+				StaticForms.FAG.ChangeBtn(name, text_nombre.Text, text_apellido.Text);//llama a la funcion changeBTN para que cambiarle el nombre al boton
 				this.Close();//se cierra el formulario
 			}else{
 				label_error.ForeColor = Color.FromArgb(0xB00020);
