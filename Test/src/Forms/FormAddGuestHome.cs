@@ -2,8 +2,12 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
+
 using Program.Classes;
+using Program.StaticClasses;
+
 using MaterialSkin.Controls;
+
 using Transitions;
 /*
   
@@ -118,13 +122,12 @@ namespace Program.Forms
 		
 		/// <summary>
 		/// Función para cambiar el texto de un botón según el apellido y nombre del
-		/// paciente
+		/// paciente.
 		/// </summary>
-		/// <param name="name"></param>
-		/// <param name="pName"></param>
-		/// <param name="pSurname"></param>
+		/// <param name="name">Nombre del Botón</param>
+		/// <param name="pName">Nombre del Paciente</param>
+		/// <param name="pSurname">Apellido del Paciente</param>
 		public void ChangeBtn(string name, string pName, string pSurname){
-			// for para encontrar el botón con el nombre recibido
 			var aa = Controls.Find(name, false);
 			Console.WriteLine(aa.Length);
 			Console.WriteLine(aa[0].Name);
@@ -155,6 +158,18 @@ namespace Program.Forms
 //				t.add(this, "Top", -this.Height);
 //				t.TransitionCompletedEvent += (_, __) => this.Close();
 //				t.run();
+		}
+		
+		void btn_addClick(object sender, EventArgs e)
+		{
+		  Guests.ForEach(g => {
+		                   DBConn.insertGuest(g);
+		                 });
+		  
+      var t = new Transition(new TransitionType_Acceleration(500));
+				t.add(this, "Top", -this.Height);
+				t.TransitionCompletedEvent += (_, __) => this.Close();
+				t.run();
 		}
 	}
 }
